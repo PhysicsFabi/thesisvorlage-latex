@@ -1,0 +1,84 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'img.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{219.5122426bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.71336702)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{img.pdf}}%
+    \put(-0.00453776,0.67183313){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$m^2$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{img.pdf}}%
+    \put(0.72438505,0.47624216){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Updelta m_{21}^2$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{img.pdf}}%
+    \put(0.23073063,0.37223934){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Updelta m_{32}^2$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{img.pdf}}%
+    \put(0.2290657,0.11944434){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Updelta m_{21}^2$\end{tabular}}}}%
+    \put(0.95568344,0.57420622){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\scriptsize{\delta = \SI{180}{\degree}}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{img.pdf}}%
+    \put(0.95588029,0.50583441){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\scriptsize{\delta = \SI{0}{\degree}}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{img.pdf}}%
+    \put(0.72639011,0.2692235){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Updelta m_{32}^2$\end{tabular}}}}%
+    \put(0.60904996,0.06930092){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\upnu_3$\end{tabular}}}}%
+    \put(0.61137566,0.42992393){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\upnu_1$\end{tabular}}}}%
+    \put(0.60777874,0.5306588){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\upnu_2$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{img.pdf}}%
+    \put(0.22208773,0.61750552){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\upnu_{\mathrm{e}}$\end{tabular}}}}%
+    \put(0.37502963,0.61939338){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\upnu_{\upmu}$\end{tabular}}}}%
+    \put(0.53176947,0.62006116){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\upnu_{\uptau}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{img.pdf}}%
+    \put(0.10137867,0.06918801){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\upnu_1$\end{tabular}}}}%
+    \put(0.09828054,0.53043752){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\upnu_3$\end{tabular}}}}%
+    \put(0.09778169,0.16992288){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\upnu_2$\end{tabular}}}}%
+    \put(-0.17489728,-0.18246735){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.52241841\unitlength}\raggedright \end{minipage}}}%
+    \put(0.16336623,0.05014778){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.2553114\unitlength}\centering Normal\end{minipage}}}%
+    \put(0.6766909,0.05054474){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.25575262\unitlength}\centering Inverted\end{minipage}}}%
+  \end{picture}%
+\endgroup%

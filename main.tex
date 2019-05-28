@@ -1,99 +1,12 @@
-\documentclass{include/thesisclass}
-% Main File - Based on thesisclass.cls
-% Comments are mostly in English
-% ------------------------------------------------------------------------------
-% Further files in folder:
-%  - include/cmds.tex (for macros and additional commands)
-%  - include/kitlogo.pdf (for titlepage)
-%  - lit.bib (bibtex bibliography database)
-%  - include/titlepage.tex (for layout of titelpage)
-% ------------------------------------------------------------------------------
-% Useful Supplied Packages:
-% amsmath, amssymb, mathtools, bbm, upgreek, nicefrac,
-% siunitx, varioref, booktabs, graphicx, tikz, multicol
+\documentclass{document/thesisclass}
+\input{document/settings.tex}
+\input{include/input-me.tex}
 
-
-
-
-
-%% -------------------------
-%% |    Thesis Settings    |
-%% -------------------------
-% english or ngerman (new german für neue deutsche Rechtschreibung statt german)
-\SelectLanguage{english}
-% details on this thesis
-\newcommand{\thesisauthor}{Klara Fall}
-\newcommand{\thesistopic}{Name des Themas auf Deutsch}
-\newcommand{\thesisentopic}{Name of the Topic in English}
-\newcommand{\thesislongtopic}{Very long and very detailed description of the very interesting thesis topic (only necessary for pdfsubject tag).}
-\newcommand{\thesisinstitute}{Institut für Experimentelle Kernphysik}
-\newcommand{\thesisreviewerone}{Prof. Dr. D. Cay}
-\newcommand{\thesisreviewertwo}{Prof. Dr. E. Vil}
-\newcommand{\thesisadvisorone}{} % to use: enter names and uncomment in titlepg
-\newcommand{\thesisadvisortwo}{}
-\newcommand{\thesistimestart}{01.04.2015} % on titlepage
-\newcommand{\thesistimeend}{30.09.2015} % on titlepage
-\newcommand{\thesistimehandin}{30.09.2015} % on second page 'preamble'
-\newcommand{\thesispagehead}{Bachelor Thesis: \thesisentopic} % page heading
-
-
-
-
-
-%% ---------------------
-%% |    PDF - Setup    |
-%% ---------------------
-% This information will appear embed into the PDF file as meta data, but will 
-% not be printed anywhere
-\hypersetup
-{
-    pdfauthor={\thesisauthor},
-    pdftitle={Bachelorarbeit: \thesistopic},
-    pdfsubject={\thesislongtopic},
-    pdfkeywords={kit,physik,bachelor,thesis,\thesisauthor}
-}
-
-
-
-
-
-%% --------------------------------------
-%% |    Settings for Word Separation    |
-%% --------------------------------------
-% Help for separation:
-% In German package the following hints are additionally available:
-% "- = Additional separation
-% "| = Suppress ligation and possible separation (e.g. Schaf"|fell)
-% "~ = Hyphenation without separation (e.g. bergauf und "~ab)
-% "= = Hyphenation with separation before and after
-% "" = Separation without a hyphenation (e.g. und/""oder)
-
-% Describe separation hints here:
-\hyphenation
-{
-    über-nom-me-nen an-ge-ge-be-nen
-    %Pro-to-koll-in-stan-zen
-    %Ma-na-ge-ment  Netz-werk-ele-men-ten
-    %Netz-werk Netz-werk-re-ser-vie-rung
-    %Netz-werk-adap-ter Fein-ju-stier-ung
-    %Da-ten-strom-spe-zi-fi-ka-tion Pa-ket-rumpf
-    %Kon-troll-in-stanz
-}
-
-
-
-
-
-%% -----------------------
-%% |    Main Document    |
-%% -----------------------
-\usepackage{lipsum} % for Lorem Ipsum text example
 \begin{document}
-    % Titlepage and ToC
     \FrontMatter
 
-    \input{include/titlepage}
-    \input{include/preamble}
+    \input{document/titlepage}
+    \input{document/preamble}
 
     \begingroup \let\clearpage\relax    % in order to avoid listoffigures and
     \tableofcontents                    % listoftables on new pages
@@ -102,47 +15,79 @@
     \endgroup
     \cleardoublepage
 
-
-
-    % Contents
     \MainMatter
+    
+    \input{chapter/neutrinos/input-me.tex}
+    \input{chapter/katrin/input-me.tex}
+    \input{chapter/energyDependentCrossSec/input-me.tex}
+    
+    \chapter{(Theoretical Corrections to the \texorpdfstring{$\upbeta$}{Beta} Decay Spectrum)}
+    \section{Motivation}
+    What are theoretical corrections?
+    
+    \section{Application to Data}
+    What is the effect on the parameters of interest? How can it be explained? 
+    
+    
+    
+    \chapter{Parameter Inference at KATRIN with KaFit}
+    
+    \section{The KATRIN Likelihood}
+    What does parameter inference mean? What does sensitivity on the neutrino mass mean? What is the likelihood? What is a Frequentist approach? What is a Bayesian approach? 
+    \section{Overview of Analysis Methods}
+    What are the parameters of interest? What is run stacking? What is a uniform fit? Was the neutrino mass fixed? Which energy loss model/fsd binning/...? More general, which analysis configuration was used and why?
+    
+    \section{Inference Algorithms}
+    \subsection{Classical Minimizer}
+    What algorithm is implemented in/interfaced to KaFit? What is MINUIT and MINOS? What are the pros and cons?
+    \subsection{Markov-Chain-Monte-Carlo}
+    What is a Markov-Chain-Monte-Carlo?  What algorithm is implemented in/interfaced to KaFit? What are the pros and cons of the method? What are the pros and cons of the different implementations?
+    
+    \section{Treatment of Uncertainties}
+    \subsection{Nuisance Parameters}
+    What are nuisance parameters? How can they be included in an analysis? What are the difficulties? How can these difficulties be circumvented?
+    \subsection{Penalized Likelihood and Priors}
+    What does it mean to constrain a nuisance parameter? How can penalty terms and priors be described as constraints? How do penalty terms priors compare? How does this fit in a Frequentist and Bayesian framework?
+    \subsection{Monte Carlo Propagation and Covariance Matrix Approach}
+    What is the Monte Carlo Propagation and the Covariance Matrix Approach. Why are they similar? Where do they differ? What is the motivation behind using them? What are the pros and cons? What is the convergence criteria for the sampling?
+    \subsection{Shift Method}
+    What is the shift method? What are its limitations and when is it needed?
+    
+    
+    
+    \chapter{(Energy Loss Normalization on First Tritium)}
+    
+    
+    
+    \chapter{Studies using the Preliminary KATRIN Energy Loss Model}
+    \section{The Preliminary KATRIN Energy Loss Model}
+     Which systematic effects were considered? What are the quantified uncertainties on them and where do these numbers come from? Why this selection?
+    \section{Neutrino Mass Sensitivity}
+    \subsection{Motivation}
+    Why combining systematics? What was possible in the scope of this thesis? What does this thesis try to show?
+    \subsection{Methodology}
+    What is the sensitivity on the parameters of interest? What is the z score and shrinkage for all parameters?
+    \subsection{Model Configuration}
+    Which model configuration (MTD, Slicing, Eloss-Model, FSD Binning, ...) was chosen and why?
+    \subsection{Results}
 
-    \chapter{Introduction}
-    \input{./chap/chapter1.tex}
-    \chapter{Theoretical Background}
-    \input{./chap/chapter2.tex}
-    \chapter{Experimental Investigations}
-    \input{./chap/chapter3.tex}
-
-    \emptychapter[3]{ROOT Routines}     % usage: \emptychapter[page displayed 
-                                        %        in toc]{name of the chapter}
-
-
-
+    \section{Application to Data}
+    
     \chapter{Conclusions}
-    \input{./chap/chapter4.tex}
 
-    % appendix for more or less interesting calculations
     \Appendix
     \chapter*{\appendixname} \addcontentsline{toc}{chapter}{\appendixname}
-    % to make the appendix appear in ToC without number. \appendixname = 
-    % Appendix or Anhang (depending on chosen language)
-    \input{./chap/appendix.tex} %\cleardoublepage
-
-
-
-    % Bibliography
+    \input{chapter/energyDependentCrossSec/appendix/input-me.tex}
+    
+    
+    \section{First Tritium Data}
+    What is First Tritium? Which data was selected?
+    
+    \glsaddall
+    \printglossary[type=\acronymtype]
     \TheBibliography
-
-    % BIBTEX
-    % use if you want citations to appear even if they are not referenced to: 
+    \printbibliography
     % \nocite{*} or maybe \nocite{Kon64,And59} for specific entries
     %\nocite{*}
-    \bibliographystyle{babalpha}
-    \bibliography{lit.bib}
-
-    % THEBIBLIOGRAPHY
-    %\begin{thebibliography}{000}
-    %    \bibitem{ident}Entry into Bibliography.
-    %\end{thebibliography}
+    %\bibliographystyle{babalpha}
 \end{document}

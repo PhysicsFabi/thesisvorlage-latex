@@ -1,0 +1,136 @@
+%\usepackage{layouts}
+\usepackage[utf8]{inputenc}                     % for using utf8 chars (äöüß)
+\usepackage[T1]{fontenc}                        % for correct font encoding (you
+                                                % can't search for non-ascii 
+                                                % chars in pdf otherwise)
+\usepackage{lmodern}                            % the font used by T1 font enc
+\usepackage[protrusion=true,                    % microtype package for better 
+            expansion,                          % line breaks, kerning, etc.
+            tracking,
+            kerning,
+            spacing]{microtype}
+\microtypecontext{spacing=nonfrench}            % option for scrbook to allow 
+                                                % microtype->nonfrenchspacing
+                                                % for info on nonfrenchspacing:
+                                                % en.wikipedia.org/wiki/       \
+                                                % History_of_sentence_spacing# \
+                                                % French_and_English_spacing
+
+\usepackage[english, french, ngerman]{babel}             % babel language styles. you may
+                                                % add languages, if need to be.
+%\usepackage[fixlanguage]{babelbib}              % use babel bibtex. fixlanguage 
+                                                % = don't switch language
+                                                % between bib items
+%\usepackage{cite}                              % for bibtex without babel
+\usepackage[backend=biber,style=authoryear]{biblatex}
+%\addbibresource{lit/lit.bib}
+%\addbibresource{chapter/neutrinos/lit.bib}
+%\addbibresource{chapter/katrin/lit.bib}
+%\addbibresource{chapter/energyDependentCrossSec/lit.bib}
+    
+\usepackage{amsmath}                            % lots of math packages
+\usepackage{amssymb}                            % ... even more math packages
+%\usepackage{mathtools}                         % ... (not necessary package)
+%\usepackage{bbm}                               % blackboard style fonts.
+                                                % You may prefer the provided 
+                                                % \mathbbm{R} to ordinary 
+                                                % \mathbb{R}.
+                                                
+\usepackage{upgreek}                            % use $\uppi$ etc.
+\usepackage{nicefrac}                           % use \nicefrac{1}{2} 
+                                                % for inline text, if you want
+\usepackage[load-configurations=abbreviations]
+{siunitx}                                       % package for units. Use 
+                                                % \si{\ampere} or 
+                                                % \SI{0.3}{\angstrom}.
+\sisetup{per-mode=fraction}                     % style of writing units
+\sisetup{separate-uncertainty=true}             % to allow for $\pm...$ as un-
+                                                % certainty instead of 0.34(12)
+\usepackage[version=4]{mhchem}                  % to nicely write chemcial 
+                                                % elements (e.g.
+                                                % \ce{^{227}_{90}Th+})
+
+\usepackage{vmargin}                            % Adjust margins in a simple way
+                                                % (is used below).
+\usepackage{fancyhdr}                           % Define simple page headings 
+                                                % (is used below).
+\usepackage{placeins}                           % To use \FloatBarrier
+
+\usepackage[nottoc,                             % So that the Bibliography will 
+            notlot,                             % be added to the ToC
+            notlof]{tocbibind}
+
+\usepackage{varioref}                           % Intelligent page 
+                                                % references. Provides \vref 
+                                                % and \vpageref
+
+\usepackage{booktabs}
+\usepackage[table]{xcolor}                      % used for some coloring 
+                                                % commands. table option for 
+                                                % beautiful colored tables.
+\definecolor{kitcolor}{rgb}{0 0.61 0.50}        % color is defined here and 
+                                                % later used for several 
+                                                % definitions
+
+\usepackage[pdftex]{graphicx}                   % including images
+
+\usepackage[normal,
+                font={small,color=black},
+                labelfont=bf,
+                margin=2em]{caption}            % create graphics/
+                                                % tabular captions
+\usepackage{subcaption}                         % create subcaptions
+                                                % for subpictures
+
+\usepackage[absolute,overlay]{textpos}          % used for titlepage
+\usepackage{tikz}                               % used for titlepage, 
+                                                % but may be useful for other 
+                                                % stuff, too.
+\usepackage{ifthen}                             % for some control 
+                                                % sequences in this class
+\usepackage[fit,breakall]{truncate}             % used for creating 
+                                                % textfields on titlepage
+\usepackage{etoolbox}                           % necessary to update page 
+                                                % numbering for chapters
+\usepackage{xstring}                            % used for creating substring 
+                                                % out of \appendixname
+\usepackage{multicol}                           % used for titlepage. Usefull 
+                                                % for other stuff, too.
+
+\DeclareGraphicsRule{*}{mps}{*}{}               % enables compiling 
+                                                % images with pdf-latex
+\DeclareGraphicsExtensions{.eps,                % different image exts used
+                           .pdf,
+                           .png,
+                           .jpg,
+                           .jpeg,
+                           .mps}
+\usepackage{epstopdf}                           % may be necessary for miktex to
+                                                % convert eps to pdf figures
+
+\usepackage[raiselinks=true,                    % package enables hyperlinks in
+            bookmarks=true,                     % document. hyperref also incl.
+            bookmarksopenlevel=1,               % url package for \url{...}
+            bookmarksopen=true,
+            bookmarksnumbered=true,
+            hyperindex=true,
+            plainpages=false,
+            pdfpagelabels=true,
+            pdfborder={0 0 0.5},
+            colorlinks=false,
+            linkbordercolor=kitcolor,
+            citebordercolor=kitcolor]{hyperref}
+
+\RequirePackage{scrlfile}                       % Prevent svg (<2.0) package 
+\PreventPackageFromLoading{subfig}              % from loading subfig.
+                                                % See also iss. #13
+\usepackage{svg}                                % include svg graphics
+\usepackage[acronyms,nonumberlist]{glossaries}
+\makeglossaries
+
+\usepackage[shortlabels]{enumitem}
+\usepackage{makecell}
+\usepackage{slashed}
+\usepackage{mathtools}
+\usepackage{xargs}
+\usepackage{layouts}

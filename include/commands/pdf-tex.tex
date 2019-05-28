@@ -1,0 +1,7 @@
+\newcommandx{\inputpdftex}[2][1=\linewidth]{	    
+    \begin{center}
+        \def\svgwidth{#1}
+        \graphicspath{{#2/}}
+        \input{#2/img.pdf_tex}
+    \end{center}
+}
