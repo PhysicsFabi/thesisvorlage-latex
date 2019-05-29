@@ -18,9 +18,8 @@
 
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{include/thesisclass}
+\ProvidesClass{document/thesisclass}
 \LoadClass[a4paper,11pt,titlepage]{scrbook}
-
 
 
 
@@ -44,12 +43,8 @@
                                       % {footheight}{footskip}
 
 \setlength{\marginparwidth}{1.5cm}    % for todos to be positioned correctly
-
 \parindent 0cm                        % do not indent beginning of paragraph
 \parskip 1.5ex plus0.5ex minus0.5ex   % Margin between paragraphs
-
-
-
 
 
 %% ------------------------

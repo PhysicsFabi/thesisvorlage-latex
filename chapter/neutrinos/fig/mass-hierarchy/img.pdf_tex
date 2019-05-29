@@ -61,9 +61,9 @@
     \put(0.23073063,0.37223934){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Updelta m_{32}^2$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{img.pdf}}%
     \put(0.2290657,0.11944434){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Updelta m_{21}^2$\end{tabular}}}}%
-    \put(0.95568344,0.57420622){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\scriptsize{\delta = \SI{180}{\degree}}$\end{tabular}}}}%
+    \put(0.95568344,0.57420622){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize{$\delta = \SI{180}{\degree}$}\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{img.pdf}}%
-    \put(0.95588029,0.50583441){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\scriptsize{\delta = \SI{0}{\degree}}$\end{tabular}}}}%
+    \put(0.95588029,0.50583441){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scriptsize{$\delta = \SI{0}{\degree}$}\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{img.pdf}}%
     \put(0.72639011,0.2692235){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Updelta m_{32}^2$\end{tabular}}}}%
     \put(0.60904996,0.06930092){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\upnu_3$\end{tabular}}}}%

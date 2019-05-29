@@ -1,4 +1,7 @@
-%\usepackage{layouts}
+\usepackage{silence}
+\WarningFilter{scrbook}{Usage of package `fancyhdr'}
+\WarningFilter{scrbook}{Usage of package `tocbibind'}
+
 \usepackage[utf8]{inputenc}                     % for using utf8 chars (äöüß)
 \usepackage[T1]{fontenc}                        % for correct font encoding (you
                                                 % can't search for non-ascii 
@@ -16,18 +19,43 @@
                                                 % History_of_sentence_spacing# \
                                                 % French_and_English_spacing
 
-\usepackage[english, french, ngerman]{babel}             % babel language styles. you may
+\usepackage[ngerman,french,english]{babel}             % babel language styles. you may
                                                 % add languages, if need to be.
 %\usepackage[fixlanguage]{babelbib}              % use babel bibtex. fixlanguage 
                                                 % = don't switch language
                                                 % between bib items
 %\usepackage{cite}                              % for bibtex without babel
-\usepackage[backend=biber,style=authoryear]{biblatex}
-%\addbibresource{lit/lit.bib}
-%\addbibresource{chapter/neutrinos/lit.bib}
-%\addbibresource{chapter/katrin/lit.bib}
-%\addbibresource{chapter/energyDependentCrossSec/lit.bib}
-    
+\usepackage[backend=biber,style=alphabetic,giveninits=true]{biblatex}
+\DeclareCaseLangs{%     
+	american,british,canadian,english,australian,newzealand,USenglish,UKenglish}
+\DeclareFieldFormat{titlecase}{\MakeTitleCase{#1}}
+
+\AtEveryBibitem{%
+	\clearlist{language}%
+}
+
+\newrobustcmd{\MakeTitleCase}[1]{%
+	\ifthenelse{\ifcurrentfield{booktitle}\OR\ifcurrentfield{booksubtitle}%
+		\OR\ifcurrentfield{maintitle}\OR\ifcurrentfield{mainsubtitle}%
+		\OR\ifcurrentfield{journaltitle}\OR\ifcurrentfield{journalsubtitle}%
+		\OR\ifcurrentfield{issuetitle}\OR\ifcurrentfield{issuesubtitle}%
+		\OR\ifentrytype{book}\OR\ifentrytype{mvbook}\OR\ifentrytype{bookinbook}%
+		\OR\ifentrytype{booklet}\OR\ifentrytype{suppbook}%
+		\OR\ifentrytype{collection}\OR\ifentrytype{mvcollection}%
+		\OR\ifentrytype{suppcollection}\OR\ifentrytype{manual}%
+		\OR\ifentrytype{periodical}\OR\ifentrytype{suppperiodical}%
+		\OR\ifentrytype{proceedings}\OR\ifentrytype{mvproceedings}%
+		\OR\ifentrytype{reference}\OR\ifentrytype{mvreference}%
+		\OR\ifentrytype{report}}
+	{#1}
+	{\MakeSentenceCase*{#1}}}
+
+\addbibresource{lit/lit.bib}
+\addbibresource{chapter/neutrinos/lit.bib}
+\addbibresource{chapter/katrin/lit.bib}
+\addbibresource{chapter/energyDependentCrossSec/lit.bib}
+
+\usepackage{csquotes}    
 \usepackage{amsmath}                            % lots of math packages
 \usepackage{amssymb}                            % ... even more math packages
 %\usepackage{mathtools}                         % ... (not necessary package)
@@ -133,4 +161,4 @@
 \usepackage{slashed}
 \usepackage{mathtools}
 \usepackage{xargs}
-\usepackage{layouts}
+%\usepackage{layouts}

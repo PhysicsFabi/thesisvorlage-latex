@@ -25,9 +25,8 @@ The total scattering cross section is a sum of the cross section for elastic and
     \sigma(\Ekin) = \sigma_\mathrm{el} + \sigmaInel(\Ekin)
     \fullstop
 \end{equation}
-Only the energy dependence of the inelastic scattering cross section will be considered. This is justified as according to \cite{Angrik:2005ep} the cross section for elastic scattering is about an order of magnitude smaller than the one for inelastic scattering. An expression for the inelastic cross section for electrons scattering from hydrogen molecules can be found in \cite{Liu1973}. Two expressions are given, one for relativistic incident particles and one for non-relativistic incident particles. For the maximum relativistic $\beta_\mathrm{max}$ factor of $\upbeta$ electrons from tritium decay one finds
+Only the energy dependence of the inelastic scattering cross section will be considered. This is justified as according to \cite{Angrik:2005ep} the cross section for elastic scattering is about an order of magnitude smaller than the one for inelastic scattering. An expression for the inelastic cross section for electrons scattering from hydrogen molecules can be found in \cite{Liu1973}. Two expressions are given, one for relativistic incident particles and one for non-relativistic incident particles. For the maximum relativistic $\beta$ factor of $\upbeta$ electrons from tritium decay one finds
 \begin{equation}
-\label{eq:crossSecLiu}
 \begin{split}
     \beta(\Ekin, m) &= 
     \sqrt{
@@ -41,6 +40,7 @@ Only the energy dependence of the inelastic scattering cross section will be con
 \end{equation}
 Travelling at approximately a forth of the speed of light, the $\upbeta$ electrons are assumed to be non-relativistic. Then, the given expression for the energy dependent cross section is
 \begin{equation}
+	\label{eq:crossSecLiu}
     \sigma(\Ekin) =  
     (4 \pi a_0^2) \cdot
     \left(\frac{\Ekin}{R}\right)^{-1} \cdot
@@ -50,6 +50,7 @@ Travelling at approximately a forth of the speed of light, the $\upbeta$ electro
 \end{equation}
 with the Bohr radius $a_0$, the Rydberg energy $R$ and two constants given as
 \begin{equation}
+	\label{eq:crossSecLiuConstants}
     C_1 = 1.5487 
     \quad \text{and} \quad 
     C_2 = 2.2212\pm0.0434
@@ -83,7 +84,7 @@ with the Bohr radius $a_0$, the Rydberg energy $R$ and two constants given as
     \end{tabular}
     \label{tab:crossSections}
 \end{table}
-Furthermore, the total inelastic scattering cross section was measured at the Troitsk experiment and the KATRIN Design Report states a reference value. The values are listed in table \ref{tab:crossSections}. The reference value matches the theoretical calculation using \eqref{eq:crossSecLiu} at a kinetic energy of $\Ekin\approx\SI{18564.4}{eV}$ which would be the center of a $\Delta\Ekin=\SI{20}{eV}$ KATRIN measurement interval. Note that in the KATRIN reference measurement interval $[E_0-\SI{30}{eV}, E_0]$ the cross section varies less than \SI{1}{\percent}. This variation is below its theoretical uncertainty. In the measurement interval of the \gls{ft} campaign it varies $\sim\SI{8}{\percent}$.
+Furthermore, the total inelastic scattering cross section was measured at the Troitsk experiment and the KATRIN Design Report states a reference value. The values are listed in table \ref{tab:crossSections}. The reference value matches the theoretical calculation using \eqref{eq:crossSecLiu} at a kinetic energy of $\Ekin\approx\SI{18564.4}{eV}$ which would be the center of a $\Delta\Ekin=\SI{20}{eV}$ KATRIN measurement interval. Note that in the KATRIN reference measurement interval $[E_0-\SI{30}{eV}, E_0]$ the cross section varies less than \SI{1}{\percent}. This variation is below its theoretical uncertainty given by \eqref{eq:crossSecLiuConstants}. In the measurement interval of the \gls{ft} campaign it varies $\sim\SI{8}{\percent}$.
     
 \section{Motivation}
 According to \cite{Groh2015} if the full KATRIN uncertainty budget is attributed to the inelastic scattering cross section it would approximately be $\SI{0.0055e-22}{m}$. According to table \ref{tab:crossSections} this requirement holds in a measurement interval of $[E_0-\SI{30}{eV}, E_0]$. According to \eqref{eq:crossSecLiu} it is violated if the lower bound of the measurement interval is below \SI{18532}{eV}. In this sense, the motivation to implement an energy dependent cross section into the \gls{ssc} framework is two-fold:
@@ -113,7 +114,7 @@ According to \cite{Groh2015} if the full KATRIN uncertainty budget is attributed
 \end{table}
 \begin{figure}[th]
 \includegraphics[width=\textwidth]{chapter/energyDependentCrossSec/fig/scatProbs123.pdf}
-        \xcaption{Scattering probabilities}{Scattering probabilities.}{Shown are from top to bottom the probability for no, 1-fold and 2-fold scattering averaged over all starting positions and starting pitch angles of $\upbeta$ electrons. Depending on the required accuracy, for 1-fold and 2-fold scattering the Poisson model does not hold. The markers show an extended model as described in the text. Its numerical evaluation suffers from a one-sided uncertainty (of $\sim10^{-5}$ for 1-fold and $\sim10^{-3}$ for 2-fold scattering) depicted as uncertainty bars. The inset shows an energy span around the endpoint of the tritium $\upbeta$ spectrum.}
+        \xcaption{Scattering probabilities}{Scattering probabilities.}{Shown are from top to bottom the probability for no, 1-fold and 2-fold scattering averaged over all starting positions and starting pitch angles of $\upbeta$ electrons. Depending on the required accuracy, for 1-fold and 2-fold scattering the Poisson model does not hold. The markers show an extended model as described in the text. Its numerical evaluation suffers from a one-sided uncertainty (of $\sim10^{-5}$ for 1-fold and $\sim10^{-3}$ for 2-fold scattering) depicted as uncertainty bars. The inset shows an energy span around the endpoint of the tritium $\upbeta$ spectrum. The full energy range matches the measurement interval of the \glsentryfull{ft} campaign.}
         \label{fig:energyDependentScatProbs}
 \end{figure}
 The energy-dependence of the scattering cross section enters into the calculation of the scattering probabilities \eqref{eq:scatProbs}. In the derivation the dependence on the starting energy $\Esource$ was neglected. Instead an average starting energy and hence, an average scattering cross section $\sigma(\SI{18564.4}{eV})=\SI{3.456e-22}{m^2}$ was assumed. For this case table \ref{tab:scatProbs} lists the scattering probabilities averaged over all starting positions and pitch angles in the \gls{wgts}.
