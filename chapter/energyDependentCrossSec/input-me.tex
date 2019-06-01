@@ -8,10 +8,10 @@ A $\upbeta$ electron's probability to scatter when travelling through the \gls{s
     \frac{1}{\Delta\Ekin} 
     \int_{\qUmin}^{\qUmin+\Delta\Ekin} \sigma(\Ekin) \d \Ekin 
     \quad \text{with} \quad
-    \Delta\Ekin = E_0-\qUmin
+    \Delta\Ekin = \Eeff-\qUmin
     \fullstop
 \end{equation}
-Instead an energy dependent formula for the cross section can be used. Incorporating the energy dependence makes the model more complicated and slower to compute; neglecting it may lead to wrong results. More light will be shed on both aspects within this chapter.
+Here, the ``effective endpoint'' $\Eeff$ denotes the highest kinetic energy of $\upbeta$ electrons reaching the detector. It does not necessarily match the endpoint of the tritium $\upbeta$ spectrum as experiment specific effects might shift it. $\Eeff=\SI{18575}{eV}$ is assumed. Instead of an average cross section an energy dependent formula can be used. Incorporating the energy dependence makes the model more complicated and slower to compute; neglecting it may lead to wrong results. More light will be shed on both aspects within this chapter.
 
 \section{Cross Section Values}
 \begin{figure}[t]
@@ -25,7 +25,7 @@ The total scattering cross section is a sum of the cross section for elastic and
     \sigma(\Ekin) = \sigma_\mathrm{el} + \sigmaInel(\Ekin)
     \fullstop
 \end{equation}
-Only the energy dependence of the inelastic scattering cross section will be considered. This is justified as according to \cite{Angrik:2005ep} the cross section for elastic scattering is about an order of magnitude smaller than the one for inelastic scattering. An expression for the inelastic cross section for electrons scattering from hydrogen molecules can be found in \cite{Liu1973}. Two expressions are given, one for relativistic incident particles and one for non-relativistic incident particles. For the maximum relativistic $\beta$ factor of $\upbeta$ electrons from tritium decay one finds
+Only the energy dependence of the inelastic scattering cross section will be considered. This is justified for now as according to \cite{Angrik:2005ep} the cross section for elastic scattering is about an order of magnitude smaller than the one for inelastic scattering. An expression for the inelastic cross section for electrons scattering from hydrogen molecules can be found in \cite{Liu1973}. Two expressions are given, one for relativistic incident particles and one for non-relativistic incident particles. For the maximum relativistic $\beta$ factor of $\upbeta$ electrons from tritium decay one finds
 \begin{equation}
 \begin{split}
     \beta(\Ekin, m) &= 
@@ -35,10 +35,10 @@ Only the energy dependence of the inelastic scattering cross section will be con
         }
     } \\
     \beta_\mathrm{max} &= 
-    \beta(E_0\approx\SI{18.6}{keV}, m_\elecIndex\approx\SI{511}{keV})\approx0.26
+    \beta(\Eeff\approx\SI{18.6}{keV}, m_\elecIndex\approx\SI{511}{keV})\approx0.26
 \end{split}
 \end{equation}
-Travelling at approximately a forth of the speed of light, the $\upbeta$ electrons are assumed to be non-relativistic. Then, the given expression for the energy dependent cross section is
+Traveling at approximately a forth of the speed of light, the $\upbeta$ electrons are assumed to be non-relativistic. Then, the given expression for the energy dependent cross section is
 \begin{equation}
 	\label{eq:crossSecLiu}
     \sigma(\Ekin) =  
@@ -58,23 +58,23 @@ with the Bohr radius $a_0$, the Rydberg energy $R$ and two constants given as
 \end{equation}
 \begin{table}[t]
     \centering
-    \xcaption{Energy-dependence of the inelastic scattering cross section}{Energy-dependence of the inelastic scattering cross section.}{Listed are important values with reference to KATRIN. Except for the measured value, they are obtained using \eqref{eq:crossSecLiu}.}
+    \xcaption{Energy-dependence of the inelastic scattering cross section}{Energy-dependence of the inelastic scattering cross section.}{Listed are important values with reference to KATRIN. Except for the measured value, they are obtained using \eqref{eq:crossSecLiu}. The values are given relative to an assumed endpoint of the measured spectrum $\Eeff=\SI{18575}{eV}$.}
     \begin{tabular}{lll}
         \toprule
          \makecell[tl]{kin. energy} & 
          \makecell[tl]{cross section \\ (\SI{e-22}{m})} & 
          \makecell[tl]{Note} \\
          \hline
-         $E_0-\SI{1600}{eV}$ & 
+         $\Eeff-\SI{1600}{eV}$ & 
          3.740 & 
          largest range in \gls{ft} campaign \\
-         $E_0-\SI{30}{eV}$ & 
+         $\Eeff-\SI{30}{eV}$ & 
          3.459 & 
          KATRIN reference measurement interval \cite{Angrik:2005ep} \\
-         $E_0-\SI{10}{eV}$ & 
+         $\Eeff-\SI{10}{eV}$ & 
          3.456 & 
          KATRIN reference value \cite{Angrik:2005ep} \\
-         $E_0$ & 
+         $\Eeff$ & 
          3.454 & 
          endpoint of tritium $\upbeta$ spectrum \\
          \SI{18600}{eV} & 
@@ -84,11 +84,11 @@ with the Bohr radius $a_0$, the Rydberg energy $R$ and two constants given as
     \end{tabular}
     \label{tab:crossSections}
 \end{table}
-Furthermore, the total inelastic scattering cross section was measured at the Troitsk experiment and the KATRIN Design Report states a reference value. The values are listed in table \ref{tab:crossSections}. The reference value matches the theoretical calculation using \eqref{eq:crossSecLiu} at a kinetic energy of $\Ekin\approx\SI{18564.4}{eV}$ which would be the center of a $\Delta\Ekin=\SI{20}{eV}$ KATRIN measurement interval. Note that in the KATRIN reference measurement interval $[E_0-\SI{30}{eV}, E_0]$ the cross section varies less than \SI{1}{\percent}. This variation is below its theoretical uncertainty given by \eqref{eq:crossSecLiuConstants}. In the measurement interval of the \gls{ft} campaign it varies $\sim\SI{8}{\percent}$.
+Furthermore, the total inelastic scattering cross section was measured at the Troitsk experiment and the KATRIN Design Report states a reference value. The values are listed in table \ref{tab:crossSections}. The reference value matches the theoretical calculation using \eqref{eq:crossSecLiu} at a kinetic energy of $\Ekin\approx\SI{18564.4}{eV}$ which would be the center of a $\Delta\Ekin=\SI{20}{eV}$ KATRIN measurement interval. Note that in the KATRIN reference measurement interval $[\Eeff-\SI{30}{eV}, \Eeff]$ the cross section varies  $\sim\SI{0.14}{\percent}$. This variation is below its theoretical uncertainty given by \eqref{eq:crossSecLiuConstants}. In the measurement interval of the \gls{ft} campaign it varies $\sim\SI{8}{\percent}$.
     
 \section{Motivation}
-According to \cite{Groh2015} if the full KATRIN uncertainty budget is attributed to the inelastic scattering cross section it would approximately be $\SI{0.0055e-22}{m}$. According to table \ref{tab:crossSections} this requirement holds in a measurement interval of $[E_0-\SI{30}{eV}, E_0]$. According to \eqref{eq:crossSecLiu} it is violated if the lower bound of the measurement interval is below \SI{18532}{eV}. In this sense, the motivation to implement an energy dependent cross section into the \gls{ssc} framework is two-fold:
-\par{\textbf{Deep scans:} Scans deeper into the tritium $\upbeta$ spectrum increase the count rates and hence improve the statistic uncertainty on the neutrino mass. Also, for the search of sterile neutrinos deeper scans are necessary. On top of that, deeper scans have already been performed and help to establish an even better understanding of the KATRIN apparatus. In these cases the energy dependence is not negligible.}
+The motivation to implement an energy dependent cross section into the \gls{ssc} framework is two-fold:
+\par{\textbf{Deep scans:} According to \cite{Groh2015} for a neutrino mass determination with the precision goals of KATRIN, the inelastic scattering cross section has to be known with an upper uncertainty of $\SI{0.0055e-22}{m}$ (\SI{0.16}{\percent}). This requirement might be surpassed by neglecting that the scattering cross section is not constant, but varies with energy. According to table \ref{tab:crossSections} the requirement is fulfilled in a measurement interval of $[\Eeff-\SI{30}{eV}, \Eeff]$. According to \eqref{eq:crossSecLiu} it is violated if the lower bound of the measurement interval is below \SI{18531}{eV}. Scans deeper into the tritium $\upbeta$ spectrum increase the count rates and hence, improve the statistic uncertainty on the neutrino mass. Also, for the search of sterile neutrinos deeper scans are necessary. On top of that, deeper scans have already been performed e.g. in the \gls{ft} campaign and help to establish an even better understanding of the KATRIN apparatus. In these cases the energy dependence is not negligible.}
 \par{\textbf{Comparability:} A possible cross-check for software is its comparison to other software that was developed independently. \gls{ssc} is part of a data fitting suit. Other fitting software exists within the KATRIN collaboration that uses an energy dependent scattering cross section, e.g. FITRIUM \cite{Fitrium}. Furthermore, \gls{ssc} is commonly cross-checked against a Monte-Carlo particle tracking software called KASSIOPEIA \cite{KATRINCOL2019} which also implements an energy dependent scattering cross section.}
     
 \section{Scattering Probabilities}
@@ -122,17 +122,17 @@ In the energy dependent case the scattering cross section has to be adapted to t
 \begin{subequations}
 \label{eq:energydepScatProbsPoissonModel}
 \begin{align}
-    \mu(\Esource,\zSource,\thetaSource) &=
+    \mu(\Esource,\zSource,\thetaSource) =&
     \frac{\sigma(\Esource)}{\cos\thetaSource}
     \int_{\zSource}^{L/2} \rho(z)\d z \label{eq:energydepScatProbsPoissonExpectedScatCount} \\
-    P_l(\Esource,\zSource,\thetaSource) &=
+    P_l(\Esource,\zSource,\thetaSource) =&
     \mathrm{Poisson}(\mu(\Esource,\zSource,\thetaSource),l) \label{eq:nonAveragedEnergydepScatProbsPoisson} \\
-    \bar{P}_l(\Esource) &=
+    \bar{P}_l(\Esource) =&
     \frac{1}{L \cdot (1-\cos(\thetaMax))} 
       \int_{-L/2}^{L/2}  
           \int_{0}^{\theta_{max}} 
             \sin(\thetaSource)
-            \mu(\zSource,\thetaSource)
+            \mathrm{Poisson}(\mu(\Esource,\zSource,\thetaSource),l)
           \d\thetaSource
       \d\zSource
       \label{eq:energydepScatProbsPoisson}
@@ -188,7 +188,7 @@ Figure \ref{fig:energyDependentScatProbs} shows the Poisson model along with the
 
 
 \paragraph{Model compatibility}
- For 1-fold scattering the difference between the Poisson and the extended model is on the $10^{-4}$ level. For 2-fold scattering the accuracy of the numerical evaluation of the extended model is not yet sufficient to distinguish it from the Poisson model. Table \ref{tab:scatProbs} lists the scattering probabilities for an energy independent Poisson model and a reference cross section $\sigma(\SI{18564.4}{eV})=\SI{3.456e-22}{m}$ given in the KATRIN Design Report \cite{Angrik:2005ep}. It also lists the outcome of a Monte Carlo simulation taken from \cite{Groh2015}. As expected the energy dependent Poisson model recovers the energy independent model exactly at the corresponding energy of \SI{18564.4}{eV}. Furthermore, within the endpoint region of the tritium $\upbeta$ spectrum all models match the Monte Carlo simulation.
+ For 1-fold scattering the difference between the Poisson and the extended model is on the $10^{-4}$ level. For 2-fold scattering the accuracy of the numerical evaluation of the extended model is not yet sufficient to distinguish it from the Poisson model. Table \ref{tab:scatProbs} lists the scattering probabilities for an energy independent Poisson model and a reference cross section $\sigma(\SI{18564.4}{eV})=\SI{3.456e-22}{m}$ given in the KATRIN Design Report \cite{Angrik:2005ep}. It also lists the outcome of a Monte Carlo simulation taken from \cite{Groh2015}. As expected the energy dependent Poisson model recovers the energy independent model exactly at the corresponding energy of \SI{18564.4}{eV}. Furthermore, within the endpoint region of the tritium $\upbeta$ spectrum all models match the Monte Carlo simulation within its uncertainty.
 
 \paragraph{Trend of energy-dependence}
 For a decreasing starting energy of $\upbeta$ electrons the probability for no and 1-fold scattering also decreases while the probability for 2-fold scattering increases. This is expected for the following reasons. For a starting energy of $\Esource=\SI{18564.4}{eV}$ the expected amount of scatterings $\mu$ \eqref{eq:energydepScatProbsPoissonExpectedScatCount} averaged over all starting positions $\zSource$ and pitch angles $\thetaSource$ is
@@ -232,12 +232,12 @@ In other words, $\upbeta$ electrons with a starting energy near the endpoint of 
 \begin{figure}[th]
     \centering
     \includegraphics[width=\textwidth]{chapter/energyDependentCrossSec/fig/scatCrossSecRunTime.pdf}
-    \xcaption{Run times comparison between using an energy dependent and independent cross section}{Run times comparison between using an energy dependent and independent cross section.}{Shown are the run times for a fit of a simulated model to itself for different measurement intervals. For each measurement interval 30 fits were performed. The run times were clocked for a constant cross section and an energy dependent cross section.}
+    \xcaption{Run times comparison between using an energy dependent and independent cross section}{Run times comparison between using an energy dependent and independent cross section.}{Shown are the run times for a fit of a simulated model to itself for different \gls{mtd}s. The \gls{mtd}s for the ranges 20, 25, 30, 40 and 50 \SI{}{eV} are taken from the KATRIN design report \cite{Angrik:2005ep} and have a rising number of retarding potentials. A further \SI{90}{eV}-wide \gls{mtd} of the \gls{knm1} campaign was used. It contains 39 retarding potentials. The corresponding run time lies above the trend line as the width of the measurement interval is wider.  For each \gls{mtd} 30 fits were performed. The run times were clocked for a constant and an energy dependent cross section.}
     \label{fig:scatCrossSecRunTimes}
 \end{figure}
 The suggested extended model \eqref{eq:energydepScatProbsModel} at its current stage is computationally too expensive to be used in a fitting procedure. Note that a similar model has been derived for a fixed change of the pitch angle $\theta$ per scattering in \cite{Groh2015}. This model for angular changes is implemented in the \gls{ssc} software and can be used in fitting procedures. Though, an important difference is that the determination of the count rate requires an integral over the starting energy $\Esource$ in \eqref{eq:countsDependingOnPositionAndPitchAngle}. Hence, the energy dependent scattering probabilities have to be recomputed in every step of the numerical integration. This is not the case for the model considering the angular changes.
 
-Albeit the energy dependent Poisson model might not fully hold in the case of an energy dependent cross section, figure \ref{fig:energyDependentScatProbs} shows that for larger measurement intervals it is more accurate than assuming energy independent scattering probabilities. Hence, it is a reasonable choice to implement the energy dependent Poisson model into the \gls{ssc} software. As mentioned the energy dependent scattering probabilities have to be recomputed in every step of the numerical integration in \eqref{eq:countsDependingOnPositionAndPitchAngle} over the $\upbeta$ electron energy. The impact on the run time was probed for 5 different measurement time distributions. They differ in the amount and range of retarding potentials. Both aspects should influence the run time. The run time should be approximately linear in the amount of retarding potentials. The run time should get longer the wider the range of the retarding potentials is as the numerically evaluated integral over energies in \eqref{eq:countsDependingOnPositionAndPitchAngle} then stretches over a wider range. Figure \ref{fig:scatCrossSecRunTimes} shows that the run times increase by a factor of approximately $\sim10$ \todo{Add real factor} between assuming a constant cross section and an energy dependent one.
+Albeit the energy dependent Poisson model might not fully hold in the case of an energy dependent cross section, figure \ref{fig:energyDependentScatProbs} shows that for larger measurement intervals it is more accurate than assuming energy independent scattering probabilities. Hence, it is a reasonable choice to implement the energy dependent Poisson model into the \gls{ssc} software. This was done. As mentioned the energy dependent scattering probabilities have to be recomputed in every step of the numerical integration in \eqref{eq:countsDependingOnPositionAndPitchAngle} over the $\upbeta$ electron energy. The impact on the run time was probed for 5 different \gls{mtd}s. They differ in the amount and range of retarding potentials. Both aspects should influence the run time. The run time should be approximately linear in the amount of retarding potentials. The run time should get longer the wider the range of the retarding potentials is as the numerically evaluated integral over energies in \eqref{eq:countsDependingOnPositionAndPitchAngle} then stretches over a wider range. Figure \ref{fig:scatCrossSecRunTimes} shows that the run times increase by a factor of approximately $40-120$ between assuming a constant cross section and an energy dependent one.
 
 \section{Effect on Neutrino Mass Determination}
 \begin{figure}[t]
@@ -245,7 +245,8 @@ Albeit the energy dependent Poisson model might not fully hold in the case of an
         \xcaption{Neutrino mass shift due to an energy dependent inelastic scattering cross section}{Neutrino mass shift due to an energy dependent inelastic scattering cross section}{as calculated by SSC for 5 measurement intervals. The configuration for the calculation, especially the \glsentryfull{mtd}, follows the KATRIN Design Report \cite{Angrik:2005ep}. For comparison the statistical uncertainty is plotted as well. It is derived from the profile likelihood. The lines between the 5 markers are linear interpolations.}
         \label{fig:energyDepCrossSecEffectOnNuMass}
 \end{figure}
-In order to determine the influence of the energy dependence of the scattering cross section on the neutrino mass determination the so-called ``shift method'' was used. A description can e.g. be found in \cite{SeitzM2019}. In short, an integrated rate using the energy dependent Poisson model for the scattering probabilities was simulated and fitted to a model using the constant Poisson model. One obtains a deviation of the fitted and simulated neutrino mass, the neutrino mass shift. The procedure was repeated for multiple measurement intervals using the settings from the KATRIN Design Report \cite{Angrik:2005ep} for a 3-year measurement. A comparison of the statistical uncertainty on the neutrino mass and its shift is shown in figure \ref{fig:energyDepCrossSecEffectOnNuMass} depending on the measurement interval. For a measurement interval of approximately \SI{35}{eV} the shift and the statistical uncertainty are approximately equal
+\todo{Numbers can not be reconciled with shifting the cross section. What to do about it?}
+In order to determine the influence of the energy dependence of the scattering cross section on the neutrino mass determination the so-called ``shift method'' was used. A description can e.g. be found in \cite{SeitzM2019}. \todo{Write own description} In short, an integrated rate using the energy dependent Poisson model for the scattering probabilities was simulated and fitted to a model using the constant Poisson model. One obtains a deviation of the fitted and simulated neutrino mass, the neutrino mass shift. The procedure was repeated for multiple measurement intervals using the settings from the KATRIN Design Report \cite{Angrik:2005ep} for a 3-year measurement. A comparison of the statistical uncertainty on the neutrino mass and its shift is shown in figure \ref{fig:energyDepCrossSecEffectOnNuMass} depending on the measurement interval. For a measurement interval of approximately \SI{35}{eV} the shift and the statistical uncertainty are approximately equal
 \begin{equation}
     \sigma(m_\nu) \approx 
     \sqrt{0.015}\SI{}{eV} = \SI{122}{meV} 
@@ -254,7 +255,7 @@ In order to determine the influence of the energy dependence of the scattering c
 \end{equation}
 
 \paragraph{Extending the Measurement Interval}
-In spring 2019 the so-called \gls{knm1} campaign started. The measurement interval was \SI{90}{eV}. How long electrons were counted at which retarding potential, the so-called \gls{mtd}, had been optimized according to the up-to-date status of the KATRIN experiment which did not match the KATRIN Design Report in all aspects. The study on the neutrino mass shift was redone scaling the \gls{mtd} of the \gls{knm1} campaign to 3 years and using the corresponding \gls{knm1}-settings. The neutrino mass shift then would be \SI{297}{meV}.
+In spring 2019 the so-called \gls{knm1} campaign started. The measurement interval was \SI{90}{eV}. The \gls{mtd} had been optimized according to the up-to-date status of the KATRIN experiment which did not match the KATRIN Design Report in all aspects. The study on the neutrino mass shift was redone scaling the \gls{mtd} of the \gls{knm1} campaign to 3 years and using the corresponding \gls{knm1}-settings. The neutrino mass shift then would be \SI{297}{meV}.
 
 
 \section{Conclusion and Outlook}

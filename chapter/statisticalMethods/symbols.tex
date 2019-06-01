@@ -1,0 +1,13 @@
+\newcommand{\dataVec}{\vect{x}}
+\newcommand{\paramVec}{\vect{\theta}}
+\newcommand{\paramVecShared}{\vect{\theta}_\mathrm{s}}
+
+\makeatletter
+\newcommand{\@giventhatstar}[2]{\left(#1\;\middle|\;#2\right)}
+\newcommand{\@giventhatnostar}[3][]{#1(#2\;#1|\;#3#1)}
+\newcommand{\giventhat}{\@ifstar\@giventhatstar\@giventhatnostar}
+\makeatother
+
+\newcommand{\Nobsi}{N_{\mathrm{obs,}i}}
+\newcommand{\Ntheoi}{N_{\mathrm{theo,}i}}
+

@@ -75,7 +75,7 @@ Then, the measured integrated rate is expressed as integral from the threshold e
 \detEff \cdot
 \d N_T(\zSource) \cdot
 \int_{qU}^{E_0} 
-    \left(\frac{\d \Gamma(\Esource)}{ \d \Esource}\right) \cdot 
+    \left(\frac{\d \Gamma(\Esource)}{\d \Esource}\right) \cdot 
     R(\Esource, qU, \zSource, \thetaSource) 
 \d \Esource
 \comma
@@ -330,6 +330,7 @@ This expression is helpful when averaging the detected counts $N$ \eqref{eq:nonA
 \end{figure}
 The detected counts $N$ \eqref{eq:nonAveragedCounts} depend on the starting pitch angle $\thetaSource$ of the $\upbeta$ electrons. They have to be averaged over $\thetaSource$. The corresponding integral can be swapped with the sum over the \gls{wgts} slices and the integral over the energy and propagates to the response term
 \begin{align}
+\label{eq:SSCcounts}
 \bar{N}(qU) \propto \sum_{j=1}^S N_T^j
 \int_{qU}^{E_0}
     \left(\frac{\d \Gamma(\Esource)}{ \d \Esource}\right) \cdot
@@ -408,13 +409,30 @@ The averaged response function $\bar{R}^j$ is depicted in figure \ref{fig:respon
 \end{align}
 Note that the non-averaged response function $R^j$ \eqref{eq:nonAveragedResponse} has the same form as the averaged one $\bar{R}^j$ \eqref{eq:SSCresponse} if the non-averaged transmission function $\mathcal{T}^j$ \eqref{eq:transmission} is replaced by the modified transmission function $T^{j,\star}$ and the non-averaged scattering probabilities $P^j_l$ (\ref{eq:scatProbs}) by the averaged ones $\bar{P}^j_l$ \eqref{eq:averagedScatProbs}.
 
-Note further that albeit equation (\ref{eq:slimResponse}) and equation (\ref{eq:SSCresponse}) are analytically equal, they are not equal implementation-wise. Currently the implementation of the response function follows equation (\ref{eq:SSCresponse}). One one hand, equation (\ref{eq:slimResponse}) is more ``light-weight'' as it does not use the averaged scattering probabilities. In the future it might be beneficial to alter the implementation to simplify the program structure and cut down on the number of calculations. On the other hand, equation \eqref{eq:implementedResponse} allows the exchange of implementations for the transmission function whereas equation \eqref{eq:slimResponse} only allows to change the implementation of the response function as a whole.
+Note further that albeit equation (\ref{eq:slimResponse}) and equation (\ref{eq:SSCresponse}) are analytically equal, they are not equal implementation-wise. Currently the implementation of the response function follows equation (\ref{eq:SSCresponse}). One one hand, equation (\ref{eq:slimResponse}) is more ``light-weight'' as it does not use the averaged scattering probabilities. In the future it might be beneficial to alter the implementation to simplify the program structure and cut down on the number of calculations. On the other hand, equation \eqref{eq:implementedResponse} allows the exchange of implementations for the transmission function whereas equation \eqref{eq:slimResponse} only allows to exchange the implementation of the response function as a whole.
+
+\subsection{Reconciliation}
+The predicted counts for a retarding energy of $qU$ when measuring a duration $t(qU)$ are
+\begin{equation}
+	\label{eq:countsSCCFinal}
+	\bar{N}(qU) = t(qU) \cdot \detEff \cdot \left(
+		\As \cdot
+		 \sum_{j}
+			N_T^j \cdot
+			\int_{qU}^{E_0} 
+				\left(\frac{\d \Gamma(\Esource)}{ \d \Esource}\right) \cdot 
+				\bar{R}^j(\Esource, qU) 
+			\d \Esource +
+			\Rbg
+		\right)
+	\fullstop
+\end{equation}
+Here, $\As=1$ is a normalization factor, $\detEff \in [0,1]$ the detector efficiency, the sum goes over all source slices, $N_T^j$ is the number of tritium molecules in the $j$th source slice, $\left(\d \Gamma(\Esource) / \d \Esource \right)$ is the differential rate from \eqref{eq:diffRate}, $\bar{R}^j(\Esource, qU)$ is the response function from \eqref{eq:SSCresponse} and $\Rbg$ is the rate of background events.
 
 \subsection{Amendments}
-The scaffold for an analytic model of the counts measured by the KATRIN detector is build up from section \ref{sec:diffSpec} to \ref{sec:eloss}. Modifications of isolated terms can consider further effects. Selected examples are:
+Equation \eqref{eq:countsSCCFinal} is a scaffold for an analytic model of the counts measured by the KATRIN detector. Modifications of isolated terms can consider further effects. Selected examples are:
 \begin{itemize}
     \item \textbf{Doppler effect:} Gas flow and temperature move the tritium molecules and hence, smear the kinetic energy distribution of $\upbeta$ electrons. This can be modelled by convolving the differential rate $\d \Gamma / \d E$ \eqref{eq:diffRate} with a Maxwellian distribution or by applying corrections to the final energy states of the decaying molecules.
-    \item \textbf{Background events:} Background events can be modelled by adding to the counts $N$ \eqref{eq:nonAveragedCounts}.
     \item \textbf{Plasma potential:} Space charges, respectively a plasma, forms within the \gls{wgts} due to the tritium decay. Electrons passing through space charges might either gain or loose energy. In a segmented \gls{wgts} volume, this is implemented by using an effective retarding energy corrected for the plasma potential $V^j$ in the slice $j$
     \begin{equation}
         qU \rightarrow qU^j_\mathrm{eff} = qU - V^j
