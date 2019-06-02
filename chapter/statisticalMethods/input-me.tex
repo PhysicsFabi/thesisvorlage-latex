@@ -2,7 +2,7 @@
 \input{chapter/statisticalMethods/symbols.tex}
 \chapter{Parameter Inference at KATRIN with KaFit}
 \section{Introduction}
-The neutrino mass $m_\nu$ alongside with an uncertainty will be retrieved by comparing the output of the KATRIN measurement with theoretical predictions. This process is called parameter inference. There exist different statistical approaches. They differ in practicality as well as interpretation. The so-called KaFit software framework implements several corresponding tools tailored to the KATRIN experiment. It is interfaced to \gls{ssc} (see section \ref{sec:intSpecModel}). An outline of the statistical approaches will be given in this chapter.  \todo{Cite pdg statistics.}
+The neutrino mass $m_\nu$ alongside with an uncertainty will be retrieved by comparing the output of the KATRIN measurement with theoretical predictions. This process is called parameter inference. There exist different statistical approaches. They differ in practicality as well as interpretation. The so-called KaFit software framework implements several corresponding tools tailored to the KATRIN experiment. It is interfaced to \gls{ssc} (section \ref{sec:intSpecModel}). A description of KaFit can e.g. be found in \cite{Kleesiek2014}. This chapter outlines a selection of statistical approaches following mainly the statistics chapter of the Review of Particle Physics \cite{ReviewOfParticlePhysics}. Additionally, within this thesis the implementations in KaFit were extended, which will also be described.
 
 \section{The KATRIN Likelihood}
 The likelihood is the probability of a measurement outcome given a hypothesis. A hypothesis depending on a parameter vector $\paramVec$ is called a composite hypothesis. A measurement outcome can be quantified by a vector of observed values $\dataVec$. The probability $P$ of $\dataVec$ given a hypothesis in dependence of $\paramVec$ is called the likelihood function
@@ -33,7 +33,7 @@ Commonly, instead of maximizing the likelihood function, its negative logarithm 
 		 + \mathrm{constants}
 		\fullstop
 \end{equation}
-Under the made assumptions this so-called chi-square function follows the Pearson's chi-square statistic. Its minimization yields the \gls{mle} estimator $\hat{\paramVec}$ for $\paramVec$. Accordingly the value $\chi^2(\hat{\paramVec})$ is a measure for the goodness-of-fit.
+Under the made assumptions this so-called chi-square function follows the Pearson's chi-square statistic. Its minimization yields the \gls{mle} estimator $\hat{\paramVec}$ for $\paramVec$. Accordingly, the value $\chi^2(\hat{\paramVec})$ is a measure for the goodness-of-fit.
 
 The parameter of interest in $\paramVec$ is the neutrino mass squared $m_\nu^2$. Furthermore, $\paramVec$ typically comprises the endpoint of the tritium $\upbeta$ spectrum $E_0$ \eqref{eq:endpoint}, an overall normalization factor for the counts $\As$ and the rate of the background counts $\Rbg$. For the later two see \eqref{eq:countsSCCFinal}.
 
@@ -41,22 +41,58 @@ The parameter of interest in $\paramVec$ is the neutrino mass squared $m_\nu^2$.
 The presented maximum likelihood method provides point estimates $\hat{\paramVec}$. However, additional information can be provided by interval estimates. There are two main approaches to statistical inference, which may be called Bayesian and frequentist. They differ in their interpretation of probability which becomes especially evident by the interval estimates typically associated with the two approaches.
 
 \subsection{Bayesian Credible Intervals}
-The likelihood $L\giventhat{\paramVec}{\dataVec}$ is a probability distribution of the data $\dataVec$ given the parameters $\paramVec$. Using Bayes theorem, the likelihood can be transformed into a probability density for the parameters $\paramVec$ by multiplication with a prior distribution 
-
+The likelihood $L\giventhat{\dataVec}{\paramVec}$ is a probability distribution of the data $\dataVec$ given the parameters $\paramVec$. Using Bayes theorem, the likelihood can be transformed into a probability density for the parameters $\paramVec$ by multiplication with a prior distribution $\pi(\paramVec)$ and normalization to 1
+\begin{equation}
+\label{eq:posterior}
+	P\giventhat{\paramVec}{\dataVec} = 
+		\frac{
+			L\giventhat{\dataVec}{\paramVec}\pi(\paramVec)
+		}{
+			\int L\giventhat{\dataVec}{\paramVec^\prime}\pi(\paramVec^\prime) \d\paramVec^\prime
+		}
+	\fullstop
+\end{equation}
+Here, $P\giventhat{\paramVec}{\dataVec}$ is the so-called posterior distribution. So-called credible regions, in which the true parameters lie with a certain probability $\alpha$, can be extracted.  Typical values for $\alpha$ are \SI{68}{\percent} and \SI{95}{\percent}. When $\paramVec$ is one dimensional a credible region becomes a credible interval. 
 
 \subsection{Frequentist Confidence Intervals}
 In frequentist statistics, probability is interpreted as the frequency
-of the outcome of a repeatable experiment. A confidence region $C(\alpha)$ of confidence level (CL) $\alpha$ for a parameter vector with true value $\paramVec_\mathrm{T}$ is the following: If an experiment were to be repeated many times and the confidence region $C(\alpha)$ were to be constructed each time according to the same recipe, it would contain the true parameter $\paramVec_\mathrm{T}$ a fraction of at least $\alpha$ times. Typical values for $\alpha$ are chosen as quantiles of the Gaussian distribution in steps of standard deviations $\sigma$. E.g. the 1- and 2-$\sigma$ levels are \SI{68}{\percent} and \SI{95}{\percent}. The Neyman construction \cite{Neyman1937} or its extension, the unified approach by Feldman and Cousins \cite{Feldman1998}, yield such confidence regions. 
+of the outcome of a repeatable experiment. A confidence region $C(\alpha)$ of confidence level (CL) $\alpha$ for a parameter vector with true value $\paramVec_\mathrm{T}$ is the following: If an experiment were to be repeated many times and the confidence region $C(\alpha)$ were to be constructed each time according to the same recipe, it would contain the true parameter $\paramVec_\mathrm{T}$ a fraction of at least $\alpha$ times. Typical values for $\alpha$ are chosen as quantiles of the Gaussian distribution in steps of standard deviations $\sigma$. E.g. the 1- and 2-$\sigma$ levels are \SI{68}{\percent} and \SI{95}{\percent}. The Neyman construction \cite{Neyman1937} or its extension, the unified approach by Feldman and Cousins \cite{Feldman1998}, yield such confidence regions. When $\paramVec$ is one dimensional a confidence region becomes a confidence interval. 
 
+Approximated confidence regions can be extracted from the likelihood. If the likelihood follows the form of a multivariate Gaussian distribution in $\paramVec$, then the hyper surface defined by
+\begin{equation}
+	\ln L(\paramVec) = 	\ln L(\hat{\paramVec}) - \frac{s^2}{2}
+\end{equation}
+encloses a $s$-$\sigma$ confidence region for $\paramVec$. This is the case for the KATRIN chi-square likelihood. 
 
-The frequentist interpretation of probability needs an ensemble of experiments. This ensemble  but only one real experiment 
+\section{Likelihood Extensions}
+The likelihood $L(\paramVec)$ can be multiplied by a function $g(\paramVec)$
+\begin{equation}
+	\label{eq:likelihoodExtension}
+	-2\ln L^\prime(\paramVec) = -2\ln L(\paramVec) -2\ln g(\paramVec)
+	\fullstop
+\end{equation}
+This procedure may have different interpretations and usage scenarios. E.g. a comparison with \eqref{eq:posterior} shows, if $g$ is a prior probability distribution, $L^\prime$ becomes a non-normalized posterior distribution that can be used in a Bayesian analysis. A further interpretation is given in section \ref{sec:combinationOfMeasurements}. 
 
-\subsection{Frequentist Confidence Intervals}
+\subsection{Implementation}
+KaFit allowed to choose $g$ in \ref{eq:likelihoodExtension} as a product of one-dimensional Gaussian distributions. Within this thesis the software was extended to allow products of other functions. Three function types were explicitly made available through a configuration file.
+\begin{enumerate}
+	\item A reimplementation of a one-dimensional Gaussian distribution: The reimplementation was necessary to conveniently enable the combination of function types.
+	\item A multivariate Gaussian distribution: This enables the treatment of uncertainties quantified by calibration or monitor measurements as described in section \ref{sec:combinationOfMeasurements}. It can also be used as a prior distribution in a Bayesian analysis. Particularly, correlations can be respected.
+	\item A one-dimensional probability density, that is constant in the square root of a parameter, if it is positive and 0 otherwise:
+	\begin{equation}
+		g(\theta) =
+		\begin{cases}
+		0 &\text{ if } \theta \leq 0 \\
+		\text{constant} \cdot \frac{1}{\sqrt{\theta}} &\text{ if } \theta > 0
+		\end{cases}
+		\fullstop
+	\end{equation}
+	 This can be used as a uniform prior on the neutrino mass ($\theta=m_\nu^2$). Formerly, it was only possible to use a uniform prior on the squared neutrino mass.
+\end{enumerate}
+An example on how to configure KaFit using the new feature is given in appendix \todo{Add appendix}.
 
-
-
-
-\section{Combination of experiments}
+\subsection{Combination of Measurements}
+\label{sec:combinationOfMeasurements}
 If two measurements share a set of parameters $\paramVecShared$, but have additionally an individual set of parameters $\paramVec_1$ and $\paramVec_2$ and different sets of observations a combined likelihood is given by the product of the single likelihoods $L_1$ and $L_2$
 \begin{equation}
 	-2\ln L(\paramVecShared, \paramVec_1, \paramVec_2) =  
@@ -64,9 +100,12 @@ If two measurements share a set of parameters $\paramVecShared$, but have additi
 		-2\ln L_2(\paramVecShared, \paramVec_2)
 	\fullstop
 \end{equation}
-In the case of KATRIN the first measurement could be sensitive to the neutrino mass whereas say the second measurement could have been conducted using the electron gun during commissioning and be sensitive to parameters of the response function \eqref{eq:SSCresponse}. Currently, no software framework exists that allows the construction of combined likelihoods of KATRIN commissioning and neutrino mass measurements. Instead the following approximation can be made. The commission measurement is evaluated independently and one obtains estimates $\hat{\paramVec}_\mathrm{s,2}$, and an estimated covariance matrix $\hat{V}_\mathrm{s,2}$ for all components of $\paramVecShared$ that the commissioning measurement is sensitive to. These can in turn be used to approximate the likelihood $L_2$ at least in the dimension of $\paramVecShared$. A choice that stands to reason for the approximation of $L_2$ is a multivariate Gaussian distribution. For the purpose of parameter inference through minimization $-2\ln L_2$ needs only to be accurately approximated around its minimum. The choice of a multivariate Gaussian distribution corresponds a symmetric approximation of $-\ln L_2$ around its minimum by a parabola. The KATRIN likelihood for a combination of a neutrino mass and a commissioning measurement then reads
+In the case of KATRIN the first measurement could be sensitive to the neutrino mass whereas say the second measurement could have been a calibration using the electron gun and be sensitive to parameters of the response function \eqref{eq:SSCresponse}. Combining both likelihoods would incorporate the uncertainties on the parameters of the response function in the neutrino mass determination. Currently, no software framework exists that allows the construction of combined likelihoods of KATRIN neutrino mass and calibration measurements. Instead the following approximation can be made. The calibration measurement is evaluated independently and one obtains estimates $\hat{\paramVec}_\mathrm{s,2}$, and an estimated covariance matrix $\hat{V}_\mathrm{s,2}$ for all components of $\paramVecShared$ that the calibration measurement is sensitive to. These can in turn be used to approximate the likelihood $L_2$ at least in the dimension of $\paramVecShared$. A choice that stands to reason for the approximation of $L_2$ is a multivariate Gaussian distribution. For the purpose of parameter inference through minimization $-2\ln L_2$ needs only to be accurately approximated around its minimum. The choice of a multivariate Gaussian distribution corresponds a symmetric approximation of $-\ln L_2$ around its minimum by a parabola. The KATRIN likelihood for a combination of a neutrino mass and a calibration measurement then reads
 \begin{equation}
-	-2\ln L(\paramVecShared, \paramVec_1, \paramVec_2) \approx 
+	\begin{split}
+	\label{eq:penalizedLikelihood}
+	-2\ln L(\paramVecShared, \paramVec_1, \paramVec_2) &\approx
+	-2\ln L^\prime(\paramVecShared, \paramVec_1) \\ &=
 	\underbrace{
 		\chi^2(\paramVecShared, \paramVec_1)
 		\vphantom{(\paramVecShared - \hat{\paramVec}_\mathrm{s,2})^{\mathsf{T}}}
@@ -77,11 +116,16 @@ In the case of KATRIN the first measurement could be sensitive to the neutrino m
 		\hat{V}_\mathrm{s,2}^{-1}
 		(\paramVecShared - \hat{\paramVec}_\mathrm{s,2})
 	}_{(2)}
-	+ \mathrm{constants}
+	+ \mathrm{ constants}
+	\end{split}
 \end{equation}
-Here, $(1)$ is the chi-square expression \eqref{eq:katrinChi2} where the $\paramVecShared$ and $\paramVec_1$ can be written as one combined parameter vector $\paramVec$ for a neutrino mas measurement. And $(2)$ resembles the negative log likelihood of the commissioning measurement approximated by a multivariate Gaussian distribution. 
+Here, $(1)$ is the chi-square expression \eqref{eq:katrinChi2} where the $\paramVecShared$ and $\paramVec_1$ can be written as one combined parameter vector $\paramVec$ for a neutrino mass measurement. And $(2)$ resembles the negative log likelihood of the calibration measurement approximated by a multivariate Gaussian distribution. Terms having a form like $(2)$ are also sometimes called ``pull terms'' or ``likelihood penalties''. In the minimization process they ``pull'' the parameters $\paramVecShared$ towards $\hat{\paramVec}_\mathrm{s,2}$ respectively ``penalize''/increase the negative log likelihood if $\paramVecShared$ and $\hat{\paramVec}_\mathrm{s,2}$ differ.
 
-Terms having a form like $(2)$ are also sometimes called pull terms or likelihood penalties. In the minimization process they "pull" the parameters $\paramVecShared$ towards $\hat{\paramVec}_\mathrm{s,2}$ respectively penalize/increase the negative log likelihood if $\paramVecShared$ and $\hat{\paramVec}_\mathrm{s,2}$ differ. Note that $(2)$ takes the same mathematical form as a Bayesian prior.
+
+\newcommand{\CombLmax}{-2\ln L(\hat{\paramVec}_\mathrm{s}, \hat{\paramVec}_1)}
+Note that the maximum of the overall likelihood $\CombLmax$ might no longer follow the Pearson chi-square statistic and strictly speaking the measure for goodness-of-fit might get lost. However, the chi-square characteristics remain if the neutrino mass measurement, term $(1)$, is not sensitive to the shared parameters: $\d \chi^2(\paramVecShared, \paramVec_1) /d \paramVecShared = 0$. Because then the \gls{mle} for the shared parameters will match the \gls{mle} by the calibration measurement $\hat{\paramVec}_\mathrm{s} = \hat{\paramVec}_{\mathrm{s},2}$ and term $(2)$ will be 0. For example, a standard KATRIN 3-year neutrino mass measurement is not at all sensitive to parameters of the energy loss function \eqref{eq:nonAveragedResponse}. Hence, adding a corresponding term $(2)$ will not influence the chi-square characteristics. However, a standard KATRIN 3-year neutrino mass measurement is sensitive to the gas column density \eqref{eq:columnDensity}. Adding a corresponding term $(2)$ from (a naturally more sensitive) monitoring measurement would alter the distribution of the maxima of the overall likelihood. \todo{Add plot for bayesian sensitivity study on eloss and column density.}
+
+
 
 What does parameter inference mean? What does sensitivity on the neutrino mass mean? What is the likelihood? What is a Frequentist approach? What is a Bayesian approach? 
 \section{Overview of Analysis Methods}
