@@ -33,7 +33,7 @@ Commonly, instead of maximizing the likelihood function, its negative logarithm 
 		 + \mathrm{constants}
 		\fullstop
 \end{equation}
-Under the made assumptions this so-called chi-square function follows the Pearson's chi-square statistic. Its minimization yields the \gls{mle} estimator $\hat{\paramVec}$ for $\paramVec$. Accordingly, the value $\chi^2(\hat{\paramVec})$ is a measure for the goodness-of-fit.
+Under the made assumptions this expression is a sum of $n$ standard normal distributed random variables and hence, follows the Pearson's chi-square statistic with $n-\mathrm{dim}\paramVec$ degrees of freedom. Its minimization yields the \gls{mle} estimator $\hat{\paramVec}$ for $\paramVec$. Accordingly, the value $\chi^2(\hat{\paramVec})$ is a measure for the goodness-of-fit.
 
 The parameter of interest in $\paramVec$ is the neutrino mass squared $m_\nu^2$. Furthermore, $\paramVec$ typically comprises the endpoint of the tritium $\upbeta$ spectrum $E_0$ \eqref{eq:endpoint}, an overall normalization factor for the counts $\As$ and the rate of the background counts $\Rbg$. For the later two see \eqref{eq:countsSCCFinal}.
 
@@ -41,7 +41,7 @@ The parameter of interest in $\paramVec$ is the neutrino mass squared $m_\nu^2$.
 The presented maximum likelihood method provides point estimates $\hat{\paramVec}$. However, additional information can be provided by interval estimates. There are two main approaches to statistical inference, which may be called Bayesian and frequentist. They differ in their interpretation of probability which becomes especially evident by the interval estimates typically associated with the two approaches.
 
 \subsection{Bayesian Credible Intervals}
-The likelihood $L\giventhat{\dataVec}{\paramVec}$ is a probability distribution of the data $\dataVec$ given the parameters $\paramVec$. Using Bayes theorem, the likelihood can be transformed into a probability density for the parameters $\paramVec$ by multiplication with a prior distribution $\pi(\paramVec)$ and normalization to 1
+The likelihood $L\giventhat{\dataVec}{\paramVec}$ is a probability distribution of the data $\dataVec$ given the parameters $\paramVec$. Using Bayes theorem the likelihood can be transformed into a probability density for the parameters $\paramVec$ by multiplication with a prior distribution $\pi(\paramVec)$ and normalization to 1
 \begin{equation}
 \label{eq:posterior}
 	P\giventhat{\paramVec}{\dataVec} = 
@@ -74,6 +74,7 @@ The likelihood $L(\paramVec)$ can be multiplied by a function $g(\paramVec)$
 This procedure may have different interpretations and usage scenarios. E.g. a comparison with \eqref{eq:posterior} shows, if $g$ is a prior probability distribution, $L^\prime$ becomes a non-normalized posterior distribution that can be used in a Bayesian analysis. A further interpretation is given in section \ref{sec:combinationOfMeasurements}. 
 
 \subsection{Implementation}
+\label{sec:statLikelihoodExtImpl}
 KaFit allowed to choose $g$ in \ref{eq:likelihoodExtension} as a product of one-dimensional Gaussian distributions. Within this thesis the software was extended to allow products of other functions. Three function types were explicitly made available through a configuration file.
 \begin{enumerate}
 	\item A reimplementation of a one-dimensional Gaussian distribution: The reimplementation was necessary to conveniently enable the combination of function types.
@@ -87,7 +88,7 @@ KaFit allowed to choose $g$ in \ref{eq:likelihoodExtension} as a product of one-
 		\end{cases}
 		\fullstop
 	\end{equation}
-	 This can be used as a uniform prior on the neutrino mass ($\theta=m_\nu^2$). Formerly, it was only possible to use a uniform prior on the squared neutrino mass.
+	 This can be used as a uniform prior on the neutrino mass ($\theta=m_\nu^2$). Formerly, it was only possible to use a uniform prior on the squared neutrino mass. A derivation of the form of $g$ can be found in appendix \ref{sec:appStatisticPriorOnNu2}.
 \end{enumerate}
 An example on how to configure KaFit using the new feature is given in appendix \todo{Add appendix}.
 
@@ -115,15 +116,24 @@ In the case of KATRIN the first measurement could be sensitive to the neutrino m
 		(\paramVecShared - \hat{\paramVec}_\mathrm{s,2})^{\mathsf{T}}
 		\hat{V}_\mathrm{s,2}^{-1}
 		(\paramVecShared - \hat{\paramVec}_\mathrm{s,2})
-	}_{(2)}
-	+ \mathrm{ constants}
+	}_{(2)} +\; 
+	\mathrm{ constants}\\ &=
+	\chi^2(\paramVecShared, \paramVec_1) 
+	-2\ln \mathcal{N}(\paramVecShared, \hat{\paramVec}_\mathrm{s,2}, \hat{V}_\mathrm{s,2}^{-1}) +
+	\mathrm{ constants}
 	\end{split}
 \end{equation}
 Here, $(1)$ is the chi-square expression \eqref{eq:katrinChi2} where the $\paramVecShared$ and $\paramVec_1$ can be written as one combined parameter vector $\paramVec$ for a neutrino mass measurement. And $(2)$ resembles the negative log likelihood of the calibration measurement approximated by a multivariate Gaussian distribution. Terms having a form like $(2)$ are also sometimes called ``pull terms'' or ``likelihood penalties''. In the minimization process they ``pull'' the parameters $\paramVecShared$ towards $\hat{\paramVec}_\mathrm{s,2}$ respectively ``penalize''/increase the negative log likelihood if $\paramVecShared$ and $\hat{\paramVec}_\mathrm{s,2}$ differ.
 
 
 \newcommand{\CombLmax}{-2\ln L(\hat{\paramVec}_\mathrm{s}, \hat{\paramVec}_1)}
-Note that the maximum of the overall likelihood $\CombLmax$ might no longer follow the Pearson chi-square statistic and strictly speaking the measure for goodness-of-fit might get lost. However, the chi-square characteristics remain if the neutrino mass measurement, term $(1)$, is not sensitive to the shared parameters: $\d \chi^2(\paramVecShared, \paramVec_1) /d \paramVecShared = 0$. Because then the \gls{mle} for the shared parameters will match the \gls{mle} by the calibration measurement $\hat{\paramVec}_\mathrm{s} = \hat{\paramVec}_{\mathrm{s},2}$ and term $(2)$ will be 0. For example, a standard KATRIN 3-year neutrino mass measurement is not at all sensitive to parameters of the energy loss function \eqref{eq:nonAveragedResponse}. Hence, adding a corresponding term $(2)$ will not influence the chi-square characteristics. However, a standard KATRIN 3-year neutrino mass measurement is sensitive to the gas column density \eqref{eq:columnDensity}. Adding a corresponding term $(2)$ from (a naturally more sensitive) monitoring measurement would alter the distribution of the maxima of the overall likelihood. \todo{Add plot for bayesian sensitivity study on eloss and column density.}
+The chi-square term $(1)$ is a sum of $n$ standard normal distributed random variables. Hence, as discussed, a likelihood only composed of the chi-square term $(1)$ offers a goodness-of-fit criteria via the the Pearson chi-square statistic. Note that for the combined likelihood this criteria might not hold. Two special cases can be considered where the chi-square characteristics hold approximately: First, the neutrino mass measurement, term $(1)$, is not sensitive to the shared parameters $\d \chi^2(\paramVecShared, \paramVec_1) /\d \paramVecShared \approx 0$. Then the \gls{mle} for the shared parameters will match the \gls{mle} by the calibration measurement $\hat{\paramVec}_\mathrm{s} = \hat{\paramVec}_{\mathrm{s},2}$ and term $(2)$ will be 0. The combined likelihood evaluated at the \gls{mle} $\CombLmax$ then follows a chi-square distribution with $n-\dim\paramVec_1-\dim\paramVecShared$ degrees of freedom. Second, if the neutrino mass measurement is sensitive to some shared parameters $\d \chi^2(\paramVecShared, \paramVec_1) /\d \paramVecShared \neq 0$, then one might argue, that term $(2)$ evaluated at the \gls{mle} $\hat{\paramVec}_\mathrm{s} \neq \hat{\paramVec}_{\mathrm{s},2}$ is a sum of standard normal distributed random variables. If this holds, the combined likelihood evaluated at the \gls{mle} $\CombLmax$ follows a chi-square distribution with $n-\dim\paramVec_1$ degrees of freedom.
+
+
+For example, a standard KATRIN 3-year neutrino mass measurement is not at all sensitive to parameters of the energy loss function \eqref{eq:nonAveragedResponse}. Hence, adding a corresponding term $(2)$ from a designated energy loss measurement will not influence the chi-square characteristics. However, a standard KATRIN neutrino mass measurement is even after a short measurement time sensitive to the gas column density \eqref{eq:columnDensity}. Adding a corresponding term $(2)$ from (a naturally more sensitive) monitoring measurement would influence the   
+
+
+\todo{Add plots from ensemble test that proof statements.}
 
 
 

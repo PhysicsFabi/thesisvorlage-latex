@@ -7,12 +7,12 @@
 
     \input{document/titlepage}
     \input{document/preamble}
-
-    \begingroup \let\clearpage\relax    % in order to avoid listoffigures and
-    \tableofcontents                    % listoftables on new pages
+    \input{chapter/introduction/input-me.tex}
+    \tableofcontents
+    %\begingroup \let\clearpage\relax%no new pages for list of figures...
     \listoffigures
     \listoftables
-    \endgroup
+    %\endgroup
     \cleardoublepage
 
     \MainMatter
@@ -53,7 +53,9 @@
 
     \Appendix
     \chapter*{\appendixname} \addcontentsline{toc}{chapter}{\appendixname}
+    \input{chapter/statisticalMethods/appendix/input-me.tex}
     \input{chapter/energyDependentCrossSec/appendix/input-me.tex}
+    
     
     
     \section{First Tritium Data}

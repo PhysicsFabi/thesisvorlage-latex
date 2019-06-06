@@ -1,319 +1,324 @@
 \input{chapter/neutrinos/glossaries/input-me.tex}
 \chapter{Neutrino Physics}
-    
-    \section{Neutrinos until the 1960s}
-    The rich history of neutrino physics covers more than a century. The following paragraphs outline selected milestones on the way to their today's understanding.
-    
-    In 1895 Becquerel reported results on experiments with phosphorescent substances, especially uranium salts, on photographic plates \cite{Becquerel:1}. His experiments are marked as the discovery of radioactivity and triggered manifold subsequent investigations.
-    
-    In 1899 Rutherford published a classification of radioactive decays into $\upalpha$ and $\upbeta$ types according to their penetration strength \cite{Rutherford:1}.
-    
-    In 1900 Becquerel determined the mass-charge-ratio of $\upbeta$ decay particles and identified them as the electron previously described by Thomson \cite{Becquerel:2} \cite{Thomson:1}.
-    
-    In 1914 Chadwick measured a continuous electron energy spectrum in the $\upbeta$ decay ($\upbeta$ spectrum) of lead-214 and bismuth-214 \cite{Chadwick:1}.
-    
-    In 1927 Ellis and Wooster conducted a calorimetric measurement of the $\upbeta$ decay energy of radium and demonstrated that the continuity of the $\upbeta$ spectrum was intrinsic to the decay as opposed to caused by secondary effects as e.g. scattering of the electrons within an atom \cite{Ellis:1}.
-    
-    In 1930 a $\upbeta$ decay was thought of as a two-body-decay $A \rightarrow B + C$. Assuming relativistic kinematics, especially conservation of energy and momentum, in a two-body-decay the momenta of the daughter particles $B$ and $C$ are solely determined by their masses and the energy constitution of the parent particle $A$. According to Bohr there was no reason to believe that different nuclei of the same element $A$ should have a different energy constitution in a $\upbeta$ decay. Hence, the continuity of the $\upbeta$ spectrum could not be explained \cite{Bohr:1}. As a possible solution Pauli suggested the $\upbeta$ decay to be a three-body-decay and postulated a electrically neutral particle that carries part of the decay energy \cite{Pauli1930}.
-    
-    In 1934 Fermi developed a quantitative theory of $\upbeta$ decay that could describe the preceding experimental results. It comprises a four-fermion contact interaction respectively a three-body-decay model. It was the first description of the so-called ``weak interaction''. Furthermore, Fermi coined the term ``neutrino'' for the particle postulated by Pauli. \cite{Fermi1934}
-    
-    Fermi's theory inspired the idea to use the so-called ``inverse $\upbeta$ decay'' or ``neutrino capture'' to detect neutrinos, which in today's nomenclature is written as
-    \begin{equation*}
-        \aeneutrino + \proton \rightarrow \neutron + \positron \fullstop
-    \end{equation*}
-    In 1956 Cowan and Reines published results of a corresponding experiment. It was conducted using the sufficiently high neutrino flux of the nuclear reactor of the Savannah River Plant. The neutrinos originating in the reactor passed a tank of water and cadmium chloride triggering the above process. The emerging neutron was captured by the cadmium which emitted a photon in a \SIrange{3}{11}{MeV} range. The emerging positron annihilated with an electron which produced two photons of \SI{0.5}{MeV} each. A coincidence measurement of the corresponding photons enabled discriminating signal and background events. Based on their results they reported the free neutrino's discovery. \cite{Cowan103}
-    
-    In the same year, 1956, Lee and Yang published an article on parity conservation. Parity conservation implies that a mirrored physical process behaves the same as its non-mirrored counterpart. They pointed out that parity conservation might be violated in weak interactions and suggested several probing methods. \cite{Lee1956}
-    
-    In 1957 Wu et. al. conducted one of the corresponding probing methods based on $\upbeta$ decay. The parity operation respectively ``the mirroring'' corresponded a change of the magnetic field orientation in the experiment. The results showed that parity is violated. \cite{Wu1957}
-    
-    In 1958 Goldhaber et al. measured the helicity $H$ of the neutrino. Its helicity is defined as $ H = \unitvect{\sigma} \cdot \unitvect{p}$, where $\unitvect{\sigma}$ is the spin unit vector and $\unitvect{p}$ is the momentum unit vector of the neutrino. The experiment found $H = -1$ which corresponds a maximal parity violation. In other words, only left-handed neutrinos and right-handed antineutrinos interact weakly.~\cite{Goldhaber1958}
-    
-    In 1962 Danby et. al. reported on a second type of neutrinos. A beam of pions generated at the Alternating Gradient Synchrotron in Brookhaven decayed according to $\pi^{\pm} \rightarrow \mu^{\pm} + \nu / \bar\nu$. The emerging neutrinos penetrated a 13.5-meter iron shield wall and their interaction could be detected in a 10-t aluminum spark chamber. The observed interactions were path-like as opposed to shower-like, which implied the production of muons as opposed to electrons. This was marked as the discovery of the $\mu$ neutrino. \cite{Danby1962}
-    
-    The attempts to uniformly describe the manifold discoveries in the field of particle physics in a combined theory converged over the course of the second half of the 20th century into the so-called \gls{standardmodel}.
-    
-    \section{Neutrinos in the Standard Model of Particle Physics}
-        \begin{table}[tb]
-        \caption[Gauge field content of the Standard Model]{Gauge field content of the Standard Model of particle physics.}
-        \centering
-        \begin{tabular}{lrl}
-        \toprule
-        symbol & gauge symmetry & associated charge \\
-        \hline
-        $g$ & SU(3) & color \\
-        $W$ & SU(2) & isospin $\vect{T}=(T_1, T_2, T_3)$ \\
-        $B$ & U(1) &  hypercharge $Y$\\
-        \bottomrule
-        \end{tabular}
-        \label{tab:SMGaugeFields}
-    \end{table}
-    
-    
-    \begin{table}[bt]
-        \caption[Matter field content of the Standard Model]{Matter field content of the Standard Model of particle physics and corresponding properties (color charge omitted).}
-        \centering
-        \begin{tabular}{llrrlll}
-        \toprule
-        \makecell[tl]{} & 
-        \makecell[tl]{symbol} & 
-        \makecell[tl]{spin} & 
-        \makecell[tl]{generations} & 
-        \makecell[tl]{isospin \\$(\abs{\vect{T}}, T_3)$} & 
-        \makecell[tl]{hypercharge \\$Y$} \\
-        \hline
-        higgs & $\phi=(\phi^+, \phi^0)^T$ & 0 & 1 & $(1/2, \pm 1/2)$ & $\pm1/2$\\
-        \hline
-        quark & $q=(u_L, d_L)^T$ & $1/2$ & 3 & $(1/2, \pm 1/2)$ & $\pm 1/3$ \\
-        antiquark & $\bar{d}_R$ & $1/2$ & 3 & $(0, 0)$ & $+1/6$ \\
-                  & $\bar{u}_R$ & $1/2$ & 3 & $(0, 0)$ & $-4/3$ \\
-        \hline
-        lepton & $l=(\nu_L, l_L)^T$ & $1/2$ & 3 & $(1/2, \pm 1/2)$ & $\mp1/2$ \\
-        antilepton & $\bar{l}_R$ & $1/2$ & 3 & $(0, 0)$ & $+2$ \\
-        \bottomrule
-    \end{tabular}
-        \label{tab:SMMatterFields}
-    \end{table}
-    
-    
-    \begin{figure}[t]
-        \begin{center}
-            \def\svgwidth{\linewidth}
-            \inputpdftex{chapter/neutrinos/fig/standardmodel}
-        \end{center}
-    	\xcaption{Standard Model of particle physics}{Standard Model of particle physics.}{The fermions are framed continuous  and the bosons dotted. Among the fermions the quark sector is marked by a thick frame and the lepton sector by a thin one. (Illustration adapted from \cite{SeitzM2019})}
-	    \label{fig:standardmodel}
-    \end{figure}
-    The \glsentrylong{standardmodel} is a well-tested and established theory, which is evident by e.g. the extensive Review of Particle Physics of the Particle Data Group \cite{ReviewOfParticlePhysics}. It is a gauge quantum field theory exhibiting the gauge symmetry $\text{SU}(3)\times\text{SU}(2)\times\text{U}(1)$. Table \ref{tab:SMGaugeFields} contains the \gls{standardmodel}'s gauge fields and their associated charges. The $B$- and $W$-fields mix to the observable $W^+$, $W^-$ and $Z^0$ bosons as well as to the photon $\gamma$. Table \ref{tab:SMMatterFields} contains the \gls{standardmodel}'s matter fields and their properties.
+This chapter is an introduction to neutrino physics. The first aim is to give an experimentally-rooted definition of a neutrino. Therefore, selected experimental milestones are outlined that led to the today's description of a neutrino in the so-called \gls{standardmodel}. It follows an outline of the \gls{standardmodel} as its formalism offers a definition for a neutrino. Thereafter, special attention is paid to the neutrino mass: First, the so-called neutrino oscillations are introduced. Corresponding experiments proved that neutrinos have mass. Second, experiments for an absolute neutrino mass measurement are presented because as such they relate particularly to the KATRIN experiment.
 
-    Experimentally, a ``disturbance'' of a quantum field is often localized in space-time, which makes it practical to speak of the \gls{standardmodel}'s content as particles with intrinsic properties. Figure~\ref{fig:standardmodel} depicts the particles of the \gls{standardmodel} along with their masses and electric charge.
+\section{Neutrinos until the 1960s}
+Albeit the neutrino as a possible particle was not postulated until 1930, its rich scientific history might be seen as already heralded during the preceding 35 years. 
+
+In 1895, Becquerel reported results on experiments with phosphorescent substances, especially uranium salts, on photographic plates \cite{Becquerel:1}. These experiments are marked as the discovery of radioactivity and triggered manifold subsequent investigations. 
+
+In 1899, Rutherford published a classification of radioactive decays into $\upalpha$ and $\upbeta$ types according to their penetration strength \cite{Rutherford:1}. 
+
+In 1900, Becquerel determined the mass-charge ratio of $\upbeta$-decay particles and identified them as the electron previously described by Thomson \cite{Becquerel:2} \cite{Thomson:1}. 
+
+In 1914, Chadwick measured a continuous electron energy spectrum in the $\upbeta$ decay ($\upbeta$ spectrum) of lead-214 and bismuth-214 \cite{Chadwick:1}. 
+
+In 1927, Ellis and Wooster conducted a calorimetric measurement of the $\upbeta$-decay energy of radium and demonstrated that the continuity of the $\upbeta$ spectrum was intrinsic to the decay as opposed to be caused by secondary effects as e.\,g.~scattering of the electrons within an atom \cite{Ellis:1}. 
+
+In 1930, a $\upbeta$ decay was thought of as a two-body decay $\ce{^zA} \rightarrow \ce{^{z+1}B} + \ce{e^-}$. Assuming conservation of energy and momentum, in a two-body-decay the momenta of the daughter particles \ce{B} and \ce{e} are solely determined by their masses and the ``energy content'', as Bohr put it, of the parent particle \ce{A}. According to Bohr, there was no reason to believe that different nuclei of the same element \ce{A} should have a different energy content in a $\upbeta$ decay. Hence, the continuity of the $\upbeta$ spectrum could not be explained \cite{Bohr:1}. As a possible solution Pauli suggested the $\upbeta$ decay to be a three-body decay and postulated a electrically neutral particle that carries part of the decay energy \cite{Pauli1930}. 
+
+In 1934, Fermi developed a quantitative theory of $\upbeta$ decay that could describe the preceding experimental results. It comprises a four-fermion contact interaction respectively a three-body-decay model. It was the first description of the so-called ``weak interaction''. Furthermore, Fermi coined the term ``neutrino'' for the particle postulated by Pauli \cite{Fermi1934}. Fermi's theory inspired the idea to use the so-called ``inverse $\upbeta$ decay'' or ``neutrino capture'' to detect neutrinos, which in today's nomenclature is written as
+\begin{equation*}
+    \aeneutrino + \ce{p^+} \rightarrow \ce{n} + \ce{e^+} \fullstop
+\end{equation*}
+
+In 1956, Cowan and Reines published results of a corresponding experiment. It was conducted using the sufficiently high neutrino flux of the nuclear reactor of the Savannah River Plant. The neutrinos originating in the reactor passed a tank of water and cadmium chloride triggering the above process. The emerging neutron was captured by the cadmium which emitted a photon in a \SIrange{3}{11}{MeV} range. The emerging positron annihilated with an electron which produced two photons of \SI{0.5}{MeV} each. A coincidence measurement of the corresponding photons enabled discriminating signal and background events. Based on their results they reported the discovery of the free neutrino~\cite{Cowan103}. 
+
+In the same year, 1956, Lee and Yang published an article on parity conservation. Parity conservation implies that a mirrored physical process behaves the same as its non-mirrored counterpart. They pointed out that parity conservation might be violated in weak interactions and suggested several probing methods~\cite{Lee1956}. 
+
+In 1957 Wu et. al. conducted one of the corresponding probing methods based on $\upbeta$ decay. The parity operation respectively ``the mirroring'' corresponded a change of the magnetic field orientation in the experiment. The results showed that parity is violated~\cite{Wu1957}. 
+
+In 1958, Goldhaber et al.~measured the helicity $H$ of the neutrino. Its helicity is defined as $ H = \unitvect{\sigma} \cdot \unitvect{p}$, where $\unitvect{\sigma}$ is the spin unit vector and $\unitvect{p}$ is the momentum unit vector of the neutrino. The experiment found $H = -1$ which corresponds to a maximal parity violation. In other words, only left-handed neutrinos and right-handed antineutrinos interact weakly~\cite{Goldhaber1958}.
+
+In 1962, Danby et al.~reported on a second type of neutrinos. A beam of pions generated at the Alternating Gradient Synchrotron in Brookhaven decayed according to $\uppi^{\pm} \rightarrow \upmu^{\pm} + \maybeaneutrino$. The emerging neutrinos penetrated a 13.5-meter iron shield wall and their interaction were detected in a 10-t aluminum spark chamber. The observed interactions were path-like as opposed to shower-like, which implied the production of muons as opposed to electrons. This was marked as the discovery of the muon neutrino~\cite{Danby1962}.
+
+The attempts to uniformly describe the manifold discoveries in the field of particle physics in a combined theory converged over the course of the second half of the 20th century into the so-called \gls{standardmodel}.
     
-    In the \gls{standardmodel} neutrinos are leptons with the following properties:~
-    \begin{center}
-    \begin{tabular}{ll}
-        \toprule
-        flavors & 3 $(\nu_e, \nu_\mu, \nu_\tau)$ \\
-        electric charge & 0 (neutral) \\
-        spin & $\frac{1}{2} \hbar$ (fermion) \\
-        helicity & \makecell[lt]{left-handed neutrinos \\ right-handed antineutrinos} \\
-        \bottomrule
-    \end{tabular}
-    \end{center}
-    
-    \subsection{Flavors}
-    A particle's flavor is its eigenstate with respect to the weak interaction. In the 1990s a precision measurement of the width of the $Z^0$-boson resonance at the \gls{lep} yielded a number of light neutrino flavours consistent with 3 \cite{NumberOfNeutrinos}. In this context ``light'' refers to a neutrino mass smaller than half the mass of the $Z^0$ boson. The \gls{standardmodel} incorporates these three flavors, usually labeled $\nu_e$, $\nu_\mu$ and $\nu_\tau$. The last one to be discovered was the $\tau$ neutrino in 2001 by the DONUT collaboration~\cite{Kodama2000}.
-    
-    \subsection{Mass Generating Mechanisms}
-    For a theory to account for neutrino masses its Lagrangian density must exhibit corresponding mass terms. According to \cite{zuber2011neutrino} the formalism can be summarized: The form of a mass term is given by the Dirac equation, which is produced by applying the principle of least action to a suitable Lagrangian density $\mathcal{L}$. The mass terms have to be quadratic in the fermion fields $\psi$ and must leave the Lagrangian density hermitian. Furthermore, a field $\psi$ must have a left- and right-handed component in order for the mass terms not to vanish. Two possible term forms are named after Dirac and Majorana. Whether one or a mixture of both forms correspond the neutrino's reality is an open question.
-    
-    \paragraph{Dirac Masses}
-    A Dirac mass term with mass $m_D$ split in its chiral components (Weyl spinors) $\psi_{L,R}$ has the form
-    \begin{equation}
-        \mathcal{L}_D =  -m_D \bar\psi\psi = -m_D \left(\bar\psi_L\psi_R + \bar\psi_R\psi_L \right) \fullstop
-    \end{equation}
-    Applying this to neutrinos it requires both, a left- and a right-handed Dirac neutrino. Right-handed neutrinos have not yet been observed. If they exist, they don't interact weakly and hence, are called sterile.
-    \paragraph{Majorana Masses}
-    For Majorana mass terms, one uses the CP-conjugate $\psi^C$ of a fermion spinor $\psi$. Note that if $\psi$ is left-handed, $\psi^C$ is right-handed and vise versa. One can then define a Majorana field $\phi$ and construct a corresponding mass term $\mathcal{L}_M$ with a mass $m_M$
-    \begin{equation}
-        \phi = \psi + \psi^C \qquad \mathcal{L}_M = -\frac{1}{2}m_M \bar\phi \phi \fullstop
-    \end{equation}
-    As $\phi^C=\phi$, the described Majorana particle is its own antiparticle, which due to charge conservation is only possible for neutral particles, such as a neutrino.
-    
-    \section{Neutrino Oscillations}
-    \subsection{Demonstrative Formalism}
-    According to \cite{zuber2011neutrino} a formula demonstrating neutrino oscillations can be derived:
-    If the neutrino's mass eigenstates $\ket{\nu_i}$ ($i \in \left\{1, 2, 3\right\}$) of the free Hamiltonian differ from their flavor eigenstates $\ket{\nu_\alpha}$ ($\alpha \in \left\{e,\mu,\tau\right\}$) of the weak interaction, neutrinos oscillate in flavor space. The corresponding matrix for a basis change $U$ is called Pontecorvo-Maki-Nakagawa-Sakata matrix (PMNS matrix)
-    \begin{equation}
-        \ket{\nu_\alpha} = \sum_{i} U_{\alpha i} \ket{\nu_i}
-        \fullstop
-    \end{equation}
+\section{The Standard Model of Particle Physics}
+Albeit it can not account for all known physical phenomena, within its known boundaries, the \glsentryfull{standardmodel} is a well-tested and established theory, which is evident by e.g. the extensive Review of Particle Physics of the Particle Data Group \cite{ReviewOfParticlePhysics}. This section introduces fundamental concepts of the \gls{standardmodel} in a condensed manner as its formalism offers a definition for neutrinos.
+
+The \gls{standardmodel} is a gauge quantum field theory exhibiting the gauge symmetry $\text{SU}(3)\times\text{SU}(2)\times\text{U}(1)$. As such it can be formulated using the principle of least action and a Lagrangian density $\mathcal{L}$ depending on fields and their derivatives. 
+
+
+Table~\ref{tab:SMGaugeFields} contains the \gls{standardmodel}'s corresponding gauge fields and their associated charges. The B- and W-fields mix to the observable \ce{W^+}, \ce{W^-} and \ce{Z^0} bosons as well as to the photon $\upgamma$. Table~\ref{tab:SMMatterFields} contains the \gls{standardmodel}'s matter fields and their properties.
+
+\begin{table}[tb]
+	\xcaption{Gauge field content of the Standard Model}{Gauge field content of the Standard Model.}{Hello WOrlds}
+	\centering
+	\begin{tabular}{lrl}
+		\toprule
+		symbol & gauge symmetry & associated charge \\
+		\hline
+		$g$ & SU(3) & color \\
+		$W$ & SU(2) & isospin $\vect{T}=(T_1, T_2, T_3)$ \\
+		$B$ & U(1) &  hypercharge $Y$\\
+		\bottomrule
+	\end{tabular}
+	\label{tab:SMGaugeFields}
+\end{table}
+
+
+\begin{table}[bt]
+	\caption[Matter field content of the Standard Model]{Matter field content of the Standard Model of particle physics and corresponding properties (color charge omitted).}
+	\centering
+	\begin{tabular}{llrrlll}
+		\toprule
+		\makecell[tl]{} & 
+		\makecell[tl]{symbol} & 
+		\makecell[tl]{spin} & 
+		\makecell[tl]{generations} & 
+		\makecell[tl]{isospin \\$(\abs{\vect{T}}, T_3)$} & 
+		\makecell[tl]{hypercharge \\$Y$} \\
+		\hline
+		higgs & $\phi=(\phi^+, \phi^0)^T$ & 0 & 1 & $(1/2, \pm 1/2)$ & $\pm1/2$\\
+		\hline
+		quark & $q=(u_L, d_L)^T$ & $1/2$ & 3 & $(1/2, \pm 1/2)$ & $\pm 1/3$ \\
+		antiquark & $\bar{d}_R$ & $1/2$ & 3 & $(0, 0)$ & $+1/6$ \\
+		& $\bar{u}_R$ & $1/2$ & 3 & $(0, 0)$ & $-4/3$ \\
+		\hline
+		lepton & $l=(\nu_L, l_L)^T$ & $1/2$ & 3 & $(1/2, \pm 1/2)$ & $\mp1/2$ \\
+		antilepton & $\bar{l}_R$ & $1/2$ & 3 & $(0, 0)$ & $+2$ \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:SMMatterFields}
+\end{table}
+
+The gap between fields and particles can be bridged as follows: If ``[i]n region 1 in spacetime there exists a source that sends out a `disturbance in the field', which is later absorbed by a sink in region 2 in spacetime[,] experimentalists choose to call this a particle'' ~\cite{zee2003quantum}. In this sense, Figure~\ref{fig:standardmodel} depicts the particles of the \gls{standardmodel} along with their masses and electric charge.
+
+\begin{figure}[t]
+	\begin{center}
+		\def\svgwidth{\linewidth}
+		\inputpdftex{chapter/neutrinos/fig/standardmodel}
+	\end{center}
+	\xcaption{Standard Model of particle physics}{Standard Model of particle physics.}{The fermions are framed continuous  and the bosons dotted. Among the fermions the quark sector is marked by a thick frame and the lepton sector by a thin one. (Illustration adapted from \cite{SeitzM2019})}
+	\label{fig:standardmodel}
+\end{figure}
+
+\subsection{Neutrinos in the Standard Model of Particle Physics}
+In the \gls{standardmodel} neutrinos are leptons with the following properties:~
+\begin{center}
+\begin{tabular}{ll}
+    \toprule
+    flavors & 3 $(\nu_e, \nu_\mu, \nu_\tau)$ \\
+    electric charge & 0 (neutral) \\
+    spin & $\frac{1}{2} \hbar$ (fermion) \\
+    helicity & \makecell[lt]{left-handed neutrinos \\ right-handed antineutrinos} \\
+    \bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Neutrino Flavors}
+A particle's flavor is its eigenstate with respect to the weak interaction. In the 1990s a precision measurement of the width of the $Z^0$-boson resonance at the \gls{lep} yielded a number of light neutrino flavours consistent with 3 \cite{NumberOfNeutrinos}. In this context ``light'' refers to a neutrino mass smaller than half the mass of the $Z^0$ boson. The \gls{standardmodel} incorporates these three flavors, usually labeled $\nu_e$, $\nu_\mu$ and $\nu_\tau$. The last one to be discovered was the $\tau$ neutrino in 2001 by the DONUT collaboration~\cite{Kodama2000}.
+
+\subsection{Mass Generating Mechanisms}
+For a theory to account for neutrino masses its Lagrangian density must exhibit corresponding mass terms. According to \cite{zuber2011neutrino} the formalism can be summarized: The form of a mass term is given by the Dirac equation, which is produced by applying the principle of least action to a suitable Lagrangian density $\mathcal{L}$. The mass terms have to be quadratic in the fermion fields $\psi$ and must leave the Lagrangian density hermitian. Furthermore, a field $\psi$ must have a left- and right-handed component in order for the mass terms not to vanish. Two possible term forms are named after Dirac and Majorana. Whether one or a mixture of both forms correspond the neutrino's reality is an open question.
+
+\paragraph{Dirac Masses}
+A Dirac mass term with mass $m_D$ split in its chiral components (Weyl spinors) $\psi_{L,R}$ has the form
+\begin{equation}
+    \mathcal{L}_D =  -m_D \bar\psi\psi = -m_D \left(\bar\psi_L\psi_R + \bar\psi_R\psi_L \right) \fullstop
+\end{equation}
+Applying this to neutrinos it requires both, a left- and a right-handed Dirac neutrino. Right-handed neutrinos have not yet been observed. If they exist, they don't interact weakly and hence, are called sterile.
+\paragraph{Majorana Masses}
+For Majorana mass terms, one uses the CP-conjugate $\psi^C$ of a fermion spinor $\psi$. Note that if $\psi$ is left-handed, $\psi^C$ is right-handed and vise versa. One can then define a Majorana field $\phi$ and construct a corresponding mass term $\mathcal{L}_M$ with a mass $m_M$
+\begin{equation}
+    \phi = \psi + \psi^C \qquad \mathcal{L}_M = -\frac{1}{2}m_M \bar\phi \phi \fullstop
+\end{equation}
+As $\phi^C=\phi$, the described Majorana particle is its own antiparticle, which due to charge conservation is only possible for neutral particles, such as a neutrino.
+
+\section{Neutrino Oscillations}
+\subsection{Demonstrative Formalism}
+According to \cite{zuber2011neutrino} a formula demonstrating neutrino oscillations can be derived:
+If the neutrino's mass eigenstates $\ket{\nu_i}$ ($i \in \left\{1, 2, 3\right\}$) of the free Hamiltonian differ from their flavor eigenstates $\ket{\nu_\alpha}$ ($\alpha \in \left\{e,\mu,\tau\right\}$) of the weak interaction, neutrinos oscillate in flavor space. The corresponding matrix for a basis change $U$ is called Pontecorvo-Maki-Nakagawa-Sakata matrix (PMNS matrix)
+\begin{equation}
+    \ket{\nu_\alpha} = \sum_{i} U_{\alpha i} \ket{\nu_i}
+    \fullstop
+\end{equation}
 The PMNS matrix $U$ is commonly parametrized using three angles $\theta_{12}, \theta_{23}, \theta_{13} \in [0,2\pi)$, a CP-violating phase $\delta \in [0,2\pi)$ and two Majorana phases $\alpha, \beta \in [0,2\pi)$:
-    \begin{align}
-        \label{eq:PMNSmatrix}
-        U =  
-        &\begin{pmatrix} 
-        1 & 0 & 0 \\ 
-        0 & \cos\theta_{23} & \sin\theta_{23} \\ 
-        0 & -\sin\theta_{23} & \cos\theta_{23} 
-        \end{pmatrix}
-        \begin{pmatrix} 
-        \cos\theta_{13} & 0 & \sin\theta_{13}e^{-\ii\delta} \\ 
-        0 & 1 & 0 \\ 
-        -\sin\theta_{13}e^{\ii\delta} & 0 & \cos\theta_{13} 
-        \end{pmatrix} \\ \notag
-        &\begin{pmatrix} 
-        \cos\theta_{12} & \sin\theta_{12} & 0 \\ 
-        -\sin\theta_{12} & \cos\theta_{12} & 0 \\ 
-        0 & 0 & 1 
-        \end{pmatrix}
-        \begin{pmatrix} 
-        1 & 0 & 0 \\ 
-        0 & e^{\ii\alpha} & 0 \\ 
-        0 & 0 & e^{\ii\beta} 
-        \end{pmatrix}
-        \fullstop
-    \end{align}
-    The evolution of a neutrino's flavor state on a 1-dimensional path starting at position $x=0$ at time $t=0$ with momentum $p_i$  and energy $E_i$ of its mass eigenstates $\ket{\nu_i}$ is
+\begin{align}
+    \label{eq:PMNSmatrix}
+    U =  
+    &\begin{pmatrix} 
+    1 & 0 & 0 \\ 
+    0 & \cos\theta_{23} & \sin\theta_{23} \\ 
+    0 & -\sin\theta_{23} & \cos\theta_{23} 
+    \end{pmatrix}
+    \begin{pmatrix} 
+    \cos\theta_{13} & 0 & \sin\theta_{13}e^{-\ii\delta} \\ 
+    0 & 1 & 0 \\ 
+    -\sin\theta_{13}e^{\ii\delta} & 0 & \cos\theta_{13} 
+    \end{pmatrix} \\ \notag
+    &\begin{pmatrix} 
+    \cos\theta_{12} & \sin\theta_{12} & 0 \\ 
+    -\sin\theta_{12} & \cos\theta_{12} & 0 \\ 
+    0 & 0 & 1 
+    \end{pmatrix}
+    \begin{pmatrix} 
+    1 & 0 & 0 \\ 
+    0 & e^{\ii\alpha} & 0 \\ 
+    0 & 0 & e^{\ii\beta} 
+    \end{pmatrix}
+    \fullstop
+\end{align}
+The evolution of a neutrino's flavor state on a 1-dimensional path starting at position $x=0$ at time $t=0$ with momentum $p_i$  and energy $E_i$ of its mass eigenstates $\ket{\nu_i}$ is
+\begin{equation}
+    \ket{\nu_\alpha(x,t)} = \sum_{i} U_{\alpha i} e^{-\ii (E_i t-p_ix)} \ket{\nu_i} \fullstop
+\end{equation}
+This leads to the transition amplitudes
+\begin{subequations}
+    \label{eq:nuOsciTransAmp}
     \begin{equation}
-        \ket{\nu_\alpha(x,t)} = \sum_{i} U_{\alpha i} e^{-\ii (E_i t-p_ix)} \ket{\nu_i} \fullstop
+    A(\alpha \rightarrow \beta)(t) 
+    = \braket{\nu_{\beta}}{\nu_{\alpha} (L)} 
+    = \sum_i U^*_{\beta i} U_{\alpha i} e^{-\ii (E_i t-p_ix)t}
     \end{equation}
-    This leads to the transition amplitudes
-    \begin{subequations}
-        \label{eq:nuOsciTransAmp}
-        \begin{equation}
-        A(\alpha \rightarrow \beta)(t) 
-        = \braket{\nu_{\beta}}{\nu_{\alpha} (L)} 
-        = \sum_i U^*_{\beta i} U_{\alpha i} e^{-\ii (E_i t-p_ix)t}
-        \end{equation}
-        \begin{equation}
-        A(\bar\alpha \rightarrow \bar\beta)(t) 
-        = \braket{\bar{\nu}_{\beta}}{\bar{\nu}_{\alpha} (L)} 
-        = \sum_i U_{\beta i} U^*_{\alpha i} e^{-\ii (E_i t-p_ix)t}
-        \fullstop
-        \end{equation}
-    \end{subequations}
-    If $\delta \neq 0$ ($ \Rightarrow U \neq U^*$), (\ref{eq:nuOsciTransAmp}) implies $CP$-violation.
-    
-    The following assumptions allow for a demonstrative form of the transition probability:
-    \begin{itemize}
-        \renewcommand{\labelitemi}{$\bullet$}
-        \renewcommand{\labelitemii}{$\circ$}
-        \item The neutrinos are relativistic: 
-        \begin{itemize}
-            \item Their momentum equals approximately their energy which is by far larger than their mass $p_i \approx E_i \gg m_i$. This also implies the energy can be expanded in the mass-momentum-ratio $m_i/p_i$.
-            \item They travel the distance $x=L=ct$ at the speed of light $c$.
-        \end{itemize}
-        \item All neutrino generations have approximately the same momentum $E \approx p \approx p_i$.
-        \item The $CP$-violating phase vanishes $\delta=0$.
-    \end{itemize}
-    Then, the transition probability from one flavor $\alpha$ to another $\beta$ is
     \begin{equation}
-        \begin{split}
-        P(\alpha \rightarrow \beta)(L) 
-        &= \abs{\braket{\nu_\beta}{\nu_\alpha(L)}}^2 \\
-        &= 
-        \delta_{\alpha\beta}-
-        4\sum_{i}\sum_{j>i} U_{\alpha i} U_{\alpha j} U_{\beta i} U_{\beta j} 
-        \sin^2\left( \frac{(m_i^2-m_j^2)}{4} \frac{L}{E} \right)
-        \fullstop
-        \end{split}
-        \label{eq:nuOsci}
+    A(\bar\alpha \rightarrow \bar\beta)(t) 
+    = \braket{\bar{\nu}_{\beta}}{\bar{\nu}_{\alpha} (L)} 
+    = \sum_i U_{\beta i} U^*_{\alpha i} e^{-\ii (E_i t-p_ix)t}
+    \fullstop
     \end{equation}
-    
-    Equation (\ref{eq:nuOsci}) shows oscillatory behavior if the mass of at least two flavors differ and the corresponding off-diagonal elements of the PMNS matrix $U$ are non-vanishing. Furthermore, neutrino oscillation experiments are sensitive to the difference of squared masses 
-    \begin{equation}
-        \label{eq:massSquaredDiff}
-        \Delta m^2_{ij} =  \abs{m^2_i - m^2_j} \fullstop
-    \end{equation}
-    which only yields two independent observables for three masses. Thus, these experiments can not be used to determine the absolute mass scale of neutrinos.
-    
-    \subsection{Solar Neutrino Experiments}
-    Solar neutrino experiments led to the discovery of neutrino oscillations. In the end of the 1930s Bethe, von Weizecker and Critchfield showed that the so-called pp cycle is the primary source of solar neutrinos \cite{Weiz1938, Bethe38, Bethe39}. Its initial reaction and the one with the broadest neutrino energy spectrum are
-    \begin{equation}
-        \ce{p} + \ce{p} \rightarrow \ce{^2D} + \ce{e^+} + \nu_e
-        \qquad
-        \ce{^8B} \rightarrow \ce{^8Be^*} + \ce{e^+} + \nu_e \fullstop
-        \label{eq:ppCycle}
-    \end{equation}
-    Note that only electron neutrinos are produced in the sun. Starting from the 1970s the solar neutrino flux was measured; the first time by the Homestake experiment using the inverse beta decay of \ce{^{37}Cl}. It could detect electron neutrinos with an energy threshold of \SI{813}{keV}. The flux was one third of the prediction by the standard solar model \cite{Cleveland1998}. The experiments GALLEX/GNO and SAGE confirmed the results, where the later could detect electron neutrinos with an energy threshold of \SI{233}{keV}~\cite{Kirsten1998, Altmann2005, Abdurashitov2009}. Starting from 1999 the SNO experiment measured the neutrino flux of all flavors. It used \SI{1000}{t} of heavy water \ce{D2O} to detect electron neutrinos via charged currents as well as all flavors via neutral currents and neutrino-electron scattering. The measured flux of all flavors of the \ce{^8B} neutrinos \eqref{eq:ppCycle} was in accordance with the electron neutrino flux predicted by the standard solar model \cite{Aharmim2013}. Accounting for neutrino oscillations in free space as well as matter mediated (MSW effect \cite{Wolfenstein1977, Mikheev1986}) explains the flux data. All in all, neutrino oscillations are experimentally verified and proof that neutrinos have mass.
-    
-    \subsection{Mixing Parameters and Mass Ordering}
-    \begin{figure}[t]
-        \inputpdftex[0.6\linewidth]{chapter/neutrinos/fig/mass-hierarchy}
-    	\xcaption{Mixing parameters and mass ordering}{Mixing parameters and mass ordering.}{The chart shows how the mass eigenstates $\nu_i$ are composed of the flavor eigenstates $\nu_\alpha$ in the normal and inverted mass ordering. The composition depends on the phase $\delta$. The mixing is shown for the two extreme cases $\delta = \SI{0}{\degree}$ (baseline) and $\delta = \SI{180}{\degree}$ (topline). Note that the mass splitting is not to scale. (Adapted from \cite{SeitzM2019}. Numerical values can be found in \cite{Esteban2019}.)}
-	    \label{fig:mixingParams}
-    \end{figure}
-    According to (\ref{eq:nuOsci}) the ratio $L/E$ determines the sensitivity of an experiment to the PMNS matrix $U$ (mixing parameters) and to $\Delta m^2_{ij}$ (mass ordering). $L$ can be tuned by placing the detector in a suitable distance from the neutrino source. $E$ can either be tuned by using e.g. particle accelerators as source or if the source exhibits an energy spectrum like e.g. the sun. According to \cite{zuber2011neutrino} there are four major neutrino sources that can be used to measure the mixing parameters and the mass ordering:
-    \begin{center}
-        \begin{tabular}{lll}
-        \toprule
-             source & flavors & sensitive to \\
-             \hline
-             nuclear power plants & $\bar{\nu}_e$ & $\sin\theta_{13}$ \\
-             accelerators & $\nu_e$, $\nu_\mu$, $\bar{\nu}_e$, $\bar{\nu}_\mu$ & $\sin\theta_{23}$, $\Delta m^2_{23}$ \\
-             atmosphere & $\nu_e$, $\nu_\mu$, $\bar{\nu}_e$, $\bar{\nu}_\mu$ & $\sin\theta_{23}$, $\Delta m^2_{23}$ \\
-             Sun & $\nu_{e}$ & $\sin\theta_{12}$, $\Delta m^2_{21}$ \\
-        \bottomrule
-        \end{tabular}
-    \end{center}
-    Furthermore, the MSW resonance of solar neutrinos requires $m_1 < m_2$, which allows for two possible mass orderings:
-    \begin{enumerate}
-        \item normal ordering $m_1 < m_2 < m_3$ and
-        \item inverted ordering $m_3 < m_1 < m_2$.
-    \end{enumerate}
-    A combination of recent experimental results can be found in \cite{Esteban2019}. Figure \ref{fig:mixingParams} illustrates the mixing parameters and the mass ordering. For normal ordering the best fit for the phase is $\delta=\SI{215}{\degree}$, but CP-conservation ($\delta=\SI{180}{\degree}$) can not be ruled out. Furthermore, $\Delta m^2_{21} \approx 7 \times 10^{-5} \SI{}{eV^2}$ and $\Delta m^2_{23} \approx 2 \times 10^{-3} \SI{}{eV^2}$.
-    
-    \section{Absolute Neutrino Mass Measurements}
-    \label{sec:absoluteNuMassMeasurement}
-    Measurements of the absolute neutrino mass fall into one of three categories \cite{Otten:2008zz}:
-    \begin{itemize}
-        \renewcommand{\labelitemi}{$\bullet$}
-        \item cosmology,
-        \item neutrinoless double $\upbeta$ decay or
-        \item kinematic measurements.
-    \end{itemize}
-    \paragraph{Cosmology}
-    In the early Universe neutral particles such as light neutrinos could escape from areas of high density to areas of low density. As they carry away mass, the larger the neutrino mass $m_\nu$ the stronger is the suppression of density fluctuations on small scales. In a mathematical formulation the so called power spectrum of the density contrast is examined. Corresponding data are e.g. obtained by the Sloan Digital Sky Survey (SDSS). This experiment records the sky's electromagnetic spectrum via telescope \cite{Doroshkevich2004}. Furthermore, the temperature anisotropies in the cosmic microwave background (CMB) encode information on the Universe's structure. The latest and most precise data are recorded by the PLANCK satellite \cite{Aghanim:2018}. Under the assumption that all mass states contribute with the same number density cosmological observations are to first order only sensitive to the sum of all neutrino masses $\sum_{i} m_i$. A combination of the above data sets yields \cite{Yeche:2017upn}
-    \begin{equation*}
-        \sum_i m_i < \SI{0.14}{eV} \quad (\SI{95}{\percent} \text{ C.L.}) \fullstop
-    \end{equation*}
-    
-    \paragraph{Neutrinoless Double $\boldsymbol{\upbeta}$ Decay}
-    Double $\upbeta$ decay ($2\nu\upbeta\upbeta$) is described as a nucleus of element $X(Z,A)$ with $Z$ protons and $A-Z$ neutrons that decays to a daughter isotope $Y(Z+2,A)$ via two simultaneous $\upbeta$ decays 
-    \begin{equation}
-        X(Z,A) \rightarrow Y(Z+2,A) + 2e^- + 2\bar{\nu}_e \fullstop
-    \end{equation}
-    According to \cite{zuber2011neutrino} if the neutrino is its own antiparticle, the neutrino emitted in the first decay can be absorbed in the second decay resulting in a neutrinoless double decay ($0\nu\upbeta\upbeta$). This would require the neutrino to have mass and be of Majorana type. Such a decay would manifest itself in a peak in the $\upbeta$ spectrum two neutrino masses above the endpoint of the continuum. Note that this would violate lepton number conservation. The half-life of such a decay encodes the Majorana mass of the electron neutrino as a weighted sum of all neutrino masses using the PMNS matrix $U$ \eqref{eq:PMNSmatrix}
-    \begin{equation}
-        \label{eq:majoranaMass}
-        m_{\upbeta\upbeta} = \abs{\sum_i U_{ei}^2 m_i} \fullstop
-    \end{equation}
-    Note that $U$ contains two unknown Majorana phases that might cause cancellation in (\ref{eq:majoranaMass}). This makes it difficult to compare $m_{\upbeta\upbeta}$ to masses obtained by other methods. The two most stringent upper limits on $m_{\upbeta\upbeta}$ are given as ranges by:
-    \begin{center}
-    \begin{tabular}{lr}
-        \toprule
-        experiment & \SI{90}{\percent} C.L. upper limit on $m_{\upbeta\upbeta}$ [eV]\\
-        \hline
-        GERDA \cite{Agostini2018} &  0.12–0.26 \\
-        KamLAND-Zen \cite{Gando2016} & 0.05–0.16 \\
-        \bottomrule
-    \end{tabular}
-    \end{center}
-    
-    \paragraph{Kinematic Measurements}
-    In decay processes the mass of neutrinos manifests itself in their energy spectrum or the energy spectrum of other decay products. With currently achievable energy resolutions the corresponding observable is a weighted sum of the $N$ neutrino eigenmasses where the weights are the elements of the PMNS matrix \eqref{eq:PMNSmatrix} 
-    \begin{equation}
-    \label{eq:nuMassSquared}
-        m^2_{\nu_{\alpha}} = \sum_{i}^{N}\abs{U_{\alpha i}}^2 m_i^2 \fullstop
-    \end{equation}
-    An experiment with a sufficiently high energy resolution can be sensitive to terms of the above sum \eqref{eq:nuMassSquared}. This enables the search for sterile neutrinos ($N>3$). A summary of kinematic neutrino mass experiments can be found in \cite{Otten:2008zz, SeitzM2019, zuber2011neutrino}, of which a selection is:
-    \begin{itemize}
+\end{subequations}
+If $\delta \neq 0$ ($ \Rightarrow U \neq U^*$), (\ref{eq:nuOsciTransAmp}) implies $CP$-violation.
+
+The following assumptions allow for a demonstrative form of the transition probability:
+\begin{itemize}
     \renewcommand{\labelitemi}{$\bullet$}
-        \item \textbf{Neutrinos from Supernova 1987A}\\ 
-        One would expect higher energetic neutrinos to arrive on Earth earlier than lower energetic ones, which was observed by multiple experiments. A corresponding analysis yielded an upper limit for the mass of the electron neutrino \cite{Loredo2002}
-        \begin{equation*}
-            m_{\nu_e} < \SI{5.7}{eV} \quad (\SI{95}{\percent} \text{ credible interval}) \fullstop 
-        \end{equation*}
-        \item \textbf{Muon decay}\\ 
-        At the Paul Scherrer Institute the decay of pions to muons and muon neutrinos was examined. An analysis of the momenta yielded an upper limit on the muon neutrino mass \cite{Assamagan1996}
-        \begin{equation*}
-            m_{\nu_\mu} < \SI{17}{keV} \quad (\SI{90}{\percent} \text{ C.L.}) \fullstop 
-        \end{equation*}
-        \item \textbf{Tauon decay}\\ 
-        At the \gls{lep} the decay of tauons to pions and tau neutrinos was examined. An analysis of the momenta yielded an upper limit on the tauon neutrino mass \cite{Barate:1997zg}
-        \begin{equation*}
-            m_{\nu_\tau} < \SI{18.2}{MeV} \quad (\SI{95}{\percent} \text{ C.L.}) \fullstop 
-        \end{equation*}
-        \item \textbf{$\boldsymbol{\upbeta}$ decay}\\ 
-        In $\upbeta^-$ decay
-        \begin{equation}
-            X(Z,A) \rightarrow Y(Z+1,A) + e^- + \bar{\nu}_e
-        \end{equation}
-        part of the released surplus energy generates the neutrino's mass. This leaves a signature in the $\upbeta$ spectrum. The latest two experiments investigated tritium $\upbeta$ decay in Mainz and Troitsk and yielded a combined result of \cite{Kraus2005, Aseev:2011dq, ReviewOfParticlePhysics}
-        \begin{equation*}
-            m_{\nu_e} < \SI{2}{eV} \quad (\SI{95}{\percent} \text{ C.L.}) \fullstop 
-        \end{equation*}
-        Note that KATRIN is a successor of these two experiments and aims for an even better precision of $m_{\nu_e} < \SI{0.2}{eV}$ (\SI{90}{\percent} C.L.) \cite{Angrik:2005ep}.
+    \renewcommand{\labelitemii}{$\circ$}
+    \item The neutrinos are relativistic: 
+    \begin{itemize}
+        \item Their momentum equals approximately their energy which is by far larger than their mass $p_i \approx E_i \gg m_i$. This also implies the energy can be expanded in the mass-momentum-ratio $m_i/p_i$.
+        \item They travel the distance $x=L=ct$ at the speed of light $c$.
     \end{itemize}
-    
+    \item All neutrino generations have approximately the same momentum $E \approx p \approx p_i$.
+    \item The $CP$-violating phase vanishes $\delta=0$.
+\end{itemize}
+Then, the transition probability from one flavor $\alpha$ to another $\beta$ is
+\begin{equation}
+    \begin{split}
+    P(\alpha \rightarrow \beta)(L) 
+    &= \abs{\braket{\nu_\beta}{\nu_\alpha(L)}}^2 \\
+    &= 
+    \delta_{\alpha\beta}-
+    4\sum_{i}\sum_{j>i} U_{\alpha i} U_{\alpha j} U_{\beta i} U_{\beta j} 
+    \sin^2\left( \frac{(m_i^2-m_j^2)}{4} \frac{L}{E} \right)
+    \fullstop
+    \end{split}
+    \label{eq:nuOsci}
+\end{equation}
+
+Equation (\ref{eq:nuOsci}) shows oscillatory behavior if the mass of at least two flavors differ and the corresponding off-diagonal elements of the PMNS matrix $U$ are non-vanishing. Furthermore, neutrino oscillation experiments are sensitive to the difference of squared masses 
+\begin{equation}
+    \label{eq:massSquaredDiff}
+    \Delta m^2_{ij} =  \abs{m^2_i - m^2_j} \fullstop
+\end{equation}
+which only yields two independent observables for three masses. Thus, these experiments can not be used to determine the absolute mass scale of neutrinos.
+
+\subsection{Solar Neutrino Experiments}
+Solar neutrino experiments led to the discovery of neutrino oscillations. In the end of the 1930s Bethe, von Weizecker and Critchfield showed that the so-called pp cycle is the primary source of solar neutrinos \cite{Weiz1938, Bethe38, Bethe39}. Its initial reaction and the one with the broadest neutrino energy spectrum are
+\begin{equation}
+    \ce{p} + \ce{p} \rightarrow \ce{^2D} + \ce{e^+} + \nu_e
+    \qquad
+    \ce{^8B} \rightarrow \ce{^8Be^*} + \ce{e^+} + \nu_e \fullstop
+    \label{eq:ppCycle}
+\end{equation}
+Note that only electron neutrinos are produced in the sun. Starting from the 1970s the solar neutrino flux was measured; the first time by the Homestake experiment using the inverse beta decay of \ce{^{37}Cl}. It could detect electron neutrinos with an energy threshold of \SI{813}{keV}. The flux was one third of the prediction by the standard solar model \cite{Cleveland1998}. The experiments GALLEX/GNO and SAGE confirmed the results, where the later could detect electron neutrinos with an energy threshold of \SI{233}{keV}~\cite{Kirsten1998, Altmann2005, Abdurashitov2009}. Starting from 1999 the SNO experiment measured the neutrino flux of all flavors. It used \SI{1000}{t} of heavy water \ce{D2O} to detect electron neutrinos via charged currents as well as all flavors via neutral currents and neutrino-electron scattering. The measured flux of all flavors of the \ce{^8B} neutrinos \eqref{eq:ppCycle} was in accordance with the electron neutrino flux predicted by the standard solar model \cite{Aharmim2013}. Accounting for neutrino oscillations in free space as well as matter mediated (MSW effect \cite{Wolfenstein1977, Mikheev1986}) explains the flux data. All in all, neutrino oscillations are experimentally verified and proof that neutrinos have mass.
+
+\subsection{Mixing Parameters and Mass Ordering}
+\begin{figure}[t]
+    \inputpdftex[0.6\linewidth]{chapter/neutrinos/fig/mass-hierarchy}
+   	\xcaption{Mixing parameters and mass ordering}{Mixing parameters and mass ordering.}{The chart shows how the mass eigenstates $\nu_i$ are composed of the flavor eigenstates $\nu_\alpha$ in the normal and inverted mass ordering. The composition depends on the phase $\delta$. The mixing is shown for the two extreme cases $\delta = \SI{0}{\degree}$ (baseline) and $\delta = \SI{180}{\degree}$ (topline). Note that the mass splitting is not to scale. (Adapted from \cite{SeitzM2019}. Numerical values can be found in \cite{Esteban2019}.)}
+ \label{fig:mixingParams}
+\end{figure}
+According to (\ref{eq:nuOsci}) the ratio $L/E$ determines the sensitivity of an experiment to the PMNS matrix $U$ (mixing parameters) and to $\Delta m^2_{ij}$ (mass ordering). $L$ can be tuned by placing the detector in a suitable distance from the neutrino source. $E$ can either be tuned by using e.g. particle accelerators as source or if the source exhibits an energy spectrum like e.g. the sun. According to \cite{zuber2011neutrino} there are four major neutrino sources that can be used to measure the mixing parameters and the mass ordering:
+\begin{center}
+    \begin{tabular}{lll}
+    \toprule
+         source & flavors & sensitive to \\
+         \hline
+         nuclear power plants & $\bar{\nu}_e$ & $\sin\theta_{13}$ \\
+         accelerators & $\nu_e$, $\nu_\mu$, $\bar{\nu}_e$, $\bar{\nu}_\mu$ & $\sin\theta_{23}$, $\Delta m^2_{23}$ \\
+         atmosphere & $\nu_e$, $\nu_\mu$, $\bar{\nu}_e$, $\bar{\nu}_\mu$ & $\sin\theta_{23}$, $\Delta m^2_{23}$ \\
+         Sun & $\nu_{e}$ & $\sin\theta_{12}$, $\Delta m^2_{21}$ \\
+    \bottomrule
+    \end{tabular}
+\end{center}
+Furthermore, the MSW resonance of solar neutrinos requires $m_1 < m_2$, which allows for two possible mass orderings:
+\begin{enumerate}
+    \item normal ordering $m_1 < m_2 < m_3$ and
+    \item inverted ordering $m_3 < m_1 < m_2$.
+\end{enumerate}
+A combination of recent experimental results can be found in \cite{Esteban2019}. Figure \ref{fig:mixingParams} illustrates the mixing parameters and the mass ordering. For normal ordering the best fit for the phase is $\delta=\SI{215}{\degree}$, but CP-conservation ($\delta=\SI{180}{\degree}$) can not be ruled out. Furthermore, $\Delta m^2_{21} \approx 7 \times 10^{-5} \SI{}{eV^2}$ and $\Delta m^2_{23} \approx 2 \times 10^{-3} \SI{}{eV^2}$.
+
+\section{Absolute Neutrino Mass Measurements}
+\label{sec:absoluteNuMassMeasurement}
+Measurements of the absolute neutrino mass fall into one of three categories \cite{Otten:2008zz}:
+\begin{itemize}
+    \renewcommand{\labelitemi}{$\bullet$}
+    \item cosmology,
+    \item neutrinoless double $\upbeta$ decay or
+    \item kinematic measurements.
+\end{itemize}
+\paragraph{Cosmology}
+In the early Universe neutral particles such as light neutrinos could escape from areas of high density to areas of low density. As they carry away mass, the larger the neutrino mass $m_\nu$ the stronger is the suppression of density fluctuations on small scales. In a mathematical formulation the so called power spectrum of the density contrast is examined. Corresponding data are e.g. obtained by the Sloan Digital Sky Survey (SDSS). This experiment records the sky's electromagnetic spectrum via telescope \cite{Doroshkevich2004}. Furthermore, the temperature anisotropies in the cosmic microwave background (CMB) encode information on the Universe's structure. The latest and most precise data are recorded by the PLANCK satellite \cite{Aghanim:2018}. Under the assumption that all mass states contribute with the same number density cosmological observations are to first order only sensitive to the sum of all neutrino masses $\sum_{i} m_i$. A combination of the above data sets yields \cite{Yeche:2017upn}
+\begin{equation*}
+    \sum_i m_i < \SI{0.14}{eV} \quad (\SI{95}{\percent} \text{ C.L.}) \fullstop
+\end{equation*}
+
+\paragraph{Neutrinoless Double $\boldsymbol{\upbeta}$ Decay}
+Double $\upbeta$ decay ($2\nu\upbeta\upbeta$) is described as a nucleus of element $X(Z,A)$ with $Z$ protons and $A-Z$ neutrons that decays to a daughter isotope $Y(Z+2,A)$ via two simultaneous $\upbeta$ decays 
+\begin{equation}
+    X(Z,A) \rightarrow Y(Z+2,A) + 2e^- + 2\bar{\nu}_e \fullstop
+\end{equation}
+According to \cite{zuber2011neutrino} if the neutrino is its own antiparticle, the neutrino emitted in the first decay can be absorbed in the second decay resulting in a neutrinoless double decay ($0\nu\upbeta\upbeta$). This would require the neutrino to have mass and be of Majorana type. Such a decay would manifest itself in a peak in the $\upbeta$ spectrum two neutrino masses above the endpoint of the continuum. Note that this would violate lepton number conservation. The half-life of such a decay encodes the Majorana mass of the electron neutrino as a weighted sum of all neutrino masses using the PMNS matrix $U$ \eqref{eq:PMNSmatrix}
+\begin{equation}
+    \label{eq:majoranaMass}
+    m_{\upbeta\upbeta} = \abs{\sum_i U_{ei}^2 m_i} \fullstop
+\end{equation}
+Note that $U$ contains two unknown Majorana phases that might cause cancellation in (\ref{eq:majoranaMass}). This makes it difficult to compare $m_{\upbeta\upbeta}$ to masses obtained by other methods. The two most stringent upper limits on $m_{\upbeta\upbeta}$ are given as ranges by:
+\begin{center}
+\begin{tabular}{lr}
+    \toprule
+    experiment & \SI{90}{\percent} C.L. upper limit on $m_{\upbeta\upbeta}$ [eV]\\
+    \hline
+    GERDA \cite{Agostini2018} &  0.12–0.26 \\
+    KamLAND-Zen \cite{Gando2016} & 0.05–0.16 \\
+    \bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Kinematic Measurements}
+In decay processes the mass of neutrinos manifests itself in their energy spectrum or the energy spectrum of other decay products. With currently achievable energy resolutions the corresponding observable is a weighted sum of the $N$ neutrino eigenmasses where the weights are the elements of the PMNS matrix \eqref{eq:PMNSmatrix} 
+\begin{equation}
+\label{eq:nuMassSquared}
+    m^2_{\nu_{\alpha}} = \sum_{i}^{N}\abs{U_{\alpha i}}^2 m_i^2 \fullstop
+\end{equation}
+An experiment with a sufficiently high energy resolution can be sensitive to terms of the above sum \eqref{eq:nuMassSquared}. This enables the search for sterile neutrinos ($N>3$). A summary of kinematic neutrino mass experiments can be found in \cite{Otten:2008zz, SeitzM2019, zuber2011neutrino}, of which a selection is:
+\begin{itemize}
+\renewcommand{\labelitemi}{$\bullet$}
+    \item \textbf{Neutrinos from Supernova 1987A}\\ 
+    One would expect higher energetic neutrinos to arrive on Earth earlier than lower energetic ones, which was observed by multiple experiments. A corresponding analysis yielded an upper limit for the mass of the electron neutrino \cite{Loredo2002}
+    \begin{equation*}
+        m_{\nu_e} < \SI{5.7}{eV} \quad (\SI{95}{\percent} \text{ credible interval}) \fullstop 
+    \end{equation*}
+    \item \textbf{Muon decay}\\ 
+    At the Paul Scherrer Institute the decay of pions to muons and muon neutrinos was examined. An analysis of the momenta yielded an upper limit on the muon neutrino mass \cite{Assamagan1996}
+    \begin{equation*}
+        m_{\nu_\mu} < \SI{17}{keV} \quad (\SI{90}{\percent} \text{ C.L.}) \fullstop 
+    \end{equation*}
+    \item \textbf{Tauon decay}\\ 
+    At the \gls{lep} the decay of tauons to pions and tau neutrinos was examined. An analysis of the momenta yielded an upper limit on the tauon neutrino mass \cite{Barate:1997zg}
+    \begin{equation*}
+        m_{\nu_\tau} < \SI{18.2}{MeV} \quad (\SI{95}{\percent} \text{ C.L.}) \fullstop 
+    \end{equation*}
+    \item \textbf{$\boldsymbol{\upbeta}$ decay}\\ 
+    In $\upbeta^-$ decay
+    \begin{equation}
+        X(Z,A) \rightarrow Y(Z+1,A) + e^- + \bar{\nu}_e
+    \end{equation}
+    part of the released surplus energy generates the neutrino's mass. This leaves a signature in the $\upbeta$ spectrum. The latest two experiments investigated tritium $\upbeta$ decay in Mainz and Troitsk and yielded a combined result of \cite{Kraus2005, Aseev:2011dq, ReviewOfParticlePhysics}
+    \begin{equation*}
+        m_{\nu_e} < \SI{2}{eV} \quad (\SI{95}{\percent} \text{ C.L.}) \fullstop 
+    \end{equation*}
+    Note that KATRIN is a successor of these two experiments and aims for an even better precision of $m_{\nu_e} < \SI{0.2}{eV}$ (\SI{90}{\percent} C.L.) \cite{Angrik:2005ep}.
+\end{itemize}

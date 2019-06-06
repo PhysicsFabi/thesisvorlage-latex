@@ -1,13 +1,15 @@
 \section{Energy-Dependence of the Scattering Probabilities}
+\todo{Better subcaption, introduction}
+\subsection{Modeling}
 \label{sec:energyDepOfScatProbsAppendix}
-A model for energy dependent scattering probabilities is derived. The expected amount of scatterings for a $\upbeta$ electron when travelling  through the whole \gls{wgts} volume of length $L$ filled with a gas of constant density $\rho$ is
+A model for energy dependent scattering probabilities is derived. The expected amount of scatterings for a $\upbeta$ electron when traveling  through the whole \gls{wgts} volume of length $L$ filled with a gas of constant density $\rho$ is
 \begin{equation}
     \mu(E,\thetaSource) =
     \frac{\sigma(E)\rho L}{\cos\thetaSource},
 \end{equation}
 where $E$ denotes the electron's kinetic energy; $\thetaSource$ the starting pitch angle; and $\sigma(E)$ the energy dependent scattering cross section.
 
-The volume of the \gls{wgts} is divided into $N$ slices of equal width $w=L/N$. $N$ is chosen sufficiently large that the probability for a $\upbeta$ electron to scatter twice within one slice is essentially zero. Then, for large $N$ the probability to scatter within one slice is $\mu(E,\thetaSource)/N$. The probability not to scatter within $n$ slices is
+The volume of the \gls{wgts} is divided into $N$ slices of equal width $w=L/N$. $N$ is chosen sufficiently large that the probability for a $\upbeta$ electron to scatter twice within one slice is essentially zero. Then, for large $N$ the probability to scatter within one slice is $\mu(E,\thetaSource)/N$. The probability not to scatter within $n<N$ slices is
 \begin{equation}
     p_0(E,\thetaSource,n) =
     \left(
@@ -26,7 +28,7 @@ Using the well known limit for the Euler constant, one obtains for $n=N$ and $N\
     \mathrm{e}^{-\mu(E,\thetaSource)}
     \fullstop
 \end{align}
-Assuming a constant energy loss per scattering of $\epsilon$ the probability to scatter $l$ times within $n$ slices can be expressed recursively
+Assuming a constant energy loss per scattering of $\epsilon$ the probability to scatter $l$ times within $n<N$ slices can be expressed recursively
 \begin{equation}
     p_l(E,\thetaSource,n) =
     \underbrace{
@@ -59,7 +61,8 @@ The probability to scatter $l$ times can be averaged over all starting positions
 \begin{equation}
     \label{eq:EnergyDepScatProbsAppendixZAverage}
     \bar{p}_l(E,\thetaSource) = 
-    \sum_{\nSource}^{N} p_l(E,\thetaSource,\nSource) \approx
+    \frac{1}{N}
+    \sum_{\nSource=1}^{N} p_l(E,\thetaSource,\nSource) \approx
     \frac{1}{L}
     \int_{0}^{L}
         p_l(E,\thetaSource,
@@ -74,11 +77,12 @@ Then the limit $N\rightarrow\infty$ is applied
     \lim_{N\rightarrow\infty} \bar{p}_l(\Esource,\thetaSource)
     \label{eq:energyDepScatProbsAppendix}
 \end{equation}
-$P^{\star}_l(\Esource,\thetaSource)$ denotes the probability for a $\upbeta$ electron to scatter $l$ times when travelling through the whole \gls{wgts} with a starting energy $\Esource$ and pitch angle $\thetaSource$ averaged over all starting positions. Finally, this expression has to be averaged over all starting pitch angles in order to obtain the energy dependent scattering probabilities
+$P^{\star}_l(\Esource,\thetaSource)$ denotes the probability for a $\upbeta$ electron to scatter $l$ times when traveling through the whole \gls{wgts} with a starting energy $\Esource$ and pitch angle $\thetaSource$ averaged over all starting positions. Finally, this expression has to be averaged over all starting pitch angles in order to obtain the energy dependent scattering probabilities
 \begin{equation}
     \bar{P}^{\star}_l(\Esource) = 
     \frac{1}{1-\cos\thetaMax}
     \int_0^{\thetaMax}
+    	\sin \thetaSource
         P^{\star}_l(\Esource,\thetaSource) 
         \d \thetaSource
     \fullstop

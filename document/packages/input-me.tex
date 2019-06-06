@@ -85,9 +85,7 @@
                                                 % (is used below).
 \usepackage{placeins}                           % To use \FloatBarrier
 
-\usepackage[nottoc,                             % So that the Bibliography will 
-            notlot,                             % be added to the ToC
-            notlof]{tocbibind}
+\usepackage[nottoc]{tocbibind}							% Add L. o. figures, ... to toc
 
 \usepackage{varioref}                           % Intelligent page 
                                                 % references. Provides \vref 
@@ -163,3 +161,19 @@
 \usepackage{mathtools}
 \usepackage{xargs}
 %\usepackage{layouts}
+\usepackage{listings}
+\lstdefinelanguage{XML}
+{	
+	frame=single,
+	basicstyle=\ttfamily\footnotesize,
+	morestring=[b]",
+	moredelim=[s][\bfseries\color{violet}]{<}{\ },
+	moredelim=[s][\bfseries\color{violet}]{</}{>},
+	moredelim=[l][\bfseries\color{violet}]{/>},
+	moredelim=[l][\bfseries\color{violet}]{>},
+	morecomment=[s]{<?}{?>},
+	morecomment=[s]{<!--}{-->},
+	commentstyle=\color{gray},
+	stringstyle=\color{brown},
+	identifierstyle=\color{magenta}
+}
