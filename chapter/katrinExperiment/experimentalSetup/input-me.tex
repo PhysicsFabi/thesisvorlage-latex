@@ -6,8 +6,8 @@
 \begin{figure}[t]
     \inputpdftex{\currentFigureFolder/beamline}
    	\xcaption{KATRIN beamline}{The KATRIN beamline.}{Shown are main hardware components:\\
-   	a) rear section (see section \ref{sec:rearSection})\\
-   	b) \glsentryfull{wgts} (see section \ref{sec:wgts})\\
+   	a) rear section (see section \ref{sec:katrinExpSetupRearSection})\\
+   	b) \glsentryfull{wgts} (see section \ref{sec:katrinExpSetupWGTS})\\
    	c) \glsentryfull{dps} (see section \ref{sec:diffPumpingSection})\\
    	d) \glsentryfull{cps} (see section \ref{sec:cryoPumpingSection})\\
    	e) pre spectrometer (see section \ref{sec:spectrometer})\\
@@ -16,35 +16,26 @@
    	}
  \label{fig:katrinExpSetupBeamline}
 \end{figure}
-The KATRIN experiment comprises a 70-m-long beam line depicted in figure \ref{fig:katrinExpSetupBeamline}. This section steps through the various components describing their functionality and purpose. However, given KATRIN's complexity, it can by no means be exhaustive and for a comprehensive description of the KATRIN apparatus the reader is referred to the KATRIN Design Report~\cite{Angrik:2005ep} supplemented by a more recent hardware overview.
+This section describes the KATRIN apparatus. However, given KATRIN's complexity, it can by no means be exhaustive and for a comprehensive treatise the reader is referred to the KATRIN Design Report~\cite{Angrik:2005ep} supplemented by an up-to-date hardware overview that is in the making at the time of writing this thesis\footnote{What to I put here?} \todo{Proper Footnote}.
 
- It can be divided into two sections: 
+The KATRIN experiment comprises a 70-m-long beam line depicted in figure \ref{fig:katrinExpSetupBeamline}. It can be divided into two sections: 
 \begin{enumerate}
-    \item Within the \textbf{\gls{sts}} the tritium decays and the $\upbeta$ electrons are magnetically guided to the 
-    \item \textbf{\gls{sds}} where they are filtered out according to their kinetic energy and finally counted at the detector.
+    \item Within the \textbf{\gls{sts}} the tritium decays and the $\upbeta$ electrons are magnetically guided along the beam line. Furthermore, the gas flow from the tritium source to the exit of the \gls{sts} is reduced by 14 orders of magnitude.
+    \item In the \textbf{\gls{sds}} the $\upbeta$ electrons are filtered according to their kinetic energy and finally counted at the detector.
 \end{enumerate}
+The $\upbeta$  electrons  must be guided from their point of origin to the detector. Therefore, a magnetic filed is created by superconducting coils surrounding the beam line in the \gls{sts} as well as coils around the spectrometer tank in the \gls{sds}. The field lines are parallel to the beam line and intersperse it over the range of the whole experiment. Charged particles perform cyclotron motions around the field lines and are adiabatically guided from the \gls{sts} to the detector. Adiabaticity is guaranteed by avoiding strongly varying field strengths on short distances. As $\upbeta$ electrons must not loose energy before their detection, the \gls{sds} is windowlessly connected to the \gls{sts}. However, The spectrometer must be kept practically free of any tritium flow for safety reasons and to keep the strict background requirements. Therefore, pumping systems reduce the gas inlet pressure of $\sim\SI{3e-3}{mbar}$ to the tritium partial pressure of $\sim\SI{1e-11}{mbar}$ of the spectrometer.
 
-
-
-
-Some central concepts of the source section are:
-{\par \textbf{Beam tube setup:} In the \gls{sts} the beam line is split into beam tube elements respectively stainless steel pipes. The pipes are either connected directly or by functional elements such as pump ports and valves.}
-
-{\par \textbf{Magnetic guidance of charged particles:} Superconducting coils surrounding the beam line in the \gls{sts} as well as coils around the spectrometer tank in the \gls{sds} create a magnetic field. The field lines are approximately parallel to the beam line and intersperse it over the range of the whole experiment. Charged particles perform cyclotron motions around the field lines and are adiabatically guided from the \gls{sts} to the detector. Adiabaticity is guaranteed by avoiding strongly varying field strengths on short distances.}
-
-{\par \textbf{Temperature:} Different parts and layers of the source section are operated at specific temperatures for several reasons such as establishing super-conductivity for the coils, stable gas dynamics and gas flow reduction. Several cooling systems based on liquid helium, neon, nitrogen and argon are installed. Additionally, in the \gls{sts}, the beam tube, the magnets and the hull are separated by insulation vacuums as well as heat shields of liquid nitrogen and neon.}
-
-{\par \textbf{Gas flow:} The spectrometer must be kept practically free of any tritium flow for safety and background reasons. Nonetheless, to allow an undisturbed passage of the $\upbeta$ electrons, the spectrometer is windowlessly connected to the source section. Hence, differential pumping sections are installed that reduce the inlet pressure of $\sim\SI{3e-3}{mbar}$ to the tritium partial pressure of the spectrometer of $\sim\SI{1e-11}{mbar}$.}
+The following sections step through the various components along the KATRIN beam line describing their functionality and purpose.
 
 \subsection{Windowless Gaseous Tritium Source}
-\label{sec:wgts}%
+\label{sec:katrinExpSetupWGTS}
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{\currentFigureFolder/wgts.png}
     \xcaption{KATRIN \glsentryfull{wgts}}{The \glsentryfull{wgts}.}{Shown are the hull and a sketch of the beam tube. Indicated are the molecular pumps, the design temperatures for tritium operation, the maximum magnetic field strengths and a color gradient depicting the decreasing gas density from the center to the sides. (From \cite{Harms2015})}
-    \label{fig:wgts}
+    \label{fig:katrinExpSetupWGTS}
 \end{figure}%
-The \gls{wgts} is a \SI{16}{m}-long, \SI{1.5}{m}-wide and \SI{4}{m}-high cryostat. It is depicted in figure \ref{fig:wgts} and a detailed description can e.g. be found in \cite{Grohman2008}.
+The \gls{wgts} is a 16-m-long, 1.5-m-wide and 4-m-high cryostat. It is depicted in figure \ref{fig:katrinExpSetupWGTS} and a detailed description can e.\,g.~be found in \cite{Grohman2008}.
 {\par \textbf{The inner loop:} The molecular tritium (\ce{T2}) is injected centrally in the \gls{wgts}'s \SI{90}{mm}-wide beam tube where it decays. The design gas column density is 
 \begin{equation}
     \label{eq:columnDensity}
@@ -73,7 +64,7 @@ In order to adiabatically guide the $\upbeta$ electrons to the spectrometer sect
 The stability of the column density \eqref{eq:columnDensity} must be on the \SI{0.1}{\percent} level. This requires stable parameters like temperature $T$ and pressure $p$. On one hand, the higher the temperature the less stable the system. Furthermore, thermal motion smears the energy spectrum of the $\upbeta$ electrons (Doppler effect). On the other hand, at low temperatures the gas molecules cluster. $T=\SI{30}{K}$ is chosen as a compromise and established by a two-phase neon cooling system. For calibration purposes it is also possible to operate the \gls{wgts} with krypton instead of tritium. This requires a beam tube temperature of $T=100K$ in order for the krypton not to freeze. In this operational mode the neon has to be exchanged for argon that provides a suitable vapor pressure.}
 
 \subsection{Rear Section}
-\label{sec:rearSection}
+\label{sec:katrinExpSetupRearSection}
 \begin{figure}[t]
     \inputpdftex{\currentFigureFolder/rear-section}
    	\xcaption{KATRIN rear section}{The rear section}{terminates the KATRIN beam line and houses several monitoring and calibration devices. (Adapted from \cite{SeitzM2019})}
