@@ -2,68 +2,33 @@
 \input{document/settings.tex}
 \input{include/input-me.tex}
 
-\begin{document}
+\begin{document}	
     \FrontMatter
 
     \input{document/titlepage}
     \input{document/preamble}
     \input{chapter/introduction/input-me.tex}
     \tableofcontents
-    %\begingroup \let\clearpage\relax%no new pages for list of figures...
     \listoffigures
     \listoftables
-    %\endgroup
     \cleardoublepage
 
     \MainMatter
     
-    \input{chapter/neutrinos/input-me.tex}
-    \input{chapter/katrin/input-me.tex}
+    \input{chapter/neutrinoPhysics/input-me.tex}
+    \input{chapter/katrinExperiment/input-me.tex}
     \input{chapter/statisticalMethods/input-me.tex}
     \input{chapter/energyDependentCrossSec/input-me.tex}
-    
-    
-    \chapter{(Theoretical Corrections to the \texorpdfstring{$\upbeta$}{Beta} Decay Spectrum)}
-    \section{Motivation}
-    What are theoretical corrections?
-    
-    \section{Application to Data}
-    What is the effect on the parameters of interest? How can it be explained?  
-    
-    \chapter{(Energy Loss Normalization on First Tritium)}
-    
-    
-    
-    \chapter{Studies using the Preliminary KATRIN Energy Loss Model}
-    \section{The Preliminary KATRIN Energy Loss Model}
-     Which systematic effects were considered? What are the quantified uncertainties on them and where do these numbers come from? Why this selection?
-    \section{Neutrino Mass Sensitivity}
-    \subsection{Motivation}
-    Why combining systematics? What was possible in the scope of this thesis? What does this thesis try to show?
-    \subsection{Methodology}
-    What is the sensitivity on the parameters of interest? What is the z score and shrinkage for all parameters?
-    \subsection{Model Configuration}
-    Which model configuration (MTD, Slicing, Eloss-Model, FSD Binning, ...) was chosen and why?
-    \subsection{Results}
-
-    \section{Application to Data}   
-    \chapter{Conclusions}
+    \input{chapter/sensitivityStudyWithPreliminaryKatrinElossModel/input-me.tex}
+    \input{chapter/conclusionAndOutlook/input-me.tex}
 
     \Appendix
     \chapter*{\appendixname} \addcontentsline{toc}{chapter}{\appendixname}
-    \input{chapter/statisticalMethods/appendix/input-me.tex}
     \input{chapter/energyDependentCrossSec/appendix/input-me.tex}
-    
-    
-    
-    \section{First Tritium Data}
-    What is First Tritium? Which data was selected?
+    \input{chapter/sensitivityStudyWithPreliminaryKatrinElossModel/statisticalPrerequisites/appendix/input-me.tex}
     
     \glsaddall
     \printglossary[type=\acronymtype]
     \TheBibliography
     \printbibliography
-    % \nocite{*} or maybe \nocite{Kon64,And59} for specific entries
-    %\nocite{*}
-    %\bibliographystyle{babalpha}
 \end{document}

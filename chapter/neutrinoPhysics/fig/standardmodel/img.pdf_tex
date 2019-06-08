@@ -1,0 +1,135 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'img.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{340.15748031bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.69166667)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{img.pdf}}%
+    \put(0.12788193,0.60060414){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\Large{\textbf{u}}\end{tabular}}}}%
+    \put(0.29398146,0.60060414){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\Large{\textbf{c}}\end{tabular}}}}%
+    \put(0.46008098,0.60060414){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\Large{\textbf{t}}\end{tabular}}}}%
+    \put(0.62177079,0.43244675){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\Large{$\mathbf{\upgamma}$}\end{tabular}}}}%
+    \put(0.12788193,0.43450462){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\Large{\textbf{d}}\end{tabular}}}}%
+    \put(0.29398146,0.43450462){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\Large{\textbf{s}}\end{tabular}}}}%
+    \put(0.46008098,0.43450462){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\Large{\textbf{b}}\end{tabular}}}}%
+    \put(0.61736106,0.26605324){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\Large{$\mathbf{Z}^0$}\end{tabular}}}}%
+    \put(0.12788193,0.26840509){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\Large{\textbf{e}}\end{tabular}}}}%
+    \put(0.29398146,0.26840509){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\Large{$\mathbf{\upmu}$}\end{tabular}}}}%
+    \put(0.46008098,0.26840509){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\Large{$\mathbf{\uptau}$}\end{tabular}}}}%
+    \put(0.61265736,0.09995371){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\Large{$\mathbf{W^{\pm}}$}\end{tabular}}}}%
+    \put(0.62177079,0.59825229){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\Large{\textbf{g}}\end{tabular}}}}%
+    \put(0.45567126,0.10230557){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\Large{$\mathbf{\upnu_{\uptau}}$}\end{tabular}}}}%
+    \put(0.28516202,0.10230557){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\Large{$\mathbf{\upnu_{\upmu}}$}\end{tabular}}}}%
+    \put(0.11906249,0.10230557){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\Large{$\mathbf{\upnu_{\mathrm{e}}}$}\end{tabular}}}}%
+    \put(0.78427428,0.10158109){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\Large{\textbf{H}}\end{tabular}}}}%
+    \put(0.08805443,0.63626231){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{2.2\,MeV}\end{tabular}}}}%
+    \put(0.41972435,0.63626231){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{173.0\,GeV}\end{tabular}}}}%
+    \put(0.25457045,0.63702511){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{1.3\,GeV}\end{tabular}}}}%
+    \put(0.42028755,0.47066419){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{4.2\,GeV}\end{tabular}}}}%
+    \put(0.25355714,0.47105923){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{95\,MeV}\end{tabular}}}}%
+    \put(0.089141,0.47074228){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{4.7\,MeV}\end{tabular}}}}%
+    \put(0.58472618,0.63716536){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{0}\end{tabular}}}}%
+    \put(0.58450821,0.47127125){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{0}\end{tabular}}}}%
+    \put(0.58361119,0.3058962){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{91.2\,GeV}\end{tabular}}}}%
+    \put(0.58363286,0.14087642){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{80.4\,GeV}\end{tabular}}}}%
+    \put(0.75019984,0.14112648){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{125.2\,GeV}\end{tabular}}}}%
+    \put(0.5852142,0.67648581){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l} \end{tabular}}}}%
+    \put(0.41866021,0.30537828){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{1.8\,GeV}\end{tabular}}}}%
+    \put(0.25331909,0.30545436){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{105.7\,MeV}\end{tabular}}}}%
+    \put(0.08862943,0.30537843){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{511\,keV}\end{tabular}}}}%
+    \put(0.41973465,0.14020305){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{0}\end{tabular}}}}%
+    \put(0.25287227,0.14064876){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{0}\end{tabular}}}}%
+    \put(0.08901037,0.13996376){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{0}\end{tabular}}}}%
+    \put(0.58453835,0.04638622){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{$\pm$1}\end{tabular}}}}%
+    \put(0.42250228,0.04394508){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{0}\end{tabular}}}}%
+    \put(0.25471918,0.0447587){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{0}\end{tabular}}}}%
+    \put(0.0878568,0.04512675){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{0}\end{tabular}}}}%
+    \put(0.58317495,0.21167198){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{0}\end{tabular}}}}%
+    \put(0.5852395,0.3777715){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{0}\end{tabular}}}}%
+    \put(0.4223681,0.2124856){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{-1}\end{tabular}}}}%
+    \put(0.25702596,0.21167198){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{-1}\end{tabular}}}}%
+    \put(0.08740557,0.21167198){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{-1}\end{tabular}}}}%
+    \put(0.75149477,0.04610716){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{0}\end{tabular}}}}%
+    \put(0.58274216,0.54468465){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{0}\end{tabular}}}}%
+    \put(0.42299134,0.54631188){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{2/3}\end{tabular}}}}%
+    \put(0.2552082,0.54631188){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{2/3}\end{tabular}}}}%
+    \put(0.08955444,0.5446845){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{2/3}\end{tabular}}}}%
+    \put(0.42179675,0.37695774){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{-1/3}\end{tabular}}}}%
+    \put(0.2547494,0.37777136){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{-1/3}\end{tabular}}}}%
+    \put(0.0903551,0.37939874){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\tiny{-1/3}\end{tabular}}}}%
+    \put(0.10058776,0.24168752){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{Electron}\end{tabular}}}}%
+    \put(0.60269716,0.5742872){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{Gluon}\end{tabular}}}}%
+    \put(0.4250439,0.57505){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{Top quark}\end{tabular}}}}%
+    \put(0.2706087,0.56258364){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{\shortstack{Charm \\ quark}}\end{tabular}}}}%
+    \put(0.09822214,0.5758128){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{Up quark}\end{tabular}}}}%
+    \put(0.60269709,0.40892263){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{Photon}\end{tabular}}}}%
+    \put(0.43733252,0.39569346){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{\shortstack{Bottom \\ quark}}\end{tabular}}}}%
+    \put(0.26976309,0.39569346){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{\shortstack{Strange \\ quark}}\end{tabular}}}}%
+    \put(0.08455476,0.40892263){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{Down quark}\end{tabular}}}}%
+    \put(0.59888638,0.24168752){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{Z boson}\end{tabular}}}}%
+    \put(0.44507759,0.24092471){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{Tauon}\end{tabular}}}}%
+    \put(0.27745539,0.24174034){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{Muon}\end{tabular}}}}%
+    \put(0.77688031,0.05563256){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{\shortstack{Higgs \\ boson}}\end{tabular}}}}%
+    \put(0.59651996,0.07462982){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{W boson}\end{tabular}}}}%
+    \put(0.43878351,0.0560609){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{\shortstack{Tauon \\ neutrino}}\end{tabular}}}}%
+    \put(0.27159948,0.05576865){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{\shortstack{Muon \\neutrino}}\end{tabular}}}}%
+    \put(0.10406003,0.0552559){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{\shortstack{Electron \\ neutrino}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{img.pdf}}%
+    \put(0.73813756,0.63670343){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{Mass}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{img.pdf}}%
+    \put(0.73742744,0.59725608){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{Symbol}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{img.pdf}}%
+    \put(0.73730162,0.57257413){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{Name}\end{tabular}}}}%
+    \put(0.73700879,0.5300862){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\tiny{\shortstack{Electric \\ charge}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{img.pdf}}%
+  \end{picture}%
+\endgroup%

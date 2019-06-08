@@ -1,0 +1,29 @@
+\usepackage[backend=biber,style=alphabetic,giveninits=true]{biblatex}
+\DeclareCaseLangs{%     
+	american,british,canadian,english,australian,newzealand,USenglish,UKenglish}
+\DeclareFieldFormat{titlecase}{\MakeTitleCase{#1}}
+
+\AtEveryBibitem{%
+	\clearlist{language}%
+}
+
+\newrobustcmd{\MakeTitleCase}[1]{%
+	\ifthenelse{\ifcurrentfield{booktitle}\OR\ifcurrentfield{booksubtitle}%
+		\OR\ifcurrentfield{maintitle}\OR\ifcurrentfield{mainsubtitle}%
+		\OR\ifcurrentfield{journaltitle}\OR\ifcurrentfield{journalsubtitle}%
+		\OR\ifcurrentfield{issuetitle}\OR\ifcurrentfield{issuesubtitle}%
+		\OR\ifentrytype{book}\OR\ifentrytype{mvbook}\OR\ifentrytype{bookinbook}%
+		\OR\ifentrytype{booklet}\OR\ifentrytype{suppbook}%
+		\OR\ifentrytype{collection}\OR\ifentrytype{mvcollection}%
+		\OR\ifentrytype{suppcollection}\OR\ifentrytype{manual}%
+		\OR\ifentrytype{periodical}\OR\ifentrytype{suppperiodical}%
+		\OR\ifentrytype{proceedings}\OR\ifentrytype{mvproceedings}%
+		\OR\ifentrytype{reference}\OR\ifentrytype{mvreference}%
+		\OR\ifentrytype{report}}
+	{#1}
+	{\MakeSentenceCase*{#1}}}
+
+\addbibresource{lit/lit.bib}
+\addbibresource{chapter/neutrinoPhysics/lit.bib}
+\addbibresource{chapter/katrinExperiment/experimentalSetup/lit.bib}
+\addbibresource{chapter/energyDependentCrossSec/lit.bib}

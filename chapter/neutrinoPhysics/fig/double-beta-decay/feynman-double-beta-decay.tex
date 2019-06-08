@@ -1,0 +1,28 @@
+% !TeX program = lualatex
+\documentclass[20pt]{standalone}
+\usepackage{feynman}
+\usepackage{upgreek}
+\begin{document}
+\newcommand{\scaleFactor}{2.}
+\begin{feynman} 
+	\electroweak[]{8.00, 5.00}{9.00, 6.00}
+	\fermion[]{4.00, 4.00}{8.00, 5.00}
+	\fermion[]{8.00, 9.00}{12.00, 10.00}
+	\fermion[]{8.00, 5.00}{12.00, 4.00}
+	\fermion[]{9.00, 8.00}{12.00, 8.00}
+	\fermion[]{9.00, 6.00}{12.00, 6.00}
+	\electroweak[]{8.00, 9.00}{9.00, 8.00}
+	\fermion[]{9.00, 6.00}{9.00, 7.00}
+	\fermion[]{9.00, 8.00}{9.00, 7.00}
+	\fermion[]{4.00, 10.00}{8.00, 9.00}
+	\text{12.70,6.0}{$\mathrm{\scalebox{\scaleFactor}{e}}^{\scalebox{\scaleFactor}{-}}$}
+	\text{12.70,8.00}{$\mathrm{\scalebox{\scaleFactor}{e}}^{\scalebox{\scaleFactor}{-}}$}
+	\text{12.70,10.00}{$\mathrm{\scalebox{\scaleFactor}{u}}$}
+	\text{12.70,3.90}{$\mathrm{\scalebox{\scaleFactor}{u}}$}
+	\text{3.75,4.00}{$\mathrm{\scalebox{\scaleFactor}{d}}$}
+	\text{3.75,10.00}{$\mathrm{\scalebox{\scaleFactor}{d}}$}
+	\text{7.80,5.80}{$\mathrm{\scalebox{\scaleFactor}{W}}^{\scalebox{\scaleFactor}{-}}$}
+	\text{7.90,8.20}{$\mathrm{\scalebox{\scaleFactor}{W}}^{\scalebox{\scaleFactor}{-}}$}
+	\text{9.40,6.90}{$\scalebox{\scaleFactor}{\upnu}$}
+\end{feynman}
+\end{document}
