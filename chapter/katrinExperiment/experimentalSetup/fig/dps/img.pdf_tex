@@ -58,7 +58,12 @@
     \put(0.05230769,0.5061938){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}WGTS\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{img.pdf}}%
     \put(0.41138093,0.01435903){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}outer loop\end{tabular}}}}%
-    \put(0.41353633,0.54153849){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}pump ports\end{tabular}}}}%
+    \put(0.42235578,0.54153849){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}pump ports\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{img.pdf}}%
+    \put(0.0812713,0.31780828){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}M1\end{tabular}}}}%
+    \put(0.26783517,0.3165301){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}M2\end{tabular}}}}%
+    \put(0.44690574,0.31774979){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}M3\end{tabular}}}}%
+    \put(0.62752272,0.31826502){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}M4\end{tabular}}}}%
+    \put(0.81519394,0.31826502){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}M5\end{tabular}}}}%
   \end{picture}%
 \endgroup%

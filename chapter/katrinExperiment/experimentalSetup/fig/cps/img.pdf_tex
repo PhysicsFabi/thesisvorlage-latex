@@ -72,5 +72,12 @@
     \put(0.01694891,0.2962382){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}LN$_2$ shield\end{tabular}}}}%
     \put(-0.00031678,0.39043414){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\shortstack{LHe reservoir }\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=9]{img.pdf}}%
+    \put(0.14522711,0.15513026){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}M1\end{tabular}}}}%
+    \put(0.20705986,0.1822319){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}M2\end{tabular}}}}%
+    \put(0.2831303,0.21570689){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}M3\end{tabular}}}}%
+    \put(0.3497447,0.26429621){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}M4\end{tabular}}}}%
+    \put(0.38814596,0.29407679){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}M5\end{tabular}}}}%
+    \put(0.4312494,0.32072271){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}M6\end{tabular}}}}%
+    \put(0.49394531,0.35598907){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}M7\end{tabular}}}}%
   \end{picture}%
 \endgroup%

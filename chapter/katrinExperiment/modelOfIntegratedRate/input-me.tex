@@ -1,6 +1,5 @@
 \def\currentRootFolder{chapter/katrinExperiment/modelOfIntegratedRate}
 \def\currentFigureFolder{\currentRootFolder/fig}
-\input{\currentRootFolder/symbols.tex}
 \input{\currentRootFolder/glossaries.tex}
 
 \section{THIS SECTION IS NOT YET STRUCTURED! The Integrated \texorpdfstring{$\upbeta$}{Beta}-Decay Spectrum Measured by KATRIN}
@@ -188,18 +187,18 @@ The Poisson distribution is formed for the expected scattering count $\mu^j$ \eq
 \subsection{\glsentryshort{mace} Principle and Transmission Function}
 \label{sec:mace}
 \begin{figure}[t]
-        \inputpdftex{\currentFigureFolder/mace}
-    	\xcaption{Scheme of the KATRIN main spectrometer and the \glsentryshort{mace} filter principle.}{
-    	Schemeof the KATRIN main spectrometer and the \glsentryfull{mace} filter principle.}{
-    	 The {KATRIN} design magnetic field settings are
-    	$\Bps=\SI{4.5}{T}$, 
-    	$\Bsource=\SI{3.6}{T}$, 
-    	$\Bmax=\SI{6.0}{T}$, 
-    	$B_\mathrm{D}=\SI{3.6}{T}$, 
-    	$\Bana\approx\SI{3e-4}{T}$. $\Vec{E}$ denotes the magnetic field regulated by the retarding potential $U$ that reaches its maximum $U_\mathrm{a} = U$ at the analyzing plane. (Adapted from \cite{SeitzM2019})
-    	}
-	    \label{fig:mace}
-    \end{figure}
+	\inputpdftex{\currentFigureFolder/mace}
+	\xcaption{Scheme of the KATRIN main spectrometer and the \glsentryshort{mace} filter principle.}{
+		Scheme of the KATRIN main spectrometer and the \glsentryfull{mace} filter principle.}{
+		The {KATRIN} design magnetic field settings are
+		$\Bps=\SI{4.5}{T}$, 
+		$\Bsource=\SI{3.6}{T}$, 
+		$\Bmax=\SI{6.0}{T}$, 
+		$B_\mathrm{D}=\SI{3.6}{T}$, 
+		$\Bana\approx\SI{3e-4}{T}$. $\Vec{E}$ denotes the magnetic field regulated by the retarding potential $U$ that reaches its maximum $U_\mathrm{a} = U$ at the analyzing plane. (Adapted from \cite{SeitzM2019})
+	}
+	\label{fig:mace}
+\end{figure}
 
 The spectrometers of KATRIN follow the \glsentryfull{mace} principle. Figure \ref{fig:mace} shows a corresponding sketch. The main spectrometer is a vacuum vessel with a downstream magnet of strength $\Bps$ and an upstream magnet of strength $\Bpinch$ making electrons form a magnetic flux tube. In the case of KATRIN the fluxtube begins in the \gls{sts} with a magnetic field strength of $\Bsource$. In other words, the spectroscopic properties are not solely determined by the spectrometer vessel, but also by the \gls{sts}. The minimum magnetic field strength $\Bmin = \Bana$ is reached at the so-called analyzing plane in the vessel center. Electrons entering the vessel perform cyclotron motions around the magnetic field lines. Their total kinetic energy $\Esource$ is split into a longitudinal component $E_\parallel$ along the beam axis and a transverse component $E_\bot$
 \begin{equation}
