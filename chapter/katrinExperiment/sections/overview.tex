@@ -1,0 +1,25 @@
+\section{Overview}
+\label{sec:katrinExpSetupOverview}
+\begin{figure}[t]
+	\inputpdftex{\currentFigureFolder/beamline}
+	\xcaption{KATRIN beamline}{The KATRIN beamline.}{Shown are main hardware components:\\
+		a) rear section (see section \ref{sec:katrinExpSetupRearSection})\\
+		b) \glsentryfull{wgts} (see section \ref{sec:katrinExpSetupWGTS})\\
+		c) \glsentryfull{dps} (see section \ref{sec:katrinExpSetupDiffPumpingSection})\\
+		d) \glsentryfull{cps} (see section \ref{sec:katrinExpSetupCryoPumpingSection})\\
+		e) pre spectrometer (see section \ref{sec:katrinExpSetupSpectrometer})\\
+		f) main spectrometer (see section \ref{sec:katrinExpSetupSpectrometer})\\
+		g) detector (see section \ref{sec:katrinExpSetupDetector})
+	}
+	\label{fig:katrinExpSetupBeamline}
+\end{figure}
+The KATRIN experiment comprises a 70-m-long beam line depicted in figure \ref{fig:katrinExpSetupBeamline}. It can be divided into two sections: 
+\begin{enumerate}
+	\item Within the \textbf{\gls{sts}} the tritium decays and the $\upbeta$ electrons are magnetically guided along the beam line. Furthermore, the gas flow from the tritium source to the exit of the \gls{sts} is reduced by 14 orders of magnitude.
+	\item In the \textbf{\gls{sds}} the $\upbeta$ electrons are filtered according to their kinetic energy and finally counted at the detector.
+\end{enumerate}
+The $\upbeta$ electrons must be guided from their point of origin to the detector. Therefore, a magnetic filed is created by superconducting coils surrounding the beam line in the \gls{sts} as well as coils around the spectrometer tank in the \gls{sds}. The field lines are parallel to the beam line and intersperse it over the range of the whole experiment. The volume that is mapped onto the detector by this mechanism is called the flux tube. Within the flux tube, charged particles perform cyclotron motions around the field lines and are adiabatically guided from the \gls{sts} to the detector. Adiabaticity is guaranteed by avoiding strongly varying field strengths on short distances. 
+
+As $\upbeta$ electrons must not loose energy before their detection, the \gls{sds} is windowlessly connected to the \gls{sts}. However, the spectrometer must be kept practically free of any tritium flow for safety reasons and to keep the strict background requirements. Therefore, pumping systems reduce the gas inlet pressure of $\sim\SI{3e-3}{mbar}$ to the tritium partial pressure of $\sim\SI{1e-11}{mbar}$ of the spectrometer.
+
+The following sections step through the various components along the KATRIN beam line describing their functionality and purpose.

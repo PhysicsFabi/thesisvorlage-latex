@@ -1,0 +1,33 @@
+\def\currentRootFolder{chapter/modelOfIntegratedRate/neutrinoMassMeasurement}
+\def\currentFigureFolder{\currentRootFolder/fig}
+\input{\currentRootFolder/symbols.tex}
+\input{\currentRootFolder/glossaries.tex}
+
+\section{A KATRIN Neutrino Mass Measurement}
+\label{sec:katrinExpNuMassMeasurement}
+\todo{Introduction}
+The predicted counts for a retarding energy of $qU$ when measuring a duration $t(qU)$ are
+\begin{equation}
+\label{eq:intSpecModelCountsFinal}
+\bar{N}(qU) = t(qU) \cdot \detEff \cdot \left(
+\As \cdot
+\sum_{j}
+N_T^j \cdot
+\int_{qU}^{E_0} 
+\left(\frac{\d \Gamma(\Esource)}{ \d \Esource}\right) \cdot 
+\bar{R}^j(\Esource, qU) 
+\d \Esource +
+\Rbg
+\right)
+\fullstop
+\end{equation}
+Here, $\As=1$ is a normalization factor, $\detEff \in [0,1]$ is the detector efficiency \todo{reference KATRIN chapter}, the sum goes over all source slices with label $j$, $N_T^j$ is the number of tritium molecules in the $j$th source slice, $\left(\d \Gamma(\Esource) / \d \Esource \right)$ is the differential rate from \eqref{eq:intSpecModelDiffSpec}, $\bar{R}^j(\Esource, qU)$ is the response function from \eqref{eq:} and $\Rbg$ is the rate of background events.
+
+KATRIN measures electron counts as described in \eqref{eq:countsSCCFinal} at a set of retarding energies ${qU_i}$. How much measurement time $t(qU_i)$ is attributed to a certain retarding energy is called a \gls{mtd}. The \gls{mtd} influences the experiment's sensitivity to the neutrino mass. An optimal \gls{mtd} balances the following aspects:
+\begin{enumerate}
+	\item Some measurement time has to be attributed to retarding energies beyond the endpoint of the spectrum to determine the background rate. The optimal duration depends on the background rate.
+	\item The shape of the integral tritium $\upbeta$ spectrum depends the strongest on the neutrino mass near its endpoint $E_0$ \eqref{eq:endpoint}. \todo{Plot!}
+	\item Measurements deeper into the spectrum increase the count rate and hence, lower the statistical uncertainty due to Poisson statistics.
+	\item The theoretical description of the integral tritium $\upbeta$ spectrum is optimized for the endpoint region. Deeper scans introduce modeling uncertainties.
+\end{enumerate}
+The KATRIN Design Report \cite{Angrik:2005ep} suggests 5 \gls{mtd}s for different measurement ranges $[E_0-\alpha\;\SI{}{eV}, E_0 + \SI{5}{eV}]$ with $\alpha \in \{20, 25, 30, 40, 50\}$ and the conclusion that $\alpha=30$ yields the best sensitivity to the neutrino mass. Furthermore, searches for sterile neutrinos at the keV-scale would require deeper scans~\cite{Kleesiek2014}. Several measurement campaigns were already conducted. The \gls{ft} commissioning campaign successfully proved the apparatus functioning. The corresponding \gls{mtd} covered a range starting at $\sim E_0-\SI{1.6}{keV}$. The \gls{knm1} campaign is evaluated during the writing of this thesis. It set out to establish an unprecedented limit on the neutrino mass by $\upbeta$-decay measurements. Its \gls{mtd} starts at $\sim E_0-\SI{90}{eV}$.

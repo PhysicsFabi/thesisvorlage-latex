@@ -65,7 +65,7 @@ Note that in other works $C_2=2.4036$ \cite{Liu1987} and $C_2=1.53$ \cite{Gerhar
 
 \begin{table}[t]
     \centering
-    \xcaption{Energy-dependence of the inelastic scattering cross section}{Energy-dependence of the inelastic scattering cross section.}{Listed are important values with reference to KATRIN. Except for the measured value, they are obtained using \eqref{eq:crossSecLiu}. The values are given relative to an assumed endpoint of the measured spectrum $\Eeff=\SI{18575}{eV}$.}
+    \xcaption{Inelastic cross section for electrons scattering from molecular hydrogen isotopologues for different incident energies}{Inelastic cross section for electrons scattering from molecular hydrogen isotopologues for different incident energies.}{Listed are important values with reference to KATRIN. Except for the measured value, they are obtained using \eqref{eq:crossSecLiu}. The values are given relative to an assumed endpoint of the measured spectrum $\Eeff=\SI{18575}{eV}$.}
     \begin{tabular}{lll}
         \toprule
          \makecell[tl]{kin. energy} & 
@@ -125,7 +125,7 @@ The motivation to implement an energy dependent cross section into the \gls{ssc}
 \end{table}
 \begin{figure}[th]
 \includegraphics[width=\textwidth]{\currentFigureFolder/scatProbs123.pdf}
-        \xcaption{Scattering probabilities}{Scattering probabilities.}{Shown are from top to bottom the probability for no, 1-fold and 2-fold scattering averaged over all starting positions and starting pitch angles of $\upbeta$ electrons. Depending on the required accuracy, for 1-fold and 2-fold scattering the Poisson model does not hold. The markers show an extended model as described in the text. Its numerical evaluation suffers from a one-sided uncertainty (of $\sim10^{-5}$ for 1-fold and $\sim10^{-3}$ for 2-fold scattering) depicted as uncertainty bars. The inset shows an energy span around the endpoint of the tritium $\upbeta$ spectrum. The full energy range matches the measurement interval of the \glsentryfull{ft} campaign.}
+        \xcaption{Energy-dependent probability of electron scattering within the \gls{wgts}}{Energy-dependent probability of electron scattering within the \gls{wgts}.}{Shown are from top to bottom the probability for no, 1-fold and 2-fold scattering averaged over all starting positions and starting pitch angles of $\upbeta$ electrons. Depending on the required accuracy, for 1-fold and 2-fold scattering the Poisson model does not hold. The markers show an extended model as described in the text. Its numerical evaluation suffers from a one-sided uncertainty (of $\sim10^{-5}$ for 1-fold and $\sim10^{-3}$ for 2-fold scattering) depicted as uncertainty bars. The inset shows an energy span around the endpoint of the tritium $\upbeta$ spectrum. The full energy range matches the measurement interval of the \glsentryfull{ft} campaign.}
         \label{fig:energyDependentScatProbs}
 \end{figure}
 The energy-dependence of the scattering cross section enters into the calculation of the scattering probabilities \eqref{eq:scatProbs}. In the derivation the dependence on the starting energy $\Esource$ was neglected. Instead an average starting energy and hence, an average scattering cross section $\sigma(\SI{18564.4}{eV})=\SI{3.456e-22}{m^2}$ was assumed. For this case table \ref{tab:scatProbs} lists the scattering probabilities averaged over all starting positions and pitch angles in the \gls{wgts}.
@@ -239,13 +239,13 @@ In other words, $\upbeta$ electrons with a starting energy near the endpoint of 
 \end{equation}
  The sign of the derivative is determined by the sign of $(*)$ which follows approximately the above reasoning being negative for $l<\bar{\mu}$ and positive for $l>\bar{\mu}$.
 
-\section{Implementation of the Energy-Dependent Scattering Model}
-\subsection{Description of the Implementation}
-\subsection{Performance and Accuracy Considerations}
+\subsection{Model Implementation}
+\todo{}
+\subsection{Performance and Accuracy}
 \begin{figure}[th]
     \centering
     \includegraphics[width=\textwidth]{\currentFigureFolder/scatCrossSecRunTime.pdf}
-    \xcaption{Run-time comparison between using an energy-dependent and -independent cross section}{Run-time comparison between using an energy-dependent and independent cross section.}{Shown are the run times for a fit of a simulated model to itself for different \gls{mtd}s. The \gls{mtd}s for the ranges 20, 25, 30, 40 and 50 \SI{}{eV} are taken from the KATRIN design report \cite{Angrik:2005ep} and have a rising number of retarding potentials. A further \SI{90}{eV}-wide \gls{mtd} of the \gls{knm1} campaign was used. It contains 39 retarding potentials. The corresponding run time lies above the trend line as the width of the measurement interval is wider.  For each \gls{mtd} 30 fits were performed. The run times were clocked for a constant and an energy-dependent cross section.}
+    \xcaption{Run-time comparison between using an energy-dependent and -independent inelastic scattering cross section}{Run-time comparison between using an energy-dependent and -independent inelastic scattering cross section.}{Shown are the run times for a fit of a simulated model to itself for different \gls{mtd}s. The \gls{mtd}s for the ranges 20, 25, 30, 40 and 50 \SI{}{eV} are taken from the KATRIN design report \cite{Angrik:2005ep} and have a rising number of retarding potentials. A further \SI{90}{eV}-wide \gls{mtd} of the \gls{knm1} campaign was used. It contains 39 retarding potentials. The corresponding run time lies above the trend line as the width of the measurement interval is wider.  For each \gls{mtd} 30 fits were performed. The run times were clocked for a constant and an energy-dependent cross section.}
     \label{fig:scatCrossSecRunTimes}
 \end{figure}
 The suggested extended model \eqref{eq:energydepScatProbsModel} at its current stage is computationally too expensive to be used in a fitting procedure. Note that a similar model has been derived for a fixed change of the pitch angle $\theta$ per scattering in \cite{Groh2015}. This model for angular changes is implemented in the \gls{ssc} software and can be used in fitting procedures. Though, an important difference is that the determination of the count rate requires an integral over the starting energy $\Esource$ in \eqref{eq:countsDependingOnPositionAndPitchAngle}. Hence, the energy dependent scattering probabilities have to be recomputed in every step of the numerical integration. This is not the case for the model considering the angular changes.
