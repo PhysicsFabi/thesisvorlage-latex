@@ -10,7 +10,7 @@ The pre and main spectrometer are vacuum vessels designed to filter passing elec
 		Scheme of the KATRIN main spectrometer and the \glsentryfull{mace} filter principle.}{
 		The {KATRIN} design magnetic field settings are
 		$\Bps=\SI{4.5}{T}$, 
-		$\BsourceAvg=\SI{3.6}{T}$, 
+		$\Bsource=\SI{3.6}{T}$, 
 		$\Bmax=\SI{6.0}{T}$, 
 		$B_\mathrm{D}=\SI{3.6}{T}$, 
 		$\Bana\approx\SI{3e-4}{T}$. $\Vec{E}$ denotes the magnetic field regulated by the retarding potential $U$ that reaches its maximum $U_\mathrm{a} = U$ at the analyzing plane. (Adapted from \cite{SeitzM2019}.)
@@ -24,7 +24,7 @@ The pre and main spectrometer apply the so-called \gls{mace} principle~\cite{Ang
 A retarding voltage barrier is applied along the beam axis within the spectrometer, reaching its maximum $U$ at the so-called analyzing plane in the center and dropping off towards the source and the detector. The retarding voltage barrier deflects electrons with kinetic energies below $eU$. For higher energies it depends on the electron's angle with respect to the beam line axis whether it can pass the spectrometer or not. \todo{cite or refer}}
 
 {\par \textbf{Magnetic collimation}: 
-The electric field gradient of the retarding voltage barrier is parallel to the beam line, but $\upbeta$ electrons are emitted in an arbitrary angle. In order to analyze their full kinetic energy, they have to be collimated. This is achieved by a magnetic field gradient that drops from $\BsourceAvg=\SI{3.6}{T}$ in the \gls{sts} to $\Bana\approx\SI{3e-4}{T}$ in the analyzing plane. In the following a plausibility argument for the momentum collimation due to the field gradient, according to~\cite{zuber2011neutrino}, is given: Electrons entering the spectrometer vessel perform cyclotron motions around the magnetic field lines. Their total kinetic energy~$\Esource$ is split into a longitudinal component~$E_\parallel$ along the beam axis and a transverse component~$E_\bot$
+The electric field gradient of the retarding voltage barrier is parallel to the beam line, but $\upbeta$ electrons are emitted in an arbitrary angle. In order to analyze their full kinetic energy, they have to be collimated. This is achieved by a magnetic field gradient that drops from $\Bsource=\SI{3.6}{T}$ in the \gls{sts} to $\Bana\approx\SI{3e-4}{T}$ in the analyzing plane. In the following a plausibility argument for the momentum collimation due to the field gradient, according to~\cite{zuber2011neutrino}, is given: Electrons entering the spectrometer vessel perform cyclotron motions around the magnetic field lines. Their total kinetic energy~$\Esource$ is split into a longitudinal component~$E_\parallel$ along the beam axis and a transverse component~$E_\bot$
 \begin{equation}
 \label{eq:totalKinElecEnergy}
 \Esource = E_\parallel + E_\bot \fullstop
@@ -36,13 +36,13 @@ E_\bot = - \mu B = \frac{e}{2 m_\elecIndex}LB \fullstop
 Adiabaticity conserves angular momentum $L$ and the total energy of the electron $\Esource$. Hence, when the magnetic field strength $B$ decreases to $\Bana=\Bmin$ in the analyzing plane, the transverse component of the electron's energy $E_\bot$ decreases likewise and transforms to longitudinal energy $E_\parallel$.}
 
 {\par \textbf{Magnetic Bottle effect:}
-As the source is placed in a lower magnetic field $\BsourceAvg$ as the maximum field strength along the beam line $\Bmax$ at the detector side, $\upbeta$ electrons traveling downstream to the detector are subject to the magnetic bottle effect~\cite{Angrik:2005ep}. They get reflected and travel upstream to the rear wall if their starting angle $\thetaSource$ with respect to the beam line axis surpasses $\thetaMax$ with
+As the source is placed in a lower magnetic field $\Bsource$ as the maximum field strength along the beam line $\Bmax$ at the detector side, $\upbeta$ electrons traveling downstream to the detector are subject to the magnetic bottle effect~\cite{Angrik:2005ep}. They get reflected and travel upstream to the rear wall if their starting angle $\thetaSource$ with respect to the beam line axis surpasses $\thetaMax$ with
 \begin{equation}
 \label{eq:thetaMax}
-\sin\thetaMax = \sqrt{\frac{\BsourceAvg}{\Bmax}} 
+\sin\thetaMax = \sqrt{\frac{\Bsource}{\Bmax}} 
 \fullstop
 \end{equation}
-For the KATRIN design values $\Bmax=\SI{6}{T}$ and $\BsourceAvg=\SI{3.6}{T}$ one obtains $\thetaMax\approx\SI{51}{\degree}$.
+For the KATRIN design values $\Bmax=\SI{6}{T}$ and $\Bsource=\SI{3.6}{T}$ one obtains $\thetaMax\approx\SI{51}{\degree}$.
 A cutting angle $\thetaMax$ is beneficial because the greater the emission angle of a $\upbeta$ electron the larger the distance it travels in the \gls{wgts} and the more it is subject to energy losses such as scattering or synchrotron radiation~\cite{Angrik:2005ep}.}
 
 {\par \textbf{\gls{mace}-filter width:} 
@@ -51,7 +51,7 @@ Electrons with a kinetic energy below $qU$ cannot pass the spectrometer. Electro
 \Delta E = \frac{\Bana}{\Bmax} E
 \fullstop
 \end{equation}
-Electrons with an energy between $eU$ and $eU+\Delta E$ pass the potential barrier only with a certain probability. A quantitative description of this so-called transmission probability will be given in section~\ref{} \todo{add section}. However, it can already be deduced, that a larger $\Delta E$ adds a greater uncertainty to the measurement and thus it should be kept as low as possible. $\Delta E$ depends on the the maximum magnetic field strength along the beam line $\Bmax=\SI{6}{T}$, the kinetic energy of $\upbeta$ electrons $E\approx\SI{18.6}{keV}$, and the field in the magnetic field in the analyzing plane $\Bana\approx\SI{3e-4}{T}$. Hence, its KATRIN design value is $\Delta E\approx\SI{0.93}{eV}$. }
+Electrons with an energy between $eU$ and $eU+\Delta E$ pass the potential barrier only with a certain probability. A quantitative description of this so-called transmission probability will be given in section~\ref{sec:intSpecModelResponseTransmission}. However, it can already be deduced, that a larger $\Delta E$ adds a greater uncertainty to the measurement and thus it should be kept as low as possible. $\Delta E$ depends on the the maximum magnetic field strength along the beam line $\Bmax=\SI{6}{T}$, the kinetic energy of $\upbeta$ electrons $E\approx\SI{18.6}{keV}$, and the field in the magnetic field in the analyzing plane $\Bana\approx\SI{3e-4}{T}$. Hence, its KATRIN design value is $\Delta E\approx\SI{0.93}{eV}$. }
 
 {\par \textbf{Dimensions of the KATRIN main spectrometer:} This paragraph outlines, why the diameter of the KATRIN main spectrometer is \SI{10}{m}, while the one of its predecessor experiment in Mainz was only \SI{1}{m}~\cite{Kraus2005}. KATRIN's envisaged sensitivity requires a relative \gls{mace}-filter width of at least $E/\Delta E = 20000$, which directly corresponds the ratio of the magnetic fields $\Bmax/\Bana$~\cite{Angrik:2005ep}. For a smaller $\Delta E$, $\Bana$ should be chosen as low as possible. However, the lower $\Bana$, the wider the flux tube that must be governed by the spectrometer vessel. Also, the magnetic field must decrease at a sufficiently slow rate from the spectrometer's entrance to the analyzing plane in order to guarantee adiabaticity, which requires a certain spectrometer length. Dimensions that meet the demands and are feasible for the main spectrometer were found to be a radius of \SI{10}{m} and a length of \SI{23}{m}~\cite{Angrik:2005ep, Valerius2009}.}
 
