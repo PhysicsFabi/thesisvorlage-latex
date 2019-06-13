@@ -83,7 +83,7 @@ An equivalent method of constructing confidence intervals is to consider a test 
 \end{equation}
 In the case of a construction via a hypothesis test, all parameter values $\paramVec$ are excluded from the confidence interval of level $\alpha$ that are rejected by the test with a significance of $\alpha$~\cite{ReviewOfParticlePhysics}.
 
-If the likelihood follows the form of a multivariate Gaussian distribution in $\paramVec$, then the above test statistic~\eqref{eq:statMethodsLikelihoodRatio} can be evaluated and the the hyper surface defined by
+If the likelihood follows the form of a multivariate Gaussian distribution in $\paramVec$, then the above test statistic~\eqref{eq:statMethodsLikelihoodRatio} can be evaluated and the hyper surface defined by
 \begin{equation}
 	\label{eq:statMethodsConfidenceContour}
 	\ln L(\paramVec) = 	\ln L(\hat{\paramVec}) - \frac{s^2}{2}
@@ -92,7 +92,7 @@ encloses a $s$-$\sigma$ confidence region for $\paramVec$~\cite{ReviewOfParticle
 
 The derivation of the KATRIN $\chi^2$-likelihood~\eqref{eq:statMethodsKatrinChi2} was based on the assumption of its Gaussian-like shape. In this sense, the confidence contour~\eqref{eq:statMethodsConfidenceContour} applies. 
 
-In conclusion, in this section a recipe has been derived, that enables the extraction of confidence regions for the parameters of a KATRIN measurement, especially for the squared neutrino mass, from the KATRIN likelihood. However, in practice, finding the corresponding contours of the confidence region given by equation \ref{eq:statMethodsConfidenceContour} may not be feasible, as it is a multi-dimensional problem. In a minimal setup of a KATRIN parameter inference $\paramVec$ has at least the dimension 4 comprised by the $\upbeta$-spectrum endpoint, the background rate, the signal amplitude and the neutrino mass~\cite{Kleesiek2014}. (For the meaning of these parameters also see equation \eqref{eq:intSpecModelCountsFinal}.) When only the confidence interval for the neutrino mass is of interest, the other so-called nuisance parameters can e.\,g.~be profiled out. This procedure is reviewed section~\ref{sec:statMethodsProfileLikelihood}.
+In conclusion, in this section a recipe has been derived, that enables the extraction of confidence regions for the parameters of a KATRIN measurement, especially for the squared neutrino mass, from the KATRIN likelihood. However, in practice, finding the corresponding contours of the confidence region given by equation \ref{eq:statMethodsConfidenceContour} may not be feasible, as it is a multi-dimensional problem. In a minimal setup of a KATRIN parameter inference $\paramVec$ has at least the dimension 4 comprised of the $\upbeta$-spectrum endpoint, the background rate, the signal amplitude and the squared neutrino mass~\cite{Kleesiek2014}. (For the meaning of these parameters also see equation \eqref{eq:intSpecModelDetectorCounts}.) When only the confidence interval for the neutrino mass is of interest, the other so-called nuisance parameters can e.\,g.~be profiled out. This procedure is reviewed in section~\ref{sec:statMethodsProfileLikelihood}.
 
 \section{Nuisance Parameters and the Profile Likelihood Method}
 \label{sec:statMethodsProfileLikelihood}
@@ -117,7 +117,7 @@ In application to a KATRIN neutrino mass measurement, the introduced formalism c
 
 \section{The KaFit and SSC Software Frameworks}
 \label{sec:statMethodsKaFitSSC}
-With respect to neutrino mass inference at KATRIN two formalisms have been presented: the model for a KATRIN neutrino mass measurement in chapter~\ref{sec:intSpecModel} and a statistical framework in chapter~\ref{sec:statMethods}. 
+With respect to neutrino mass inference at KATRIN two formalisms have been presented: the model for a KATRIN neutrino mass measurement in chapter~\ref{sec:intSpecModel} and a statistical framework for parameter inference in chapter~\ref{sec:statMethods}. 
 
 The two formalisms are implemented within two modules of the so-called ``KATRIN Analysis and Simulations Package'' (KASPER)\footnote{\url{https://nuserv.uni-muenster.de:8443/katrin-git/kasper}}:
 \begin{enumerate}
@@ -127,5 +127,20 @@ The two formalisms are implemented within two modules of the so-called ``KATRIN 
 
 Both packages were extended to allow for the analysis done within the scope of this thesis as will be explained in chapters~\ref{sec:energyDepScat} and~\ref{sec:katrinEloss}.
 
+\section{A Standard 4-parameter KATRIN Neutrino Mass Fit}
+\label{sec:statMethodsKatrinSensitivity}
+This section reviews how sensitivity is understood in the KATRIN Design Report~\cite{Angrik:2005ep} and then relates this understanding to more recent works and the thesis at hand.
+
+Within the KATRIN Design Report an ensemble of many KATRIN measurements was simulated similar to the description in section~\ref{sec:intSpecModelNuMassMeasurement} with a true neutrino mass of 0. The simulated count rates $\{N(qU_i)\}$ in the retarding voltage bins $\{qU_i\}$ were randomized according to a Gaussian distribution with a standard deviation of $\sigma_i=\sqrt{N(qU_i)}$ which approximates Poissonian statistics. From each simulated measurement the squared neutrino mass was inferred with in a fit with 4 free parameters: the squared neutrino mass, the $\upbeta$-spectrum endpoint, the signal amplitude .
+
 \section{KATRIN's Sensitivity to the Electron Antineutrino Mass}
 \label{sec:statMethodsKatrinSensitivity}
+This section reviews how sensitivity is understood in the KATRIN Design Report~\cite{Angrik:2005ep} and then relates this understanding to more recent works and the thesis at hand.
+
+Within the KATRIN Design Report an ensemble of many KATRIN measurements was simulated similar to the description in section~\ref{sec:intSpecModelNuMassMeasurement} with a true neutrino mass of 0. The simulated count rates $\{N(qU_i)\}$ in the retarding voltage bins $\{qU_i\}$ were randomized according to a Gaussian distribution with a standard deviation of $\sigma_i=\sqrt{N(qU_i)}$ which approximates Poissonian statistics. From each simulated measurement the squared neutrino mass was inferred with in a fit with 4 free parameters: the squared neutrino mass, the $\upbeta$-spectrum endpoint, the signal amplitude .
+
+
+
+
+
+``In case of the standard 4 parameter fit, the confidence intervals calculated from ensemble tests are in very good agreement with alternative methods [...], including likelihood ratio intervals (profile likelihood method)''
