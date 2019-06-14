@@ -46,7 +46,9 @@ The minimization of equation~\eqref{eq:statMethodsKatrinChi2} yields the \gls{ml
 
 Under the made assumptions equation~\eqref{eq:statMethodsKatrinChi2} is a sum of $n$ standard normal distributed random variables. Hence, evaluated at the \gls{mle},  $\chi^2(\hat{\paramVec})$, follows the Pearson's chi-square statistic with $n-\mathrm{dim}\paramVec$ degrees of freedom. Accordingly, the value $\chi^2(\hat{\paramVec})$ is a measure for the goodness-of-fit~\cite{ReviewOfParticlePhysics}.
 
-In regard to a KATRIN neutrino mass measurement, the parameter of interest in $\paramVec$ is the neutrino mass squared $m_\nu^2$. Furthermore, $\paramVec$ typically comprises the endpoint of the tritium-$\upbeta$ spectrum $E_0$, an overall normalization factor for the counts $\As$ and the rate of the background counts $\Rbg$~\cite{Kleesiek2014}. For the later three see equation ~\eqref{eq:intSpecModelCountsFinal}.
+\section{A Standard Four-Parameter KATRIN Neutrino Mass Fit}
+\label{sec:statMethodsStandardFit}
+In regard to a KATRIN neutrino mass measurement, the parameter of interest in the parameter vector $\paramVec$ is the squared neutrino mass $m_\nu^2$. Furthermore, $\paramVec$ typically comprises the endpoint of the tritium-$\upbeta$ spectrum $E_0$, an overall normalization factor for the counts $\As$ and the rate of the background counts $\Rbg$~\cite{Kleesiek2014}. For the later three see equation ~\eqref{eq:intSpecModelCountsFinal}.
 
 \section{Uncertainty Intervals}
 \label{sec:statMethodsUncertaintyIntervals}
@@ -122,25 +124,65 @@ With respect to neutrino mass inference at KATRIN two formalisms have been prese
 The two formalisms are implemented within two modules of the so-called ``KATRIN Analysis and Simulations Package'' (KASPER)\footnote{\url{https://nuserv.uni-muenster.de:8443/katrin-git/kasper}}:
 \begin{enumerate}
 	\item The \textbf{\glsentryfull{ssc}} package implements the formulas for the differential and integrated spectrum calculations. Therefore, it follows the formulas given in chapter~\ref{sec:intSpecModel}. Additionally, it also includes aspects beyond the given description, such as the gas dynamics within the \gls{wgts}~\cite{Hoetzel2012, Groh2015, Kleesiek2019, Kaefer2012}.
-	\item The \textbf{KaFit} package translates the $\upbeta$ spectrum calculated by \glsentryshort{ssc} into expected detector counts. Furthermore, KaFit implements several statistic tools tailored to the KATRIN experiment. One of which is the extraction of confidence intervals according to the profile likelihood method section~\ref{sec:statMethodsUncertaintyIntervalsConfidence}. The actual minimization and profiling are done by the interfaced MINUIT2 and MINOS package from the ROOT\footnote{\url{http://root.cern.ch/}}~\cite{ANTCHEVA2009} analysis framework~\cite{Kleesiek2014}.
+	\item The \textbf{KaFit} package translates the $\upbeta$ spectrum calculated by \glsentryshort{ssc} into expected detector counts. Furthermore, KaFit implements several statistic tools tailored to the KATRIN experiment. One of which is the extraction of confidence intervals according to the profile likelihood method (see section~\ref{sec:statMethodsUncertaintyIntervalsConfidence}). The actual minimization and profiling are done by the interfaced MINUIT2 and MINOS package from the ROOT\footnote{\url{http://root.cern.ch/}}~\cite{ANTCHEVA2009} analysis framework~\cite{Kleesiek2014}.
 \end{enumerate}
 
 Both packages were extended to allow for the analysis done within the scope of this thesis as will be explained in chapters~\ref{sec:energyDepScat} and~\ref{sec:katrinEloss}.
 
-\section{A Standard 4-parameter KATRIN Neutrino Mass Fit}
-\label{sec:statMethodsKatrinSensitivity}
-This section reviews how sensitivity is understood in the KATRIN Design Report~\cite{Angrik:2005ep} and then relates this understanding to more recent works and the thesis at hand.
 
-Within the KATRIN Design Report an ensemble of many KATRIN measurements was simulated similar to the description in section~\ref{sec:intSpecModelNuMassMeasurement} with a true neutrino mass of 0. The simulated count rates $\{N(qU_i)\}$ in the retarding voltage bins $\{qU_i\}$ were randomized according to a Gaussian distribution with a standard deviation of $\sigma_i=\sqrt{N(qU_i)}$ which approximates Poissonian statistics. From each simulated measurement the squared neutrino mass was inferred with in a fit with 4 free parameters: the squared neutrino mass, the $\upbeta$-spectrum endpoint, the signal amplitude .
+
 
 \section{KATRIN's Sensitivity to the Electron Antineutrino Mass}
 \label{sec:statMethodsKatrinSensitivity}
-This section reviews how sensitivity is understood in the KATRIN Design Report~\cite{Angrik:2005ep} and then relates this understanding to more recent works and the thesis at hand.
+This section explains the origin of the often quoted KATRIN design sensitivity to the neutrino mass of $\SI{200}{meV}$\,(\SI{90}{\percent} C.L.).
 
-Within the KATRIN Design Report an ensemble of many KATRIN measurements was simulated similar to the description in section~\ref{sec:intSpecModelNuMassMeasurement} with a true neutrino mass of 0. The simulated count rates $\{N(qU_i)\}$ in the retarding voltage bins $\{qU_i\}$ were randomized according to a Gaussian distribution with a standard deviation of $\sigma_i=\sqrt{N(qU_i)}$ which approximates Poissonian statistics. From each simulated measurement the squared neutrino mass was inferred with in a fit with 4 free parameters: the squared neutrino mass, the $\upbeta$-spectrum endpoint, the signal amplitude .
+\subsection{Definition and Construction of KATRIN's Sensitivity}
+KATRIN's sensitivity on the neutrino mass can be understood as the minimal neutrino mass that has to inferred from a KATRIN neutrino mass measurement to exclude the null hypothesis of a vanishing neutrino mass at a significance level of $p=\SI{90}{\percent}$~\cite{Kleesiek2014,Angrik:2005ep}.
 
+Such a limit can be constructed from a 1-$\sigma$ uncertainty $\totUncert$ on the squared neutrino mass~\cite{Kleesiek2014,Angrik:2005ep}
+\begin{equation}
+	\label{eq:statMethodsSensitivity}
+	S_{\nuMass}(\SI{90}{\percent}) = \sqrt{1.645\cdot\totUncert}
+	\comma
+\end{equation}
+where the factor 1.645 translates the $\SI{68.3}{\percent}$ interval into a $\SI{90}{\percent}$ interval.
 
-
-
-
-``In case of the standard 4 parameter fit, the confidence intervals calculated from ensemble tests are in very good agreement with alternative methods [...], including likelihood ratio intervals (profile likelihood method)''
+\subsection{Sensitivity from Simulated Ensembles}
+In the KATRIN Design Report the sensitivity on the neutrino mass was evaluated using ensemble tests. An ensemble of many KATRIN measurements was simulated (see section~\ref{sec:intSpecModelNuMassMeasurement}) with a true neutrino mass of \SI{0}{eV}. From each simulated measurement the squared neutrino mass was inferred in a standard KATRIN four-parameter fit (see section~\ref{sec:statMethodsStandardFit}). Probability was interpreted as the frequency of an outcome of such a fit. The central 1-$\sigma$ interval of the obtained ensemble of squared neutrino masses was taken as the statistical uncertainty on the squared neutrino mass~\cite{Angrik:2005ep}
+\begin{equation}
+	\statUncert = \SI{0.018}{eV^2}
+\end{equation}
+A systematic uncertainty was estimated to be approximately \SI{0.01}{eV}. Due to the early stage of the experiment the systematic uncertainty was conservatively enlarged to a systematic budget at approximately the same scale as the statistical uncertainty~\cite{Angrik:2005ep}
+\begin{equation}
+	\sysUncert = \SI{0.017}{eV^2}
+\end{equation}
+Adding these two quadratically yields KATRIN's sensitivity~\cite{Angrik:2005ep}
+\begin{equation}
+	\label{eq:statMethodsSensitivityDesignReport}
+	S_{\nuMass}(\SI{90}{\percent}) = 
+	\sqrt{1.645\cdot
+		\sqrt{
+		\statUncert^2+\sysUncert^2
+	}} \approx \SI{200}{meV}
+	\fullstop
+\end{equation}
+The corresponding investigations were redone in the scope of several works. Table~\ref{tab:statMethodsSensitivityFromEnsembleTests} lists selected results.
+\begin{table}[ht]
+	\centering
+	\xcaption{KATRIN's sensitivity to the neutrino mass from ensemble tests}{KATRIN's sensitivity to the neutrino mass from ensemble tests.}{The table lists KATRIN's sensitivity~$S_{\nuMass}(\SI{90}{\percent})$ as defined by equation~\eqref{eq:statMethodsSensitivityDesignReport}. Several works reevaluated the statistical uncertainty according to experimental and theoretical progress. For each reevaluation a systematic uncertainty of $\sysUncert = \SI{0.017}{eV^2}$ was assumed. The output of an ensemble test is itself a random variable. Corresponding intervals are reprinted where originally stated.}
+	\begin{tabular}{lrlr}
+		\toprule
+		\makecell[t]{$\statUncert$ (\SI{}{eV^2})} & 
+		\makecell[t]{$S_{\nuMass}(\SI{90}{\percent})$ (\SI{}{meV})} & 
+		\makecell[t]{comment} &
+		\makecell[t]{reference}
+		\\
+		\hline
+		0.018 & 200 & design value & \cite{Angrik:2005ep} \\
+		$0.0165\pm0.0001$ & 198 & updated $\upbeta$-spectrum calculation & \cite{Hoetzel2012} \\
+		$0.0162\pm0.0001$ & 197 & updated $\upbeta$-spectrum calculation & \cite{Kleesiek2014} \\
+		0.01490 & 193 & optimized \gls{mtd} & \cite{Kleesiek2014} \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:statMethodsSensitivityFromEnsembleTests}
+\end{table}
