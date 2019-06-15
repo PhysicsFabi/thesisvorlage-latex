@@ -96,27 +96,6 @@ The derivation of the KATRIN $\chi^2$-likelihood~\eqref{eq:statMethodsKatrinChi2
 
 In conclusion, in this section a recipe has been derived, that enables the extraction of confidence regions for the parameters of a KATRIN measurement, especially for the squared neutrino mass, from the KATRIN likelihood. However, in practice, finding the corresponding contours of the confidence region given by equation \ref{eq:statMethodsConfidenceContour} may not be feasible, as it is a multi-dimensional problem. In a minimal setup of a KATRIN parameter inference $\paramVec$ has at least the dimension 4 comprised of the $\upbeta$-spectrum endpoint, the background rate, the signal amplitude and the squared neutrino mass~\cite{Kleesiek2014}. (For the meaning of these parameters also see equation \eqref{eq:intSpecModelDetectorCounts}.) When only the confidence interval for the neutrino mass is of interest, the other so-called nuisance parameters can e.\,g.~be profiled out. This procedure is reviewed in section~\ref{sec:statMethodsProfileLikelihood}.
 
-\section{Nuisance Parameters and the Profile Likelihood Method}
-\label{sec:statMethodsProfileLikelihood}
-Apart from the  parameters of interest $\paramVec$ (usually the squared neutrino mass), the KATRIN likelihood depends on further so-called nuisance parameters $\nuisanceParamVec$ (e.\,g. the background rate). The dimensionality may pose difficulties when deriving a confidence region for the combined parameter set. Furthermore, as indicated by the naming conventions, the dimensions of the nuisance parameters in the confidence region are not of interest. Hence, in order to derive a confidence interval with restricted dimensions, a test statistic, similar to the one in equation~\ref{eq:statMethodsLikelihoodRatio}, but that solely depends on the parameters of interest, has to be found. The following paragraph outlines, how a corresponding test statistic can be constructed using the profile likelihood method.
-
-A corresponding derivation may start with the definition of the profile likelihood: The profile likelihood only depends on the parameters of interest $\paramVec$. Its values correspond the likelihood values evaluated at $\paramVec$ in the dimensions of the parameter of interest and maximized in the dimensions of the nuisance parameters~\cite{ReviewOfParticlePhysics}
-\begin{equation}
-	\profLikelihood(\paramVec) = 
-	L(\paramVec, \hat{\hat{\nuisanceParamVec}}(\paramVec))
-	\comma
-\end{equation}
-where the double-hat indicates the maximization respectively the profiling. Also, the profile likelihood ratio can be defined~\cite{ReviewOfParticlePhysics}
-\begin{equation}
-	\label{eq:statMethodsProfileLikelihoodRatio}
-	\lambda_\mathrm{p}(\paramVec) = 
-	\frac{\profLikelihood(\paramVec)}{\profLikelihood(\hat{\paramVec})}
-	\fullstop
-\end{equation}
-According to Wilks’ theorem~\cite{wilks1938}, the distribution of $-2\ln\lambda_\mathrm{p}(\hat{\paramVec})$, where $\hat{\paramVec}$ is the \gls{mle}, approaches a $\chi^2$ distribution in the limit of a large data sample, independent of the values of the nuisance parameters $\nuisanceParamVec$~\cite{ReviewOfParticlePhysics}. Hence, the profile likelihood ratio offers a test statistic, from which a confidence interval for the parameters of interest can be derived.
-
-In application to a KATRIN neutrino mass measurement, the introduced formalism can be summarized as follows: The profile likelihood~\eqref{eq:statMethodsProfileLikelihoodRatio} is a measure (test statistic) for whether a hypothesized squared neutrino mass has to be rejected given the KATRIN data. Furthermore, analogously to section~\ref{sec:statMethodsUncertaintyIntervalsConfidence}, this allows for the derivation of a confidence interval for the squared neutrino mass. It should be noted, however, that this method requires an extrapolation of the likelihood to nonphysical negative squared neutrino masses~\cite{Kleesiek2014}.
-
 \section{The KaFit and SSC Software Frameworks}
 \label{sec:statMethodsKaFitSSC}
 With respect to neutrino mass inference at KATRIN two formalisms have been presented: the model for a KATRIN neutrino mass measurement in chapter~\ref{sec:intSpecModel} and a statistical framework for parameter inference in chapter~\ref{sec:statMethods}. 
@@ -134,9 +113,10 @@ Both packages were extended to allow for the analysis done within the scope of t
 
 \section{KATRIN's Sensitivity to the Electron Antineutrino Mass}
 \label{sec:statMethodsKatrinSensitivity}
-This section explains the origin of the often quoted KATRIN design sensitivity to the neutrino mass of $\SI{200}{meV}$\,(\SI{90}{\percent} C.L.).
+This section explains the origin of the often quoted KATRIN design sensitivity to the neutrino mass of $\SI{200}{meV}$\,(\SI{90}{\percent} C.L.). First, a definition of the sensitivity is given in section~\ref{sec:statMethodsSensitivtyDef}. Then, section~\ref{sec:statMethodsSensitivtyFromEnsemble} shows how this definition was applied by different works to deduce KATRIN's sensitivity.
 
 \subsection{Definition and Construction of KATRIN's Sensitivity}
+\label{sec:statMethodsSensitivtyDef}
 KATRIN's sensitivity on the neutrino mass can be understood as the minimal neutrino mass that has to inferred from a KATRIN neutrino mass measurement to exclude the null hypothesis of a vanishing neutrino mass at a significance level of $p=\SI{90}{\percent}$~\cite{Kleesiek2014,Angrik:2005ep}.
 
 Such a limit can be constructed from a 1-$\sigma$ uncertainty $\totUncert$ on the squared neutrino mass~\cite{Kleesiek2014,Angrik:2005ep}
@@ -148,6 +128,7 @@ Such a limit can be constructed from a 1-$\sigma$ uncertainty $\totUncert$ on th
 where the factor 1.645 translates the $\SI{68.3}{\percent}$ interval into a $\SI{90}{\percent}$ interval.
 
 \subsection{Sensitivity from Simulated Ensembles}
+\label{sec:statMethodsSensitivtyFromEnsemble}
 In the KATRIN Design Report the sensitivity on the neutrino mass was evaluated using ensemble tests. An ensemble of many KATRIN measurements was simulated (see section~\ref{sec:intSpecModelNuMassMeasurement}) with a true neutrino mass of \SI{0}{eV}. From each simulated measurement the squared neutrino mass was inferred in a standard KATRIN four-parameter fit (see section~\ref{sec:statMethodsStandardFit}). Probability was interpreted as the frequency of an outcome of such a fit. The central 1-$\sigma$ interval of the obtained ensemble of squared neutrino masses was taken as the statistical uncertainty on the squared neutrino mass~\cite{Angrik:2005ep}
 \begin{equation}
 	\statUncert = \SI{0.018}{eV^2}
@@ -156,7 +137,7 @@ A systematic uncertainty was estimated to be approximately \SI{0.01}{eV}. Due to
 \begin{equation}
 	\sysUncert = \SI{0.017}{eV^2}
 \end{equation}
-Adding these two quadratically yields KATRIN's sensitivity~\cite{Angrik:2005ep}
+Adding these two quadratically and applying the definition~\eqref{eq:statMethodsSensitivity} yields KATRIN's sensitivity~\cite{Angrik:2005ep}
 \begin{equation}
 	\label{eq:statMethodsSensitivityDesignReport}
 	S_{\nuMass}(\SI{90}{\percent}) = 
@@ -180,7 +161,7 @@ The corresponding investigations were redone in the scope of several works. Tabl
 		\hline
 		0.018 & 200 & design value & \cite{Angrik:2005ep} \\
 		$0.0165\pm0.0001$ & 198 & updated $\upbeta$-spectrum calculation & \cite{Hoetzel2012} \\
-		$0.0162\pm0.0001$ & 197 & updated $\upbeta$-spectrum calculation & \cite{Kleesiek2014} \\
+		$0.0162\pm0.0001$ & 197 & further updated $\upbeta$-spectrum calculation & \cite{Kleesiek2014} \\
 		0.01490 & 193 & optimized \gls{mtd} & \cite{Kleesiek2014} \\
 		\bottomrule
 	\end{tabular}

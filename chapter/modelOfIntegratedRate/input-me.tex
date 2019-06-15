@@ -168,11 +168,11 @@ The transmission function denotes the probability of an electron to pass the \gl
 \frac{
 	q(U-\Usource)
 }{
-	1-\sin^2\thetaSource \frac{\Bana}{\Bsource} \frac{\gammaSource+1}{\gammaAna+1}
+	1-\sin^2\thetaSource \frac{\Bana}{\Bsource} \frac{\gamma(E)+1}{\gammaAna+1}
 }
 \fullstop
 \end{equation}
-where $\gammaSource\equiv\gammaSource(\Esource)$ and $\gammaAna$ denote the relativistic $\gamma$-factor of the $\upbeta$ electrons at their place of origin and the analyzing plane. As the electrons are slowed down substantially by the retarding potential in the spectrometer, it holds $\gammaAna\approx1$~\cite{Groh2015}. In the following, for ease of notation, also $\Usource=0$ and $\gammaSource=1$ is assumed.
+where $\gamma(E)$ and $\gammaAna$ denote the relativistic Lorentz factor of the $\upbeta$ electrons with energy $E$ and in the analyzing plane. As the electrons are slowed down substantially by the retarding potential in the spectrometer, it holds $\gammaAna\approx1$. In the following, for ease of notation, also $\Usource=0$ and $\gammaSource=1$ is assumed.
 
 Electrons pass the \gls{mace} filter if their energy $E$ when arriving at the spectrometer surpasses the transmission energy $\EtransPure$, equation~\eqref{eq:intSpecModelTransmissionEnergy}. This condition can be resolved for the starting pitch angle~\cite{Groh2015}
 \begin{align}
@@ -372,7 +372,7 @@ The energy loss function was the last piece needed to assemble the KATRIN respon
 
 \subsection{Assembly of the KATRIN Response Function}
 \label{sec:intSpecModelResponseReconciliation}
-This section aims at giving an expression for the KATRIN response function. (It combines the characteristics of the KATRIN spectrometer and the \gls{wgts}. It should be noted, that the initially chosen notation here differs slightly from those used in the works this derivation is largely base on~\cite{Groh2015,Kleesiek2019} in order to emphasize dependencies on the starting positions $\zSource$ and pitch angles of electrons $\thetaSource$. However, the final results are reconciled.)
+This section aims at giving an expression for the KATRIN response function. It combines the characteristics of the KATRIN spectrometer and the \gls{wgts}. (It should be noted, that the initially chosen notation here differs slightly from those used in the works~\cite{Groh2015,Kleesiek2019} this derivation is largely based on in order to emphasize dependencies on the starting positions $\zSource$ and pitch angles of electrons $\thetaSource$. However, the final results are reconciled.)
 
 The KATRIN response function in dependence of the starting position and pitch angle of an electron reads 
 \begin{equation}
@@ -386,7 +386,7 @@ The KATRIN response function in dependence of the starting position and pitch an
 	\d \epsilon
 	\fullstop
 \end{equation}
-where the integral goes over the energy losses, the sum goes over the scattering count, $\mathcal{T}$ denotes the non-averaged transmission function \eqref{eq:intSpecModelTransmission}, $P_l$ the non-averaged scattering probabilities \eqref{eq:intSpecModelNonAveragedScatProbs} and $f_l$ the energy loss function \eqref{eq:intSpecModelConvolutedEloss}. In words, the transmission function is smeared by the energy loss probability density and then weighted sum is formed over generations of $l$-fold scattered electrons where the weight is the probability to scatter $l$ times.
+where the integral goes over the energy losses, the sum goes over the scattering count, $\mathcal{T}$ denotes the non-averaged transmission function \eqref{eq:intSpecModelTransmission}, $P_l$ the non-averaged scattering probabilities \eqref{eq:intSpecModelNonAveragedScatProbs} and $f_l$ the energy loss function \eqref{eq:intSpecModelConvolutedEloss}. In words, the transmission function is smeared by the energy loss probability density and then a weighted sum is formed over generations of $l$-fold scattered electrons where the weight is the probability to scatter $l$ times.
 
 The mean value of equation \eqref{eq:intSpecModelNonAveragedResponse} with respect to the starting pitch angle as described in section~\ref{sec:intSpecModelResponseConcepts} can be calculated. Also the corresponding integral is swapped with the integral over the energy loss and the sum over the scatterings
 \begin{align}
@@ -432,7 +432,7 @@ This expression can be reformulated to have the same form as the non-averaged re
 \end{align}
 
 
-The non-averaged transmission function $\mathcal{T}$, equation \eqref{eq:intSpecModelTransmissionPitchAngle},  within $T_l^{\star}$ is a step function with respect to the starting pitch angle $\thetaSource$ of an electron. This allows to adapt the upper integral boundary when integrating over $\thetaSource$ from $\thetaMax$ to $\thetaTransPure$. Furthermore, analogous to the KATRIN transmission function from equation~\ref{eq:intSpecModelTransmission}, a distinction of cases avoids imaginary square roots. One obtains the detailed transmission function as given in~\cite{Groh2015,Kleesiek2019}
+The non-averaged transmission function $\mathcal{T}$, equation \eqref{eq:intSpecModelTransmissionPitchAngle},  within $T_l^{\star}$ is a step function with respect to the starting pitch angle $\thetaSource$ of an electron. This allows to adapt the upper integral boundary from $\thetaMax$ to $\thetaTransPure$ when integrating over $\thetaSource$ . Furthermore, analogous to the KATRIN transmission function from equation~\ref{eq:intSpecModelTransmission}, a distinction of cases avoids imaginary square roots. One obtains the detailed transmission function as given in~\cite{Groh2015,Kleesiek2019}
 \begin{equation}
 	\label{eq:intSpecModelDetailedTransmission}
 	T_l^{\star}(E,qU,\zSource) =

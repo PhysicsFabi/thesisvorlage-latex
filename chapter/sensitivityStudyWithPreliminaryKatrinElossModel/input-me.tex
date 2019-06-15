@@ -1,11 +1,34 @@
+\def\currentRootFolder{chapter/sensitivityStudyWithPreliminaryKatrinElossModel}
+\def\currentFigureFolder{\currentRootFolder/fig}
+
 \chapter{Parameter Inference Using an Energy Loss Model for Inelastically-Scattering Electrons Derived from KATRIN Data}
 \label{sec:katrinEloss}
+A quantitative accurate description of the scattering processes of $\upbeta$ electrons within KATRIN's gaseous tritium source is of crucial importance for the neutrino-mass-sensitivity goal. In modeling the corresponding effects the energy loss function as described in section~\ref{sec:intSpecModelResponseEloss}) plays an important role. With reference to the described energy loss function, the KATRIN Design report states, that its precision is not sufficient for the KATRIN-sensitivity goal. It was planned to deduce an sufficiently accurate model from data taken at KATRIN~\cite{Angrik:2005ep}. Such a model has successfully been established preliminarily for electrons scattering from deuterium molecules based on data taken in October 2018 by a dedicated subgroup of the KATRIN collaboration. This new energy loss model, from here forth named ``the KATRIN model'', has improved uncertainties with respect to the model from literature (section~\ref{sec:intSpecModelResponseEloss}), from here forth named ``the Aseev model'' after the primary author of the corresponding publication~\cite{Aseev2000}. Within the scope of this thesis the impact on KATRIN's sensitivity by the exchange of the Aseev model for the KATRIN model was studied. Therefore, this chapter is structured as follows: Section~\ref{sec:katrinElossConcept} presents the general idea of this study. Section~\ref{sec:katrinElossModel} outlines the KATRIN model. Section~\ref{sec:katrinElossStatistics} introduces the necessary statistical tools. Section~\ref{sec:katrinElossModelResults} lists and discusses the results. And section~\ref{sec:katrinElossModelConclusion} concludes and offers an outlook.
+
+\section{Introduction and Motivation}
+\label{sec:katrinElossConcept}
+For the conducted sensitivity study KATRIN-neutrino-mass measurements were simulated assuming a neutrino mass of \SI{0}{eV} and using the KATRIN energy loss model. An uncertainty interval was deduced using the profile likelihood method as described in a subsequent section~\ref{sec:katrinElossStatistics} \todo{proper section}. This enables the treatment of the model uncertainties and their correlations as nuisance parameters.
+
+It should be noted, that the KATRIN model used in this thesis still is in its early stages and may be subject to changes. In fact, by the time of writing this thesis it has already undergone small adaptions to the version used in this chapter. However the form of the model has stayed the same, only the parameter values changed slightly. The newer and older parameter set are printed side by side in the appendix~\ref{sec:}. \todo{appendix}.
+
+Furthermore, during a neutrino mass measurement, the nominal tritium purity in the~\gls{wgts} is~\SI{95}{\percent}. Here, an energy loss model for deuterium is used. Two different, but similar energy loss models are expected for the two different gas species (compare~\cite{Abdurashitov2017} and~\cite{Aseev2000}). Within the scope of this thesis, the impact on KATRIN's sensitivity from the reduction of uncertainties on the energy loss model are of primary interest. As long as the KATRIN model for deuterium is sufficiently similar to the model for tritium, it is a plausible approach to use it for simulations of KATRIN-neutrino-mass measurements. In that regard, the results for KATRIN's sensitivity are expected to be meaningful.
+
+Moreover, it is of interest, to implement the required statistical tools into the available software frameworks in order for the study to be repeated or extended if needed.
 
 \section{The Preliminary KATRIN Energy Loss Model}
+\label{sec:katrinElossModel}
+\begin{figure}[th]
+	\centering
+	\includegraphics[width=\textwidth]{\currentFigureFolder/KATRINandAseevElossModel}
+	\xcaption{}{}{}
+	\label{fig:katrinElossElossModel}
+\end{figure}
 
 
 \input{chapter/sensitivityStudyWithPreliminaryKatrinElossModel/statisticalPrerequisites/input-me.tex}
 
 \section{A Sensitivity Study using the Recent Preliminary KATRIN Energy Loss Model}
+\label{sec:katrinElossModelResults}
 
 \section{Conclusion and Outlook}
+\label{sec:katrinElossModelConclusion}
