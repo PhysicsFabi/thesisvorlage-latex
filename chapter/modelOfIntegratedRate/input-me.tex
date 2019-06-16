@@ -64,6 +64,7 @@ The phase-space factor of the outgoing electron with momentum $p$ and mass $m_\e
 
 The phase space factor of the emitted neutrino  depends on multiple quantities: First, there is the $\upbeta$-spectrum endpoint of molecular tritium $E_0=\SI{18574.00\pm0.07}{eV}$~\cite{Myers2015,Otten:2008zz}. Second, there is the final state energy of the molecular system $V_f$. The exited energy state $f$ is caused by vibration, rotation or electronic excitation of the decaying molecule. A review on tritium molecular final states and tabulated values can e.\,g.~be found in~\cite{Bodine2015} and references therein. The probability that the molecular system is in a final state of energy $V_f$ after the decay is denoted by $P_f$. Then the energy of the neutrino reads 
 \begin{equation}
+\label{eq:intSpecModelDiffSpecNeutrinoEnergy}
 \epsilon_f = E_0 - E - V_f 
 \fullstop
 \end{equation}
@@ -388,7 +389,7 @@ The KATRIN response function in dependence of the starting position and pitch an
 \end{equation}
 where the integral goes over the energy losses, the sum goes over the scattering count, $\mathcal{T}$ denotes the non-averaged transmission function \eqref{eq:intSpecModelTransmission}, $P_l$ the non-averaged scattering probabilities \eqref{eq:intSpecModelNonAveragedScatProbs} and $f_l$ the energy loss function \eqref{eq:intSpecModelConvolutedEloss}. In words, the transmission function is smeared by the energy loss probability density and then a weighted sum is formed over generations of $l$-fold scattered electrons where the weight is the probability to scatter $l$ times.
 
-The mean value of equation \eqref{eq:intSpecModelNonAveragedResponse} with respect to the starting pitch angle as described in section~\ref{sec:intSpecModelResponseConcepts} can be calculated. Also the corresponding integral is swapped with the integral over the energy loss and the sum over the scatterings
+The mean value of equation \eqref{eq:intSpecModelNonAveragedResponse} with respect to the starting pitch angle as described in section~\ref{sec:intSpecModelResponseConcepts} can be calculated. Also the corresponding integral is swapped with the integral over the energy loss and the sum over the scattering count
 \begin{align}
 	\label{eq:intSpecModelAveragedResponseIntermediate}
 	R(\Esource, qU, \zSource) &= 
@@ -432,7 +433,7 @@ This expression can be reformulated to have the same form as the non-averaged re
 \end{align}
 
 
-The non-averaged transmission function $\mathcal{T}$, equation \eqref{eq:intSpecModelTransmissionPitchAngle},  within $T_l^{\star}$ is a step function with respect to the starting pitch angle $\thetaSource$ of an electron. This allows to adapt the upper integral boundary from $\thetaMax$ to $\thetaTransPure$ when integrating over $\thetaSource$ . Furthermore, analogous to the KATRIN transmission function from equation~\ref{eq:intSpecModelTransmission}, a distinction of cases avoids imaginary square roots. One obtains the detailed transmission function as given in~\cite{Groh2015,Kleesiek2019}
+The non-averaged transmission function $\mathcal{T}$, equation \eqref{eq:intSpecModelTransmissionPitchAngle},  within $T_l^{\star}$ is a step function with respect to the starting pitch angle $\thetaSource$ of an electron. This allows to adapt the upper integral boundary from $\thetaMax$ to $\thetaTransPure$ when integrating over $\thetaSource$ . Furthermore, in analogy to the KATRIN transmission function from equation~\ref{eq:intSpecModelTransmission}, a distinction of cases avoids imaginary square roots. One obtains the detailed transmission function as given in~\cite{Groh2015,Kleesiek2019}
 \begin{equation}
 	\label{eq:intSpecModelDetailedTransmission}
 	T_l^{\star}(E,qU,\zSource) =

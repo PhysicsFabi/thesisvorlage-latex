@@ -3,32 +3,75 @@
 
 \chapter{Parameter Inference Using an Energy Loss Model for Inelastically-Scattering Electrons Derived from KATRIN Data}
 \label{sec:katrinEloss}
-A quantitative accurate description of the scattering processes of $\upbeta$ electrons within KATRIN's gaseous tritium source is of crucial importance for the neutrino-mass-sensitivity goal. In modeling the corresponding effects the energy loss function as described in section~\ref{sec:intSpecModelResponseEloss}) plays an important role. With reference to the described energy loss function, the KATRIN Design report states, that its precision is not sufficient for the KATRIN-sensitivity goal. It was planned to deduce an sufficiently accurate model from data taken at KATRIN~\cite{Angrik:2005ep}. Such a model has successfully been established preliminarily for electrons scattering from deuterium molecules based on data taken in October 2018 by a dedicated subgroup of the KATRIN collaboration. This new energy loss model, from here forth named ``the KATRIN model'', has improved uncertainties with respect to the model from literature (section~\ref{sec:intSpecModelResponseEloss}), from here forth named ``the Aseev model'' after the primary author of the corresponding publication~\cite{Aseev2000}. Within the scope of this thesis the impact on KATRIN's sensitivity by the exchange of the Aseev model for the KATRIN model was studied. Therefore, this chapter is structured as follows: Section~\ref{sec:katrinElossConcept} presents the general idea of this study. Section~\ref{sec:katrinElossModel} outlines the KATRIN model. Section~\ref{sec:katrinElossStatistics} introduces the necessary statistical tools. Section~\ref{sec:katrinElossModelResults} lists and discusses the results. And section~\ref{sec:katrinElossModelConclusion} concludes and offers an outlook.
+A quantitative accurate description of the scattering processes of $\upbeta$ electrons within KATRIN's gaseous tritium source is of crucial importance for the neutrino-mass-sensitivity goal. In modeling the corresponding effects the energy loss function as described in section~\ref{sec:intSpecModelResponseEloss}) plays an important role. With reference to the described energy loss function, the KATRIN Design report states, that its precision is not sufficient for the KATRIN-sensitivity goal. It was planned to deduce a sufficiently accurate model from data taken at KATRIN~\cite{Angrik:2005ep}. Such a model has successfully been established preliminarily for electrons scattering from deuterium molecules based on data taken in October 2018 by a dedicated subgroup of the KATRIN collaboration. This new energy loss model, from here forth named ``the KATRIN model'', has improved uncertainties with respect to the model from literature (section~\ref{sec:intSpecModelResponseEloss}), from here forth named ``the Aseev model'' after the primary author of the corresponding publication~\cite{Aseev2000}. Within the scope of this thesis the impact on KATRIN's sensitivity by the exchange of the Aseev model for the KATRIN model was studied. Therefore, this chapter is structured as follows: Section~\ref{sec:katrinElossConcept} presents the general idea of this study. Section~\ref{sec:katrinElossModel} outlines the KATRIN model. Section~\ref{sec:katrinElossStatistics} introduces the necessary statistical tools. Section~\ref{sec:katrinElossModelResults} lists and discusses the results. And section~\ref{sec:katrinElossModelConclusion} concludes and offers an outlook.
 
 \section{Introduction and Motivation}
 \label{sec:katrinElossConcept}
 For the conducted sensitivity study KATRIN-neutrino-mass measurements were simulated assuming a neutrino mass of \SI{0}{eV} and using the KATRIN energy loss model. An uncertainty interval was deduced using the profile likelihood method as described in a subsequent section~\ref{sec:katrinElossStatistics} \todo{proper section}. This enables the treatment of the model uncertainties and their correlations as nuisance parameters.
 
-It should be noted, that the KATRIN model used in this thesis still is in its early stages and may be subject to changes. In fact, by the time of writing this thesis it has already undergone small adaptions to the version used in this chapter. However the form of the model has stayed the same, only the parameter values changed slightly. The newer and older parameter set are printed side by side in the appendix~\ref{sec:}. \todo{appendix}.
+It should be noted, that the KATRIN model used in this thesis is still preliminary and may be subject to changes. In fact, by the time of writing this thesis it has already undergone small adaptions to the version used in this chapter. However the form of the model has stayed the same, only the parameter values changed slightly. The newer and older parameter set are printed side by side in the appendix~\ref{sec:}. \todo{appendix}.
 
-Furthermore, during a neutrino mass measurement, the nominal tritium purity in the~\gls{wgts} is~\SI{95}{\percent}. Here, an energy loss model for deuterium is used. Two different, but similar energy loss models are expected for the two different gas species (compare~\cite{Abdurashitov2017} and~\cite{Aseev2000}). Within the scope of this thesis, the impact on KATRIN's sensitivity from the reduction of uncertainties on the energy loss model are of primary interest. As long as the KATRIN model for deuterium is sufficiently similar to the model for tritium, it is a plausible approach to use it for simulations of KATRIN-neutrino-mass measurements. In that regard, the results for KATRIN's sensitivity are expected to be meaningful.
+Furthermore, during a neutrino mass measurement, the nominal tritium purity in the~\gls{wgts} is~\SI{95}{\percent}. Here, an energy loss model for deuterium is used. Two different, but similar energy loss models are expected for the two different gas species (compare~\cite{Abdurashitov2017} and~\cite{Aseev2000}). Within the scope of this thesis, the impact on KATRIN's sensitivity from the reduction of uncertainties on the energy loss model are of primary interest. As long as the KATRIN model for deuterium is sufficiently similar to the model for tritium, it is a plausible approach to use it for simulations of KATRIN-neutrino-mass measurements. (For the similarity, see figure~\ref{fig:katrinElossElossModel}.) In that regard, the results for KATRIN's sensitivity derived in this chapter are expected to be meaningful.
 
-Moreover, it is of interest, to implement the required statistical tools into the available software frameworks in order for the study to be repeated or extended if needed.
+Moreover, it is of interest to implement the required statistical tools into the available software frameworks in order for the study to be repeated or extended if needed. This will most likely be the case, when data for scattering from tritium are evaluated. Additionally, the approach taken in the scope of this thesis is explained in a general manner and may be applied to other model uncertainties, not only the once stemming from the energy loss function.
 
 \section{The Preliminary KATRIN Energy Loss Model}
 \label{sec:katrinElossModel}
-\begin{figure}[th]
+\begin{figure}[tbh]
 	\centering
 	\includegraphics[width=\textwidth]{\currentFigureFolder/KATRINandAseevElossModel}
-	\xcaption{}{}{}
+	\xcaption{The preliminary model for the energy loss of electrons scattering from deuterium molecules established at KATRIN}{The preliminary model for the energy loss of electrons scattering from deuterium molecules established at KATRIN.}{}
 	\label{fig:katrinElossElossModel}
 \end{figure}
+The presented KATIRIN energy loss model is a phenomenological description fitted to data taken at the KATRIN experiment in October 2018. It was established by a dedicated subgroup of the KATRIN collaboration. As the model is still in its early stages this work refrains from a detailed physical interpretation and instead focuses on its statistical features. For the physics behind the model the reader is referred to the KATRIN documents specified in the footnote \footnote{\url{fuzzy.fzk.de/bscw/bscw.cgi/1254307}}\footnote{\url{neutrino.ikp.kit.edu/katrin/images/b/bf/D2_eloss_parametrization_v2.pdf}}\footnote{\url{nuserv.uni-muenster.de:8443/afulst/KATRIN-eloss/}}. Figure~\ref{fig:katrinElossElossModel} shows the KATRIN model in comparison to the Aseev model. Both match well in their general form and especially in the ionization tail.
 
+With respect to the statistical properties, the KATRIN model shows an improved uncertainty in the ionization tail and also in large parts of the excitation peak.
+
+The KATRIN model is based on the sum of three scaled Gaussian distributions to model the excitation peak region and an ab initio description for the ionization tail seamlessly attached to the model of the excitation peak region. The whole model can be described by 9 parameters which comprise the scales $A_i$, means $m_i$ and standard deviations $s_i$ of the three Gaussian distributions
+\begin{equation}
+	\nuisanceParamVec_\mathrm{eloss} = 
+	\transp{\left(
+	A_1, m_1, s_1, 
+	A_2, m_2, s_2, 
+	A_3, m_3, s_3
+	\right)}
+	\fullstop
+\end{equation}
+Although, the KATRIN model itself only comprises 9 parameters, it was obtained in a 15-parameter fit. The other 6 fit parameters are correlated with the parameters of the energy loss model and hence can not necessarily be neglected with regard to the uncertainty of the KATRIN model. In the scope of this thesis they were incorporated in the statistical treatment of the uncertainties. The further fit parameters are described in the following: The KATRIN model was fitted simultaneously to 4 data sets. One of which was recorded in a time-of-flight mode and the other three in an integral mode of the spectrometer. \todo{Refer to an explanation of these modes.} For each a different expected scattering count $\mu_\mathrm{tof}, \mu_{\mathrm{int},1}, \mu_{\mathrm{int},2}, \mu_{\mathrm{int},3}$ (see equation~\eqref{eq:intSpecModelExpectedScatteringCount}) was fitted. Furthermore, the two different measurement methods were normalized relatively to each other with a normalization factor $N_\mathrm{tof}$. Within the data sets of the integral measurement, one data set was additionally normalized with respect to the other two with a factor $N_{\mathrm{int},1}$. This yields the additional parameters
+\begin{equation}
+	\nuisanceParamVec_\mathrm{eloss+} = 
+	\transp{\left(
+		N_{\mathrm{int},1},
+		\mu_\mathrm{tof},
+		\mu_{\mathrm{int},1}, 
+		\mu_{\mathrm{int},2}, 
+		\mu_{\mathrm{int},3},
+		N_\mathrm{tof},
+		\right)}
+	\fullstop
+\end{equation}
+The best best-fit values and the covariance matrix of the full 15-parameter fit can be found in appendix~\ref{sec:}. \todo{add appendix}. The aim of this chapter is to study the impact of the model uncertainties from these parameters on KATRIN's sensitivity to the neutrino mass. Therefore, section~\ref{sec:katrinElossStatistics} introduces a set of statistical tools used in the scope of this thesis.
 
 \input{chapter/sensitivityStudyWithPreliminaryKatrinElossModel/statisticalPrerequisites/input-me.tex}
 
 \section{A Sensitivity Study using the Recent Preliminary KATRIN Energy Loss Model}
 \label{sec:katrinElossModelResults}
+\def\currentRootFolder{chapter/sensitivityStudyWithPreliminaryKatrinElossModel}
+\def\currentFigureFolder{\currentRootFolder/fig}
+\begin{figure}[th]
+	\centering
+	\includegraphics[width=\textwidth]{\currentFigureFolder/profileLikelihoodKATRINandAseev.pdf}
+	\xcaption{}{}{}
+	\label{fig:katrinElossResultsProfileLikelihood}
+\end{figure}
+
+\begin{figure}[th]
+	\centering
+	\includegraphics[width=\textwidth]{\currentFigureFolder/coverage.pdf}
+	\xcaption{Coverage Test for confidence interval}{}{}
+	\label{fig:katrinElossResultsCoverage}
+\end{figure}
+
 
 \section{Conclusion and Outlook}
 \label{sec:katrinElossModelConclusion}

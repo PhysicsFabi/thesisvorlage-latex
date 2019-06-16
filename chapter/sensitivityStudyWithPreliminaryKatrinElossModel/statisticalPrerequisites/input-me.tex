@@ -5,34 +5,17 @@
 
 \section{Statistical Prerequisites}
 \label{sec:katrinElossStatistics}
-\subsection{Nuisance Parameters and the Profile Likelihood Method}
-\label{sec:statMethodsProfileLikelihood}
-Apart from the  parameters of interest $\paramVec$ (usually the squared neutrino mass), the KATRIN likelihood depends on further so-called nuisance parameters $\nuisanceParamVec$ (e.\,g. the background rate). The dimensionality may pose difficulties when deriving a confidence region for the combined parameter set. Furthermore, as indicated by the naming conventions, the dimensions of the nuisance parameters in the confidence region are not of interest. Hence, in order to derive a confidence interval with restricted dimensions, a test statistic, similar to the one in equation~\ref{eq:statMethodsLikelihoodRatio}, but that solely depends on the parameters of interest, has to be found. The following paragraph outlines, how a corresponding test statistic can be constructed using the profile likelihood method.
-
-A corresponding derivation may start with the definition of the profile likelihood: The profile likelihood only depends on the parameters of interest $\paramVec$. Its values correspond the likelihood values evaluated at $\paramVec$ in the dimensions of the parameter of interest and maximized in the dimensions of the nuisance parameters~\cite{ReviewOfParticlePhysics}
-\begin{equation}
-\profLikelihood(\paramVec) = 
-L(\paramVec, \hat{\hat{\nuisanceParamVec}}(\paramVec))
-\comma
-\end{equation}
-where the double-hat indicates the maximization respectively the profiling. Also, the profile likelihood ratio can be defined~\cite{ReviewOfParticlePhysics}
-\begin{equation}
-\label{eq:statMethodsProfileLikelihoodRatio}
-\lambda_\mathrm{p}(\paramVec) = 
-\frac{\profLikelihood(\paramVec)}{\profLikelihood(\hat{\paramVec})}
-\fullstop
-\end{equation}
-According to Wilks’ theorem~\cite{wilks1938}, the distribution of $-2\ln\lambda_\mathrm{p}(\hat{\paramVec})$, where $\hat{\paramVec}$ is the \gls{mle}, approaches a $\chi^2$ distribution in the limit of a large data sample, independent of the values of the nuisance parameters $\nuisanceParamVec$~\cite{ReviewOfParticlePhysics}. Hence, the profile likelihood ratio offers a test statistic, from which a confidence interval for the parameters of interest can be derived.
-
-In application to a KATRIN neutrino mass measurement, the introduced formalism can be summarized as follows: The profile likelihood~\eqref{eq:statMethodsProfileLikelihoodRatio} is a measure (test statistic) for whether a hypothesized squared neutrino mass has to be rejected given the KATRIN data. Furthermore, analogously to section~\ref{sec:statMethodsUncertaintyIntervalsConfidence}, this allows for the derivation of a confidence interval for the squared neutrino mass. It should be noted, however, that this method requires an extrapolation of the likelihood to nonphysical negative squared neutrino masses~\cite{Kleesiek2014}.
-
-
-\subsection{Sensitivity from  the Profile Likelihood Method}
-In the scope of this thesis, the sensitivity on the neutrino mass is evaluated using the profile likelihood method (section~\ref{sec:statMethodsProfileLikelihood}) in order to account for nuisance parameters and especially their correlations. The profile likelihood method was also used in~\cite{Kleesiek2014} for a KATRIN standard 4-parameter fit (section~\ref{sec:statMethodsProfileLikelihood}). The obtained value for $\statUncert$ is plotted and can be extracted to be between \SIrange[range-phrase=--]{0.0155}{0.0165}{eV^2} which is in agreement with the result $\statUncert=\SI{0.0162}{eV^2}$ from ensemble testing (see table~\ref{tab:statMethodsSensitivityFromEnsembleTests}). ``In case of the standard 4 parameter fit, the confidence intervals calculated from ensemble tests are in very good agreement with alternative methods [...], including likelihood ratio intervals (profile likelihood method)'' Kleesiek, page 160, profile likelihood, optimized mtd, uncertainty on suqred mnu $0.01494 eV^2$.
-
-
+This chapter develops the statistical tools used in the scope of this thesis in order to evaluate the impact of the KATRIN model on KATRIN's sensitivity to the neutrino mass. The methods are described in a general manner and then related to the KATRIN model. Section~\ref{sec:katrinElossProfileLikelihood} 
 
 \subsection{Combination of Commissioning and Neutrino Mass Measurements}
+\begin{figure}[th]
+	\centering
+	\includegraphics[width=\textwidth]{\currentFigureFolder/katrinElossChi2Distribution.pdf}
+	\xcaption{}{}{}
+	\label{fig:katrinElossStatisticsChi2}
+\end{figure}
+
+
 If two measurements share a set of parameters $\paramVecShared$, but have additionally an individual set of parameters $\paramVec_1$ and $\paramVec_2$ and different sets of observations a combined likelihood is given by the product of the single likelihoods $L_1$ and $L_2$
 \begin{equation}
 -2\ln L(\paramVecShared, \paramVec_1, \paramVec_2) =  
@@ -73,6 +56,39 @@ For example, a standard KATRIN 3-year neutrino mass measurement is not at all se
 
 
 \todo{Add plots from ensemble test that proof statements.}
+
+\subsection{Nuisance Parameters and the Profile Likelihood Method}
+\label{sec:katrinElossProfileLikelihood}
+\begin{figure}[th]
+	\centering
+	\includegraphics[width=\textwidth]{\currentFigureFolder/profileLikelihood.pdf}
+	\xcaption{}{}{}
+	\label{fig:katrinElossStatisticsProfileLikelihood}
+\end{figure}
+Apart from the  parameters of interest $\paramVec$ (usually the squared neutrino mass), the KATRIN likelihood depends on further so-called nuisance parameters $\nuisanceParamVec$ (e.\,g. the background rate). The dimensionality may pose difficulties when deriving a confidence region for the combined parameter set. Furthermore, as indicated by the naming conventions, the dimensions of the nuisance parameters in the confidence region are not of interest. Hence, in order to derive a confidence interval with restricted dimensions, a test statistic, similar to the one in equation~\ref{eq:statMethodsLikelihoodRatio}, but that solely depends on the parameters of interest, has to be found. The following paragraph outlines, how a corresponding test statistic can be constructed using the profile likelihood method.
+
+A corresponding derivation may start with the definition of the profile likelihood: The profile likelihood only depends on the parameters of interest $\paramVec$. Its values correspond the likelihood values evaluated at $\paramVec$ in the dimensions of the parameters of interest and maximized in the dimensions of the nuisance parameters~\cite{ReviewOfParticlePhysics}
+\begin{equation}
+\profLikelihood(\paramVec) = 
+L(\paramVec, \hat{\hat{\nuisanceParamVec}}(\paramVec))
+\comma
+\end{equation}
+where the double-hat indicates the maximization respectively the profiling. Also, the profile likelihood ratio can be defined~\cite{ReviewOfParticlePhysics}
+\begin{equation}
+\label{eq:statMethodsProfileLikelihoodRatio}
+\lambda_\mathrm{p}(\paramVec) = 
+\frac{\profLikelihood(\paramVec)}{\profLikelihood(\hat{\paramVec})}
+\fullstop
+\end{equation}
+According to Wilks’ theorem~\cite{wilks1938}, the distribution of $-2\ln\lambda_\mathrm{p}(\hat{\paramVec})$, where $\hat{\paramVec}$ is the \gls{mle}, approaches a $\chi^2$ distribution in the limit of a large data sample, independent of the values of the nuisance parameters $\nuisanceParamVec$~\cite{ReviewOfParticlePhysics}. Hence, the profile likelihood ratio offers a test statistic, from which a confidence interval for the parameters of interest can be derived.
+
+In application to a KATRIN neutrino mass measurement, the introduced formalism can be summarized as follows: The profile likelihood~\eqref{eq:statMethodsProfileLikelihoodRatio} is a measure (test statistic) for whether a hypothesized squared neutrino mass has to be rejected given the KATRIN data. Furthermore, analogously to section~\ref{sec:statMethodsUncertaintyIntervalsConfidence}, this allows for the derivation of a confidence interval for the squared neutrino mass. It should be noted, however, that this method requires an extrapolation of the likelihood to nonphysical negative squared neutrino masses~\cite{Kleesiek2014}.
+
+
+
+
+
+
 
 \subsection{Extension of the KaFit Software Framework}
 \label{sec:statLikelihoodExtImpl}
