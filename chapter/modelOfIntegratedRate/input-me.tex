@@ -40,20 +40,20 @@ the effective electron-antineutrino mass $\nuMass$ defined via the PMNS matrix $
 	 \nuMass^2 = \abs{U_{\elecIndex i}}^2 m_i^2\,;
 \end{equation}
 the Fermi constant $\fermiConst$;
-the up-down-quark-coupling given by the Cabibo angle $\theta_\mathrm{C}$~\cite{Kleesiek2019}
+the up-down-quark-coupling given by the Cabibbo angle $\theta_\mathrm{C}$~\cite{ReviewOfParticlePhysics}
 \begin{equation}
 V_\mathrm{ud} = \cos \theta_\mathrm{C} = 
 0.97425\pm0.00022;
 \end{equation}
-and the nuclear transition matrix element~\cite{Kleesiek2019}
+and the nuclear transition matrix element~\cite{ReviewOfParticlePhysics}
 \begin{equation}
 \abs{\nucMatrixElement}^2 = g_V^2+3g_A^2 \quad
-\text{with } g_v = 1 \quad
+\text{with } g_V = 1 \quad
 \text{and} \quad g_A/g_V = -1.2646 \pm 0.0035
 \end{equation}
 which is independent of the electron's kinetic energy as the decay is super-allowed and given by the vector $g_V$ and axial vector $g_A$ coupling.
 
-Furthermore, the Fermi function $F(Z,\Esource)$ accounts for the Coulomb interaction between the outgoing electron and the daughter nucleus with atomic charge $Z=2$, which in its relativistic version can be approximated as~\cite{Kleesiek2019}
+Furthermore, the Fermi function $F(Z,\Esource)$ accounts for the Coulomb interaction between the outgoing electron and the daughter nucleus with atomic charge $Z=2$, which in its relativistic version can be approximated as~\cite{Simpson1981}
 \begin{equation}
 F(Z,\Esource) \approx \frac{2 \pi \eta}{1-\exp{2 \pi \eta}} \cdot R
 \comma
@@ -517,23 +517,23 @@ where $\Gamma(qU)$ denotes the integral rate~\eqref{eq:intSpecModelIntegralRate}
 
 \section{Measurement Time Distribution}
 \label{sec:intSpecModelMTD}
-KATRIN measures electron counts as described in equation \eqref{eq:intSpecModelDetectorCounts} at a set of retarding energies $\left\{qU_i\right\}$. How much measurement time $t(qU_i)$ is attributed to a certain retarding energy is specified in a so-called \gls{mtd}. The \gls{mtd} influences the experiment's sensitivity to the neutrino mass. An optimal \gls{mtd} balances the following aspects:
+KATRIN measures electron counts as described in equation \eqref{eq:intSpecModelDetectorCounts} at a set of retarding energies $\left\{qU_i\right\}$. How much measurement time $t(qU_i)$ is attributed to a certain retarding energy is specified in a \gls{mtd}. The \gls{mtd} influences the experiment's sensitivity to the neutrino mass. An optimal \gls{mtd} balances the following aspects:
 \begin{enumerate}
-	\item Some measurement time has to be attributed to retarding energies beyond the endpoint of the integral tritium-$\upbeta$ spectrum to determine the background rate. The optimal duration depends on the background rate~\cite{Angrik:2005ep}.
-	\item The shape of the integral tritium-$\upbeta$ spectrum depends the strongest on the neutrino mass near its endpoint. Hence, most measurement time should be attributed to this region~\cite{Angrik:2005ep}.
+	\item Some measurement time has to be attributed to retarding energies beyond the endpoint of the integral tritium-$\upbeta$ spectrum to determine the background rate. The optimal duration depends on the background rate, but can generally take up a sizable fraction (of order \SI{30}{percent}) of the overall measurement time. ~\cite{Angrik:2005ep}.
+	\item Near its endpoint, the shape of the integral tritium-$\upbeta$ spectrum depends most strongly on the neutrino mass. Hence, most measurement time should be attributed to this region~\cite{Angrik:2005ep}.
 	\item Retarding voltage bins deeper into the spectrum increase the count rate and hence, lower the statistical uncertainty due to Poisson statistics. Theses measurements mainly determine the endpoint from extrapolating the slope of the integral tritium-$\upbeta$ spectrum~\cite{Angrik:2005ep}.
-	\item The theoretical description of the integral tritium-$\upbeta$ spectrum is optimized for the endpoint region. E.\,g.~the molecular final states (Rydberg states and the electronic continuum) for $\upbeta$-electron energies \SI{40}{eV} below the endpoint would need further investigation~\cite{Doss:2006}. Hence, deeper scans introduce modeling uncertainties. However, it is expected that continuous modeling efforts decrease these uncertainties as needed.
+	\item The theoretical description of the integral tritium-$\upbeta$ spectrum is optimized for the endpoint region. E.\,g.~the molecular final states for $\upbeta$-electron energies \SI{40}{eV} below the endpoint would need further investigation~\cite{Doss:2006}. Hence, deeper scans introduce modeling uncertainties. However, it is expected that continuous modeling efforts decrease these uncertainties as needed.
 \end{enumerate}
 The KATRIN Design Report~\cite{Angrik:2005ep} suggests 5 \gls{mtd}s for different measurement ranges $[E_0-\alpha\;\SI{}{eV}, E_0 + \SI{5}{eV}]$ with $\alpha \in \{20, 25, 30, 40, 50\}$ and the conclusion that $\alpha=30$ yields the best sensitivity to the neutrino mass.
 
-As an energy-dependent effect is investigated within this thesis, it should be noted, that scans beyond the $\SI{50}{eV}$ range have already been performed and may also be performed again in the future. E.\,g.~searches for sterile neutrinos at the keV-scale would require deeper scans. On top of that, within several measurement campaigns deeper scans were conducted: The \gls{ft} commissioning campaign successfully proved the apparatus functioning. The corresponding \gls{mtd} covered a range starting at $\sim\,E_0-\SI{1.6}{keV}$. The \gls{knm1} campaign is evaluated during the writing of this thesis. It set out to establish an unprecedented limit on the neutrino mass by $\upbeta$-decay measurements. Its \gls{mtd} starts at $\sim\,E_0-\SI{90}{eV}$.
+As an energy-dependent effect is investigated within this thesis, it should be noted, that scans beyond the $\SI{50}{eV}$ range have already been performed and may also be performed again in the future. E.\,g.~searches for sterile neutrinos at the keV-scale would require deeper scans~\cite{Mertens2019}. On top of that, within several measurement campaigns deeper scans were conducted: The \gls{ft} commissioning campaign successfully proved the apparatus functioning. The corresponding \gls{mtd} covered a range starting at $\sim\,E_0-\SI{1.6}{keV}$. The \gls{knm1} is being evaluated during the writing of this thesis. It set out to establish an unprecedented limit on the neutrino mass by $\upbeta$-decay measurements. Its \gls{mtd} starts at $\sim\,E_0-\SI{90}{eV}$, but the analysis range for neutrino mass inference remains still to be determined.
 
 \section{A KATRIN Neutrino Mass Measurement}
 \label{sec:intSpecModelNuMassMeasurement}
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{\currentFigureFolder/neutrinoMassMeasurement.pdf}
-	\xcaption{Simulated KATRIN measurement for a non-vanishing neutrino mass.}{Simulated KATRIN measurement for a non-vanishing neutrino mass.}{The top plot shows the measured integral rate $\Gamma$ in dependence of the retarding energy. The plot in the middle shows the relative rate difference for a non-vanishing neutrino mass $\Gamma(\nuMass=\SI{0.35}{eV})/\Gamma(\nuMass=\SI{0}{eV})-1$. The difference is $\sim\SI{2}{\percent}$ at a retarding energy approximately $\SI{4}{eV}$ below the endpoint (simulated as $E_0=\SI{18575}{eV}$). The bottom plot shows the \gls{mtd} where most measurement time is attributed to the most sensitive region. This is also reflected by the uncertainty bars of the toy data. (Adapted from~\cite{SeitzM2019}.)}
+	\xcaption{Simulated KATRIN measurement for a non-vanishing neutrino mass.}{Simulated KATRIN measurement for a non-vanishing neutrino mass.}{The top panel shows the measured integral rate $\Gamma$ in dependence of the retarding energy. The center panel shows the relative rate difference for a non-vanishing neutrino mass $\Gamma(\nuMass=\SI{0.35}{eV})/\Gamma(\nuMass=\SI{0}{eV})-1$. The difference is $\sim\SI{2}{\percent}$ at a retarding energy approximately $\SI{4}{eV}$ below the endpoint (simulated as $E_0=\SI{18575}{eV}$). The bottom panel shows the \gls{mtd} where most measurement time is attributed to the most sensitive region. This is also reflected by the uncertainty bars of the toy data. (Adapted from~\cite{SeitzM2019}.)}
 	\label{fig:katrinExpNuMassMeasurement}
 \end{figure}
 In summary, a KATRIN measurement yields a set of electron counts $\{N(qU_i)\}$, equation \eqref{eq:intSpecModelDetectorCounts}, distributed over retarding voltage bins $\{qU_i\}$, where the counts fluctuate statistically~\cite{Angrik:2005ep}. The fluctuation can be assumed to be of Poissonian nature~\cite{Kleesiek2014}. Figure~\ref{fig:katrinExpNuMassMeasurement} shows a KATRIN measurement for an \gls{mtd} starting at $E_0-\SI{30}{eV}$ and a total measurement time of three years. The distortion of the measured integral rate by a non-vanishing neutrino mass can be seen approximately \SI{-4}{eV} below the endpoint $E_0$. This distortion can be used to infer the squared electron antineutrino mass from a KATRIN neutrino mass measurement. Chapter~\ref{sec:statMethods} presents corresponding statistical methods.

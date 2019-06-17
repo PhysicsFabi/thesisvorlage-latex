@@ -4,11 +4,9 @@
 \input{chapter/statisticalMethods/glossaries.tex}
 \chapter{Statistical Methods and Neutrino Mass Inference at KATRIN}
 \label{sec:statMethods}
-\todo{Unify wording: dertector counts, measured counts theoretical counts, predcited coutns, expected counts.}
+The best estimator for the neutrino mass $m_\nu$ alongside with an uncertainty or an upper limit will be retrieved by comparing the output of the KATRIN measurement with theoretical predictions within the process of parameter inference. Different statistical approaches exist, that differ in practicality as well as interpretation. This chapter reviews a selection of statistical approaches suitable in relation to the KATRIN experiment.
 
-The best estimator for the neutrino mass $m_\nu$ alongside with an uncertainty or an upper limit will be retrieved by comparing the output of the KATRIN measurement with theoretical predictions. This process is called parameter inference. There exist different statistical approaches. They differ in practicality as well as interpretation. This chapter reviews a selection of statistical approaches suitable in relation to the KATRIN experiment.
-
-Section~\ref{sec:statMethodsMLE} outlines the principle of the \glsentryfull{mle}. Section~\ref{sec:statMethodsKATRINLikelihood} relates the principle of the \glsentryshort{mle} to a KATRIN measurement and neutrino mass inference. Section~\ref{sec:statMethodsUncertaintyIntervals} reviews the concept of uncertainty intervals and how confidence intervals can be extracted from the likelihood. Section~\ref{sec:statMethodsProfileLikelihood} extends the formalism to account for so-called nuisance parameters within the profile-likelihood formalism. Section~\ref{sec:statMethodsKaFitSSC} introduces the statistical software framework that was used within this thesis. And finally, section~\ref{sec:statMethodsKatrinSensitivity} deduces the neutrino mass uncertainty and explains the origin of the often quoted $\SI{200}{eV}$ (\SI{90}{\percent} C.L.) KATRIN sensitivity.
+Section~\ref{sec:statMethodsMLE} outlines the principle of the \glsentryfull{mle}. Section~\ref{sec:statMethodsKATRINLikelihood} relates the principle of the \glsentryshort{mle} to a KATRIN measurement and neutrino mass inference. Section~\ref{sec:statMethodsUncertaintyIntervals} reviews the concept of uncertainty intervals and how confidence intervals can be extracted from the likelihood. Section~\ref{sec:statMethodsKaFitSSC} introduces the statistical software framework that was used within this thesis. Finally, section~\ref{sec:statMethodsKatrinSensitivity} relates the principle of uncertainty to neutrino mass inference and explains the origin of the often quoted $\SI{200}{meV}$ (\SI{90}{\percent} C.L.) KATRIN sensitivity.
 
 \section{Maximum Likelihood Estimation}
 \label{sec:statMethodsMLE}
@@ -22,14 +20,18 @@ If $p$ denotes the probability for one observed value $x_i$ in $\dataVec$, then 
 	L(\paramVec) = \prod_{i} p\giventhat{x_i}{\paramVec}
 	\fullstop
 \end{equation}
-The parameter vector $\hat{\paramVec}$ that maximizes the likelihood function is called the \gls{mle} for the true values of $\paramVec$~\ref{sec:statMethodsMLE}.
+The parameter vector $\hat{\paramVec}$ that maximizes the likelihood function is called the \gls{mle} for the true values of $\paramVec$.
 
 \section{The Likelihood of a KATRIN measurement}
 \label{sec:statMethodsKATRINLikelihood}
-The \gls{mle}-method can be applied to a KATRIN measurement as follows: The data vector is given by a set of $n$ electron counts $\left\{\Nobsi\right\}$ measured at different retarding potentials $\left\{qU_i\right\}$. The hypothesis is that these counts follow a Poisson distribution with predicted expected electron counts $\left\{\Ntheoi\right\}$ as in equation \eqref{eq:intSpecModelCountsFinal}~\cite{Kleesiek2014}. For sufficiently high counts a Poisson distribution can be approximated by a Gaussian distribution $\mathcal{N}(x,\mu, \sigma)$ with mean $\mu=\Ntheoi(\paramVec)$ and standard deviation $\sigma=\sqrt{\Nobsi}$. \todo{Clearify what the right std is. SSC paper and KaFit use the theo. counts, but then the application of the ln does not yield the $\chi^2$ sum!? Also a comment right next to the Kafit code says "We are use Neyman' ChiSquare here (denominator given by measured counts variance)" But then the theo. counts are used anyway.} The likelihood function then reads
+The \gls{mle}-method can be applied to a KATRIN measurement as follows: The data vector is given by a set of $n$ electron counts $\left\{\Nobsi\right\}$ measured at different retarding potentials $\left\{qU_i\right\}$. The hypothesis is that these counts follow a Poisson distribution with predicted expected electron counts $\left\{\Ntheoi\right\}$ as per equation \eqref{eq:intSpecModelDetectorCounts}~\cite{Kleesiek2014}. For sufficiently high counts a Poisson distribution can be approximated by a Gaussian distribution $\mathcal{N}(x,\mu, \sigma)$ with mean $\mu=\Ntheoi(\paramVec)$ and standard deviation $\sigma=\sqrt{\Nobsi}$. \todo{Clearify what the right std is. SSC paper and KaFit use the theo. counts, but then the application of the ln does not yield the $\chi^2$ sum!? Also a comment right next to the Kafit code says "We are use Neyman' ChiSquare here (denominator given by measured counts variance)" But then the theo. counts are used anyway.} The likelihood function then reads
 \begin{equation}
 	\label{eq:KATRINlikelihood}
-	L(\paramVec) = \prod_{i}^{n} \mathcal{N}\left(\Nobsi,\mu=\Ntheoi(\paramVec), \sigma=\sqrt{\Nobsi}\right)
+	L(\paramVec) = \prod_{i}^{n} \mathcal{N}\left(
+		x=\Nobsi,
+		\mu=\Ntheoi(\paramVec),
+		\sigma=\sqrt{\Nobsi}
+	\right)
 	\fullstop
 \end{equation}
 Commonly, instead of maximizing the likelihood function, its negative logarithm is minimized and a factor 2 is introduced~\cite{ReviewOfParticlePhysics}. This yields
@@ -44,15 +46,15 @@ Commonly, instead of maximizing the likelihood function, its negative logarithm 
 \end{equation}
 The minimization of equation~\eqref{eq:statMethodsKatrinChi2} yields the \gls{mle} estimator $\hat{\paramVec}$ for $\paramVec$.
 
-Under the made assumptions equation~\eqref{eq:statMethodsKatrinChi2} is a sum of $n$ standard normal distributed random variables. Hence, evaluated at the \gls{mle},  $\chi^2(\hat{\paramVec})$, follows the Pearson's chi-square statistic with $n-\mathrm{dim}\paramVec$ degrees of freedom. Accordingly, the value $\chi^2(\hat{\paramVec})$ is a measure for the goodness-of-fit~\cite{ReviewOfParticlePhysics}.
+Under the made assumptions equation~\eqref{eq:statMethodsKatrinChi2} is a sum of $n$ standard normal distributed random variables. Hence, evaluated at the \gls{mle},  $\chi^2(\hat{\paramVec})$, follows the Pearson's chi-square statistic with $n-\mathrm{dim}\paramVec$ degrees of freedom. Accordingly, the value $\chi^2(\hat{\paramVec})$ is a measure for the goodness-of-fit~\cite{ReviewOfParticlePhysics}. In conclusion, equation~\eqref{eq:statMethodsKatrinChi2} can be used for neutrino mass inference via the maximum likelihood method.
 
 \section{A Standard Four-Parameter KATRIN Neutrino Mass Fit}
 \label{sec:statMethodsStandardFit}
-In regard to a KATRIN neutrino mass measurement, the parameter of interest in the parameter vector $\paramVec$ is the squared neutrino mass $m_\nu^2$. Furthermore, $\paramVec$ typically comprises the endpoint of the tritium-$\upbeta$ spectrum $E_0$, equation~\eqref{eq:intSpecModelDiffSpecNeutrinoEnergy}, an overall normalization factor for the $\upbeta$ electron counts $\sigAmp$ and the background rate $\bgRate$~\cite{Kleesiek2014,Angrik:2005ep}. For the latter two see equation~\eqref{eq:intSpecModelDetectorCounts}.
+In regard to a KATRIN neutrino mass measurement, the parameter of interest in the parameter vector $\paramVec$ is the squared neutrino mass $m_\nu^2$. Furthermore, $\paramVec$ typically comprises the endpoint of the tritium-$\upbeta$ spectrum $E_0$, equation~\eqref{eq:intSpecModelDiffSpecNeutrinoEnergy}, an overall normalization factor for the $\upbeta$ electron counts $\sigAmp$ and the background rate $\bgRate$~\cite{Kleesiek2014,Angrik:2005ep}. For the latter two see equation~\eqref{eq:intSpecModelDetectorCounts}. Hence, in order to infer the neutrino mass, the four-dimensional likelihood has to be minimized. Following this procedure with simulated data enables the determination of KATRIN's sensitivity (see section~\ref{sec:statMethodsKatrinSensitivity}).
 
 \section{Uncertainty Intervals}
 \label{sec:statMethodsUncertaintyIntervals}
-The presented maximum likelihood method provides point estimates $\hat{\paramVec}$. However, additional information can be provided by interval estimates. There are two main approaches to statistical inference, which may be called Bayesian and frequentist~\cite{ReviewOfParticlePhysics}. They differ in their interpretation of probability, which becomes especially evident by the interval estimates associated with the two approaches: Credible and confidence intervals. Both interval types can be given with reference to quantiles of the Gaussian distribution. E.\,g.~the 1- and 2-$\sigma$ levels define \SI{68}{\percent} and \SI{95}{\percent} intervals. The following two sections explain the matter in more detail.
+The presented maximum likelihood method (section~\ref{sec:statMethodsMLE}) provides point estimates $\hat{\paramVec}$. However, additional information can be provided by interval estimates. There are two main approaches to statistical inference, which may be called Bayesian and frequentist~\cite{ReviewOfParticlePhysics}. They differ in their interpretation of probability, which becomes especially evident by the interval estimates associated with the two approaches: Credible and confidence intervals. Both interval types can be given with reference to quantiles of the Gaussian distribution. E.\,g.~the 1- and 2-$\sigma$ levels define \SI{68}{\percent} and \SI{95}{\percent} intervals. The following two sections explain the matter in more detail.
 
 \subsection{Bayesian Credible Intervals}
 The likelihood $L\giventhat{\dataVec}{\paramVec}$ is a probability distribution of the data $\dataVec$ given the parameters $\paramVec$. Using Bayes theorem the likelihood can be transformed into a probability density for the parameters $\paramVec$ by multiplication with a prior distribution $\pi(\paramVec)$ and normalization to one~\cite{ReviewOfParticlePhysics}
