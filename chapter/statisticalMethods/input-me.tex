@@ -50,14 +50,14 @@ Under the made assumptions equation~\eqref{eq:statMethodsKatrinChi2} is a sum of
 
 \section{A Standard Four-Parameter KATRIN Neutrino Mass Fit}
 \label{sec:statMethodsStandardFit}
-In regard to a KATRIN neutrino mass measurement, the parameter of interest in the parameter vector $\paramVec$ is the squared neutrino mass $m_\nu^2$. Furthermore, $\paramVec$ typically comprises the endpoint of the tritium-$\upbeta$ spectrum $E_0$, equation~\eqref{eq:intSpecModelDiffSpecNeutrinoEnergy}, an overall normalization factor for the $\upbeta$ electron counts $\sigAmp$ and the background rate $\bgRate$~\cite{Kleesiek2014,Angrik:2005ep}. For the latter two see equation~\eqref{eq:intSpecModelDetectorCounts}. Hence, in order to infer the neutrino mass, the four-dimensional likelihood has to be minimized. Following this procedure with simulated data enables the determination of KATRIN's sensitivity (see section~\ref{sec:statMethodsKatrinSensitivity}).
+In regard to a KATRIN neutrino mass measurement, the parameter of interest in the parameter vector $\paramVec$ is the squared neutrino mass $m_\nu^2$. Furthermore, $\paramVec$ typically comprises the endpoint of the tritium-$\upbeta$ spectrum $E_0$, equation~\eqref{eq:intSpecModelDiffSpecNeutrinoEnergy}, an overall normalization factor for the $\upbeta$ electron counts $\sigAmp$ and the background rate $\bgRate$~\cite{Kleesiek2014,Angrik:2005ep}. For the latter two see equation~\eqref{eq:intSpecModelDetectorCounts}. Hence, in order to infer the neutrino mass, the four-dimensional likelihood has to be minimized. Following this procedure with simulated data enables the determination of KATRIN's sensitivity (see subsequent section~\ref{sec:statMethodsKatrinSensitivity}).
 
 \section{Uncertainty Intervals}
 \label{sec:statMethodsUncertaintyIntervals}
 The presented maximum likelihood method (section~\ref{sec:statMethodsMLE}) provides point estimates $\hat{\paramVec}$. However, additional information can be provided by interval estimates. There are two main approaches to statistical inference, which may be called Bayesian and frequentist~\cite{ReviewOfParticlePhysics}. They differ in their interpretation of probability, which becomes especially evident by the interval estimates associated with the two approaches: Credible and confidence intervals. Both interval types can be given with reference to quantiles of the Gaussian distribution. E.\,g.~the 1- and 2-$\sigma$ levels define \SI{68}{\percent} and \SI{95}{\percent} intervals. The following two sections explain the matter in more detail.
 
 \subsection{Bayesian Credible Intervals}
-The likelihood $L\giventhat{\dataVec}{\paramVec}$ is a probability distribution of the data $\dataVec$ given the parameters $\paramVec$. Using Bayes theorem the likelihood can be transformed into a probability density for the parameters $\paramVec$ by multiplication with a prior distribution $\pi(\paramVec)$ and normalization to one~\cite{ReviewOfParticlePhysics}
+The likelihood $L\giventhat{\dataVec}{\paramVec}$ is a probability distribution for the data $\dataVec$ given the parameters $\paramVec$. Using Bayes theorem the likelihood can be transformed into a probability density for the parameters $\paramVec$ by multiplication with a prior distribution $\pi(\paramVec)$ and normalization to one. One obtains the posterior distribution~\cite{ReviewOfParticlePhysics}
 \begin{equation}
 \label{eq:statMethodsPosterior}
 	P\giventhat{\paramVec}{\dataVec} = 
@@ -68,15 +68,15 @@ The likelihood $L\giventhat{\dataVec}{\paramVec}$ is a probability distribution 
 		}
 	\fullstop
 \end{equation}
-Here, $P\giventhat{\paramVec}{\dataVec}$ is the so-called posterior distribution. So-called credible regions, in which the true parameters lie with a certain probability $\alpha$, can be extracted. As noted, typical values for $\alpha$ are \SI{68}{\percent} and \SI{95}{\percent}. When $\paramVec$ is one dimensional a credible region becomes a credible interval. 
+Credible regions, in which the true parameters lie with a certain probability can be extracted. When $\paramVec$ is one dimensional a credible region is also called a credible interval. 
 
 \subsection{Frequentist Confidence Intervals}
 \label{sec:statMethodsUncertaintyIntervalsConfidence}
-This section first aims at defining the terms ``confidence interval'', ``coverage probability'' and ``confidence level''. On the basis of these definitions it is explained, how confidence intervals can be extracted from a likelihood in general and especially in the case of a KATRIN neutrino mass measurement.
+This section first gives definitions for the terms ``confidence interval'', ``coverage probability'' and ``confidence level''. On the basis of these definitions it is explained, how confidence intervals can be extracted from a likelihood in general. This approach was extended and applied within the scope of this thesis in order to study the impact of model uncertainties on KATRIN's sensitivity.
 
-In frequentist statistics, probability is interpreted as the frequency of the outcome of a repeatable experiment and the boundary of a so-called confidence region is given by a function of the data. There is some freedom of choice for the corresponding function. It should be noted, that in this sense, the term confidence regions is somewhat ``unqualified''~\cite{ReviewOfParticlePhysics}. But it obtains a deeper meaning in combination with a coverage probability. First, it should be noted, that the boundary of the confidence region would fluctuate if one were to repeat the experiment many times. One would obtain an ensemble of confidence regions. The so-called coverage probability $\alpha$ refers to the fraction of regions in such an ensemble that contains the true parameter values~$\paramVec_\mathrm{T}$\cite{ReviewOfParticlePhysics}. If an ensemble of confidence regions covers the true parameter values~$\paramVec_\mathrm{T}$ at least a fraction of $\alpha$ times, the confidence interval is understood to have a confidence level of $\alpha$~\cite{ReviewOfParticlePhysics}. When $\paramVec$ is one dimensional a confidence region becomes a confidence interval. 
+In frequentist statistics, probability is interpreted as the frequency of the outcome of a repeatable experiment and the boundary of a so-called confidence region is given by a function of the data. There is some freedom of choice for the corresponding function. It should be noted, that in this sense, the term confidence region is somewhat ``unqualified''~\cite{ReviewOfParticlePhysics}. But it obtains a deeper meaning in combination with a coverage probability. First, it should be noted, that the boundary of the confidence region would fluctuate if one were to repeat the experiment many times. One would obtain an ensemble of confidence regions. The coverage probability $\alpha$ refers to the fraction of regions in such an ensemble that contains the true parameter values~$\paramVec_\mathrm{T}$\cite{ReviewOfParticlePhysics}. If an ensemble of confidence regions covers the true parameter values~$\paramVec_\mathrm{T}$ at least a fraction of $\alpha$ times, the confidence interval is understood to have a confidence level of $\alpha$~\cite{ReviewOfParticlePhysics}. When $\paramVec$ is one dimensional a corresponding confidence region is called a confidence interval. 
 
-The Neyman construction~\cite{Neyman1937} or its extension, the unified approach by Feldman and Cousins~\cite{Feldman1998}, yield such confidence regions.
+The Neyman construction~\cite{Neyman1937} or its extension, the unified approach by Feldman and Cousins~\cite{Feldman1998}, yield such confidence intervals.
 
 An equivalent method of constructing confidence intervals is to consider a test (see hypothesis testing in~\cite{ReviewOfParticlePhysics}) of the hypothesis that the parameter values $\paramVec$ have the true values $\paramVec_\mathrm{T}$~\cite{ReviewOfParticlePhysics}. In this construction the choice of test to be used is free. One possibility is a test statistic based on the likelihood ratio between the \gls{mle} $\hat{\paramVec}$ and $\paramVec$~\cite{ReviewOfParticlePhysics}
 \begin{equation}
@@ -94,24 +94,19 @@ If the likelihood follows the form of a multivariate Gaussian distribution in $\
 \end{equation}
 encloses a $s$-$\sigma$ confidence region for $\paramVec$~\cite{ReviewOfParticlePhysics}. (Here, $s$-$\sigma$ denotes the corresponding quantile of a Gaussian distribution.) 
 
-The derivation of the KATRIN $\chi^2$-likelihood~\eqref{eq:statMethodsKatrinChi2} was based on the assumption of its Gaussian-like shape. In this sense, the confidence contour~\eqref{eq:statMethodsConfidenceContour} applies. 
-
-In conclusion, in this section a recipe has been derived, that enables the extraction of confidence regions for the parameters of a KATRIN measurement, especially for the squared neutrino mass, from the KATRIN likelihood. However, in practice, finding the corresponding contours of the confidence region given by equation \ref{eq:statMethodsConfidenceContour} may not be feasible, as it is a multi-dimensional problem. In a minimal setup of a KATRIN parameter inference $\paramVec$ has at least the dimension 4 comprised of the $\upbeta$-spectrum endpoint, the background rate, the signal amplitude and the squared neutrino mass~\cite{Kleesiek2014}. (For the meaning of these parameters also see equation \eqref{eq:intSpecModelDetectorCounts}.) When only the confidence interval for the neutrino mass is of interest, the other so-called nuisance parameters can e.\,g.~be profiled out. This procedure is reviewed in section~\ref{sec:statMethodsProfileLikelihood}.
+In conclusion, in this section a recipe has been presented, that enables the extraction of confidence regions for the parameters of a KATRIN measurement, especially for the squared neutrino mass, from the KATRIN likelihood. However, in practice, finding the corresponding contours of the confidence region given by equation \ref{eq:statMethodsConfidenceContour} may not be feasible, as it is a multi-dimensional problem. In a nominal setup of a KATRIN parameter inference $\paramVec$ is at least 4-dimensional (see section~\ref{sec:statMethodsStandardFit}). When only the confidence interval for the neutrino mass is of interest, the other nuisance parameters can e.\,g.~be profiled out. This procedure finds application within the scope of this thesis and is reviewed more closely in the subsequent section~\ref{sec:katrinElossProfileLikelihood}.
 
 \section{The KaFit and SSC Software Frameworks}
 \label{sec:statMethodsKaFitSSC}
-With respect to neutrino mass inference at KATRIN two formalisms have been presented: the model for a KATRIN neutrino mass measurement in chapter~\ref{sec:intSpecModel} and a statistical framework for parameter inference in chapter~\ref{sec:statMethods}. 
+With respect to neutrino mass inference at KATRIN two formalisms have been presented: the model for a KATRIN neutrino mass measurement in chapter~\ref{sec:intSpecModel} and a statistical framework for parameter inference within the current chapter~\ref{sec:statMethods}. 
 
-The two formalisms are implemented within two modules of the so-called ``KATRIN Analysis and Simulations Package'' (KASPER)\footnote{\url{https://nuserv.uni-muenster.de:8443/katrin-git/kasper}}:
+The two formalisms are implemented within two modules of the ``KATRIN Analysis and Simulations Package'' (KASPER)\footnote{\url{https://nuserv.uni-muenster.de:8443/katrin-git/kasper}}:
 \begin{enumerate}
 	\item The \textbf{\glsentryfull{ssc}} package implements the formulas for the differential and integrated spectrum calculations. Therefore, it follows the formulas given in chapter~\ref{sec:intSpecModel}. Additionally, it also includes aspects beyond the given description, such as the gas dynamics within the \gls{wgts}~\cite{Hoetzel2012, Groh2015, Kleesiek2019, Kaefer2012}.
 	\item The \textbf{KaFit} package translates the $\upbeta$ spectrum calculated by \glsentryshort{ssc} into expected detector counts. Furthermore, KaFit implements several statistic tools tailored to the KATRIN experiment. One of which is the extraction of confidence intervals according to the profile likelihood method (see section~\ref{sec:statMethodsUncertaintyIntervalsConfidence}), which is of importance in the scope of this thesis. The actual minimization and profiling are done by the interfaced MINUIT2 and MINOS package from the ROOT\footnote{\url{http://root.cern.ch/}}~\cite{ANTCHEVA2009} analysis framework~\cite{Kleesiek2014}.
 \end{enumerate}
 
-Both packages were extended to allow for the analysis done within the scope of this thesis as will be explained in chapters~\ref{sec:energyDepScat} and~\ref{sec:katrinEloss}.
-
-
-
+Both packages were used and extended to allow for the analysis done within the scope of this thesis as will be explained in chapters~\ref{sec:energyDepScat} and~\ref{sec:katrinEloss}.
 
 \section{KATRIN's Sensitivity to the Electron Antineutrino Mass}
 \label{sec:statMethodsKatrinSensitivity}
@@ -119,19 +114,28 @@ This section explains the origin of the often quoted KATRIN design sensitivity t
 
 \subsection{Definition and Construction of KATRIN's Sensitivity}
 \label{sec:statMethodsSensitivtyDef}
-KATRIN's sensitivity on the neutrino mass can be understood as the minimal neutrino mass that has to be inferred from a KATRIN neutrino mass measurement to exclude the null hypothesis of a vanishing neutrino mass at a significance level of $p=\SI{90}{\percent}$~\cite{Kleesiek2014,Angrik:2005ep}.
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{\currentFigureFolder/sensitivityIllustration.pdf}
+	\xcaption{Illustration of KATRIN's sensitivity on the neutrino mass}{Illustration of KATRIN's sensitivity on the neutrino mass.}{The graph shows a hypothetical measurements that illustrate KATRIN's sensitivity of \SI{200}{meV}~\cite{Angrik:2005ep} to the neutrino mass with a symmetric confidence interval (\SI{90}{\percent} C.L.) centrally located around the best fit estimator. In this scenario KATRIN can reject the null hypothesis of a vanishing neutrino mass at a \SI{90}{\percent} confidence level if it estimates a neutrino mass of at least \SI{200}{meV}.}
+	\label{fig:statMethodsSensitivity}
+\end{figure}
 
-Such a limit can be constructed from a 1-$\sigma$ uncertainty $\totUncert$ on the squared neutrino mass~\cite{Kleesiek2014,Angrik:2005ep}
+KATRIN's sensitivity can be understood as half the width of a symmetric and central confidence interval (\SI{90}{\percent} C.L.) for the neutrino mass obtained from a KATRIN neutrino mass measurement. As such it can be constructed from a 1-$\sigma$ uncertainty $\totUncert$ on the squared neutrino mass~\cite{Angrik:2005ep}
 \begin{equation}
-	\label{eq:statMethodsSensitivity}
-	S_{\nuMass}(\SI{90}{\percent}) = \sqrt{1.645\cdot\totUncert}
-	\comma
+\label{eq:statMethodsSensitivity}
+S_{\nuMass}(\SI{90}{\percent}) = \sqrt{1.645\cdot\totUncert}
+\comma
 \end{equation}
 where the factor 1.645 translates the $\SI{68.3}{\percent}$ interval into a $\SI{90}{\percent}$ interval.
 
+In other words, KATRIN's sensitivity on the neutrino mass can be understood as the minimal neutrino mass that has to be inferred from a KATRIN neutrino mass measurement to exclude the null hypothesis of a vanishing neutrino mass when constructing a symmetric and central confidence interval (\SI{90}{\percent} C.L.)~\cite{Kleesiek2014}. Figure~\ref{fig:statMethodsSensitivity} illustrates this statement.
+
+For a more comprehensive picture, where not only a symmetric and central confidence interval is considered, but also the unified approach according to Feldmann and Cousins as well as Bayesian statistics, the reader is referred to~\cite{Kleesiek2019}.
+
 \subsection{Sensitivity from Simulated Ensembles}
 \label{sec:statMethodsSensitivtyFromEnsemble}
-In the KATRIN Design Report the sensitivity on the neutrino mass was evaluated using ensemble tests. An ensemble of many KATRIN measurements was simulated (see section~\ref{sec:intSpecModelNuMassMeasurement}) with a true neutrino mass of \SI{0}{eV}. From each simulated measurement the squared neutrino mass was inferred in a standard KATRIN four-parameter fit (see section~\ref{sec:statMethodsStandardFit}). Probability was interpreted as the frequency of an outcome of such a fit. The central 1-$\sigma$ interval of the obtained ensemble of squared neutrino masses was taken as the statistical uncertainty on the squared neutrino mass~\cite{Angrik:2005ep}
+In the KATRIN Design Report the sensitivity on the neutrino mass was evaluated using ensemble tests. An ensemble of many KATRIN measurements was simulated (see section~\ref{sec:intSpecModelNuMassMeasurement} on how such a simulation can be conducted) with a true neutrino mass of \SI{0}{eV}. From each simulated measurement the squared neutrino mass was inferred in a standard KATRIN four-parameter fit (see section~\ref{sec:statMethodsStandardFit}). Probability was interpreted as the frequency of an outcome of such a fit. The central 1-$\sigma$ interval of the obtained ensemble of squared neutrino masses was taken as the statistical uncertainty on the squared neutrino mass~\cite{Angrik:2005ep}
 \begin{equation}
 	\statUncertTDR = \SI{0.018}{eV^2}
 \end{equation}
@@ -142,7 +146,7 @@ A systematic uncertainty was estimated to be approximately \SI{0.01}{eV}. Due to
 Adding the statistic and systematic uncertainty quadratically and applying the definition~\eqref{eq:statMethodsSensitivity} yields KATRIN's design sensitivity~\cite{Angrik:2005ep}
 \begin{equation}
 	\label{eq:statMethodsSensitivityDesignReport}
-	S_{\nuMass}(\SI{90}{\percent}) = 
+	S_{\nuMass}^{\mathrm{TDR}}(\SI{90}{\percent}) = 
 	\sqrt{1.645\cdot
 		\sqrt{
 		\statUncertTDR^2+\sysUncertTDR^2
@@ -171,4 +175,4 @@ The corresponding investigations were redone in the scope of several works. Tabl
 	\label{tab:statMethodsSensitivityFromEnsembleTests}
 \end{table}
 \subsection{Sensitivity from  the Profile Likelihood Method}
-In the scope of this thesis the sensitivity on the neutrino mass as obtained by the profile likelihood method is of importance. (See chapter~\ref{sec:katrinEloss} for a description and application of the profile likelihood method.) In this regard, previous results from~\cite{Kleesiek2014} based on the profile likelihood method are shortly reviewed here. Two uncertainties were obtained for two different~\gls{mtd}s in a KATRIN standard 4-parameter fit (section~\ref{sec:statMethodsStandardFit}). The first \gls{mtd} had been specially optimized with regard to KATRIN's sensitivity and the resulting statistical uncertainty is $\statUncert=\SI{0.01494}{eV^2}$. For the second result the nominal \gls{mtd} from the KATRIN Design Report was used as introduced in section~\ref{sec:intSpecModelMTD}. The corresponding profile likelihood was plotted and $\statUncert$ can be extracted to be between \SIrange[range-phrase=--]{0.0155}{0.0165}{eV^2}. Both results are in agreement on the $10^{-3}$ level with the results from ensemble tests (see~\cite{Kleesiek2014} in table~\ref{tab:statMethodsSensitivityFromEnsembleTests}). This is an indicator for the general validity of the profile likelihood method in the context of a KATRIN measurement. A more detailed discussion on the matter is given in chapter~\ref{sec:katrinEloss}.
+In the scope of this thesis the sensitivity on the neutrino mass as obtained by the profile likelihood method is of importance. (See chapter~\ref{sec:katrinEloss} for a description and application of the profile likelihood method.) In this regard, previous results from~\cite{Kleesiek2014} based on the profile likelihood method are shortly reviewed here. Two uncertainties were obtained for two different~\gls{mtd}s in a KATRIN standard 4-parameter fit (see section~\ref{sec:statMethodsStandardFit}). The first \gls{mtd} had been specially optimized with regard to KATRIN's sensitivity and the resulting statistical uncertainty is $\statUncert=\SI{0.01494}{eV^2}$. For the second result the nominal \gls{mtd} from the KATRIN Design Report was used as introduced in section~\ref{sec:intSpecModelMTD}. The corresponding profile likelihood was plotted and $\statUncert$ can be extracted to be between \SIrange[range-phrase=--]{0.0155}{0.0165}{eV^2}. Both results are in agreement on the $10^{-3}$ level with the results from ensemble tests (see~\cite{Kleesiek2014} in table~\ref{tab:statMethodsSensitivityFromEnsembleTests}). This is an indicator for the general validity of the profile likelihood method in the context of a KATRIN measurement. A more detailed discussion on the matter is given in chapter~\ref{sec:katrinEloss}.
