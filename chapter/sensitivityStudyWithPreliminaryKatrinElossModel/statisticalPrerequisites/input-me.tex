@@ -8,31 +8,31 @@
 This section develops the statistical tools used in the scope of this thesis in order to evaluate the impact of the KATRIN model on KATRIN's sensitivity to the neutrino mass. The methods are described in a general manner (and could be applied to study model uncertainties in general) and then related to the KATRIN model. Section~\ref{sec:katrinElossStatisticsCombMeasurements} presents a concept for the combination of multiple measurements in parameter inference. Section~\ref{sec:katrinElossStatisticsProfileLikelihood} introduces the profile likelihood method for the treatment of nuisance parameters. And section~\ref{sec:katrinElossStatisticsImplementation} outlines how the statistical concepts were implemented into the KaFit (see section~\ref{sec:statMethodsKaFitSSC}) software framework.
 
 \subsection{Combination of Commissioning and Neutrino Mass Measurements}
-\label{sec:katrinElossStatisticsCombMeasurements}
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=\textwidth]{\currentFigureFolder/katrinElossChi2Distribution.pdf}
-	\xcaption{}{}{}
-	\label{fig:katrinElossStatisticsChi2}
-\end{figure}
-
-
-If two measurements share a set of parameters $\paramVecShared$, but have additionally an individual set of parameters $\paramVec_1$ and $\paramVec_2$ and different sets of observations a combined likelihood is given by the product of the single likelihoods $L_1$ and $L_2$
-\begin{equation}
--2\ln L(\paramVecShared, \paramVec_1, \paramVec_2) =  
+If two measurements share a set of parameters $\paramVecShared$, but have additionally an individual set of parameters $\paramVec_1$ and $\paramVec_2$ and different sets of observations a combined likelihood is given by the product of the single likelihoods $L_1$ and $L_2$~\cite{ReviewOfParticlePhysics}
+\newcommand{\paramVecSOne}{\paramVec_\mathrm{1,s}}
+\newcommand{\paramVecSTwo}{\paramVec_\mathrm{2,s}}
+\begin{align}
+-2\ln L(\paramVecShared, \paramVec_1, \paramVec_2) &=  
 -2\ln L_1(\paramVecShared, \paramVec_1)
 -2\ln L_2(\paramVecShared, \paramVec_2)
+\nonumber \\
+&\equiv
+-2\ln L_1(\paramVecSOne)
+-2\ln L_2(\paramVecSTwo)
 \fullstop
-\end{equation}
-In the case of KATRIN the first measurement could be sensitive to the neutrino mass whereas say the second measurement could have been a calibration using the electron gun and be sensitive to parameters of the response function \eqref{eq:SSCresponse}. Combining both likelihoods would incorporate the uncertainties on the parameters of the response function in the neutrino mass determination. Currently, no software framework exists that allows the construction of combined likelihoods of KATRIN neutrino mass and calibration measurements. Instead the following approximation can be made. The calibration measurement is evaluated independently and one obtains estimates $\hat{\paramVec}_\mathrm{s,2}$, and an estimated covariance matrix $\hat{V}_\mathrm{s,2}$ for all components of $\paramVecShared$ that the calibration measurement is sensitive to. These can in turn be used to approximate the likelihood $L_2$ at least in the dimension of $\paramVecShared$. A choice that stands to reason for the approximation of $L_2$ is a multivariate Gaussian distribution. For the purpose of parameter inference through minimization $-2\ln L_2$ needs only to be accurately approximated around its minimum. The choice of a multivariate Gaussian distribution corresponds a symmetric approximation of $-\ln L_2$ around its minimum by a parabola. The KATRIN likelihood for a combination of a neutrino mass and a calibration measurement then reads
+\end{align}
+where, for ease of notation, the combined parameter vectors $\paramVec_\mathrm{s,1}\equiv(\paramVec_\mathrm{s},\paramVec_1)$ and 
+$\paramVec_\mathrm{s,2}\equiv(\paramVec_\mathrm{s},\paramVec_2)$ are introduced. The first measurement could be sensitive to the neutrino mass whereas the second measurement could have been a calibration or commissioning measurement and be sensitive to parameters of the response function (see equation~\ref{eq:intSpecModelResponse}). Combining both likelihoods would incorporate the uncertainties on the parameters of the response function in the neutrino mass determination. 
+
+For practicality, in this thesis, an approximation is applied: The calibration measurement is seen as evaluated independently and one obtains estimates $\hat{\paramVec}_\mathrm{2,s}$, and an estimated covariance matrix $\hat{V}_\mathrm{2,s}$. These can in turn be used to approximate the likelihood $L_2$. A choice that stands to reason for the approximation of $L_2$ is a multivariate normal distribution $\mathcal{N}$. For the purpose of parameter inference through the maximum likelihood method $-2\ln L_2$ needs only to be accurately approximated within the contour, that is needed to extract uncertainty intervals. The choice of a multivariate normal distribution corresponds a symmetric approximation of $-\ln L_2$ around its minimum by a second order function. The combined likelihood then reads
 \begin{equation}
 \begin{split}
 \label{eq:penalizedLikelihood}
 -2\ln L(\paramVecShared, \paramVec_1, \paramVec_2) &\approx
 -2\ln L^\prime(\paramVecShared, \paramVec_1) \\ &=
 \underbrace{
-	\chi^2(\paramVecShared, \paramVec_1)
-	\vphantom{(\paramVecShared - \hat{\paramVec}_\mathrm{s,2})^{\mathsf{T}}}
+	\chi^2(\paramVecSOne)
+	\vphantom{(\paramVecSTwo - \hat{\paramVec}_\mathrm{s,2})^{\mathsf{T}}}
 }_{(1)}
 +
 \underbrace{
@@ -41,34 +41,29 @@ In the case of KATRIN the first measurement could be sensitive to the neutrino m
 	(\paramVecShared - \hat{\paramVec}_\mathrm{s,2})
 }_{(2)} +\; 
 \mathrm{ constants}\\ &=
-\chi^2(\paramVecShared, \paramVec_1) 
--2\ln \mathcal{N}(\paramVecShared, \hat{\paramVec}_\mathrm{s,2}, \hat{V}_\mathrm{s,2}^{-1}) +
+\chi^2(\paramVecSOne) 
+-2\ln \mathcal{N}(\paramVecSTwo, \hat{\paramVec}_\mathrm{s,2}, \hat{V}_\mathrm{s,2}^{-1}) +
 \mathrm{ constants}
 \end{split}
 \end{equation}
-Here, $(1)$ is the chi-square expression \eqref{eq:katrinChi2} where the $\paramVecShared$ and $\paramVec_1$ can be written as one combined parameter vector $\paramVec$ for a neutrino mass measurement. And $(2)$ resembles the negative log likelihood of the calibration measurement approximated by a multivariate Gaussian distribution. Terms having a form like $(2)$ are also sometimes called ``pull terms'' or ``likelihood penalties''. In the minimization process they ``pull'' the parameters $\paramVecShared$ towards $\hat{\paramVec}_\mathrm{s,2}$ respectively ``penalize''/increase the negative log likelihood if $\paramVecShared$ and $\hat{\paramVec}_\mathrm{s,2}$ differ.
+Here, $(1)$ is the chi-square likelihood for a KATRIN neutrino mass measurement (see equation~\ref{eq:statMethodsKatrinChi2}). And $(2)$ resembles the negative log likelihood of the calibration measurement approximated by a multivariate normal distribution. Terms having a form like $(2)$ are also sometimes called ``pull terms'' because in the minimization of the likelihood they ``pull'' the parameters $\paramVecShared$ towards the corresponding values in $\hat{\paramVec}_\mathrm{s,2}$.
 
+The chi-square term $(1)$ is a sum of $n$ standard normal distributed random variables. Hence, as discussed in section~\ref{sec:statMethodsKATRINLikelihood}, a likelihood only composed of the chi-square term $(1)$ offers a goodness-of-fit criteria via the the Pearson chi-square statistic. Whether the same criteria can be applied to the combined likelihood has to be investigated individually from case to case.
 
-\newcommand{\CombLmax}{-2\ln L(\hat{\paramVec}_\mathrm{s}, \hat{\paramVec}_1)}
-The chi-square term $(1)$ is a sum of $n$ standard normal distributed random variables. Hence, as discussed, a likelihood only composed of the chi-square term $(1)$ offers a goodness-of-fit criteria via the the Pearson chi-square statistic. Note that for the combined likelihood this criteria might not hold. Two special cases can be considered where the chi-square characteristics hold approximately: First, the neutrino mass measurement, term $(1)$, is not sensitive to the shared parameters $\d \chi^2(\paramVecShared, \paramVec_1) /\d \paramVecShared \approx 0$. Then the \gls{mle} for the shared parameters will match the \gls{mle} by the calibration measurement $\hat{\paramVec}_\mathrm{s} = \hat{\paramVec}_{\mathrm{s},2}$ and term $(2)$ will be 0. The combined likelihood evaluated at the \gls{mle} $\CombLmax$ then follows a chi-square distribution with $n-\dim\paramVec_1-\dim\paramVecShared$ degrees of freedom. Second, if the neutrino mass measurement is sensitive to some shared parameters $\d \chi^2(\paramVecShared, \paramVec_1) /\d \paramVecShared \neq 0$, then one might argue, that term $(2)$ evaluated at the \gls{mle} $\hat{\paramVec}_\mathrm{s} \neq \hat{\paramVec}_{\mathrm{s},2}$ is a sum of standard normal distributed random variables. If this holds, the combined likelihood evaluated at the \gls{mle} $\CombLmax$ follows a chi-square distribution with $n-\dim\paramVec_1$ degrees of freedom.
-
-
-For example, a standard KATRIN 3-year neutrino mass measurement is not at all sensitive to parameters of the energy loss function \eqref{eq:nonAveragedResponse}. Hence, adding a corresponding term $(2)$ from a designated energy loss measurement will not influence the chi-square characteristics. However, a standard KATRIN neutrino mass measurement is even after a short measurement time sensitive to the gas column density \eqref{eq:columnDensity}. Adding a corresponding term $(2)$ from (a naturally more sensitive) monitoring measurement would influence the   
-
-
-\todo{Add plots from ensemble test that proof statements.}
+\paragraph{Application to the KATRIN Energy Loss Model}
+With regard to the study presented in this chapter, the following identification can be made. $\paramVec_1$ comprises the parameter of a nominal four-parameter KATRIN neutrino mass fit (see section~\ref{sec:statMethodsStandardFit}). Furthermore, the commissioning/calibration measurement can be identified with the measurement of the KATRIN energy loss model $\hat{\paramVec}_\mathrm{s}=\hat{\nuisanceParamVec}_\mathrm{eloss}$, $\hat{\paramVec}_2=\hat{\nuisanceParamVec}_\mathrm{eloss+}$ and the corresponding covariance matrix $\hat{V}_\mathrm{s,2}$. The numerical values for the later three can be found in appendix~\ref{sec:appendixKatrinElossElossModelParams}.
 
 \subsection{Nuisance Parameters and the Profile Likelihood Method}
 \label{sec:katrinElossStatisticsProfileLikelihood}
-\begin{figure}[th]
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=\textwidth]{\currentFigureFolder/profileLikelihood.pdf}
 	\xcaption{}{}{}
 	\label{fig:katrinElossStatisticsProfileLikelihood}
 \end{figure}
-Apart from the  parameters of interest $\paramVec$ (usually the squared neutrino mass), the KATRIN likelihood depends on further so-called nuisance parameters $\nuisanceParamVec$ (e.\,g. the background rate). The dimensionality may pose difficulties when deriving a confidence region for the combined parameter set. Furthermore, as indicated by the naming conventions, the dimensions of the nuisance parameters in the confidence region are not of interest. Hence, in order to derive a confidence interval with restricted dimensions, a test statistic, similar to the one in equation~\ref{eq:statMethodsLikelihoodRatio}, but that solely depends on the parameters of interest, has to be found. The following paragraph outlines, how a corresponding test statistic can be constructed using the profile likelihood method.
+Apart from the  parameters of interest $\paramVec$ (usually the squared neutrino mass), the KATRIN likelihood depends on further so-called nuisance parameters $\nuisanceParamVec$. The dimensionality may pose difficulties when deriving a confidence region for the combined parameter set. Furthermore, as indicated by the naming conventions, the dimensions of the nuisance parameters in the confidence region are not of interest. Hence, in order to derive a confidence interval with just one dimension, a test statistic, similar to the one in equation~\ref{eq:statMethodsLikelihoodRatio}, but that solely depending on the parameters of interest, has to be found. The following paragraph outlines, how a corresponding test statistic can be constructed using the profile likelihood method.
 
-A corresponding derivation may start with the definition of the profile likelihood: The profile likelihood only depends on the parameters of interest $\paramVec$. Its values correspond the likelihood values evaluated at $\paramVec$ in the dimensions of the parameters of interest and maximized in the dimensions of the nuisance parameters~\cite{ReviewOfParticlePhysics}
+A corresponding derivation may start with the definition of the profile likelihood: The profile likelihood only depends on the parameters of interest $\paramVec$ and not on the nuisance parameters $\nuisanceParamVec$. Its values correspond the likelihood values evaluated at $\paramVec$ in the dimensions of the parameters of interest and maximized in the dimensions of the nuisance parameters~\cite{ReviewOfParticlePhysics}
 \begin{equation}
 \profLikelihood(\paramVec) = 
 L(\paramVec, \hat{\hat{\nuisanceParamVec}}(\paramVec))
@@ -81,9 +76,7 @@ where the double-hat indicates the maximization respectively the profiling. Also
 \frac{\profLikelihood(\paramVec)}{\profLikelihood(\hat{\paramVec})}
 \fullstop
 \end{equation}
-According to Wilks’ theorem~\cite{wilks1938}, the distribution of $-2\ln\lambda_\mathrm{p}(\hat{\paramVec})$, where $\hat{\paramVec}$ is the \gls{mle}, approaches a $\chi^2$ distribution in the limit of a large data sample, independent of the values of the nuisance parameters $\nuisanceParamVec$~\cite{ReviewOfParticlePhysics}. Hence, the profile likelihood ratio offers a test statistic, from which a confidence interval for the parameters of interest can be derived.
-
-In application to a KATRIN neutrino mass measurement, the introduced formalism can be summarized as follows: The profile likelihood~\eqref{eq:statMethodsProfileLikelihoodRatio} is a measure (test statistic) for whether a hypothesized squared neutrino mass has to be rejected given the KATRIN data. Furthermore, analogously to section~\ref{sec:statMethodsUncertaintyIntervalsConfidence}, this allows for the derivation of a confidence interval for the squared neutrino mass. It should be noted, however, that this method requires an extrapolation of the likelihood to nonphysical negative squared neutrino masses~\cite{Kleesiek2014}.
+According to Wilks’ theorem~\cite{wilks1938}, the distribution of $-2\ln\lambda_\mathrm{p}(\hat{\paramVec})$, where $\hat{\paramVec}$ is the \gls{mle} (see section~\ref{sec:statMethodsMLE}), approaches a chi-square distribution in the limit of a large data sample size, independently of the values of the nuisance parameters $\nuisanceParamVec$~\cite{ReviewOfParticlePhysics}. Hence, the profile likelihood ratio offers a test statistic, from which a confidence interval for the parameters of interest can be derived. However, it should be noted that whether the limit of a large sample size is given has to be investigated individually from case to case.
 
 \subsection{Extension of the KaFit Software Framework}
 \label{sec:katrinElossStatisticsImplementation}
