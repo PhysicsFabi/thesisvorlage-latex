@@ -10,7 +10,9 @@
 \DeclareFieldFormat{pages}{#1}
 \DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
 \DeclareFieldFormat[online, book]{title}{``#1''}
-\DeclareFieldFormat[online, thesis, book]{date}{\mkbibparens{#1}}
+\DeclareFieldFormat[online, thesis]{date}{\mkbibparens{#1}}
+\DeclareFieldFormat[unpublished]{note}{#1,}
+
 
 
 \newbibmacro*{institution+location+date}{%

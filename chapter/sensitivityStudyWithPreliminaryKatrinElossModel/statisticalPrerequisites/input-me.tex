@@ -5,10 +5,11 @@
 
 \section{Statistical Prerequisites}
 \label{sec:katrinElossStatistics}
-This chapter develops the statistical tools used in the scope of this thesis in order to evaluate the impact of the KATRIN model on KATRIN's sensitivity to the neutrino mass. The methods are described in a general manner and then related to the KATRIN model. Section~\ref{sec:katrinElossProfileLikelihood} 
+This section develops the statistical tools used in the scope of this thesis in order to evaluate the impact of the KATRIN model on KATRIN's sensitivity to the neutrino mass. The methods are described in a general manner (and could be applied to study model uncertainties in general) and then related to the KATRIN model. Section~\ref{sec:katrinElossStatisticsCombMeasurements} presents a concept for a combined parameter inference based on multiple measurements. Section~\ref{sec:katrinElossStatisticsProfileLikelihood} introduces the profile likelihood method for the treatment of nuisance parameters. And section~\ref{sec:katrinElossStatisticsImplementation} outlines how the statistical concepts were implemented into the KaFit (see section~\ref{sec:statMethodsKaFitSSC}) software framework.
 
 \subsection{Combination of Commissioning and Neutrino Mass Measurements}
-\begin{figure}[th]
+\label{sec:katrinElossStatisticsCombMeasurements}
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=\textwidth]{\currentFigureFolder/katrinElossChi2Distribution.pdf}
 	\xcaption{}{}{}
@@ -84,14 +85,8 @@ According to Wilks’ theorem~\cite{wilks1938}, the distribution of $-2\ln\lambd
 
 In application to a KATRIN neutrino mass measurement, the introduced formalism can be summarized as follows: The profile likelihood~\eqref{eq:statMethodsProfileLikelihoodRatio} is a measure (test statistic) for whether a hypothesized squared neutrino mass has to be rejected given the KATRIN data. Furthermore, analogously to section~\ref{sec:statMethodsUncertaintyIntervalsConfidence}, this allows for the derivation of a confidence interval for the squared neutrino mass. It should be noted, however, that this method requires an extrapolation of the likelihood to nonphysical negative squared neutrino masses~\cite{Kleesiek2014}.
 
-
-
-
-
-
-
 \subsection{Extension of the KaFit Software Framework}
-\label{sec:statLikelihoodExtImpl}
+\label{sec:katrinElossStatisticsImplementation}
 The likelihood $L(\paramVec)$ can be multiplied by a function $g(\paramVec)$
 \begin{equation}
 \label{eq:likelihoodExtension}
