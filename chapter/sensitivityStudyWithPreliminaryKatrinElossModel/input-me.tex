@@ -112,7 +112,7 @@ Furthermore, during a neutrino mass measurement, the nominal tritium purity in t
 
 It should also be noted that the variances used in this thesis for the parameter sets $\nuisanceParamVec_\mathrm{eloss}$ and $\nuisanceParamVec_\mathrm{eloss+}$ (see equations~\ref{eq:katrinElossElossModelParams} and~\ref{eq:katrinElossElossModelExtendedParams}) were estimated using the MIGRAD algorithm of the ROOT software framework~\cite{Hannen2019_1}. A cross-check by a more reliable estimation, for example by means of scanning the likelihood with the MINOS algorithm was not yet done at the time of writing this thesis.
 
-Furthermore, the KATRIN model does not yet incorporate systematic uncertainties. Corresponding efforts for their incorporation are made at the time of writing this thesis. A future version of the KATRIN model might exhibit larger uncertainties than the version used in this thesis.
+Furthermore, the KATRIN model does not yet incorporate systematic uncertainties. Corresponding efforts for their incorporation are made at the time of writing this thesis. A future version of the KATRIN model may exhibit larger uncertainties than the version used in this thesis.
 
 \input{chapter/sensitivityStudyWithPreliminaryKatrinElossModel/statisticalPrerequisites/input-me.tex}
 
@@ -121,10 +121,10 @@ Furthermore, the KATRIN model does not yet incorporate systematic uncertainties.
 
 \section{Results}
 \label{sec:katrinElossModelResults}
-This section lists the results of the impact from the uncertainties of the KATRIN model on KATRIN's sensitivity. The sensitivity study was conducted using a mathematical model of a KATRIN measurement as described in chapter~\ref{sec:intSpecModel} with a neutrino mass of \SI{0}{eV}. Correspondingly, the SSC and KaFit modules were used. The full configuration of the mathematical model can be found in appendix~\ref{sec:appendixKatrinElossSSCConfig}. The uncertainties of the KATRIN respectively the Aseev model were respected as described in section~\ref{sec:katrinElossStatisticsCombMeasurements} about the combination of a neutrino mass and a commissioning measurement. The confidence interval for the squared neutrino mass was extracted via the profile-likelihood method as described in section~\ref{sec:katrinElossStatisticsProfileLikelihood}.
+This section lists the results of the impact from the uncertainties of the KATRIN model on KATRIN's sensitivity. The sensitivity study was conducted using a mathematical model of a KATRIN measurement as described in chapter~\ref{sec:intSpecModel} using a nominal configuration according to the KATRIN Design Report~\cite{Angrik:2005ep} with a neutrino mass of \SI{0}{eV} and a measurement time of three years. Correspondingly, the SSC and KaFit modules were used. The full configuration of the study can be found in appendix~\ref{sec:appendixKatrinElossSSCConfig}. The uncertainties of the KATRIN respectively the Aseev model were respected as described in section~\ref{sec:katrinElossStatisticsCombMeasurements} about the combination of a neutrino mass and a commissioning measurement. The confidence interval for the squared neutrino mass was extracted via the profile-likelihood method as described in section~\ref{sec:katrinElossStatisticsProfileLikelihood}.
 
 Section~\ref{sec:katrinElossModelResultsAsimov} presents the study using an Asimov data set. And section~\ref{sec:katrinElossModelResultsEnsemble} presents the same results as obtained through an ensemble test. For the relation of these two approaches see section~\ref{sec:katrinElossStatisticsAsimov}.
-\subsection{Asimov Data Set}
+\subsection{Sensitivity from an Asimov Data Set}
 \label{sec:katrinElossModelResultsAsimov}
 \begin{figure}[t]
 	\centering
@@ -159,7 +159,7 @@ Under the restrictions listed in section~\ref{sec:katrinElossValidity}, the foll
 		\makecell[tr]{$S_{\nuMass}(\SI{90}{\percent})$ \\ (\SI{}{meV})}  
 		\\
 		\hline
-		statistics only & -1.586 & 1.592 & 1.589 & 196 \\
+		``statistics only'' & -1.586 & 1.592 & 1.589 & 196 \\
 		KATRIN model & -1.598 & 1.604 & 1.601 & 196 \\
 		Aseev model & -1.931 & 1.939 & 1.935 & 206 \\
 		\bottomrule
@@ -167,12 +167,19 @@ Under the restrictions listed in section~\ref{sec:katrinElossValidity}, the foll
 	\label{tab:katrinElossModelResultsAsimov}
 \end{table}
 
-\subsection{Ensemble Test}
+\subsection{Cross-Check of the Asimov Data Set via Ensemble Testing}
 \label{sec:katrinElossModelResultsEnsemble}
+An ensemble of 4046 KATRIN neutrino mass measurements with a true neutrino mass of~\SI{0}{eV} was simulated using the KATRIN model respecting its uncertainties in the same manner as for the Asimov data set described in the last section~\ref{sec:katrinElossStatisticsAsimov}. Several aspects were investigated as listed below:
+\paragraph{Test of Coverage}
+The extraction of a confidence interval via the profile-likelihood method as done in the previous section~\ref{sec:katrinElossStatisticsAsimov} for the Asimov data set should per construction yield a coverage probability of \SI{68.2}{\percent}. But if all conditions are met for this to hold has to be justified. Either a theoretical argument can be given or it can simply be put to the test. In the scope of this thesis the test approach was chosen. In other words, \SI{68.2}{\percent} of the obtained confidence intervals in the conducted ensemble test should cover the true simulated neutrino mass of~\SI{0}{eV}. The obtained coverage is \SI{67.6}{\percent} as illustrated in figure~\ref{fig:katrinElossResultsCoverage}. The slight undercoverage may stem from a limited ensemble test size.
+
+\paragraph{Chi-Square Characteristics}
+As mentioned in section~\ref{sec:katrinElossStatisticsCombMeasurements} the combined likelihood of a neutrino mass and a commissioning measurement evaluated at the \gls{mle} $-2\ln L(\hat{\paramVec})$ might not follow the chi-square statistic. Figure~\ref{fig:katrinElossStatisticsChi2} shows the obtained distribution of $-2\ln L(\hat{\paramVec})$. In the case of the conducted simulation an \gls{mtd} with 41 retarding potentials was used. Hence, there are 41 summands in the likelihood for the KATRIN neutrino mass measurement. In the combined likelihood there are additional 15 summands to approximate the likelihood of the measurement of the KATRIN model. In total there are 19 fit parameters, four for the nominal KATRIN neutrino mass fit (see section~\ref{sec:statMethodsStandardFit}) and 15 in order to incorporate the uncertainties of the KATRIN model. Thus, it stands to reason that the obtained distribution follows a chi-square distribution with $41+15-19=37$ degrees of freedom. A corresponding Kolmogorov–Smirnov test confirms this assumption with a $p$-value of $p=\SI{6e-6}{}$.
+
 \begin{figure}[th]
 	\centering
 	\includegraphics[width=\textwidth]{\currentFigureFolder/coverage.pdf}
-	\xcaption{Coverage Test for confidence interval}{}{}
+	\xcaption{Test of coverage for confidence interval}{Test of coverage for confidence interval.}{The graph illustrates the coverage probability. An ensemble of 4046 neutrino mass measurement with a true neutrino mass of~\SI{0}{eV} were simulated. For each simulated measurement a confidence interval was constructed using the profile-likelihood method. The obtained confidence intervals were sorted by their lower limit and plotted stacked which yields the gray band. The confidence intervals that cover the true value are plotted in dark gray while the ones that do not cover the true value a plotted in light gray. In total~\SI{67.8}{\percent} coverage is obtained. In the limit of an infinite ensemble size a coverage of~\SI{68.2}{\percent} would be expected per construction.}
 	\label{fig:katrinElossResultsCoverage}
 \end{figure}
 

@@ -3,7 +3,9 @@
 The best-fit values, standard deviations and correlations of the fit parameters for the KATRIN model for the energy loss of electrons scattering off deuterium molecules as used in this thesis are listed below~\cite{Hannen2019_1}. The parameter names follow section~\ref{sec:katrinElossModel}.
 
 \includegraphics[width=\textwidth]{chapter/sensitivityStudyWithPreliminaryKatrinElossModel/appendix/fig/katrinElossParamValues.pdf}
+\clearpage
 
+\begin{samepage}
 \section{Configuration of Sensitivity Study using the Preliminary KATRIN Energy Loss Model}
 \label{sec:appendixKatrinElossSSCConfig}
 The configuration of the \gls{ssc} module is listed below as used in the sensitivity study in chapter~\ref{sec:katrinEloss}.
@@ -30,7 +32,7 @@ The configuration of the \gls{ssc} module is listed below as used in the sensiti
 	\midrule
 	energy loss function & KATRIN or Aseev model \\
 	inel. scattering cross section & \SI{3.456e-22}{m^2} \\
-	elas. scattering & ignored \\
+	elas. scattering & neglected \\
 	\myModelConfigTableStrut
 	\textbf{Transmission Function} & \\
 	\midrule
@@ -42,5 +44,10 @@ The configuration of the \gls{ssc} module is listed below as used in the sensiti
 	\textbf{Detector} & \\
 	\midrule
 	efficiency & \SI{95}{\percent} \\
+	\textbf{MTD} & \\
+	\midrule
+	range & $[E_0-\SI{30}{eV},E_0+\SI{5}{eV}]$ \\
+	duration & 3 years \\
 	\bottomrule
 \end{tabular}
+\end{samepage}
