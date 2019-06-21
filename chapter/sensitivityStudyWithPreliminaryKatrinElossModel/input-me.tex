@@ -1,7 +1,7 @@
 \def\currentRootFolder{chapter/sensitivityStudyWithPreliminaryKatrinElossModel}
 \def\currentFigureFolder{\currentRootFolder/fig}
 
-\chapter{Impact on KATRIN's Sensitivity by an Energy Loss Model for Inelastically-Scattering Electrons Derived from KATRIN Data}
+\chapter{Sensitivity Study using an Empirical Energy Loss Model for Inelastically-Scattering Electrons Derived from KATRIN Data}
 \label{sec:katrinEloss}
 A quantitative accurate description of the scattering processes of $\upbeta$ electrons within KATRIN's gaseous tritium source is of crucial importance for the neutrino-mass-sensitivity goal. In modeling the corresponding effects the energy loss function as described in section~\ref{sec:intSpecModelResponseEloss} plays an important role. With reference to the described energy loss function, the KATRIN Design Report states, that its precision is not sufficient for the KATRIN-sensitivity goal. It was planned to deduce a sufficiently accurate model from data taken at KATRIN~\cite{Angrik:2005ep}. In that regard, a preliminary model has successfully been established for electrons scattering from deuterium molecules based on data taken in October 2018 by a dedicated subgroup of the KATRIN collaboration. This preliminary energy loss model, from here forth called the ``KATRIN model'', has improved uncertainties with respect to the model from literature (section~\ref{sec:intSpecModelResponseEloss}), from here forth called the ``Aseev model'' after the primary author of the corresponding publication~\cite{Aseev2000}. Within the scope of this thesis the impact on KATRIN's sensitivity by the exchange of the Aseev model for the KATRIN model was studied. Therefore, this chapter is structured as follows: Section~\ref{sec:katrinElossConcept} presents the general idea of this study. Section~\ref{sec:katrinElossModel} outlines the KATRIN model. Section~\ref{sec:katrinElossValidity} discusses the scope of the validity of this study, for example what is expected of the comparison of a model for electrons scattering off deuterium and another model for scattering off tritium. Section~\ref{sec:katrinElossStatistics} introduces the necessary statistical tools. Section~\ref{sec:katrinElossModelResults} lists and discusses the results. And section~\ref{sec:katrinElossModelConclusion} concludes and offers an outlook.
 
@@ -102,7 +102,7 @@ For a detailed description of the full fit of the KATRIN model to the recorded d
 \end{equation}
 The best best-fit values and the covariance matrix of the full 15-parameter fit ($\nuisanceParamVec_\mathrm{eloss}$ and $\nuisanceParamVec_\mathrm{eloss+}$) can be found in appendix~\ref{sec:appendixKatrinElossElossModelParams}. The aim of this chapter is to study the impact of the model uncertainties from these 15 parameters on KATRIN's sensitivity to the neutrino mass.
 
-\section{Scope of Validity}
+\section{Scope of the Presented Analysis}
 \label{sec:katrinElossValidity}
 This section lists considerations that should be kept in mind with regard to the study presented in this chapter.
 
@@ -110,23 +110,65 @@ First, it should be noted that the KATRIN model as presented is still preliminar
 
 Furthermore, during a neutrino mass measurement, the nominal tritium purity in the~\gls{wgts} is approximately~\SI{95}{\percent}. Here, an energy loss model for deuterium is used. Two different, but similar energy loss models are expected for the two different gas species (compare~\cite{Abdurashitov2017} and~\cite{Aseev2000}). Within the scope of this thesis, the impact on KATRIN's sensitivity from the reduction of uncertainties on the energy loss model are of primary interest. As long as the KATRIN model for scattering off deuterium molecules is sufficiently similar to the model for scattering off tritium molecules, it is a plausible approach to use it for simulations of KATRIN neutrino mass measurements. (For the similarity, see figure~\ref{fig:katrinElossElossModel}.) In that regard, the results for KATRIN's sensitivity derived in this chapter are expected to be meaningful.
 
-It should also be noted that the covariances used in this thesis for the parameter sets $\nuisanceParamVec_\mathrm{eloss}$ and $\nuisanceParamVec_\mathrm{eloss+}$ (see equations~\ref{eq:katrinElossElossModelParams} and~\ref{eq:katrinElossElossModelExtendedParams}) were estimated using the MIGRAD algorithm of the ROOT software framework~\cite{Hannen2019_1}. A cross-check by a more reliable estimation of the covariances, for example by means of scanning the likelihood with the MINOS algorithm was not yet done at the time of writing this thesis.
+It should also be noted that the variances used in this thesis for the parameter sets $\nuisanceParamVec_\mathrm{eloss}$ and $\nuisanceParamVec_\mathrm{eloss+}$ (see equations~\ref{eq:katrinElossElossModelParams} and~\ref{eq:katrinElossElossModelExtendedParams}) were estimated using the MIGRAD algorithm of the ROOT software framework~\cite{Hannen2019_1}. A cross-check by a more reliable estimation, for example by means of scanning the likelihood with the MINOS algorithm was not yet done at the time of writing this thesis.
 
 Furthermore, the KATRIN model does not yet incorporate systematic uncertainties. Corresponding efforts for their incorporation are made at the time of writing this thesis. A future version of the KATRIN model might exhibit larger uncertainties than the version used in this thesis.
 
 \input{chapter/sensitivityStudyWithPreliminaryKatrinElossModel/statisticalPrerequisites/input-me.tex}
 
-\section{A Sensitivity Study using the Recent Preliminary KATRIN Energy Loss Model}
-\label{sec:katrinElossModelResults}
 \def\currentRootFolder{chapter/sensitivityStudyWithPreliminaryKatrinElossModel}
 \def\currentFigureFolder{\currentRootFolder/fig}
-\begin{figure}[th]
+
+\section{Results}
+\label{sec:katrinElossModelResults}
+This section lists the results of the impact from the uncertainties of the KATRIN model on KATRIN's sensitivity. The sensitivity study was conducted using a mathematical model of a KATRIN measurement as described in chapter~\ref{sec:intSpecModel} with a neutrino mass of \SI{0}{eV}. Correspondingly, the SSC and KaFit modules were used. The full configuration of the mathematical model can be found in appendix~\ref{sec:appendixKatrinElossSSCConfig}. The uncertainties of the KATRIN respectively the Aseev model were respected as described in section~\ref{sec:katrinElossStatisticsCombMeasurements} about the combination of a neutrino mass and a commissioning measurement. The confidence interval for the squared neutrino mass was extracted via the profile-likelihood method as described in section~\ref{sec:katrinElossStatisticsProfileLikelihood}.
+
+Section~\ref{sec:katrinElossModelResultsAsimov} presents the study using an Asimov data set. And section~\ref{sec:katrinElossModelResultsEnsemble} presents the same results as obtained through an ensemble test. For the relation of these two approaches see section~\ref{sec:katrinElossStatisticsAsimov}.
+\subsection{Asimov Data Set}
+\label{sec:katrinElossModelResultsAsimov}
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=\textwidth]{\currentFigureFolder/profileLikelihoodKATRINandAseev.pdf}
-	\xcaption{}{}{}
+	\xcaption{Profile-likelihood ratio from an Asimov data set}{Profile-likelihood ratio from an Asimov data set.}{The graph shows the profile-likelihood ratio $\lambda_\mathrm{p}$ for three models with different uncertainties: the KATRIN model (dashed line), the Aseev model (dotted line) and ``statistics only'' (shaded area). For a description of the different cases, the reader is referred to the main text. (That the ``statistics only'' case is plotted as area instead of as a line solely serves readability as a line would overlap with the line of the KATRIN model.) The horizontal $s$-$\sigma$ lines are drawn at $s^2/2$ as per equation~\eqref{eq:statMethodsConfidenceContour}. Their intersections with $\lambda_\mathrm{p}$ mark the confidence intervals for the neutrino mass at \SI{68}{\percent} respectively \SI{90}{\percent} confidence level. The width of the two intervals indeed relate through the factor 1.645 due to the parabolic shape of $\lambda_\mathrm{p}$. It is apparent, that the uncertainties of the KATRIN model are negligible with respect to the ``statistics only'' case. The corresponding profile likelihoods are almost equal. Furthermore, the \gls{mle} recovers the true simulated neutrino mass of \SI{0}{eV}.}
 	\label{fig:katrinElossResultsProfileLikelihood}
 \end{figure}
+The following three cases were investigated using an Asimov data set:
+\begin{enumerate}
+	\item The simulation and fit-model use the KATRIN model, but it was assumed to be without uncertainties. In other words, only the four parameters of a nominal KATRIN neutrino mass fit (see section~\ref{sec:statMethodsStandardFit}) were treated as free parameters and the parameters of the KATRIN model were fixed to their best estimates. In the following, this is referred to as the ``statistics only'' case.
+	\item The simulation and fit-model use the KATRIN model, and all its parameters were treated as free parameters  in order to incorporate the uncertainties of the KATRIN model, which results in a 19-parameter fit.
+	\item The simulation and fit-model use the Aseev model, and all its parameters were treated as free parameters in order to incorporate the uncertainties of the Aseev model, which results in a nine-parameter fit.
+\end{enumerate}
+Figure~\ref{fig:katrinElossResultsProfileLikelihood} shows the corresponding profile-likelihood ratios and table~\ref{tab:katrinElossModelResultsAsimov} lists the extracted confidence intervals and obtained sensitivities.
 
+Under the restrictions listed in section~\ref{sec:katrinElossValidity}, the following conclusions can be drawn
+\begin{itemize}
+	\item Using the KATRIN model at its current stage yields an improvement of~\SI{10}{meV}  in sensitivity to the neutrino mass compared with the Aseev model of.
+	\item The uncertainties stemming from the KATRIN model are negligible with respect to the statistical uncertainty.
+	\item The profile-likelihood ratio has a parabolic shape, which translates to a Gaussian shape for the likelihood. This hints at the applicability of  Wilk's theorem to enable the profile-likelihood method and Walt's theorem to enable the usage of an Asimov data set. It also justifies the usage of the factor $1.645$ to convert from a confidence interval of~\SI{60}{\percent} confidence level to one of~\SI{90}{\percent}.
+\end{itemize}
+
+\begin{table}[t]
+	\centering
+	\xcaption{Confidence intervals and sensitivity from an Asimov data set}{Confidence intervals and sensitivity from an Asimov data set.}{The table lists values that can be extracted from the profile-likelihood ratio depicted in figure~\ref{fig:katrinElossResultsProfileLikelihood} for the three conducted studies in the ``statistics only'' case and respecting the uncertainties from the KATRIN and the Aseev model: The lower bound of the confidence interval (\SI{60}{\percent} C.L.) on the squared neutrino mass $l(\nuMass^2)$, the upper bound $u(\nuMass^2)$, half the width of the interval $\sigma_\mathrm{tot}(\nuMass^2)$ and KATRIN's sensitivity on the neutrino mass as per equation~\eqref{eq:statMethodsSensitivity}. For the calculation of the sensitivity an additional systematic budget of $\SI{0.017}{eV^2}$ was included (see section~\ref{sec:statMethodsSensitivtyFromEnsemble}).}
+	\begin{tabular}{lrrrr}
+		\toprule
+		\makecell[tr]{} &
+		\makecell[tr]{$l(\nuMass^2)$ \\ (\SI{e-2}{eV^2})} & 
+		\makecell[tr]{$u(\nuMass^2)$ \\ (\SI{e-2}{eV^2})} & 
+		\makecell[tr]{$\sigma_\mathrm{tot}(\nuMass^2)$ \\ (\SI{e-2}{eV^2})} &
+		\makecell[tr]{$S_{\nuMass}(\SI{90}{\percent})$ \\ (\SI{}{meV})}  
+		\\
+		\hline
+		statistics only & -1.586 & 1.592 & 1.589 & 196 \\
+		KATRIN model & -1.598 & 1.604 & 1.601 & 196 \\
+		Aseev model & -1.931 & 1.939 & 1.935 & 206 \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:katrinElossModelResultsAsimov}
+\end{table}
+
+\subsection{Ensemble Test}
+\label{sec:katrinElossModelResultsEnsemble}
 \begin{figure}[th]
 	\centering
 	\includegraphics[width=\textwidth]{\currentFigureFolder/coverage.pdf}
@@ -134,7 +176,6 @@ Furthermore, the KATRIN model does not yet incorporate systematic uncertainties.
 	\label{fig:katrinElossResultsCoverage}
 \end{figure}
 
-\label{sec:katrinElossStatisticsCombMeasurements}
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=\textwidth]{\currentFigureFolder/katrinElossChi2Distribution.pdf}
