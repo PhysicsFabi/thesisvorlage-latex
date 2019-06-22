@@ -1,6 +1,6 @@
-\section{Software Documentation for KaFit-Likelihood Extensions}
+\section{Documentation of KaFit-Likelihood Extensions}
 \label{sec:appendixKatrinElossStatisticsLikelihoodExtKaFitConfig}
-Within this thesis the implementation of the likelihood in the KaFit framework was extended as described in section \ref{sec:katrinElossStatisticsCombMeasurements}. It is possible to multiply the likelihood by different function types that resemble term $(2)$ in equation~\eqref{eq:katrinElossStatisticsPullTerm}. 
+Within this thesis the implementation of the likelihood in the KaFit framework was extended as described in section \ref{sec:katrinElossStatisticsCombMeasurements}. The possibility was introduced to multiply the likelihood by different function types that resemble term $(2)$ in equation~\eqref{eq:katrinElossStatisticsPullTerm}. 
 
 KaFit is configured using an \texttt{XML}-like syntax. Example excerpts from KaFit-\texttt{XML}-configurations are given below. {\color{brown}\texttt{[Double]}} is used as a placeholder for a number; and {\color{brown}\texttt{[Index*]}} for a parameter index. E.\,g.~the squared neutrino mass has the parameter index 0. A new \texttt{Penalty}-tag was introduced as sub-tag of the already established \texttt{LoglikelihoodKatrin}-tag:
 \begin{lstlisting}[language=XML]
@@ -14,7 +14,7 @@ KaFit is configured using an \texttt{XML}-like syntax. Example excerpts from KaF
 \end{lstlisting}
 {\color{gray}\texttt{<!-- Penalty Type -->}} can be substituted by one ore more of the following tags:
 \paragraph{Multivariate Normal Distribution}
-The attribute {\color{magenta}\texttt{Mean}} specifies the mean of a parameter; {\color{magenta}\texttt{Std}} the standard deviation; and one ore more {\color{violet}\texttt{Correlation}}-sub-tags the correlations between the parameters, that given through the {\color{violet}\texttt{Parameter}}-tags.
+The {\color{violet}\texttt{Parameter}}-tag represents a parameter the likelihood depends on. Its attribute {\color{magenta}\texttt{Mean}} specifies the mean of a parameter; {\color{magenta}\texttt{Std}} the standard deviation; and one ore more {\color{violet}\texttt{Correlation}}-sub-tags the correlations between the parameters.
 \begin{lstlisting}[language=XML]
 <MultivarNorm>
   <Parameter Index="[Index1]" Mean="[Double]" Std="[Double]" />
@@ -36,7 +36,7 @@ A constant prior on the neutrino mass in a Bayesian analysis can be set via the 
 \begin{lstlisting}[language=XML]
 <ConstInSqrt ParamIndex="0" />
 \end{lstlisting}
-The former implementation only allowed for a constant prior on the squared neutrino mass. The following lines derive the form of a prior on $m_\nu^2$ that resembles a uniform prior on $m_\nu$. Let $f(m_\nu)=C=\mathrm{constant}$ be the prior on $m_\nu$ and $g(m_\nu^2)$ be the prior on $m_\nu^2$. Starting from conservation of probability one derives
+The former implementation within KaFit only allowed for a constant prior on the squared neutrino mass. The following lines derive the form of a prior on $m_\nu^2$ that resembles a uniform prior on $m_\nu$. Let $f(m_\nu)=C=\mathrm{constant}$ be the prior on $m_\nu$ and $g(m_\nu^2)$ be the prior on $m_\nu^2$. Starting from conservation of probability one derives
 \begin{align*}
 f(m_\nu)\d m_\nu =& g(m_\nu^2) \d m_\nu^2 \\
 \Rightarrow
