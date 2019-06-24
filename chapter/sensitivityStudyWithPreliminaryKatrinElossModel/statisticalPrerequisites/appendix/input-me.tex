@@ -2,7 +2,7 @@
 \label{sec:appendixKatrinElossStatisticsLikelihoodExtKaFitConfig}
 Within this thesis the implementation of the likelihood in the KaFit framework was extended as described in section \ref{sec:katrinElossStatisticsCombMeasurements}. The possibility was introduced to multiply the likelihood by different function types that resemble term $(2)$ in equation~\eqref{eq:katrinElossStatisticsPullTerm}. 
 
-KaFit is configured using an \texttt{XML}-like syntax. Example excerpts from KaFit-\texttt{XML}-configurations are given below. {\color{brown}\texttt{[Double]}} is used as a placeholder for a number; and {\color{brown}\texttt{[Index*]}} for a parameter index. E.\,g.~the squared neutrino mass has the parameter index 0. A new \texttt{Penalty}-tag was introduced as sub-tag of the already established \texttt{LoglikelihoodKatrin}-tag:
+KaFit is configured using an \texttt{XML}-like syntax. Example excerpts from KaFit-\texttt{XML}-configurations are given below. The documentation is given to a level that enables the usage by a user already familiar with KaFit. {\color{brown}\texttt{[Double]}} is used as a placeholder for a number; and {\color{brown}\texttt{[Index*]}} for a parameter index. For example, the squared neutrino mass has the parameter index 0. A new \texttt{Penalty}-tag was introduced as sub-tag of the already established \texttt{LoglikelihoodKatrin}-tag:
 \begin{lstlisting}[language=XML]
 <LoglikelihoodKatrin 
     Name="myKatrinLogL" PDF="Gauss" RunSource="myRunGen" 
