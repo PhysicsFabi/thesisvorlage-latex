@@ -42,23 +42,23 @@ In the preceding section~\ref{sec:intSpecModelResponseEloss}, the energy loss fu
 	A_3, m_3, s_3
 	\right)} \\
 \katrinElossPhen{\epsilon} &=
-\sum_{i=1}^3 A_i \cdot \mathcal{N}_i(\epsilon, \mu=m_i, \sigma=s_i)
+\sum_{i=1}^3 A_i \cdot \mathcal{N}(\epsilon, \mu=m_i, \sigma=s_i)
 \fullstop
 \end{align}
-The second part, the ionization tail, follows the binary-encounter-dipole (BED) model. For a full formula, the reader is referred to~\cite{Kim1994}. Here, this part will be denoted
+The second part, the ionization tail, follows a modified version of the binary-encounter-dipole (BED) model. For a full formula, the reader is referred to~\cite{Kim1994}. Here, this part will be denoted
 \newcommand{\katrinElossBDE}[1]{
 	\frac{
-		\d \sigma_\mathrm{ion}^\mathrm{BDE}(#1)
+		\d \sigma_\mathrm{ion}^\mathrm{BED}(#1)
 	}{
 		\d \epsilon
 	}
-}
+}%
+\newcommand{\ionEnergyDeu}{E_\mathrm{ion,D_2}}%
 \begin{equation}
 	\katrinElossBDE{\epsilon}
 	\fullstop
 \end{equation}%
-\newcommand{\ionEnergyDeu}{E_\mathrm{ion,D_2}}%
-The transition between the two parts is introduced at the ionization energy of deuterium $\ionEnergyDeu=\SI{15.467}{eV}$~\cite{Shiner1993}. In order for the transition to be continuous a scaling factor for the ionization tail is introduced
+The BED model is valid for hydrogen molecules. Therefore, it depends on the ionization energy of hydrogen. The corresponding value was exchanged for the one of deuterium $\ionEnergyDeu=\SI{15.467}{eV}$~\cite{Shiner1993}. Whether further modifications with regard to the difference in isotopologues are necessary is currently under investigation. Furthermore, the constant normalization factor of the BED model was removed for the following reason: The transition between the two parts, the phenomenological peak and the BED tail, is introduced at the ionization energy of deuterium $\ionEnergyDeu$. In order for the transition to be continuous a scaling factor for the ionization tail is introduced
 \begin{equation}
 c = \left.	
 	\left(
@@ -88,10 +88,10 @@ Then, the full parametrization for the KATRIN model reads~\cite{Hannen2019_1}
 \subsection{Nuisance Parameters}
 The uncertainties of the KATRIN model as evaluated at the time of writing this thesis can be divided into two sets: The KATRIN model itself comprises nine parameters. However, it was obtained in a 15-parameter fit. The other six fit parameters are correlated with the parameters of the KATRIN model and hence are not necessarily negligible with regard to uncertainties. In the scope of this thesis they were incorporated in the statistical treatment of the uncertainties. Whether they may be neglected in future studies needs further investigation. 
 
-For a detailed description of the full fit of the KATRIN model to the recorded data, the reader is referred to~\cite{Hannen2019_1}, but a description of the essentials is given in the following. An overview of the used data sets is required in order to describe the further six fit parameters. Four integral spectra were recorded analogously to the described integral $\upbeta$ spectrum in chapter~\ref{sec:intSpecModel}, but with the electron gun (see section~\ref{sec:katrinExpSetupRearSection}) as electron source instead of tritium. For each data set a different deuterium column density (see section~\ref{sec:katrinExpSetupWGTS}) was set in the \gls{wgts}: \SI{0}{\percent}, \SI{15}{\percent}, \SI{50}{\percent}, \SI{100}{\percent} of the nominal column density of $\rho d = \SI{5e17}{molecules/cm^2}$. The fit model for the \mbox{\SI{15}{\percent}-measurement} was rescaled with respect to the other measurements \todo{Why?}. The corresponding scaling factor $N_{\mathrm{int},15}$ was a free fit parameter. A further scaling factor $N_\mathrm{K}$ for the KATRIN model was introduced in the fit as a free parameter in order for the whole KATRIN model to keep its properties of a probability density and integrate to unity. Additionally, a 5th data set recorded at $\SI{15}{\percent}$ column density in a time-of-flight mode~\cite{Bonn1999} was fitted simultaneously. For each data set a different expected scattering count $
-\mu_{\mathrm{tof},15},
-\mu_{\mathrm{int},15}, 
-\mu_{\mathrm{int},50}, 
+For a detailed description of the full fit of the KATRIN model to the recorded data, the reader is referred to~\cite{Hannen2019_1}, but a description of the essentials is given in the following. An overview of the used data sets is required in order to describe the further six fit parameters. Four integral spectra were recorded analogously to the described integral $\upbeta$ spectrum in chapter~\ref{sec:intSpecModel}, but with the electron gun (see section~\ref{sec:katrinExpSetupRearSection}) as electron source instead of tritium. For each data set a different deuterium column density (see section~\ref{sec:katrinExpSetupWGTS}) was set in the \gls{wgts}: \SI{0}{\percent}, \SI{15}{\percent}, \SI{50}{\percent}, \SI{100}{\percent} of the nominal column density of $\rho d = \SI{5e17}{molecules/cm^2}$. The fit model for the \mbox{\SI{15}{\percent}-measurement} was rescaled with respect to the other measurements because the respective data set underwent a different preprocessing than the others. The corresponding scaling factor $N_{\mathrm{int},15}$ was a free fit parameter. A further scaling factor $N_\mathrm{K}$ for the KATRIN model was introduced in the fit as a free parameter in order for the whole KATRIN model to keep its properties of a probability density and integrate to unity. Additionally, a 5th data set recorded at $\SI{15}{\percent}$ column density in a time-of-flight mode~\cite{Bonn1999} was fitted simultaneously. For each data set a different expected scattering count $
+\mu_{\mathrm{tof},15}, 
+\mu_{\mathrm{int},15},  
+\mu_{\mathrm{int},50},  
 \mu_{\mathrm{int},100}$ (see equation~\ref{eq:intSpecModelExpectedScatteringCount}) was fitted, which adds four further parameters (there is no scattering for the $\SI{0}{\percent}$ measurement). In summary, the additional parameters in the fit of the KATRIN model are
 \begin{equation}
 \label{eq:katrinElossElossModelExtendedParams}
@@ -142,7 +142,7 @@ The following three cases were investigated using an Asimov data set:\mynobreakp
 	\item The simulation- and fit-model use the KATRIN energy loss model, and all its parameters were treated as free parameters  in order to incorporate the uncertainties of the KATRIN model, which results in a 19-parameter fit.
 	\item The simulation- and fit-model use the Aseev model, and all its parameters were treated as free parameters in order to incorporate the uncertainties of the Aseev model, which results in a nine-parameter fit.
 \end{enumerate}
-Figure~\ref{fig:katrinElossResultsProfileLikelihood} shows the corresponding profile-likelihood ratios and table~\ref{tab:katrinElossModelResultsAsimov} lists the extracted confidence intervals and obtained sensitivities. The ``statistics only'' case can be compared to the results listed in table~\ref{tab:statMethodsSensitivityFromEnsembleTests}. Here, a $\sim\SI{4e-4}{eV^2}$ smaller statistical uncertainties on the squared neutrino mass is obtained compared to the results by~\cite{Kleesiek2014, Hoetzel2012}. This is mainly due to the fact, that in the study presented in this chapter a detection efficiency of \SI{95}{\percent} was used, whereas the other works used~\SI{90}{\percent}.
+Figure~\ref{fig:katrinElossResultsProfileLikelihood} shows the corresponding profile-likelihood ratios and table~\ref{tab:katrinElossModelResultsAsimov} lists the extracted confidence intervals and obtained sensitivities. The ``statistics only'' case can be compared to the results listed in table~\ref{tab:statMethodsSensitivityFromEnsembleTests}. Here, a $\sim\SI{4e-4}{eV^2}$ smaller statistical uncertainty on the squared neutrino mass is obtained compared to the results by~\cite{Kleesiek2014, Hoetzel2012}. This is mainly due to the fact, that in the study presented in this chapter a detection efficiency of \SI{95}{\percent} was used, whereas the other works used~\SI{90}{\percent}.
 
 Under the restrictions listed in section~\ref{sec:katrinElossValidity}, the following conclusions can be drawn:
 \begin{itemize}
@@ -197,7 +197,7 @@ The estimated mean and standard deviation of the distribution of the  confidence
 	\xcaption{Chis-square distribution for the simulated ensemble of neutrino mass measurements obtained in the sensitivity study using the KATRIN energy loss model}{Chis-square distribution for the simulated ensemble of neutrino mass measurements obtained in the sensitivity study using the KATRIN energy loss model.}{An ensemble of 4046 KATRIN neutrino mass measurements was simulated. The histogram shows the obtained distribution of the likelihood $L$ evaluated at the~\gls{mle}~$\hat{\theta}$. The obtained distribution may follow a chi-square distribution with 38 degrees of freedom. For details the reader is referred to the main text.}
 	\label{fig:katrinElossStatisticsChi2}
 \end{figure}
-
+\FloatBarrier
 \section{Conclusion and Outlook}
 \label{sec:katrinElossModelOutlook}
 A general statistical framework was developed that enables the incorporation of model uncertainties into parameter inference within a frequentist context. It was used to show that the uncertainties of the KATRIN energy loss model at its current preliminary stage are negligible within neutrino mass interference. Furthermore, it was shown, that Asimov data sets of the presented kind may reasonably be assumed to be representative for an ensemble of neutrino mass measurements. Also, it was shown, that precautions have to be taken, when using the chi-square statistic as a measure for goodness-of-fit at the same time as incorporating ``pull terms''. 
