@@ -106,9 +106,9 @@
 \usepackage{epstopdf}                           % may be necessary for miktex to
                                                 % convert eps to pdf figures
 
-\usepackage[raiselinks=true,                    % package enables hyperlinks in
-            bookmarks=true,                     % document. hyperref also incl.
-            bookmarksopenlevel=1,               % url package for \url{...}
+\usepackage[raiselinks=true,                    
+            bookmarks=true,                     
+            bookmarksopenlevel=1,               
             bookmarksopen=true,
             bookmarksnumbered=true,
             hyperindex=true,
@@ -117,7 +117,8 @@
             pdfborder={0 0 0.5},
             colorlinks=false,
             linkbordercolor=kitcolor,
-            citebordercolor=kitcolor]{hyperref}
+            citebordercolor=kitcolor,
+            hidelinks=true]{hyperref}
 
 \RequirePackage{scrlfile}                       % Prevent svg (<2.0) package 
 \PreventPackageFromLoading{subfig}              % from loading subfig.
@@ -155,3 +156,4 @@
 \usepackage{floatrow}
 \floatsetup[table]{capposition=top}
 \usepackage{tablefootnote}
+\usepackage{pifont}
