@@ -277,7 +277,7 @@ Table~\ref{tab:intSpecModelAveragedScatProbs} lists the numerical evaluation of 
 
 \begin{table}[ht]
 	\centering
-	\xcaption{Probability for electron scattering within the \gls{wgts} averaged over starting positions and pitch angles}{Probability for electron scattering within the \gls{wgts} averaged over starting positions and pitch angles.}{Listed are the evaluations of equation \eqref{eq:intSpecModelAveragedScatProbs} for the following input parameters:
+	\xcaption{Probability of severalfold electron scattering within the \glsentryshort{wgts}}{Probability of severalfold electron scattering within the \glsentryshort{wgts}.}{Listed are the evaluations of equation \eqref{eq:intSpecModelAveragedScatProbs} for the following input parameters:
 	A scattering cross section of $\sigma=\SI{3.456e-22}{m^2}$~\cite{Angrik:2005ep},
 	a constant gas column density $\rho d = \SI{5e17}{cm^{-2}}$, 
 	a \gls{wgts} length of $d=\SI{10.0820}{m}$
@@ -369,7 +369,7 @@ where $\conv$ denotes the convolution
 \fullstop 
 \end{equation}
 
-\subsection{Assembly of the KATRIN Response Function}
+\subsection{Assembly of the Response Function}
 \label{sec:intSpecModelResponseReconciliation}
 This section gives an expression for the KATRIN response function. It should be noted that the chosen notation differs slightly from those used in the works~\cite{Groh2015,Kleesiek2019}, that this derivation is largely based on. The latter make approximations of the transmission properties and introduce more involved concepts where the approximations do not hold. Here, this approach is inverted: First, the involved concepts are applied and the approximations are introduced in a second step. However, the final results reconcile.
 
@@ -462,7 +462,7 @@ The non-averaged transmission function $\mathcal{T}$~\eqref{eq:intSpecModelTrans
 \end{equation}
 where $\thetaTransPure$ denotes the transmission-pitch angle~\eqref{eq:intSpecModelTransmissionPitchAngle} and $\Delta E$ the \gls{mace}-filter width~\eqref{eq:intSpecModelTransmissionMACEFilterWidth}. As $T_l^{\star}$ vanishes for $E<qU$ the upper integral limit over energy losses in the response function~\ref{eq:intSpecModelFullResponseIntermediate} can be cut to $\Esource-qU$. Furthermore, it was found, that for $l>3$ scatterings the detailed transmission $T_l^{\star}$ function can be exchanged for the KATRIN transmission function~\eqref{eq:intSpecModelTransmission} without making a significant error~\cite{Groh2015}.
 
-\paragraph{Summary}
+\subsection{Summary}
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{\currentFigureFolder/response.pdf}
@@ -559,4 +559,4 @@ As an energy-dependent effect is investigated within this thesis, it should be n
 	\xcaption{Simulated KATRIN measurement for a non-vanishing neutrino mass.}{Simulated KATRIN measurement for a non-vanishing neutrino mass.}{The total measurement time is three years. The top panel shows the measured integral rate $\Gamma$ in dependence of the retarding energy. The center panel shows the relative rate difference for a non-vanishing neutrino mass $\Gamma(\nuMass=\SI{0.35}{eV})/\Gamma(\nuMass=\SI{0}{eV})-1$. The difference is $\sim\SI{2}{\percent}$ at a retarding energy approximately $\SI{4}{eV}$ below the endpoint (simulated as $E_0=\SI{18575}{eV}$). The bottom panel shows the \gls{mtd} where most measurement time is attributed to the most sensitive region. This is also reflected by the uncertainty bars of the toy data. (Adapted from~\cite{SeitzM2019}.)}
 	\label{fig:katrinExpNuMassMeasurement}
 \end{figure}
-In summary, a KATRIN measurement yields a set of electron counts $\{N(qU_i)\}$, equation \eqref{eq:intSpecModelDetectorCounts}, distributed over retarding voltage bins $\{qU_i\}$, where the counts fluctuate statistically~\cite{Angrik:2005ep}. A possible model for the fluctuations is a Poissonian distribution~\cite{Kleesiek2014}. Figure~\ref{fig:katrinExpNuMassMeasurement} shows a KATRIN measurement for an \gls{mtd} starting at $E_0-\SI{30}{eV}$ and a total measurement time of three years. The distortion of the measured integral rate by a non-vanishing neutrino mass can be seen approximately \SI{4}{eV} below the endpoint $E_0$. This distortion can be used to infer the squared electron antineutrino mass from a KATRIN neutrino mass measurement. Chapter~\ref{sec:statMethods} presents corresponding statistical methods.
+In summary, a KATRIN measurement yields a set of electron counts $\{N(qU_i)\}$, equation~\eqref{eq:intSpecModelDetectorCounts}, distributed over retarding voltage bins $\{qU_i\}$, where the counts fluctuate statistically~\cite{Angrik:2005ep}. A possible model for the fluctuations is a Poissonian distribution~\cite{Kleesiek2014}. Figure~\ref{fig:katrinExpNuMassMeasurement} shows a KATRIN measurement for an \gls{mtd} starting at $E_0-\SI{30}{eV}$ and a total measurement time of three years. The distortion of the measured integral rate by a non-vanishing neutrino mass can be seen approximately \SI{4}{eV} below the endpoint $E_0$. This distortion can be used to infer the squared electron antineutrino mass from a KATRIN neutrino mass measurement. Chapter~\ref{sec:statMethods} presents corresponding statistical methods.

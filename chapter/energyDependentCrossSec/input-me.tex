@@ -9,7 +9,7 @@ The probability of an electron to scatter when traveling through the \gls{wgts} 
 The cross section depends on the energy of the incident electrons: $\sigma \equiv \sigma(\Ekin)$. This dependence has been neglected in the formal modeling of a KATRIN measurement within the previous chapter~\ref{sec:intSpecModel}. This chapter investigates effects related to the incorporation of the energy-dependence. Section~\ref{sec:eDepScatCrossSecSources} lists cross section values from different sources and relates them to each other. Section~\ref{sec:eDepScatCrossSecModel} extends the mathematical formalism for a KATRIN measurement in order to incorporate the energy-dependence of the scattering cross section. Section~\ref{sec:eDepScatCrossSecNuMassInf} discusses the energy-dependence within the context of neutrino mass inference. In the end, section~\ref{sec:eDepScatCrossSecConclusion} concludes and offers an outlook.
 
 
-\section{Cross Section for Electrons Scattering off Molecules of Hydrogen Isotopologues}
+\section{Cross Section for Electrons Scattering off Molecular Hydrogen Isotopologues}
 \label{sec:eDepScatCrossSecSources}
 There exist several sources for cross-section formulae and values. This section gives an overview about the sources considered in this thesis and how they relate to each other. First, the cross section for electrons with an energy of \SI{18600}{eV} scattering off tritium was measured at the Troitsk experiment to be~\cite{Aseev2000}
 \begin{equation}
@@ -106,7 +106,7 @@ The energy-dependence of the cross section enters into the calculation of the sc
 
 \begin{table}[t]
 	\centering
-	\xcaption{Probabilities for severalfold scattering of electrons in the \gls{wgts}}{Probabilities for severalfold scattering of electrons in the \gls{wgts}}{averaged over all starting positions and starting pitch angles. Both, the values from a Monte Carlo (MC) simulation and the values according to equation~\eqref{eq:intSpecModelAveragedScatProbs} are given. The  cross section was evaluated at an energy of $E=\SI{18564.37463}{eV}$ 
+	\xcaption{Probabilities for severalfold scattering of electrons in the \glsentryshort{wgts} - reviewed}{Probabilities for severalfold scattering of electrons in the \glsentryshort{wgts}.}{The probabilities are averaged over all starting positions and starting pitch angles. Both, the values from a Monte Carlo (MC) simulation and the values according to equation~\eqref{eq:intSpecModelAveragedScatProbs} are given. The  cross section was evaluated at an energy of $E=\SI{18564.37463}{eV}$ 
 	for the two energy interpretations described by equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecTDREngeryInterpretation} and~\eqref{eq:eDepScatCrossSecSourcesCrossSecNonRelEnergy}. Further input parameters to the calculations are a constant gas column density $\rho d = \SI{5e17}{cm^{-2}}$, 
 	a \gls{wgts} length of $d=\SI{10.0820}{m}$
 	and a maximum acceptance angle of $\thetaMax=\SI{50.7685}{\degree}$.}
@@ -119,8 +119,8 @@ The energy-dependence of the cross section enters into the calculation of the sc
 		\hline
 		\makecell[tl]{source $\rightarrow$} & 
 		\makecell[tl]{MC particle tracking\\ \cite{Groh2015}} & 
-		\makecell[tl]{eq. \eqref{eq:intSpecModelAveragedScatProbs} \\ \cite{Groh2015, Kleesiek2014}} &
-		\makecell[tr]{eq. \eqref{eq:intSpecModelAveragedScatProbs}}
+		\makecell[tl]{eq.~\eqref{eq:intSpecModelAveragedScatProbs} \\ \cite{Groh2015, Kleesiek2014}} &
+		\makecell[tr]{eq.~\eqref{eq:intSpecModelAveragedScatProbs}}
 		\\
 		\hline
 		\makecell[cl]{scattering count $\downarrow$} & 
@@ -142,7 +142,7 @@ The energy-dependence of the cross section enters into the calculation of the sc
 \label{sec:eDepScatCrossSecModelDescription}
 \begin{figure}[th]
 \includegraphics[width=\textwidth]{\currentFigureFolder/scatProbs012.pdf}
-        \xcaption{Energy-dependent probabilities for electron scattering within the \gls{wgts}}{Energy-dependent probabilities for electron scattering within the \gls{wgts}.}{From top to bottom the probability for no, one-fold and two-fold scattering are shown averaged over all starting positions and starting pitch angles of electrons within the \gls{wgts}. The lines show the Poisson model and the markers the extended model (see main text for a description of the models). The extended model is only shown for one-fold scattering because for no scattering, it equals the Poisson model and for two-fold scattering it was not calculated (see appendix~\ref{sec:appendixEDepScatCrossSecExtendedModel} for an explanation). The numerical evaluation of the extended model is subject to an uncertainty of $\sim10^{-5}$ (see appendix~\ref{sec:appendixEDepScatCrossSecExtendedModelNumEval}), that is depicted as uncertainty bars. The shown energy range matches the measurement range of the \glsentryfull{ft} measurement campaign and the inset shows an energy span around the endpoint of the tritium $\upbeta$ spectrum.}
+        \xcaption{Probability for severalfold scattering in the \glsentryshort{wgts} in dependence of the incident electron energy}{Probability for severalfold scattering in the \glsentryshort{wgts} in dependence of the incident electron energy.}{From top to bottom the probability for no, one-fold and two-fold scattering are shown averaged over all starting positions and starting pitch angles of electrons within the \gls{wgts}. The lines show the Poisson model and the markers the extended model (see main text for a description of the models). The extended model is only shown for one-fold scattering because for no scattering, it equals the Poisson model and for two-fold scattering it was not calculated (see appendix~\ref{sec:appendixEDepScatCrossSecExtendedModel} for an explanation). The numerical evaluation of the extended model is subject to an uncertainty of $\sim10^{-5}$ (see appendix~\ref{sec:appendixEDepScatCrossSecExtendedModelNumEval}), that is depicted as uncertainty bars. The shown energy range matches the measurement range of the \glsentryfull{ft} measurement campaign and the inset shows an energy span around the endpoint of the tritium $\upbeta$ spectrum.}
         \label{fig:eDepScatCrossSecModel}
 \end{figure}
 Within this section, two models are presented in order to incorporate the energy-dependence of the scattering cross section into the mathematical formalism of a KATRIN measurement.
@@ -316,7 +316,7 @@ The two presented arguments show that the results presented in this chapter and 
 
 \begin{figure}[t]
 	\includegraphics[width=\textwidth]{\currentFigureFolder/normedIntegralRate.pdf}
-	\xcaption{Simulated integral $\boldsymbol{\upbeta}$-electron rate using different models of the cross section for inelastic electron scattering}{Simulated integral $\boldsymbol{\upbeta}$-electron rate using different models of the cross section for inelastic electron scattering.}{The x-axis shows the energy range of the design KATRIN analysis interval. The lines show the integral rate of $\upbeta$ electrons for different models for the inelastic scattering cross section normalized to the model, that uses the constant cross section $\sigma_\mathrm{TDR}=\SI{3.456e-22}{m^{-22}}$. The gray lines use a model with a constant cross section. The cross section values can be identified with electron energies as per equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu} and the energy interpretation of equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecTDREngeryInterpretation} with $\sigma(E_0-\SI{30}{eV}=\SI{18545}{eV})=\SI{3.459e-22}{m^{-22}}$ and $\sigma(E_0=\SI{18575}{eV})=\SI{3.454e-22}{m^{-22}}$. The black line shows the simulated integral rate for an energy-dependent cross section. This graph is meant to emphasize that the integral rates for models using a constant cross section differ by an almost constant factor, whereas the rate using an energy-dependent cross section differs by a varying factor.}
+	\xcaption{Simulated integral $\upbeta$-electron rate using different models of the cross section for inelastic electron scattering}{Simulated integral $\boldsymbol{\upbeta}$-electron rate using different models of the cross section for inelastic electron scattering.}{The x-axis shows the energy range of the design KATRIN analysis interval. The lines show the integral rate of $\upbeta$ electrons for different models for the inelastic scattering cross section normalized to the model, that uses the constant cross section $\sigma_\mathrm{TDR}=\SI{3.456e-22}{m^{-22}}$. The gray lines use a model with a constant cross section. The cross section values can be identified with electron energies as per equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu} and the energy interpretation of equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecTDREngeryInterpretation} with $\sigma(E_0-\SI{30}{eV}=\SI{18545}{eV})=\SI{3.459e-22}{m^{-22}}$ and $\sigma(E_0=\SI{18575}{eV})=\SI{3.454e-22}{m^{-22}}$. The black line shows the simulated integral rate for an energy-dependent cross section. This graph is meant to emphasize that the integral rates for models using a constant cross section differ by an almost constant factor, whereas the rate using an energy-dependent cross section differs by a varying factor.}
 	\label{fig:eDepScatCrossSecNuMassInfShiftsForConstCrossSec}
 \end{figure}
 \FloatBarrier
