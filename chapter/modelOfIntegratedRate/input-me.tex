@@ -5,7 +5,7 @@
 
 \chapter{Mathematical Formalism of a KATRIN Measurement}
 \label{sec:intSpecModel}
-For neutrino mass inference from simulated or real data, a mathematical model of a KATRIN neutrino mass measurement is required. As parameter inference is of importance within the scope of this thesis, a mathematical formalism describing a KATRIN neutrino mass measurement is outlined within this chapter. Therefore, an expression for the $\upbeta$-decay rate of a tritium molecule is given in section~\ref{sec:intSpecModelDiffSpec}. Section~\ref{sec:intSpecModelResponse} describes the KATRIN response function, respectively the mathematical modeling of the KATRIN apparatus. Sections~\ref{sec:intSpecModelIntegralRate} combines the concepts of the two preceding sections into the $\upbeta$-electron rate at the KATRIN detector. Section~\ref{sec:intSpecModelDetectorCounts} incorporates the detector efficiency, the background rate and the measurement time in order to translate the rates into an expression for the electron counts measured by the KATRIN detector for a fixed retarding potential. Section~\ref{sec:intSpecModelMTD} introduces the concept of a measurement time distribution over retarding potentials. Finally, section~\ref{sec:intSpecModelNuMassMeasurement} shows a full simulated KATRIN neutrino mass measurement as obtained by the presented formalism.
+For neutrino mass inference from simulated or real data, a mathematical model of a KATRIN neutrino mass measurement is required. As parameter inference is of relevance for the topic of this thesis, a mathematical formalism describing a KATRIN neutrino mass measurement is outlined within this chapter. Section~\ref{sec:intSpecModelDiffSpec} gives an expression for the tritium $\upbeta$-decay rate. Section~\ref{sec:intSpecModelResponse} describes the KATRIN response function, respectively the mathematical modeling of the KATRIN apparatus. Sections~\ref{sec:intSpecModelIntegralRate} combines the concepts of the two preceding sections into the $\upbeta$-electron rate at the KATRIN detector. Section~\ref{sec:intSpecModelDetectorCounts} incorporates the detector efficiency, the background rate and the measurement time in order to translate the rates into an expression for the electron counts measured by the KATRIN detector for a fixed retarding potential. Section~\ref{sec:intSpecModelMTD} introduces the concept of a measurement time distribution over retarding potentials. Finally, section~\ref{sec:intSpecModelNuMassMeasurement} shows a full simulated KATRIN neutrino mass measurement as obtained by the presented formalism.
 
 \section{Differential Tritium-\texorpdfstring{$\upbeta$}{Beta}-Decay Spectrum}
 \label{sec:intSpecModelDiffSpec}
@@ -17,7 +17,7 @@ For neutrino mass inference from simulated or real data, a mathematical model of
 \end{figure}
 
 
-This section presents a quantitative expression for the $\upbeta$-decay rate of a tritium molecule in dependence on the kinetic energy of the emitted $\upbeta$ electron (differential rate). First the whole mathematical description is denoted, then its components are explained.
+This section presents a quantitative expression for the $\upbeta$-decay rate within a tritium molecule normalized to a tritium nuclei in dependence on the kinetic energy of the emitted $\upbeta$ electron (differential rate). First the whole mathematical description is denoted, then its components are explained.
 
 Using Fermi theory and Fermi's golden rule the decay rate of a tritium molecule is~\cite{Kleesiek2019,Otten:2008zz} 
 \begin{align}
@@ -35,9 +35,9 @@ p(\Esource+m_\elecIndex) \cdot
 	\fullstop
 \end{align}
 Its constituents are the kinetic electron energy $\Esource$;
-the effective electron-antineutrino mass~$\nuMass$ defined via the PMNS matrix $U$ (eq.~\ref{eq:PMNSmatrix}),
+the effective squared electron-antineutrino mass~$\nuMass^2$ defined via the PMNS matrix $U$ (eq.~\ref{eq:PMNSmatrix}),
 \begin{equation}
-	 \nuMass^2 = \abs{U_{\elecIndex i}}^2 m_i^2\,;
+	 \nuMass^2 = \sum_{i}\abs{U_{\elecIndex i}}^2 m_i^2\,;
 \end{equation}
 the Fermi constant $\fermiConst$;
 the up-down-quark-coupling given by the Cabibbo angle $\theta_\mathrm{C}$~\cite{ReviewOfParticlePhysics}
@@ -51,7 +51,7 @@ and the nuclear transition matrix element~\cite{ReviewOfParticlePhysics}
 \text{with } g_V = 1 \quad
 \text{and} \quad g_A/g_V = -1.2646 \pm 0.0035
 \end{equation}
-which is independent of the electron's kinetic energy as the decay is super-allowed and given by the vector $g_V$ and axial vector $g_A$ coupling.
+which is independent of the electron's kinetic energy (as the decay is super-allowed) and given by the vector $g_V$ and axial vector $g_A$ coupling.
 
 Furthermore, the Fermi function $F(Z,\Esource)$ accounts for the Coulomb interaction between the outgoing electron and the daughter nucleus with atomic charge $Z=2$, which in its relativistic version can be approximated as~\cite{Simpson1981}
 \begin{equation}
@@ -65,7 +65,7 @@ The phase-space factor of the outgoing electron with momentum $p$ and mass $m_\e
 The phase space factor of the emitted neutrino  depends on multiple quantities: First, there is the $\upbeta$-spectrum endpoint of molecular tritium $E_0=\SI{18574.00\pm0.07}{eV}$~\cite{Myers2015,Otten:2008zz}. Second, there is the final state energy of the molecule $V_f$. The exited energy state $f$ is caused by vibration, rotation or electronic excitation of the decaying molecule. A review on tritium molecular final states and tabulated values can e.\,g.~be found in~\cite{Bodine2015} and references therein. The probability that the molecule is in a final state of energy $V_f$ after the decay is denoted by $P_f$. Then the energy of the neutrino reads 
 \begin{equation}
 \label{eq:intSpecModelDiffSpecNeutrinoEnergy}
-\epsilon_f = E_0 - E - V_f 
+\epsilon_f = E_0 - \Esource - V_f 
 \fullstop
 \end{equation}
 Third, there is the neutrino's momentum $\sqrt{\epsilon_f^2-\nuMass^2}$. Then, the complete phase space factor of the neutrino is a sum over all possible molecular final states labeled $f$.
@@ -76,13 +76,13 @@ The differential rate is depicted in figure~\ref{fig:intSpecModelDiffSpec} for a
 
 \section{Response Function}
 \label{sec:intSpecModelResponse}
-The aim of this chapter is an introduction to the mathematical formalism for the electron rate at the KATRIN detector. The previous section~\ref{sec:intSpecModelDiffSpec} gives an expression for the differential $\upbeta$-electron rate. The next step is the inclusion of the characteristics of the KATRIN experimental setup. This can be accomplished by denoting the KATRIN response function. In the outlined formalism, it reflects the probability of an electron emitted in the \gls{wgts} to reach the KATRIN detector~\cite{Groh2015} (the detector efficiency is treated separately).
+The aim of this chapter is an introduction to the mathematical formalism for the electron rate at the KATRIN detector. The previous section~\ref{sec:intSpecModelDiffSpec} gives an expression for the differential $\upbeta$-electron rate. The next step is the inclusion of the characteristics of the KATRIN experimental setup. This can be accomplished by introducing the KATRIN response function. In the outlined formalism, it reflects the probability of an electron emitted in the \gls{wgts} to reach the KATRIN detector~\cite{Groh2015} as a function of experimental settings. Which settings are incorporated in particular is developed throughout this chapter.
 
-First, central concepts and the nomenclature are presented in section~\ref{sec:intSpecModelResponseConcepts}. Then, components of the response function are introduced: 
+First, central concepts, the used nomenclature and an overview of the respected experimental settings are presented in section~\ref{sec:intSpecModelResponseConcepts} . Then, the components of the response function are introduced: 
 \begin{itemize}
-	\item The gas dynamics within the \gls{sts} needs to be simulated. See section~\ref{sec:intSpecModelResponseGasDynamics}.
+	\item The gas dynamics within the \gls{wgts} needs to be simulated. See section~\ref{sec:intSpecModelResponseGasDynamics}.
 	\item The characteristics of the KATRIN spectrometer can be summarized in the transmission function. See section~\ref{sec:intSpecModelResponseTransmission}.
-	\item The passage of electrons through the \gls{wgts} is influenced by scattering from gas molecules. The probability for such scattering is discussed in section~\ref{sec:intSpecModelResponseScattering}. Furthermore, the amount of energy an electron loses when scattering is considered in section~\ref{sec:intSpecModelResponseEloss}.
+	\item The passage of electrons through the \gls{wgts} is influenced by scattering off gas molecules. The probability for such scattering is discussed in section~\ref{sec:intSpecModelResponseScattering}. Furthermore, the amount of energy an electron loses when scattering is considered in section~\ref{sec:intSpecModelResponseEloss}.
 \end{itemize}
 Finally, the described components will be assembled to the KATRIN response function in section~\ref{sec:intSpecModelResponseReconciliation} and section~\ref{sec:intSpecModelResponseSummary} summarizes the obtained results.
 
@@ -94,7 +94,7 @@ Before the formalism for the KATRIN response function is developed, this section
 This chapter focuses on a one-dimensional description of the KATRIN response function. The position along the beam line is denoted with $z$. The origin of the coordinate system is the center of the \gls{wgts} as already chosen in previous works, e.\,g.~\cite{Groh2015,Kleesiek2014}. In this sense, the rear and the front of the \gls{wgts} of length $d$ have the coordinates $\mp d/2$.
 
 \paragraph{Pitch Angle}
-In this chapter, the angle between an electron's direction of motion and the beam line axis, the so-called pitch angle, is denoted by $\theta$.
+In this chapter, the angle between an electron's direction of motion and the magnetic field along the beam line axis, the so-called pitch angle, is denoted by $\theta$.
 
 \paragraph{Parameter Indices}
 Whether an electron reaches the KATRIN detector depends i.\,a.~on its starting parameters when originating in the \gls{wgts}. In this chapter, these starting parameters are denoted with a lower index $\mathrm{S}$. The three decisive starting parameters are the following:
@@ -148,11 +148,11 @@ As the response function models the characteristics of the KATRIN apparatus, it 
 	\item the starting potential $\Usource$ of a $\upbeta$ electron within the \gls{wgts}.
 \end{itemize}
 For the detailed meaning of these parameters and their KATRIN design values, see section \ref{sec:katrinExpSetupSpectrometer}.
-It should be noted, that none of these quantities are constant, but that they exhibit a spatial, especially a radial, dependency~\cite{Angrik:2005ep}. For ease of notation, the spatial dependency is left implicit within this chapter.
+It should be noted, that none of these quantities are constant, but that they exhibit a spatial, especially a radial, dependency~\cite{Angrik:2005ep}. For ease of notation, the spatial dependency is left implicit within this chapter. Also, the detector efficiency is treated separately from the response function (see subsequent section~\ref{sec:intSpecModelDetectorCounts}).
 
 \subsection{Gas Dynamics}
 \label{sec:intSpecModelResponseGasDynamics}
-The gas dynamics within the \gls{sts} has to be simulated. This topic is not treated in detail here. The reader is referred to~\cite{Hoetzel2012, Heizmann2018, Kuckert2018}. In short, in a one-dimensional description, the result of such a gas dynamic simulation is the gas molecule density $\rho(z)$. For nominal settings, averaging $\rho(z)$ along the beam line axis and multiplication by the length $d$ of the \gls{wgts} yields the design column density $\rho d = \SI{5e17}{cm^{-2}}$~\cite{Angrik:2005ep}.
+The gas dynamics within the \gls{sts} has to be simulated. This topic is not treated in detail here. The reader is referred to~\cite{Hoetzel2012, Heizmann2018, Kuckert2018, Kuckert2016}. In short, in a one-dimensional description, the result of such a gas dynamic simulation is the gas molecule density $\rho(z)$. For nominal settings, averaging $\rho(z)$ along the beam line axis and multiplication by the length $d$ of the \gls{wgts} yields the design column density $\rho d = \SI{5e17}{cm^{-2}}$~\cite{Angrik:2005ep}.
 
 \subsection{Transmission Function}
 \label{sec:intSpecModelResponseTransmission}
@@ -173,7 +173,7 @@ The transmission function denotes the probability of an electron to pass the \gl
 }
 \fullstop
 \end{equation}
-where $\gamma(E)$ and $\gammaAna$ denote the relativistic Lorentz factor of the $\upbeta$ electrons with energy $E$ and in the analyzing plane. As the electrons are slowed down substantially by the retarding potential in the spectrometer, it holds $\gammaAna\approx1$. In the following, for ease of notation, also $\Usource=0$ and $\gamma(E)=1$ is assumed (the form of the following equations allow to easily identify that the correct values would have to be re-substituted into the retarding voltage or in the fraction of the magnetic fields, which justifies this simplification).
+where $\gamma(E)$ and $\gammaAna$ denote the relativistic Lorentz factor of the $\upbeta$ electrons with energy $E$ and in the analyzing plane. As the electrons are slowed down substantially by the retarding potential in the spectrometer, $\gammaAna\approx1$ holds to a good approximation. In the following, for ease of notation, also $\Usource=0$ and $\gamma(E)=1$ is assumed (the form of the following equations allow to easily identify that the correct values would have to be re-substituted into the retarding voltage or in the fraction of the magnetic fields, which justifies this simplified notation).
 
 Electrons pass the \gls{mace} filter if their energy $E$ when arriving at the spectrometer surpasses the transmission energy $\EtransPure$ (eq.~\ref{eq:intSpecModelTransmissionEnergy}). This condition can be resolved for the starting pitch angle~\cite{Groh2015}
 \begin{align}
@@ -236,7 +236,7 @@ The electron moves on a spiral track due to its cyclotron motion in the magnetic
 \d s = \frac{1}{\cos\thetaSource} \d z 
 \fullstop
 \end{equation}
-Remarkably, this expression is independent of the electron energy and the magnetic field strength in the \gls{wgts}. The effective column density can then be expressed as a line integral along the electrons path $\varphi$ over the gas density~$\rho(z)$ from the starting position of the electron to the point where it leaves the \gls{wgts}
+Remarkably, this expression is independent of the electron energy and the magnetic field strength in the \gls{wgts}. The effective column density can then be expressed as a line integral along the electron's path $\varphi$ over the gas density~$\rho(z)$ from the starting position of the electron to the point where it leaves the \gls{wgts}
 \begin{equation}
 \label{eq:intSpecModelEffColumnDensity}
 \lambda(\zSource,\thetaSource) = 
@@ -280,7 +280,7 @@ Table~\ref{tab:intSpecModelAveragedScatProbs} lists the numerical evaluation of 
 	\xcaption{Probability for severalfold electron-scattering in the \glsentryshort{wgts}}{Probability for severalfold electron-scattering in the \glsentryshort{wgts}.}{Listed are the evaluations of equation \eqref{eq:intSpecModelAveragedScatProbs} for the following input parameters:
 	A scattering cross section of $\sigma=\SI{3.456e-22}{m^2}$~\cite{Angrik:2005ep},
 	a constant gas column density $\rho d = \SI{5e17}{cm^{-2}}$, 
-	a \gls{wgts} length of $d=\SI{10.0820}{m}$
+	a \gls{wgts} beam tube length of $d=\SI{10.0820}{m}$
 	and a maximum acceptance angle of $\thetaMax=\SI{50.7685}{\degree}$.
 	The same values can be found in \cite{Groh2015, Kleesiek2014}. The reader is also referred to a review of this values in section~\ref{sec:eDepScatCrossSecModel}.}
 	\begin{tabular}{cr}
@@ -306,7 +306,7 @@ Table~\ref{tab:intSpecModelAveragedScatProbs} lists the numerical evaluation of 
 		\captionsetup[capbesidefigure]{}%
 		\thisfloatsetup{capbesideposition={left,top}, capbesidewidth=6.4cm}}]{figure}[\FBwidth][][t]
 	{
-		\xcaption{The energy loss probability density due to electron scattering in the \glsentryshort{wgts}}{The energy loss probability density due to electron scattering in the \glsentryshort{wgts}}{given by equation \eqref{eq:intSpecModelAseevEloss} and determined at the Troitsk experiment~\cite{Aseev2000}. The table below lists the corresponding parameters, where $\epsilon_1$ was fixed and $\epsCrit$  was chosen to make the piece wise defined function continuous.\vspace{2mm}
+		\xcaption{The probability density for the energy loss of electrons due to scattering off tritium molecules}{The probability density for the energy loss of electrons due to scattering off tritium molecules.}{The energy loss function is shown as per equation \eqref{eq:intSpecModelAseevEloss} and as determined at the Troitsk experiment~\cite{Aseev2000}. The table below lists the corresponding parameters, where $\epsilon_1$ was fixed and $\epsCrit$  was chosen to make the piecewise defined function continuous.\vspace{2mm}
 			\begin{tabular}{cc}
 				\toprule
 				\makecell[t]{parameter} &
@@ -325,7 +325,7 @@ Table~\ref{tab:intSpecModelAveragedScatProbs} lists the numerical evaluation of 
 		\label{fig:intSpecModelAseevEloss}}
 	{\includegraphics{\currentFigureFolder/eloss.pdf}}
 \end{figure}
-This section describes the ``energy loss function'' $f_l(\epsilon)$. It denotes the probability density for an electron to lose an energy $\epsilon$ when scattering $l$ times. Only the case of inelastic scattering is treated here. For an additional treatment of elastic scattering, which is less likely by one order of magnitude, the reader is referred to~\cite{Kleesiek2019}.
+This section describes the ``energy loss function'' $f_l(\epsilon)$. It denotes the probability density for an electron to lose a specific amount of energy $\epsilon$ when scattering $l$ times. Only the case of inelastic scattering is treated here. For an additional treatment of elastic scattering, which is less likely by one order of magnitude\footnote{Compare the cross sections $\sigma_\mathrm{inel}=\SI{3.456e-22}{m^2}$~\cite{Angrik:2005ep} and $\sigma_\mathrm{el}=\SI{0.29e-22}{m^2}$~\cite{Kleesiek2019} for kinetic electron energies that are relevant in regard to the KATRIN experiment of $\sim\SI{18.6}{keV}$.}, the reader is referred to~\cite{Kleesiek2019}.
 
 The energy loss function for no scattering is the Dirac delta function~\cite{Kleesiek2019}
 \begin{equation}
@@ -333,7 +333,7 @@ f_0(\epsilon) = \delta(\epsilon)
 \fullstop
 \end{equation}
 
-A phenomenological description for 1-fold scattering of electrons from hydrogen isotopologues was derived from data at the Troitsk experiment~\cite{Aseev2000, Abdurashitov2017}
+A phenomenological description for 1-fold scattering of electrons off hydrogen isotopologues was derived from data at the Troitsk experiment~\cite{Aseev2000, Abdurashitov2017}
 \begin{equation}
 \label{eq:intSpecModelAseevEloss}
 	f_1(\epsilon) =
@@ -356,7 +356,7 @@ A phenomenological description for 1-fold scattering of electrons from hydrogen 
 		&\text{ if } \epsilon \geq \epsCrit
 	\end{cases}
 \end{equation}
-Figure~\ref{fig:intSpecModelAseevEloss} depicts this energy loss function for scattering of tritium molecules. It should be noted, that a more recent, preliminary energy loss model derived from a dedicated subgroup of the KATRIN collaboration is investigated in chapter~\ref{sec:katrinEloss}.
+Figure~\ref{fig:intSpecModelAseevEloss} depicts this energy loss function for scattering off tritium molecules. It should be noted, that a more recent, preliminary energy loss model derived from a dedicated subgroup of the KATRIN collaboration is investigated in chapter~\ref{sec:katrinEloss}.
 
 For severalfold scattering, the above function $f_1$ has to be convoluted with itself and the energy loss function becomes~\cite{Kleesiek2019}
 \begin{equation}
@@ -374,7 +374,7 @@ where $\conv$ denotes the convolution
 
 \subsection{Assembly of the Response Function}
 \label{sec:intSpecModelResponseReconciliation}
-This section gives an expression for the KATRIN response function. It should be noted, that the chosen notation differs slightly from those used in the works~\cite{Groh2015,Kleesiek2019}, that this derivation is largely based on. The latter make approximations of the transmission properties and introduce more involved concepts where the approximations do not hold. Here, this approach is inverted: First, the involved concepts are applied and the approximations are introduced in a second step. However, the final results reconcile.
+This section gives an expression for the KATRIN response function. It should be noted, that the notation chosen here differs slightly from the ones used in the works~\cite{Groh2015,Kleesiek2019}, that this derivation is largely based on. The latter make approximations of the transmission properties and introduce more involved concepts where the approximations do not hold. Here, this approach is inverted: First, the involved concepts are applied and the approximations are introduced in a second step. However, the final results are in agreement.
 
 The KATRIN response function in dependence on the starting position and pitch angle of an electron reads 
 \begin{align}
@@ -396,7 +396,7 @@ The KATRIN response function in dependence on the starting position and pitch an
 \end{align}
 where the integral goes over the energy losses, the sum goes over the scattering count, $\mathcal{T}$ denotes the non-averaged transmission function \eqref{eq:intSpecModelTransmission}, $P_l$ the non-averaged scattering probabilities \eqref{eq:intSpecModelNonAveragedScatProbs} and $f_l$ the energy loss function \eqref{eq:intSpecModelConvolutedEloss}. The cut of the lower integral limit is caused by the vanishing energy loss function ($f_l(\epsilon) = 0$ if $\epsilon < 0$). In words, the transmission function is smeared using the energy loss function as a smearing kernel and then a weighted sum is formed over generations of $l$-fold scattered electrons where the weight is the probability to scatter $l$ times.
 
-The mean value of equation \eqref{eq:intSpecModelNonAveragedResponse} with respect to the starting pitch angle can be calculated as described in section~\ref{sec:intSpecModelResponseConcepts}. Also, the corresponding integral is swapped with the integral over the energy loss and the sum over the scattering count
+The mean value of equation~\eqref{eq:intSpecModelNonAveragedResponse} with respect to the starting pitch angle can be calculated as described in section~\ref{sec:intSpecModelResponseConcepts}. Also, the corresponding integral is swapped with the integral over the energy loss and the sum over the scattering count
 \begin{align}
 \label{eq:intSpecModelAveragedResponseIntermediate}
 R(\Esource, qU, \zSource) &= 
@@ -487,14 +487,14 @@ R(\Esource, qU, \zSource) =
 where $T_l^{\star}$ is the detailed transmission function (eq.~\ref{eq:intSpecModelDetailedTransmission}), $\bar{P}_l$ are the averaged scattering probabilities (eq.~\ref{eq:intSpecModelAveragedScatProbs}), and $f_l$ is the energy loss function (eq.~\ref{eq:intSpecModelConvolutedEloss}). The response function denotes the mean (with respect to the pitch angle distribution) probability of an electron starting with an energy $\Esource$ at a position $\zSource$ to overcome the retarding energy $qU$ and reach the detector. 
 
 Figure~\ref{fig:intSpecModelResponse} shows the response function for two different starting positions of electrons as well as averaged over all starting positions. It exhibits many features: For unscattered electrons, the response function resembles the transmission function. This causes the steep rise at $\Esource-qU=\SI{0}{eV}$ within the interval of the \gls{mace}-filter width $\Delta E\approx\SI{0.93}{eV}$. As the transmission probability is weighted by the probability for no scattering, the plateaus resemble the corresponding probabilities (eq.~\ref{eq:intSpecModelNonAveragedScatProbs} averaged over starting pitch angles): $\sim\SI{12}{\percent}$ (rear), $\SI{41.33}{\percent}$ (average, see table~\ref{tab:intSpecModelAveragedScatProbs}), $\sim\SI{98}{\percent}$ (front).
-The discontinuity in the first derivative of the energy loss function at $\epsCrit=\SI{14.09}eV$ causes kinks. As the energy loss function has an onset at $\epsilon_0\approx\SI{10}{eV}$, the corresponding kinks are at $n\cdot\epsilon_0+\epsCrit$ ($n\in\{0,1,\dots\}$) and are increasingly smoothed for higher $n$. (Also see figure~\ref{fig:intSpecModelAseevEloss} for the energy loss function.) 
+The discontinuity in the first derivative of the energy loss function at $\epsCrit=\SI{14.09}{eV}$ causes kinks. As the energy loss function has an onset at $\epsilon_0\approx\SI{10}{eV}$, the corresponding kinks are at $n\cdot\epsilon_0+\epsCrit$ ($n\in\{0,1,\dots\}$) and are increasingly smoothed for higher $n$. (Also see figure~\ref{fig:intSpecModelAseevEloss} for the energy loss function.) 
 The response function~\eqref{eq:intSpecModelResponse} can be understood as a weighted sum of smeared transmission functions approximately shifted by the onset of the energy loss function. Electrons starting from the front of the \gls{wgts} are unlikely to scatter, which is why the response function almost resembles the transmission function. Electrons starting from the rear are likely to scatter. Thus, the corresponding response function shows the features of multiple scatterings. For multiple scatterings, the sharp edges of the transmission function are smoothed by the energy loss, which is why only one sharp edge and one plateau, namely for the no-scattering case, is apparent.
 
 \section{Integral Rate}
 \label{sec:intSpecModelIntegralRate}
 This section gives an expression for the integral $\upbeta$-electron rate at the KATRIN detector. 
 
-As already mentioned, the response function~\eqref{eq:intSpecModelResponse} depends on the starting position of the electrons. To account for this, the \gls{wgts} can be thought of being divided into $n$ slices of width~$w=d/n$ and an averaged response function for the $j$th ($j\in\{0,1,\dots,n-1\}$) slice can be given
+As already mentioned, the response function~\eqref{eq:intSpecModelResponse} depends on the starting position of the electrons. To account for this, the \gls{wgts} can be thought of being divided into $n$ slices of width~$w=d/n$ and an averaged response function for the $j$th ($j\in\{0,1,\dots,n-1\}$) slice can be given:
 \begin{equation}
 	R(\Esource,qU,\zSource) \rightarrow
 	R_j(\Esource,qU) =
@@ -517,13 +517,13 @@ The integral rate then reads~\cite{Kleesiek2019}
 		\d \Esource
 		\fullstop
 \end{equation}
-Here, the integral goes over all starting energies that enable electrons to overcome the retarding potential. The transmission probability vanishes for starting energies smaller than $qU$ and the differential rate vanishes for energies above the $\upbeta$-spectrum endpoint $E_0$ (see equation~\ref{eq:intSpecModelDiffSpec}), which yields the two integral limits. The sum goes over all slices of the \gls{wgts}. $N_{j, \mathrm{T}}$ is the number of tritium nuclei in the $j$th slice of the \gls{wgts}. And the factor $1/2$ accounts for the fact, that on average only half the $\upbeta$ electrons are emitted towards the detector.
+Here, the integral goes over all starting energies that enable electrons to overcome the retarding potential. The transmission probability vanishes for starting energies smaller than $qU$ and the differential rate vanishes for energies above the $\upbeta$-spectrum endpoint $E_0$ (see equation~\ref{eq:intSpecModelDiffSpec}), which yields the two integral limits. The sum goes over all slices of the \gls{wgts}. $N_{j, \mathrm{T}}$ is the number of tritium nuclei in the $j$th slice of the \gls{wgts}. And the factor $1/2$ accounts for the fact that, on average, only half the $\upbeta$ electrons are emitted towards the detector.
 
 \section{Detector Counts}
 \label{sec:intSpecModelDetectorCounts}
 This section gives an expression for the electron counts measured by the KATRIN detector. 
 
-Therefore, the detector efficiency \mbox{$\epsilon_\mathrm{det}\in[0,1]$} has to be taken into account (for a description, its determination and value see section~\ref{sec:katrinExpSetupDetector}). Furthermore, the background rate~$\bgRate$ (with a nominal value of $\SI{10}{cps}$~\cite{Angrik:2005ep}) has to be considered. Also a relative rate factor $\sigAmp=1$ between the background and the $\upbeta$-electron rate is introduced as it can be used in fitting procedures (see section~\ref{sec:statMethodsStandardFit}.) Assuming a measurement time of $t(qU)$ attributed to a retarding energy $qU$, the detector counts are~\cite{Kleesiek2014}
+Therefore, the detector efficiency \mbox{$\epsilon_\mathrm{det}\in[0,1]$} has to be taken into account (for a description, its determination and value see section~\ref{sec:katrinExpSetupDetector}). Furthermore, the background rate~$\bgRate$ (with a nominal value of $\SI{10}{mcps}$~\cite{Angrik:2005ep}) has to be considered. Also a relative rate factor $\sigAmp=1$ between the background and the $\upbeta$-electron rate is introduced as it can be used in fitting procedures (see section~\ref{sec:statMethodsStandardFit}). Assuming a measurement time of $t(qU)$ attributed to a retarding energy $qU$, the detector counts are~\cite{Kleesiek2014}
 \begin{equation}
 \label{eq:intSpecModelDetectorCounts}
 	N(qU) = t(qU)\cdot\epsilon_\mathrm{det}\cdot
