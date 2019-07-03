@@ -115,7 +115,7 @@ Figure~\ref{fig:eDepScatCrossSecSourcesValues} shows the theoretical cross-secti
 
 \subsection{Relation to Former Works}
 \label{sec:eDepScatCrossSecSourcesChoice}
-As already stated and depicted in figure~\ref{fig:eDepScatCrossSecSourcesValues}, the cross section from the KATRIN Design Report does not match the theoretical calculations used in this thesis. Nonetheless, several former works (see subsequent section~\ref{sec:eDepScatCrossSecNuMassInf}) are based on this value. Comparability is of importance in the scope of this thesis (as will become apparent in section~\ref{sec:eDepScatCrossSecNuMassInf}). How this issue is addressed is explained in the following.
+As already stated and depicted in figure~\ref{fig:eDepScatCrossSecSourcesValues}, the reference cross section from the KATRIN Design Report does not match the theoretical calculations used in this thesis. Nonetheless, several former works (see subsequent section~\ref{sec:eDepScatCrossSecNuMassInf}) are based on the reference value. Comparability is of importance in the scope of this thesis (as will become apparent in section~\ref{sec:eDepScatCrossSecNuMassInf}). How this issue is addressed is explained in the following.
 
 The cross section value stated in the KATRIN Design Report can be recovered from equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu} if an erroneous energy interpretation is applied. If, instead of equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecNonRelEnergy}, one applies the energy interpretation
 \begin{equation}
@@ -128,7 +128,7 @@ the obtained cross section via equation~\eqref{eq:eDepScatCrossSecSourcesCrossSe
 \label{eq:eDepScatCrossSecSourcesTRDCrossSec}
 	\sigma_\mathrm{TDR} 
 	\equiv\sigma(E_\mathrm{TDR}=\SI{18565}{eV})
-	=\SI{3.45590e-22}{m^2} 
+	=\SI{3.4559e-22}{m^2} 
 	\approx\SI{3.456e-22}{m^2}
 \end{equation}
 as stated in the KATRIN Design Report, where the energy $E_\mathrm{TDR}$ is approximately central in the KATRIN design analysis interval (see section~\ref{sec:intSpecModelMTD}). Whether this had been the approach, that had led to the reference cross section in the KATRIN Design Report is not known. 
@@ -185,8 +185,6 @@ The energy-dependence of the cross section enters into the calculation of the sc
 	\label{tab:eDepScatCrossSecModelScatProbs}
 \end{table}
 
-
-\label{sec:eDepScatCrossSecModelDescription}
 \begin{figure}[th]
 \includegraphics[width=\textwidth]{\currentFigureFolder/scatProbs012Poisson.pdf}
         \xcaption{Probability for severalfold electron-scattering in the \glsentryshort{wgts}}{Probability for severalfold electron-scattering in the \glsentryshort{wgts}.}{From top to bottom, the probability for no, one-fold and two-fold scattering are shown averaged over all starting positions and starting pitch angles of electrons in the \gls{wgts} according to the Poisson Model in equation~\eqref{eq:eDepScatCrossSecModelPoisson}. The shown energy range matches the measurement range of the \gls{ft} measurement campaign and the inset shows an energy span around the endpoint of the tritium $\upbeta$~spectrum.}
@@ -194,7 +192,7 @@ The energy-dependence of the cross section enters into the calculation of the sc
 \end{figure}
 
 \paragraph{The Poisson Model}
-An expression for the probability of $l$-fold scattering of electrons within the \gls{wgts} is derived in the previous section~\ref{sec:intSpecModelResponseScattering}. The given model is independent of the energy of the electrons. Instead of using a constant cross section, the energy-dependence can be respected. The corresponding formulae from section~\ref{sec:intSpecModelResponseScattering} are repeated below, with the energy-dependence made explicit and an energy-dependent cross section as per equation~\ref{eq:eDepScatCrossSecSourcesCrossSecLiu}
+An expression for the probability of $l$-fold scattering of electrons within the \gls{wgts} is derived in the previous section~\ref{sec:intSpecModelResponseScattering}. The given model is independent of the energy of the electrons. Instead of using a constant cross section, the energy-dependence can be respected. The corresponding formulae from section~\ref{sec:intSpecModelResponseScattering} are repeated below, with the energy-dependence made explicit and an energy-dependent cross section as per equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu}
 \begin{subequations}
 \label{eq:eDepScatCrossSecModelPoisson}
 \begin{align}
@@ -217,20 +215,22 @@ An expression for the probability of $l$-fold scattering of electrons within the
 \end{subequations}
 As a reminder, $\bar{P}_l(\Esource)$ in the final equation \eqref{eq:eDepScatCrossSecModelPoissonAveragedScatProbs} denotes the probability for $l$-fold scattering of an electron with a starting kinetic energy $\Esource$ averaged over all starting positions and pitch angles in the \gls{wgts}. In the following, this model is denoted ``Poisson model''. 
 
-\subsection{Limits of the Poisson Model}
-The Poisson model is exact for the probability of no scattering $\bar{P}_0(\Esource)$, but it does not hold for one or more scatterings because an electron loses energy when scattering. The scattering cross section increases with decreasing energy (see figure~\ref{fig:eDepScatCrossSecSourcesValues}) and the electron becomes more likely to scatter again. In other words, the probabilities of individual scattering processes are no longer independent when respecting the dependence on the electron energy. This violates one of the preconditions to model the scattering probabilities via a Poisson distribution. Another model beyond the description via a Poisson distribution is suggested in the subsequent section~\ref{sec:eDepScatCrossSecModelExtended}. However, this extended model posed computational difficulties. The aim of this thesis is the assessment of energy-dependent effects. This can already be achieved with the Poisson model as shown in the following sections.
-
-\subsection{Energy-Dependent Scattering Probabilities}
+\subsection{Properties of the Poisson Model}
+\label{sec:eDepScatCrossSecModelPoissonProperties}
 Figure~\ref{fig:eDepScatCrossSecModel} shows the Poisson model as per equation~\eqref{eq:eDepScatCrossSecModelPoisson}. Table \ref{tab:eDepScatCrossSecModelScatProbs} lists the scattering probabilities for an energy-independent Poisson model (see section~\ref{sec:intSpecModelResponseScattering}) and a reference cross section $\sigma(E\approx\SI{18564}{eV})=\SI{3.673e-22}{m}$. The energy-dependent Poisson model recovers the energy-independent model exactly at the corresponding energy as expected.
 
-As depicted in figure~\ref{fig:eDepScatCrossSecModel}, for an increasing starting energy of electrons within the \gls{wgts}, the probability for no and one-fold scattering also increases, while the probability for two-fold scattering decreases. This paragraph aims at giving an intuitive argument for this change of sign in the derivative $\d \bar{P}_l(\Esource) / \d \Esource$ in the transition from $l=1$ to $l=2$. The Poisson model $\bar{P}_l(\Esource)$ is a probability density in $l$ for a fixed $\Esource$ (see appendix~\ref{sec:eDepScatCrossSecPoissonModelProbDensityProof} for a proof). Hence, the expected scattering count for an energy within the range of starting energies $\Esource \in [\SI{17}{keV}, \SI{18.6}{keV}]$, that is depicted in figure~\ref{fig:eDepScatCrossSecModel} can be calculated  (numerically)
-\begin{align}
+\paragraph{Trend of the Energy-Dependence}
+As depicted in figure~\ref{fig:eDepScatCrossSecModel}, for an increasing starting energy of electrons within the \gls{wgts}, the probability for no and one-fold scattering also increases, while the probability for two-fold scattering decreases. This paragraph aims at giving an intuitive argument for this change of sign in the derivative $\d \bar{P}_l(\Esource) / \d \Esource$ in the transition from $l=1$ to $l=2$. The Poisson model $\bar{P}_l(\Esource)$ is a probability density in $l$ for a fixed $\Esource$ (see appendix~\ref{sec:appendixEDepScatCrossSecPoissonModelProbDensityProof} for a proof). Hence, the expected scattering count for an energy within the range of starting energies $\Esource \in [\SI{17}{keV}, \SI{18.6}{keV}]$, that is depicted in figure~\ref{fig:eDepScatCrossSecModel}, can be calculated (numerically)
+\begin{equation}
+\label{eq:eDepScatCrossSecModelPoissonExpectedScatCount}
+\begin{split}	
 	\bar{l}(\SI{17.0}{keV}) &= 
 	\sum_{l}^{\infty} \bar{P}_l(\SI{17.0}{keV}) \cdot l \approx 1.23 \\	
 	\bar{l}(\SI{18.6}{keV}) &= 
 	\sum_{l}^{\infty} \bar{P}_l(\SI{18.6}{keV}) \cdot l \approx 1.14
 	\fullstop
-\end{align} 
+\end{split}
+\end{equation} 
 In other words, electrons with a starting energy between \SI{17}{keV} and \SI{18.6}{keV} are expected to scatter between 1 and 2 times on their way through the \gls{wgts} (averaged over all starting positions and pitch angles). Then, the illustrative line of argument is the following: 
 \begin{align*}
 	&\text{ the starting energy $\Esource$ increases} \\ \Rightarrow
@@ -245,7 +245,10 @@ This is in accordance with the trend of the energy-dependence depicted in figure
 
 \todo{Show stuff for Krypton energies}
 
+\paragraph{Limit of the Poisson Model}
+The Poisson model is exact for the probability of no scattering $\bar{P}_0(\Esource)$, but it does not hold for one or more scatterings because an electron loses energy when scattering. The scattering cross section increases with decreasing energy (see figure~\ref{fig:eDepScatCrossSecSourcesValues}) and the electron becomes more likely to scatter again. In other words, the probabilities of individual scattering processes are no longer independent when respecting the dependence on the electron energy. This violates one of the preconditions to model the scattering probabilities via a Poisson distribution. Another model beyond the description via a Poisson distribution is suggested in the subsequent section~\ref{sec:eDepScatCrossSecModelExtended}. However, this extended model posed computational difficulties. The aim of this thesis is the assessment of energy-dependent effects. This can already be achieved with the Poisson model as shown in the previous paragraphs. Therefore, the Poisson model was further used to address the energy-dependent effects in the scope of neutrino mass inference.
 \FloatBarrier
+
 \subsection{Implementation and Performance}
 Within the scope of this thesis, the energy-dependent Poisson model of equation~\eqref{eq:eDepScatCrossSecModelPoisson} was implemented into the \gls{ssc} software framework. The energy-dependence of the scattering cross section may not be negligible in neutrino mass inference as is explained in the subsequent section~\ref{sec:eDepScatCrossSecNuMassInf}. For that reason, the impact on the fitting run time by using an energy-dependent cross section was probed. Depending on the \gls{mtd}, a fit might become slower by a factor of 40 to 120. This is due to the fact, that, when integrating over the energy loss in the response function in equation~\eqref{eq:intSpecModelResponse}, the scattering probabilities have to be recomputed in every step of the numerical integration. It might be beneficial to investigate whether the evaluation can be speed up in the future. For example, it might be sufficient to only compute the energy-dependent scattering probabilities for a limited set of energies and interpolate them in-between those energies.
 
@@ -338,7 +341,9 @@ The two presented arguments show that the results obtained in the scope of this 
 
 \section{An Energy-Dependent Scattering Model beyond Using the Poisson Distribution}
 \label{sec:eDepScatCrossSecModelExtended}
-In the previous section~\ref{sec:eDepScatCrossSecModelPoisson} the scattering probabilities are modeled using a Poisson distribution. This introduces an error for the following reason: A scattering electron loses energy. The scattering cross section increases with decreasing energy (see figure~\ref{fig:eDepScatCrossSecSourcesValues}) and the electron becomes more likely to scatter again. In other words, the probabilities of individual scattering processes are not independent when respecting the dependence on the electron energy. This violates one of the preconditions to model the scattering probabilities via a Poisson distribution. This section aims at quantifying the error that is introduced by this approximation. Another model beyond the description via a Poisson distribution is suggested\footnote{The idea was inspired by a model in~\cite{Groh2015} that incorporates changes of the electron pitch angle due to scattering.} in~\ref{sec:eDepScatCrossSecExtendedModelFormalism} that partly accounts for the energy loss of electrons in the formalism of the scattering probabilities. The suggested model was evaluated numerically as it includes one limit and two integrals. The numerical accuracy had to be good enough to decided whether it differs significantly from the Poisson model or not. At the same time, a balance between the numerical accuracy and the evaluation run time had to be found. This matter is described in detail in section~\ref{sec:eDepScatCrossSecExtendedModelNumEval}. The results of the numerical evaluation are discussed in section~\ref{sec:eDepScatCrossSecExtendedModelDiscussion}.
+In the previous section~\ref{sec:eDepScatCrossSecModelPoisson} the scattering probabilities are modeled using a Poisson distribution. This introduces an error for the following reason: A scattering electron loses energy. The scattering cross section increases with decreasing energy (see figure~\ref{fig:eDepScatCrossSecSourcesValues}) and the electron becomes more likely to scatter again. In other words, the probabilities of individual scattering processes are not independent when respecting the dependence on the electron energy. This violates one of the preconditions to model the scattering probabilities via a Poisson distribution. 
+
+This section aims at quantifying the error that is introduced by the approximate modeling via a Poisson distribution. Another model is suggested\footnote{The idea was inspired by a model in~\cite{Groh2015} that incorporates changes of the electron pitch angle due to scattering.} in section~\ref{sec:eDepScatCrossSecExtendedModelFormalism} that partly accounts for the energy loss of electrons in the formalism of the scattering probabilities. The suggested model was evaluated numerically as it includes one limit and two integrals that could not yet be solved analytically. The numerical accuracy had to be good enough to decide whether it differs significantly from the Poisson model or not. At the same time, a balance between the numerical accuracy and the evaluation run time had to be found. This matter is described in detail in section~\ref{sec:eDepScatCrossSecExtendedModelNumEval}. The results of the numerical evaluation are discussed in section~\ref{sec:eDepScatCrossSecExtendedModelDiscussion}.
 
 \subsection{Mathematical Formalism}
 \label{sec:eDepScatCrossSecExtendedModelFormalism}
@@ -363,6 +368,7 @@ p_0(E,\thetaSource,n) =
 \end{equation}
 Using the well known limit for the Euler constant, one obtains for $n=N$ and $N\rightarrow\infty$ that $p_0$ is a Poisson distribution with expectation $\mu$ and evaluated at 0 
 \begin{align}
+\label{eq:eDepScatCrossSecExtendedModelFormalismRecoveryOfPoisson}
 \lim_{N\rightarrow\infty} 
 p_0(E,\thetaSource,N) =
 \lim_{N\rightarrow\infty} 
@@ -375,7 +381,7 @@ p_0(E,\thetaSource,N) =
 \end{align}
 In other words, for no scattering, the Poisson model for the scattering probabilities as described in section~\ref{sec:eDepScatCrossSecModelPoisson} is recovered.
 
-Assuming a constant energy loss $\epsilon$ per scattering, the probability to scatter $l$ times within $n<N$ slices can be expressed recursively
+Assuming a constant energy loss $\epsilon$ per scattering, the probability to scatter $l>0$ times within $n<N$ slices can be expressed recursively
 \begin{equation}
 \label{eq:eDepScatCrossSecExtendedModelFormalismCore}
 p_l(E,\thetaSource,n) =
@@ -398,12 +404,12 @@ p_l(E,\thetaSource,n) =
 }_{(3)}
 \fullstop
 \end{equation}
-The idea behind this expression is the following: One imagines an electron with an energy $E$ that travels through $n$ \gls{wgts} slices, scatters $l$ times in total and the last time in the $k$th slice. Hence, it must have scattered $l-1$ times in the $k-1$ slices before and must not scatter in the $n-k$ slices to follow. In that regard, the above terms have the following meaning:
+The idea behind this expression is the following: One imagines an electron with an energy $E$ that travels through $n$ \gls{wgts} slices, scatters $l$ times in total and the last time in the $k$th slice. Hence, it must have scattered $l-1$ times in the $k-1$ slices before the $k$th slice and must not scatter in the $n-k$ slices to follow. In that regard, the above terms have the following meaning:
 \begin{enumerate}[(1)]
 	\item Probability to scatter $l-1$ times within $k-1$ slices with a kinetic energy of $E$.
 	\item Probability to scatter once within the $k$th slice with a kinetic energy of $E-(l-1)\epsilon$.
 	\item Probability not to scatter within the remaining $n-k$ slices.
-	\item Sum over all slices $k$ where the electron could scatter the last time. The sum starts at $l$ (as opposed to 1) because the probability to scatter $l-1$ times within less than $k=l-1$ slices (term (1)) is 0 because due to the made assumption, that in the limit of a large amount of slices $N$ an electron does not scatter twice within one very narrow slice.
+	\item Sum over all slices $k$ where the electron could scatter the last time. The sum starts at $l$ (as opposed to 1) because the probability to scatter $l-1$ times within less than $k=l-1$ slices (term (1)) is 0 due to the made assumption, that in the limit of a large amount of slices $N$ an electron does not scatter twice within one very narrow slice.
 \end{enumerate}
 The probability to scatter $l$ times can be averaged over all starting positions of electrons respectively starting slices. In this regard, $\nSource$ denotes the amount of slices an electron has to pass through depending on its starting slice (including its starting slice). Then the average is
 \begin{equation}
@@ -446,18 +452,18 @@ $\bar{P}^{\star}_l(\Esource)$ denotes the probability for $l$-fold scattering of
 \begin{figure}[t]
 	\centering
 	\includegraphics{chapter/energyDependentCrossSec/fig/scatProb1_numericalAccuracy.pdf}
-	\xcaption{Accuracy of the numerical evaluation of the extended model of the probability for electron-scattering in the \glsentryshort{wgts}}{Accuracy of the numerical evaluation of the extended model of the probability for electron-scattering in the \glsentryshort{wgts}.}{The extended model is given by equation~\eqref{eq:eDepScatCrossSecExtendedModelFormalismAveragedDepScatProbs} and the Poisson model is given by equation~\eqref{eq:eDepScatCrossSecModelPoisson}. For both models, the energy of the incident electrons was taken such, that the Poisson model yields the values already given in table~\ref{tab:eDepScatCrossSecModelScatProbs}. The left column shows the dependence on the number $N$ of hypothetical slices of the \gls{wgts}. The right column shows the dependence on the order of Gaussian quadrature that was used to evaluate the two integrals in the extended model. The Poisson model is independent of these features and can be evaluated exactly (limited by machine number precision). In the left column, the order of Gaussian quadrature was fixed to 5 and in the right column, the number of slices was fixed to $5\times10^{5}$. The upper row shows the numerical evaluation of the extended model for no energy loss per scattering (markers). Its exact solution is given by the Poisson model (line). The lower row shows the model for an energy loss of \SI{12.6}{eV} per scattering. The upper row shows that the numerical evaluation of the extended model is within a distance of $10^{-5}$ of its exact solution and the lower row shows conversion on the $10^{-5}$ level. These results make it plausible to assume a numerical inaccuracy on the $10^{-5}$ level for the shown configurations of the numerical evaluation of the extended model.}
+	\xcaption{Accuracy of the numerical evaluation of the extended model of the probability for electron-scattering in the \glsentryshort{wgts}}{Accuracy of the numerical evaluation of the extended model of the probability for electron-scattering in the \glsentryshort{wgts}.}{The extended model is given by equation~\eqref{eq:eDepScatCrossSecExtendedModelFormalismAveragedDepScatProbs} and the Poisson model is given by equation~\eqref{eq:eDepScatCrossSecModelPoisson}. For both models, the energy of the incident electrons was taken such, that the Poisson model yields the values already given in table~\ref{tab:eDepScatCrossSecModelScatProbs}. The left column shows the dependence on the number $N$ of hypothetical slices of the \gls{wgts}. The right column shows the dependence on the order of Gaussian quadrature that was used to evaluate the two integrals in the extended model. The Poisson model is independent of these features and can be evaluated exactly (limited by machine number precision). In the left column, the order of Gaussian quadrature was fixed to 5 and in the right column, the number of slices was fixed to $5\times10^{5}$. The upper row shows the numerical evaluation of the extended model for no energy loss per scattering (markers). Its exact solution is given by the Poisson model (line). The lower row shows the model for an energy loss of \SI{12.6}{eV} per scattering. The upper row shows that the numerical evaluation of the extended model is within a distance of $10^{-5}$ of its exact solution and the lower row shows conversion on the $10^{-5}$ level. These results make it plausible to assume a numerical accuracy on the $10^{-5}$ level or better for the shown configurations of the numerical evaluation of the extended model.}
 	\label{fig:eDepScatCrossSecExtendedModelNumEval}
 \end{figure}
 For the evaluation of the energy-dependent scattering probabilities according to the extended model in equation~\eqref{eq:eDepScatCrossSecExtendedModelFormalismAveragedDepScatProbs} the fixed energy loss $\epsilon=\SI{12.6}{eV}$ per scattering was chosen as it is the most probable energy loss for electrons traveling through tritium gas (see figure~\ref{fig:intSpecModelAseevEloss}). The formula was evaluated numerically. Taking the limit~$N\rightarrow\infty$ in equation~\eqref{eq:eDepScatCrossSecExtendedModelFormalismPitchAngleDepScatProbs} was replaced by choosing a large $N$. The averaging integral over the starting positions in equation~\eqref{eq:eDepScatCrossSecExtendedModelFormalismZAverage} and starting pitch angles in equation~\eqref{eq:eDepScatCrossSecExtendedModelFormalismAveragedDepScatProbs} was computed using Gaussian quadrature. The extended model was introduced because the preconditions to model the scattering probabilities via a Poisson distribution (Poisson model) do not hold. Hence, the numerical evaluation of the extended model must be sufficiently accurate to show the difference to the Poisson model. How accurate this is can not be known beforehand and was found out by trial and error. Both, $N$ and the order of Gaussian quadrature, should be chosen as low as possible to cut down on calculation run time, but sufficiently high for the required accuracy. 
 
 Also, a benchmark had to be found, to determine the accuracy of the numerical evaluation. The following idea was used: For an energy loss of $\epsilon=\SI{0}{eV}$ per scattering, the extended model must recover the Poisson model exactly. This can be used to estimate the numerical accuracy in dependence of the number $N$ of slices and order of Gaussian quadrature. The estimated accuracy when using $\epsilon=\SI{0}{eV}$ was then assumed for evaluations when $\epsilon>\SI{0}{eV}$. A further cross-check is to look at the convergence of the numerical evaluation with increasing $N$ and an increasing order of the Gaussian quadrature, which is also done below.
 
-The averaged probability for one-fold scattering $\bar{P}^{\star}_1$ of the extended model was evaluated for $\epsilon=\SI{0}{eV}$. The result in dependence of $N$ and the order of the Gaussian quadrature is shown in the top row of figure~\ref{fig:eDepScatCrossSecExtendedModelNumEval}. It should recover the Poisson model. For $N=5\times10^5$ and using Gaussian quadrature of order 5, the Poisson model and the extended model differ less than $3\times10^{-6}$. The calculations for $\epsilon=\SI{12.6}{eV}$ are shown in the lower row of figure~\ref{fig:eDepScatCrossSecExtendedModelNumEval}. They also show convergence on the $10^{-5}$ level. Conclusively, the results make it plausible to assume a numerical inaccuracy on the $10^{-5}$ level or less for $N=10^5$ and using Gaussian quadrature of order 5 for the integrals.
+The averaged probability for one-fold scattering $\bar{P}^{\star}_1$ of the extended model was evaluated for $\epsilon=\SI{0}{eV}$. The result in dependence of $N$ and the order of the Gaussian quadrature is shown in the top row of figure~\ref{fig:eDepScatCrossSecExtendedModelNumEval}. It should recover the Poisson model. For $N=5\times10^5$ and using Gaussian quadrature of order 5, the Poisson model and the extended model differ less than $3\times10^{-6}$. The calculations for $\epsilon=\SI{12.6}{eV}$ are shown in the lower row of figure~\ref{fig:eDepScatCrossSecExtendedModelNumEval}. They also show convergence on the $10^{-5}$ level. Conclusively, the results make it plausible to assume a numerical accuracy on the $10^{-5}$ level or better for $N=10^5$ and using Gaussian quadrature of order 5 for the integrals.
 
 The corresponding run time to compute $\bar{P}^{\star}_1$ is in $\mathcal{O}(N)$ as it requires a sum over all $N$ slices in equation~\eqref{eq:eDepScatCrossSecExtendedModelFormalismCore}. The extended model is defined recursively and therefore, the run time for $l$-fold scattering is in $\mathcal{O}(N^l)$. Hence, computing the probability for two-fold scattering would take $5\times10^5$ times as long as for one-fold scattering for the same $10^{-5}$ accuracy. This was not yet found to be feasible.
 
-The results of the numerical evaluation are listed and discussed in the subsequent section~\ref{sec:eDepScatCrossSecExtendedModelDiscussion}.
+The results of the numerical evaluation of for one-fold scattering are discussed in the subsequent section~\ref{sec:eDepScatCrossSecExtendedModelDiscussion}.
 \FloatBarrier
 
 \subsection{Results and Discussion}
@@ -468,10 +474,19 @@ The results of the numerical evaluation are listed and discussed in the subseque
 	\xcaption{Comparison of the Poisson and the extended model for one-fold scattering of electrons in the \glsentryshort{wgts}}{Comparison of the Poisson and the extended model for one-fold scattering of electrons in the \glsentryshort{wgts}.}{The line shows the Poisson model and the markers the extended model (see main text for a description of the models. Due to long program run times, the latter was only evaluated at a selection of energies. Furthermore, The numerical evaluation of the extended model is subject to an uncertainty of $\sim10^{-5}$ (see section~\ref{sec:eDepScatCrossSecExtendedModelNumEval}), that is depicted as uncertainty bars.}
 	\label{fig:eDepScatCrossSecExtendedModelResults}
 \end{figure}
-Figure~\ref{fig:eDepScatCrossSecExtendedModelResults} depicts the Poisson model as per equation~\eqref{eq:eDepScatCrossSecModelPoisson} and the extended model as per equation~\eqref{eq:eDepScatCrossSecExtendedModelFormalismAveragedDepScatProbs} for the probability of one-fold scattering. The difference between the two models is below $10^{-4}$. How this difference propagates to neutrino mass inference was not investigated further in the scope of this thesis, but may be the subject of a future study. The \gls{ssc} software framework, that was used for many former works (e.\,g.~\cite{Groh2015,Kleesiek2014,SeitzM2019}), evaluates the scattering probabilities numerically with an accuracy of $10^{-5}$, which may serve as an indicator on to what extend this difference is of importance. But no definite answers can be given at the current stage.
+For no scattering, the extended model and the Poisson model are equivalent as shown in equation~\eqref{eq:eDepScatCrossSecExtendedModelFormalismRecoveryOfPoisson}.
 
-The extended model was evaluated numerically as it includes one limit and two integrals (see appendix~\ref{sec:eDepScatCrossSecExtendedModelFormalism}). The numerical accuracy had to be good enough to decided whether it differs significantly from the Poisson model or not. At the same time, a balance between the numerical accuracy and the evaluation run time had to be found. The probability for one-fold scattering could be calculated with a numerical accuracy on the $10^{-5}$ level (see appendix~\ref{sec:eDepScatCrossSecExtendedModelNumEval} on how this value is derived and how it can be interpreted). However, the evaluation of the extended model for more than one scattering has not yet been done and may be the subject of a future study.
+Figure~\ref{fig:eDepScatCrossSecExtendedModelResults} depicts the Poisson model as per equation~\eqref{eq:eDepScatCrossSecModelPoisson} and the extended model as per equation~\eqref{eq:eDepScatCrossSecExtendedModelFormalismAveragedDepScatProbs} for the probability of one-fold scattering. The difference between the two models is below $10^{-4}$.
 
+For two-fold scattering and higher scattering multiplicities the extended model could not yet be evaluated due to computational difficulties.
+
+\paragraph{Difference of the Extended and the Poisson Model}
+The argumentation concerning the sign of the difference between the Poisson and the extended model is similar to the one in section~\ref{sec:eDepScatCrossSecModelPoisson} about the change of the scattering probabilities with decreasing or increasing energy: The Poisson model is expected to underestimate the total amount of scattering, because it neglects, that an electron that scatters loses energy and becomes more likely to scatter again. As already shown, according to the Poisson model, electrons are expected to scatter between one and two times when traveling through the \gls{wgts} (see equation~\ref{eq:eDepScatCrossSecModelPoissonExpectedScatCount}). The extended model is more correct than the Poisson model and hence should increase the expected amount of scattering. Therefore, the probability for one-fold scattering should be smaller than the one given by the Poisson model (this is the case as depicted in figure~\ref{fig:eDepScatCrossSecExtendedModelResults}). For higher scattering multiplicity, the sign of the difference between the Poisson and the extended model should be the other way round. In other words, the probability of two-fold scattering as given by the Poisson model should be to low.
+
+Also, the extended model should be a probability distribution and the sum over all scattering counts should yield unity. This means, that for higher scattering multiplicities the difference between the extended model and the Poisson model would have to sum up to the difference in the probability for one-fold scattering. Hence, for scattering of higher multiplicity the absolute difference between the extended model and the Poisson model would not be able to surpass $10^{-4}$.
+
+\paragraph{Effect in Neutrino Mass Inference}
+How the error in the Poisson model propagates to neutrino mass inference was not probed in the scope of this thesis. It was also found difficult to make reasonable assumptions. As the probability for different scattering multiplicity should change 
 
  
   
