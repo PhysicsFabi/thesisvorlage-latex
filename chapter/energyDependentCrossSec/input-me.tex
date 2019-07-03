@@ -6,7 +6,7 @@
 \label{sec:eDepScatCrossSec}
 The probability of an electron to scatter when traveling through the \gls{wgts} can be characterized by the total scattering cross section $\sigma_\mathrm{tot}$. Two types of scatterings can be distinguished: elastic and inelastic scattering. The cross section for elastic scattering is smaller than the one for inelastic scattering by one order of magnitude~\cite{Kleesiek2019}. This chapter focuses on inelastic scattering and neglects elastic scattering. Within this chapter, the cross section for electrons scattering inelastically off tritium molecules is just denoted as ``cross section'' and with the symbol $\sigma$. For ease of notation and reading, the adjective ``inelastic'' and an index such as ``inel'' is omitted where the context allows it unambiguously.
 
-The cross section depends on the energy of the incident electrons: $\sigma \equiv \sigma(\Ekin)$. This dependence has been neglected in the formal modeling of a KATRIN measurement within chapter~\ref{sec:intSpecModel}. This chapter investigates effects related to the incorporation of the energy-dependence. Section~\ref{sec:eDepScatCrossSecSources} lists cross section values from different sources and relates them to each other. Section~\ref{sec:eDepScatCrossSecModel} extends the mathematical formalism for a KATRIN measurement in order to incorporate the energy-dependence of the scattering cross section. Section~\ref{sec:eDepScatCrossSecNuMassInf} discusses the energy-dependence within the context of neutrino mass inference. And section~\ref{sec:eDepScatCrossSecConclusion} concludes and offers an outlook.
+The cross section depends on the energy of the incident electrons: $\sigma \equiv \sigma(E)$. This dependence has been neglected in the formal modeling of a KATRIN measurement within chapter~\ref{sec:intSpecModel}. This chapter investigates effects related to the incorporation of the energy-dependence. Section~\ref{sec:eDepScatCrossSecSources} lists cross section values from different sources and relates them to each other. Section~\ref{sec:eDepScatCrossSecModel} extends the mathematical formalism for a KATRIN measurement in order to incorporate the energy-dependence of the scattering cross section. Section~\ref{sec:eDepScatCrossSecNuMassInf} discusses the energy-dependence within the context of neutrino mass inference. And section~\ref{sec:eDepScatCrossSecConclusion} concludes and offers an outlook.
 
 
 \section{Cross Section for Electrons Scattering off Molecular Hydrogen Isotopologues}
@@ -17,7 +17,7 @@ The goal of this thesis is to investigate to what extend it is important, that t
 	\sigma(\SI{18.6}{keV}) = \SI{3.667e-22}{m^2}
 	\fullstop
 \end{equation}
-This value is in agreement on at least the $10^{-1}\times 10^{-22}\mathrm{m}^2$ level with recent, preliminary estimations obtained through data taken at the KATRIN experiment for electrons scattering off tritium molecules. This hints at the applicability of the theoretical formula, which is of importance in the light of the following paragraph.
+This value is in agreement on at least the $10^{-1}$ level with recent, preliminary estimations obtained through data taken at the KATRIN experiment for electrons scattering off tritium molecules. This hints at the applicability of the theoretical formula, which is of importance in the light of the following paragraph.
 
 The situation regarding cross section values is not without a certain intricacy. The following list gives an introduction to the matter that shall serve as guidance for the reader:\mynobreakpar
 \begin{enumerate}
@@ -35,10 +35,9 @@ The situation regarding cross section values is not without a certain intricacy.
 	\fullstop
 	\end{equation}
 	This value also differs significantly from the theoretical value given above in equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiuAtEndpoint}. To further complicate the matter, comparability with former results is of importance in the scope of this thesis and several former works are based on $\sigma_\mathrm{TDR}$. Section~\ref{sec:eDepScatCrossSecSourcesChoice} explains why the value of $\sigma_\mathrm{TDR}$ might be erroneous and how this issue is addressed in this work.
-	\item
 \end{enumerate}
 
-\subsection{Theoretical Formulae}
+\subsection{Theoretical Cross Section Formulae}
 \label{sec:eDepScatCrossSecSourcesTheory}
 An expression for the inelastic cross section for electrons scattering off hydrogen molecules can be found in~\cite{Liu1973}. Two expressions are given: one for relativistic incident electrons and one for non-relativistic incident electrons. In regard to KATRIN, the energies of $\upbeta$~electrons from tritium $\upbeta$~decay are relevant. The maximum relativistic $\beta$~factor of electrons from tritium $\upbeta$~decay is
 \begin{align}
@@ -80,7 +79,7 @@ C_2 &= 2.4036 &&\text{\cite{Liu1987}}
 \fullstop
 \end{align}
 \end{subequations}
-The latest of these references,~\cite{Liu1987}, acknowledges that the listed values for $C_2$ are not compatible. In the scope of this thesis, equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu} is used to model the energy dependent cross section with $C_2$ from~\cite{Liu1987} (as it is the most up-to-date of the listed ones). 
+The latest of these references,~\cite{Liu1987}, acknowledges that the listed values for $C_2$ are not compatible.
 
 Furthermore, in equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu}, $T$ denotes the non-relativistic kinetic energy\footnote{I would like to thank Dr.~F. Glück for pointing this out. Also see~\cite{INOKUTI1971} for notations with regard to Bethe theory in scattering processes.} using the velocity $v$ and the electron rest mass $m_\elecIndex$
 \begin{align}
@@ -88,14 +87,29 @@ Furthermore, in equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu}, $T$ deno
 	T  &= \frac{1}{2} m_\elecIndex v^2 \nonumber \\
 	&\equiv T(E) = \frac{1}{2} \frac{m_\elecIndex}{c^2} \beta(E, m_\elecIndex)^2
 \end{align}
-with $\beta(E, m_\elecIndex)$ as in equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecBetaFactor}\footnote{This thesis uses natural units. However, for clarity, it makes sense to explicitly state the speed of light $c$ in this particular case.}.
+with $\beta(E, m_\elecIndex)$ as in equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecBetaFactor}\footnote{This thesis uses natural units. However, for clarity, it makes sense to explicitly state the speed of light $c$ in this particular case.}. This formula is valid in the center-of-mass frame of the colliding system of the electron and the hydrogen molecule. As the molecule is significantly heavier than an electron, the center of mass-frame-was assumed to be the rest frame of the molecule. Also, relative movements due to the gas flow and thermal motion in the \gls{wgts} were neglected.
 
+In the scope of this thesis, equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu} with $C_2$ from~\cite{Liu1987} (as it is the most up-to-date of the listed ones) is used to include the energy-dependence of the cross section into the mathematical formalism of a KATRIN neutrino mass measurement.
 
- Figure~\ref{fig:eDepScatCrossSecSourcesValues} shows the theoretical cross-section formula~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu} along with the measured value by the Troitsk experiment and the reference value from the KATRIN Design Report.
+As already mentioned, \cite{Liu1973} also states a formula for incident electrons with relativistic energies, which is reprinted here for completeness
+\begin{equation}
+	\label{eq:eDepScatCrossSecSourcesCrossSecLiuRelativistic}
+	\sigma(E) =  
+	(4 \pi a_0^2) \cdot
+	\left(\frac{T(E)}{R}\right)^{-1} \cdot
+	\left[
+	1.5487 \cdot \ln{\left(\frac{\beta(E,m_\elecIndex)}{1-\beta(E,m_\elecIndex)^2}\right)} + 17.4615
+	\right]
+	\fullstop
+\end{equation}
+The quantities $T(E)$, $R$ and $a_0$ match the once in equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu} and $\beta(E, m_\elecIndex)$ follows equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecBetaFactor}. For energies below $\SI{18.6}{keV}$ the difference of the formula for relativistic (eq.~\ref{eq:eDepScatCrossSecSourcesCrossSecLiu}) and non-relativistic (eq.~\ref{eq:eDepScatCrossSecSourcesCrossSecLiuRelativistic}) incident electrons is less than \SI{1}{\percent}.
+
+Figure~\ref{fig:eDepScatCrossSecSourcesValues} shows the theoretical cross-section formulae~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu} and~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiuRelativistic} along with the measured value by the Troitsk experiment and the reference value from the KATRIN Design Report.
+
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=\textwidth]{\currentFigureFolder/crossSecNoZoom.pdf}
-	\xcaption{Inelastic cross section for non-relativistic incident electrons scattering off molecular hydrogen isotopologues}{Inelastic cross section for non-relativistic incident electrons scattering off molecular hydrogen isotopologues.}{Shown is the theoretical calculation according to equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu} with constants from equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiuConstantsC1} and~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiuConstantsC2} where the later is assumed to have an uncertainty according to equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiuConstantsC2Uncert}. Also, the measurement by~\cite{Aseev2000} at the Troitsk experiment and the value stated in the KATRIN Design Report~\cite{Angrik:2005ep} are depicted. The shown energy interval is chosen according to the \gls{mtd} of the \gls{ft} measurement campaign.}
+	\xcaption{Inelastic cross section for non-relativistic incident electrons scattering off molecular hydrogen isotopologues}{Inelastic cross section for non-relativistic incident electrons scattering off molecular hydrogen isotopologues.}{The continuous line shows equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu} for incident electrons with non-relativistic energies with constants from equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiuConstantsC1} and~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiuConstantsC2} where the later is assumed to have an uncertainty according to equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiuConstantsC2Uncert}. The dashed line shows equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiuRelativistic} for incident electrons with relativistic energies. Also, the measurement by~\cite{Aseev2000} at the Troitsk neutrino mass experiment and the value stated in the KATRIN Design Report~\cite{Angrik:2005ep} are depicted. The shown energy interval is chosen according to the \gls{mtd} of the \gls{ft} measurement campaign.}
 	\label{fig:eDepScatCrossSecSourcesValues}
 \end{figure}
 
@@ -103,49 +117,47 @@ with $\beta(E, m_\elecIndex)$ as in equation~\eqref{eq:eDepScatCrossSecSourcesCr
 \label{sec:eDepScatCrossSecSourcesChoice}
 As already stated and depicted in figure~\ref{fig:eDepScatCrossSecSourcesValues}, the cross section from the KATRIN Design Report does not match the theoretical calculations used in this thesis. Nonetheless, several former works (see subsequent section~\ref{sec:eDepScatCrossSecNuMassInf}) are based on this value. Comparability is of importance in the scope of this thesis (as will become apparent in section~\ref{sec:eDepScatCrossSecNuMassInf}). How this issue is addressed is explained in the following.
 
-The cross section value stated in the KATRIN Design Report can be recovered from equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu}, if an erroneous energy interpretation is applied. (Whether this had been the approach, that led to the reference cross section in the KATRIN Design Report is subject of speculations.) If, instead of equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecNonRelEnergy}, one applies the energy interpretation
+The cross section value stated in the KATRIN Design Report can be recovered from equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu} if an erroneous energy interpretation is applied. If, instead of equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecNonRelEnergy}, one applies the energy interpretation
 \begin{equation}
 	\label{eq:eDepScatCrossSecSourcesCrossSecTDREngeryInterpretation}
-	T \equiv E
+	T(E) = E
 	\comma
 \end{equation}
 the obtained cross section via equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu} is
 \begin{equation}
 \label{eq:eDepScatCrossSecSourcesTRDCrossSec}
-	\sigma_\mathrm{TDR} = \sigma(E_\mathrm{TDR}) = \SI{3.456e-22}{m^2} 
-	\qquad 
-	\text{ with }
-	\qquad 
-	E_\mathrm{TDR} = \SI{18564.37463}{eV}
+	\sigma_\mathrm{TDR} 
+	\equiv\sigma(E_\mathrm{TDR}=\SI{18565}{eV})
+	=\SI{3.45590e-22}{m^2} 
+	\approx\SI{3.456e-22}{m^2}
 \end{equation}
-as stated in the KATRIN Design Report, where the energy $E_\mathrm{TDR}$ is within the KATRIN design analysis interval (see section~\ref{sec:intSpecModelMTD}).
+as stated in the KATRIN Design Report, where the energy $E_\mathrm{TDR}$ is approximately central in the KATRIN design analysis interval (see section~\ref{sec:intSpecModelMTD}). Whether this had been the approach, that had led to the reference cross section in the KATRIN Design Report is not known. 
 
-
-This work applies the energy interpretation~\eqref{eq:eDepScatCrossSecSourcesCrossSecTDREngeryInterpretation} when comparability to former works, that used the reference cross section of the KATRIN Design Report, is of importance. Otherwise, equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecNonRelEnergy} is used. Corresponding indications are given on a case to case basis. The quantitative difference of these two approaches can be assessed by expanding the $\beta$-factor~\eqref{eq:eDepScatCrossSecSourcesCrossSecBetaFactor} in the ratio $E/m_\elecIndex \approx 18.575/511 \approx 0.036 \ll 1$
+This work applies the energy interpretation~\eqref{eq:eDepScatCrossSecSourcesCrossSecTDREngeryInterpretation} when comparability to former works, that used the reference cross section from the KATRIN Design Report, is of importance. Otherwise, equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecNonRelEnergy} is used. Corresponding indications are given on a case to case basis. The quantitative difference of these two approaches can be assessed by expanding the $\beta$-factor~\eqref{eq:eDepScatCrossSecSourcesCrossSecBetaFactor} in the ratio $E/m_\elecIndex \approx 18.575/511 \approx 0.036 \ll 1$
 \begin{equation}
 	\beta^2 \approx 
 	2 \frac{E}{m_\elecIndex} - 
 	3 \left(\frac{E}{m_\elecIndex}\right)^2
+	\fullstop
 \end{equation}
 The energy interpretation of equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecNonRelEnergy} then becomes
 \begin{equation}
 	T(E) \approx 0.95 \cdot E
 	\comma
 \end{equation}
-which is a shift in energy and hence, in first order, also in the cross section of about \SI{5}{\percent} compared to the interpretation in~\eqref{eq:eDepScatCrossSecSourcesCrossSecTDREngeryInterpretation}. Exact calculations are given in table~\ref{tab:eDepScatCrossSecModelScatProbs}.
+which is a shift in energy and hence, in first order, also in the cross section of about \SI{5}{\percent} compared to the interpretation in equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecTDREngeryInterpretation}. Exact calculations are given in table~\ref{tab:eDepScatCrossSecModelScatProbs}.
 
-\section{An Energy-Dependent Scattering Model within the KATRIN Formalism}
-\label{sec:eDepScatCrossSecModel}
+\section{An Energy-Dependent Scattering Model using the Poisson Distribution}
+\label{sec:eDepScatCrossSecModelPoisson}
 The energy-dependence of the cross section enters into the calculation of the scattering probabilities~\eqref{eq:intSpecModelNonAveragedScatProbs}. In the derivation, that is given in the previous section~\ref{sec:intSpecModelResponseScattering}, the dependence on the starting energy $\Esource$ of electrons is neglected. Instead, an average starting energy and hence an average scattering cross section
 \begin{equation}
 	\sigma_\mathrm{TDR}(E_\mathrm{TDR})=\SI{3.456e-22}{m^2}
-\end{equation}  (energy interpretation as per equation~\ref{eq:eDepScatCrossSecSourcesCrossSecTDREngeryInterpretation}) is assumed. Table~\ref{tab:eDepScatCrossSecModelScatProbs} lists the corresponding scattering probabilities averaged over all starting positions and pitch angles of electrons. Additionally, the results of a Monte-Carlo simulation by~\cite{Groh2015} and the values using the energy interpretation of equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecNonRelEnergy} are given. How, instead of assuming energy-independent scattering probabilities, the energy-dependence can be modeled is shown in section~\ref{sec:eDepScatCrossSecModelDescription}. Subsequently, section~\ref{sec:eDepScatCrossSecModelDiscussion} discusses the presented model.
-
+\end{equation}  (energy interpretation as per equation~\ref{eq:eDepScatCrossSecSourcesCrossSecTDREngeryInterpretation}) is assumed. Table~\ref{tab:eDepScatCrossSecModelScatProbs} lists the corresponding scattering probabilities averaged over all starting positions and pitch angles of electrons. Additionally, the results of a Monte Carlo particle tracking simulation by~\cite{Groh2015} and the values using the energy interpretation of equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecNonRelEnergy} are given. How, instead of assuming energy-independent scattering probabilities, the energy-dependence can be modeled is shown in the following.
 \begin{table}[t]
 	\centering
-	\xcaption{Probability for severalfold electron-scattering in the \glsentryshort{wgts} - reviewed}{Probability for severalfold electron-scattering in the \glsentryshort{wgts}.}{The probabilities are averaged over all starting positions and starting pitch angles. Both, the values from a Monte Carlo (MC) particle tracking simulation and the values according to equation~\eqref{eq:intSpecModelAveragedScatProbs} are given. The  cross section was evaluated at an energy of $E_\mathrm{TDR}$ as per equation~\eqref{eq:eDepScatCrossSecSourcesTRDCrossSec} for the two energy interpretations described by equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecTDREngeryInterpretation} and~\eqref{eq:eDepScatCrossSecSourcesCrossSecNonRelEnergy}. Further input parameters to the calculations are a constant gas column density $\rho d = \SI{5e17}{cm^{-2}}$, 
+	\xcaption{Probability for severalfold electron-scattering in the \glsentryshort{wgts} - reviewed}{Probability for severalfold electron-scattering in the \glsentryshort{wgts}.}{The probabilities are averaged over all starting positions and starting pitch angles. Both, the values from a Monte Carlo (MC) particle tracking simulation and the values according to equation~\eqref{eq:intSpecModelAveragedScatProbs} are given. The  cross section was evaluated at an energy of $E_\mathrm{TDR}=\SI{18564.37463}{eV}$ for the two energy interpretations described by equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecTDREngeryInterpretation} and~\eqref{eq:eDepScatCrossSecSourcesCrossSecNonRelEnergy}. Further input parameters to the calculations are a constant gas column density $\rho d = \SI{5e17}{cm^{-2}}$, 
 	a \gls{wgts} length of $d=\SI{10.0820}{m}$
-	and a maximum acceptance angle of $\thetaMax=\SI{50.7685}{\degree}$.}
+	and a maximum acceptance angle of $\thetaMax=\SI{50.7685}{\degree}$. The values are given with the precision needed to reproduce the results in the table below in all digits, which is the precision used in \glsentryshort{ssc}. The energy is chosen such, that $\sigma_\mathrm{TDR}=\SI{3.456000e-22}{m^2}$ is recovered in more than 3 digits as per equation~\eqref{eq:eDepScatCrossSecSourcesTRDCrossSec}.}
 	\begin{tabular}{lllr}
 		\toprule
 		\makecell[tl]{cross section (\SI{e-22}{m^2}) $\rightarrow$} &
@@ -174,17 +186,15 @@ The energy-dependence of the cross section enters into the calculation of the sc
 \end{table}
 
 
-\subsection{Model Description}
 \label{sec:eDepScatCrossSecModelDescription}
 \begin{figure}[th]
-\includegraphics[width=\textwidth]{\currentFigureFolder/scatProbs012.pdf}
-        \xcaption{Probability for severalfold electron-scattering in the \glsentryshort{wgts}}{Probability for severalfold electron-scattering in the \glsentryshort{wgts}.}{From top to bottom the probability for no, one-fold and two-fold scattering are shown averaged over all starting positions and starting pitch angles of electrons in the \gls{wgts}. The lines show the Poisson model and the markers the extended model (see main text for a description of the models). The extended model is only shown for one-fold scattering because for no scattering, it equals the Poisson model and for two-fold scattering it was not calculated (see appendix~\ref{sec:appendixEDepScatCrossSecExtendedModel} for an explanation). The numerical evaluation of the extended model is subject to an uncertainty of $\sim10^{-5}$ (see appendix~\ref{sec:appendixEDepScatCrossSecExtendedModelNumEval}), that is depicted as uncertainty bars. The shown energy range matches the measurement range of the \gls{ft} measurement campaign and the inset shows an energy span around the endpoint of the tritium $\upbeta$~spectrum.}
+\includegraphics[width=\textwidth]{\currentFigureFolder/scatProbs012Poisson.pdf}
+        \xcaption{Probability for severalfold electron-scattering in the \glsentryshort{wgts}}{Probability for severalfold electron-scattering in the \glsentryshort{wgts}.}{From top to bottom, the probability for no, one-fold and two-fold scattering are shown averaged over all starting positions and starting pitch angles of electrons in the \gls{wgts} according to the Poisson Model in equation~\eqref{eq:eDepScatCrossSecModelPoisson}. The shown energy range matches the measurement range of the \gls{ft} measurement campaign and the inset shows an energy span around the endpoint of the tritium $\upbeta$~spectrum.}
         \label{fig:eDepScatCrossSecModel}
 \end{figure}
-Within this section, two models are presented in order to incorporate the energy-dependence of the scattering cross section into the mathematical formalism of a KATRIN measurement.
 
-\paragraph{Poisson Model}
-An expression for the probability of $l$-fold scattering of electrons within the \gls{wgts} is derived in the previous section~\ref{sec:intSpecModelResponseScattering}. The given model is independent of the energy of the electrons. Instead of using a constant cross section, the energy-dependence can be respected. The corresponding formulae from section~\ref{sec:intSpecModelResponseScattering} are repeated below, with the energy-dependence made explicit
+\paragraph{The Poisson Model}
+An expression for the probability of $l$-fold scattering of electrons within the \gls{wgts} is derived in the previous section~\ref{sec:intSpecModelResponseScattering}. The given model is independent of the energy of the electrons. Instead of using a constant cross section, the energy-dependence can be respected. The corresponding formulae from section~\ref{sec:intSpecModelResponseScattering} are repeated below, with the energy-dependence made explicit and an energy-dependent cross section as per equation~\ref{eq:eDepScatCrossSecSourcesCrossSecLiu}
 \begin{subequations}
 \label{eq:eDepScatCrossSecModelPoisson}
 \begin{align}
@@ -205,27 +215,15 @@ An expression for the probability of $l$-fold scattering of electrons within the
     \fullstop
 \end{align}
 \end{subequations}
-As a reminder, $\bar{P}_l(\Esource)$ in the final equation \eqref{eq:eDepScatCrossSecModelPoissonAveragedScatProbs} denotes the probability for $l$-fold scattering of an electron with a starting energy $\Esource$ averaged over all starting positions and pitch angles. In the following, this model is denoted ``Poisson model''. It is expected to be accurate for the probability of no scattering $\bar{P}_0(\Esource)$. But, depending on the required accuracy, for one or more scatterings the Poisson model does not necessarily hold as explained in the following paragraph.
+As a reminder, $\bar{P}_l(\Esource)$ in the final equation \eqref{eq:eDepScatCrossSecModelPoissonAveragedScatProbs} denotes the probability for $l$-fold scattering of an electron with a starting kinetic energy $\Esource$ averaged over all starting positions and pitch angles in the \gls{wgts}. In the following, this model is denoted ``Poisson model''. 
 
-\paragraph{Extended Model}
-A scattering electron loses energy. The scattering cross section increases with decreasing energy (see figure~\ref{fig:eDepScatCrossSecSourcesValues}) and the electron becomes more likely to scatter again. In other words, the probabilities of individual scattering processes are no longer independent when respecting the dependence on the electron energy. This violates one of the preconditions to model the scattering probabilities via a Poisson distribution. Another model is suggested that partly accounts for this fact (inspired by a model in~\cite{Groh2015} that incorporates changes of the electron pitch angle due to scattering). It assumes a fixed energy loss per scattering. A descriptive derivation is given in appendix~\ref{sec:appendixEDepScatCrossSecExtendedModel}. In this section, it is labeled by
-\begin{equation}
-	\label{eq:eDepScatCrossSecModelExtended}
-	\bar{P}^{\star}_l(\Esource)
-\end{equation}
-and it denotes the probability for $l$-fold scattering of an electron with a starting energy $\Esource$ averaged over all starting positions and pitch angles assuming a fixed energy loss $\epsilon$ per scattering. In the following, this model is denoted the ``extended model''. The value $\epsilon=\SI{12.6}{eV}$ was chosen as it is the most probable energy loss for electrons traveling through tritium gas (see figure~\ref{fig:intSpecModelAseevEloss}). A more accurate description would incorporate the full energy loss function. This may be the subject of a future study. 
+\subsection{Limits of the Poisson Model}
+The Poisson model is exact for the probability of no scattering $\bar{P}_0(\Esource)$, but it does not hold for one or more scatterings because an electron loses energy when scattering. The scattering cross section increases with decreasing energy (see figure~\ref{fig:eDepScatCrossSecSourcesValues}) and the electron becomes more likely to scatter again. In other words, the probabilities of individual scattering processes are no longer independent when respecting the dependence on the electron energy. This violates one of the preconditions to model the scattering probabilities via a Poisson distribution. Another model beyond the description via a Poisson distribution is suggested in the subsequent section~\ref{sec:eDepScatCrossSecModelExtended}. However, this extended model posed computational difficulties. The aim of this thesis is the assessment of energy-dependent effects. This can already be achieved with the Poisson model as shown in the following sections.
 
-The extended model was evaluated numerically as it includes one limit and two integrals (see appendix~\ref{sec:appendixEDepScatCrossSecExtendedModelFormalism}). The numerical accuracy had to be good enough to decided whether it differs significantly from the Poisson model or not. At the same time, a balance between the numerical accuracy and the evaluation run time had to be found. The probability for one-fold scattering could be calculated with a numerical accuracy on the $10^{-5}$ level (see appendix~\ref{sec:appendixEDepScatCrossSecExtendedModelNumEval} on how this value is derived and how it can be interpreted). However, the evaluation of the extended model for more than one scattering has not yet been done and may be the subject of a future study.
+\subsection{Energy-Dependent Scattering Probabilities}
+Figure~\ref{fig:eDepScatCrossSecModel} shows the Poisson model as per equation~\eqref{eq:eDepScatCrossSecModelPoisson}. Table \ref{tab:eDepScatCrossSecModelScatProbs} lists the scattering probabilities for an energy-independent Poisson model (see section~\ref{sec:intSpecModelResponseScattering}) and a reference cross section $\sigma(E\approx\SI{18564}{eV})=\SI{3.673e-22}{m}$. The energy-dependent Poisson model recovers the energy-independent model exactly at the corresponding energy as expected.
 
-\subsection{Model Discussion}
-\label{sec:eDepScatCrossSecModelDiscussion}
-Figure~\ref{fig:eDepScatCrossSecModel} shows the Poisson model along with the suggested extended model. The results are discussed in the following paragraphs.
-
-\paragraph{Model Compatibility}
-Table \ref{tab:eDepScatCrossSecModelScatProbs} lists the scattering probabilities for an energy-independent Poisson model (see section~\ref{sec:intSpecModelResponseScattering}) and a reference cross section $\sigma(\Ekin\approx\SI{18564.4}{eV})\approx\SI{3.673e-22}{m}$. The energy-dependent Poisson model recovers the energy-independent model exactly at the corresponding energy as expected. For the probability of one-fold scattering the difference between the Poisson and the extended model is below $10^{-4}$. How this difference propagates to neutrino mass inference was not investigated further in the scope of this thesis, but may be the subject of a future study. The \gls{ssc} software framework, that was used for many former works (e.\,g.~\cite{Groh2015,Kleesiek2014,SeitzM2019}), evaluates the scattering probabilities numerically with an accuracy of $10^{-5}$, which may serve as an indicator on to what extend this difference is of importance. But no definite answers can be given at the current stage.
-
-\paragraph{Trend of Energy-Dependence}
-As depicted in figure~\ref{fig:eDepScatCrossSecModel}, for an increasing starting energy of electrons within the \gls{wgts}, the probability for no and one-fold scattering also increases, while the probability for two-fold scattering decreases. This paragraph aims at giving an intuitive argument for this change of sign in the derivative $\d \bar{P}_l(\Esource) / \d \Esource$ in the transition from $l=1$ to $l=2$. The Poisson model $\bar{P}_l(\Esource)$ is a probability density in $l$ for a fixed $\Esource$ (see appendix~\ref{sec:appendixEDepScatCrossSecPoissonModelProbDensityProof} for a proof). Hence, the expected scattering count for an energy within the range of starting energies $\Esource \in [\SI{17}{keV}, \SI{18.6}{keV}]$, that is depicted in figure~\ref{fig:eDepScatCrossSecModel} can be calculated  (numerically)
+As depicted in figure~\ref{fig:eDepScatCrossSecModel}, for an increasing starting energy of electrons within the \gls{wgts}, the probability for no and one-fold scattering also increases, while the probability for two-fold scattering decreases. This paragraph aims at giving an intuitive argument for this change of sign in the derivative $\d \bar{P}_l(\Esource) / \d \Esource$ in the transition from $l=1$ to $l=2$. The Poisson model $\bar{P}_l(\Esource)$ is a probability density in $l$ for a fixed $\Esource$ (see appendix~\ref{sec:eDepScatCrossSecPoissonModelProbDensityProof} for a proof). Hence, the expected scattering count for an energy within the range of starting energies $\Esource \in [\SI{17}{keV}, \SI{18.6}{keV}]$, that is depicted in figure~\ref{fig:eDepScatCrossSecModel} can be calculated  (numerically)
 \begin{align}
 	\bar{l}(\SI{17.0}{keV}) &= 
 	\sum_{l}^{\infty} \bar{P}_l(\SI{17.0}{keV}) \cdot l \approx 1.23 \\	
@@ -244,15 +242,16 @@ In other words, electrons with a starting energy between \SI{17}{keV} and \SI{18
 	\fullstop
 \end{align*} 
 This is in accordance with the trend of the energy-dependence depicted in figure~\ref{fig:eDepScatCrossSecModel}.
+
+\todo{Show stuff for Krypton energies}
+
 \FloatBarrier
+\subsection{Implementation and Performance}
+Within the scope of this thesis, the energy-dependent Poisson model of equation~\eqref{eq:eDepScatCrossSecModelPoisson} was implemented into the \gls{ssc} software framework. The energy-dependence of the scattering cross section may not be negligible in neutrino mass inference as is explained in the subsequent section~\ref{sec:eDepScatCrossSecNuMassInf}. For that reason, the impact on the fitting run time by using an energy-dependent cross section was probed. Depending on the \gls{mtd}, a fit might become slower by a factor of 40 to 120. This is due to the fact, that, when integrating over the energy loss in the response function in equation~\eqref{eq:intSpecModelResponse}, the scattering probabilities have to be recomputed in every step of the numerical integration. It might be beneficial to investigate whether the evaluation can be speed up in the future. For example, it might be sufficient to only compute the energy-dependent scattering probabilities for a limited set of energies and interpolate them in-between those energies.
 
-\paragraph{Implementation and Performance}
-Within the scope of this thesis, the energy-dependent Poisson model of equation~\eqref{eq:eDepScatCrossSecModelPoisson} was implemented into the \gls{ssc} software framework. The extended model of equation~\eqref{eq:eDepScatCrossSecModelExtended} was not further investigated in this work. The energy-dependence of the scattering cross section may not be negligible in neutrino mass inference as is explained in the subsequent section~\ref{sec:eDepScatCrossSecNuMassInf}. For that reason, the impact on the fitting run time by using an energy-dependent cross section was probed. Depending on the \gls{mtd}, a fit might become slower by a factor of 40 to 120. This is due to the fact, that, when integrating over the energy loss in the response function in equation~\eqref{eq:intSpecModelResponse}, the scattering probabilities have to be recomputed in every step of the numerical integration. It might be beneficial to investigate whether the evaluation can be speed up in the future.
-
-
-\section{Effect on the Inferred Neutrino Mass}
+\section{Effects in Neutrino Mass Inference}
 \label{sec:eDepScatCrossSecNuMassInf}
-It was investigated, how much the squared neutrino mass that is inferred from a KATRIN measurement would be shifted if the energy-dependence of the scattering cross section is neglected in the corresponding fitting procedure. The comparability to former results is of importance within this section. For that reason, the energy interpretation of equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecTDREngeryInterpretation} is used, which yields a cross section of $\sigma_\mathrm{TDR}=\SI{3.456e-22}{m^{-2}}$~\cite{Angrik:2005ep} within the KATRIN design analysis interval. There are several previous works that studied similar effects~\cite{Antoni2015,Groh2015,SeitzM2019,Kuckert2016,Kuckert2018}. In section~\ref{sec:eDepScatCrossSecNuMassInfGroh}, the results from~\cite{Groh2015} are reviewed representatively for the mentioned works because they might intuitively contradict the results obtained in this thesis. In section~\ref{sec:eDepScatCrossSecNuMassInfThisWork}, the results of this thesis are listed. And in section~\ref{sec:eDepScatCrossSecNuMassInfRelateGrohAndFormerWork}, an argument is given, why both sets of results are assumed to be in accordance.
+It was investigated, how much the squared neutrino mass that is inferred from a KATRIN measurement would be shifted if the energy-dependence of the scattering cross section is neglected in the corresponding fitting procedure. The comparability to former results is of importance within this section. For that reason, the energy interpretation of equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecTDREngeryInterpretation} is used, which yields a cross section of $\sigma_\mathrm{TDR}=\SI{3.456e-22}{m^2}$ at an energy of \SI{18565}{eV} within the KATRIN design analysis interval. There are several previous works that studied similar effects~\cite{Antoni2015,Groh2015,SeitzM2019,Kuckert2016,Kuckert2018}. In section~\ref{sec:eDepScatCrossSecNuMassInfGroh}, the results from~\cite{Groh2015} are reviewed representatively for the mentioned works because they might intuitively contradict the results obtained in this thesis. In section~\ref{sec:eDepScatCrossSecNuMassInfThisWork}, the results of this thesis are listed. And in section~\ref{sec:eDepScatCrossSecNuMassInfRelateGrohAndFormerWork}, an argument is given, why both sets of results are assumed to be in accordance.
 
 \subsection{Neutrino Mass Shifts for an Energy-Independent Cross-Section Offset from Former Works}
 \label{sec:eDepScatCrossSecNuMassInfGroh}
@@ -271,7 +270,7 @@ In~\cite{Groh2015}, it was investigated how much a constant offset of the cross 
 	\sigma_\mathrm{TDR} = \SI{3.456e-22}{m^{-2}}
 	\fullstop
 \end{equation}
-In the KATRIN design analysis interval of \SI{30}{eV}, the relative offset of the cross section caused by the energy-dependence is (using equations~\ref{eq:eDepScatCrossSecSourcesCrossSecLiu} and \ref{eq:eDepScatCrossSecSourcesCrossSecTDREngeryInterpretation})
+In the KATRIN design analysis interval of \SI{30}{eV}, the relative offset of the cross section caused by the energy-dependence is (using the numerical inversion of equation~\ref{eq:eDepScatCrossSecSourcesCrossSecLiu} and equation~\ref{eq:eDepScatCrossSecSourcesCrossSecTDREngeryInterpretation})
 \begin{equation}
 	\label{eq:eDepScatCrossSecNuMassInfRelativeCrossSecOffset}
 	\left|
@@ -290,24 +289,26 @@ Thus, the rule of thumb~\eqref{eq:eDepScatCrossSecNuMassInfShiftRuleOfThumb} yie
 		\Delta\nuMass^2(\Delta\sigma)
 	\right| < \SI{2e-3}{eV^2} 
 \end{equation}
-within the KATRIN design analysis interval.
+within the KATRIN design analysis interval of \SI{30}{eV}.
 
 \subsection{Neutrino Mass Shifts for an Energy-Dependent Cross-Section Offset}
 \label{sec:eDepScatCrossSecNuMassInfThisWork}
 \begin{figure}[t]
 	\includegraphics[width=\textwidth]{\currentFigureFolder/nuMassShiftForEDepCrossSec.pdf}
-	\xcaption{Shift of an inferred squared neutrino mass induced by a neglected energy-dependence of the inelastic scattering cross section}{Shift of an inferred squared neutrino mass induced by a neglected energy-dependence of the inelastic scattering cross section.}{The neutrino mass was inferred from data that was simulated using an energy-dependent inelastic scattering cross section as per equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu} with the energy interpretation of~\ref{eq:eDepScatCrossSecSourcesCrossSecTDREngeryInterpretation} using a fit model that assumes a constant cross section of $\sigma_\mathrm{TDR}=\SI{3.456e-22}{m^{-22}}$. The procedure was repeated for the five different \gls{mtd}s given in the KATRIN Design Report~\cite{Angrik:2005ep}.}
+	\xcaption{Shift of an inferred squared neutrino mass induced by a neglected energy-dependence of the inelastic scattering cross section}{Shift of an inferred squared neutrino mass induced by a neglected energy-dependence of the inelastic scattering cross section.}{The neutrino mass was inferred from data that was simulated using an energy-dependent inelastic scattering cross section as per equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu} with the energy interpretation of~\ref{eq:eDepScatCrossSecSourcesCrossSecTDREngeryInterpretation} using a fit model that assumes a constant cross section of $\sigma_\mathrm{TDR}=\SI{3.456e-22}{m^{-22}}$. The procedure was repeated for five different measurement intervals (respectively \gls{mtd}s) $[E_0-\alpha, E_0+\SI{5}{eV}]$ based on the KATRIN Design Report where $\alpha$ is denoted on the abscissa. The \gls{mtd}s are listed in appendix~\ref{sec:eDepScatCrossSecMTDs}. The five markers show the results for the obtained shift of the squared neutrino mass and the dotted line is an interpolation in-between.}
 	\label{fig:eDepScatCrossSecNuMassInfShifts}
 \end{figure}
-In the scope of this thesis, an energy-dependent offset of the cross section was investigated (in contrast to a constant one in~\cite{Groh2015}). A KATRIN neutrino mass measurement for a neutrino mass of \SI{0}{eV} was simulated using an energy-dependent cross section\footnote{In all studies presented in this chapter, the simulated electron detector counts were substituted by their expectation values as opposed to fluctuated according to Poissonian statistics. In other words, no ensemble testing was done. For more details on such an Asimov data set and why it can reasonably assumed to be representative, see section~\ref{sec:katrinElossStatisticsAsimov}.}. A model that uses a constant cross section was fitted to the simulated spectrum. This procedure was repeated for the five different \gls{mtd}s given in the KATRIN Design Report. Figure~\ref{fig:eDepScatCrossSecNuMassInfShifts} shows the results. For the~\SI{30}{eV} measurement interval, the difference from \SI{0}{eV} respectively the shift of the squared neutrino mass is
+In the scope of this thesis, an energy-dependent offset of the cross section was investigated (in contrast to a constant one in~\cite{Groh2015}). A KATRIN neutrino mass measurement for a neutrino mass of \SI{0}{eV} was simulated using an energy-dependent cross section\footnote{In all studies presented in this chapter, the simulated electron detector counts were substituted by their expectation values as opposed to fluctuated according to Poissonian statistics. In other words, no ensemble testing was done. For more details on such an Asimov data set and why it can reasonably be assumed to be representative, see section~\ref{sec:katrinElossStatisticsAsimov}.}. A model that uses a constant cross section was fitted to the simulated spectrum. This procedure was repeated for the five different \gls{mtd}s. Figure~\ref{fig:eDepScatCrossSecNuMassInfShifts} shows the results. For the~\SI{30}{eV} measurement interval, the difference from \SI{0}{eV} respectively the shift of the squared neutrino mass is
 \begin{equation}
 	\label{eq:eDepScatCrossSecNuMassInfShiftByThisThesis}
-	\Delta\nuMass^2 = \SI{1.09e-2}{eV^2}
+	\Delta\nuMass^2 = \hat{m}_\upnu^2 - \SI{0}{eV^2} = \SI{1.09e-2}{eV^2}
 	\fullstop
 \end{equation}
-This value would take a sizable fraction of the systematic budget of \SI{0.017}{eV^2} (eq.~\ref{eq:statMethodsSensitivtyFromEnsembleTDRSysBudget}) of the KATRIN experiment and hence the energy-dependence of the cross section should not be neglected in neutrino mass inference.
+This value would take a sizable fraction of the systematic budget of \SI{0.017}{eV^2} (eq.~\ref{eq:statMethodsSensitivtyFromEnsembleTDRSysBudget}) of the KATRIN experiment and hence the energy-dependence of the cross section should not be neglected in neutrino mass inference. 
 
-\subsection{Relation of the Shits for an Energy-Dependent and -Independent Cross-Section Offset}
+It should be mentioned, that KATRIN's design allows to measure the product of the gas column density and the inelastic scattering cross section $\rho d \sigma(E)$ sufficiently precise for the envisaged sensitivity on the neutrino mass. How the energy-dependence of the cross section has to be respected in such a measurement might need further investigation.
+
+\subsection{Relation of the Shifts for an Energy-Dependent and -Independent Cross-Section Offset}
 \label{sec:eDepScatCrossSecNuMassInfRelateGrohAndFormerWork}
 In the scope of this thesis, the shift of an inferred neutrino mass that is introduced by neglecting the energy-dependence of the cross section was investigated. Former works investigated the shift when neglecting a constant offset of the cross section. The shift obtained in this thesis in equation~\eqref{eq:eDepScatCrossSecNuMassInfShiftByThisThesis} is larger than the one obtained by the former study in~\cite{Groh2015} under equation~\eqref{eq:eDepScatCrossSecNuMassInfShiftEstimate}, although the energy-dependent offset of the cross section is never greater than the constant offset investigated by~\cite{Groh2015}. This might be contra intuitive, but a possible explanation an be given. The reason may be, that the fit parameter for the signal amplitude $\sigAmp$ in a nominal KATRIN fit (see section~\ref{sec:statMethodsStandardFit}) can partly compensate for a constant offset of the cross section. However, it may not compensate for an energy-dependent one. In order to verify this statement, two arguments are presented below.
 
@@ -315,25 +316,167 @@ First, the study from~\cite{Groh2015} was reproduced with a free fit parameter f
 \left|
 	\Delta\sigma/\sigma_\mathrm{TDR}
 \right| \approx \SI{0.1}{\percent}
-$ (see equation~\ref{eq:eDepScatCrossSecNuMassInfRelativeCrossSecOffset}) yields a shift of the squared neutrino mass, that is larger by almost an order of magnitude with a fixed $\sigAmp$ as opposed to leaving $\sigAmp$ as a free parameter. The shifts are then compatible with the shifts of the study that uses an energy-dependent cross section.
+$ (see equation~\ref{eq:eDepScatCrossSecNuMassInfRelativeCrossSecOffset}) yields a shift of the squared neutrino mass, that is larger by almost an order of magnitude with a fixed $\sigAmp$ as opposed to leaving $\sigAmp$ as a free parameter. The shifts are then also intuitively compatible with the shifts of the study that uses an energy-dependent cross section.
 
-The second plausibility argument is the following: Figure~\ref{fig:eDepScatCrossSecNuMassInfShiftsForConstCrossSec} shows the simulated integral rate for different cross section models normalized to the integral rate obtained by using the constant cross section $\sigma_\mathrm{TDR}$ from the KATRIN Design Report. The integral rates that are based on a model with a constant, energy-independent cross section differ from each other by almost a constant factor (variations $<2\times10^{-4}$). This implies, when one of these models is used in a simulation of a KATRIN measurement and another model is used in a corresponding fit for neutrino mass inference, their difference can be compensated by the fit parameter for the signal amplitude $\sigAmp$. However, the model that uses an energy-dependent cross section does not differ from the one with the constant cross section $\sigma_\mathrm{TDR}$ by a constant factor. The difference varies over the energy range. Such a difference can not be compensated by the fit parameter for the signal amplitude $\sigAmp$.
+The second plausibility argument is the following: Figure~\ref{fig:eDepScatCrossSecNuMassInfIntegralRate} shows the simulated integral rate for different cross section models normalized to the integral rate obtained by using the model with a constant cross section $\sigma_\mathrm{TDR}$ from the KATRIN Design Report. The integral rates that are based on a model with a constant, energy-independent cross section differ from each other by almost a constant factor (variations $<2\times10^{-4}$). This implies, when one of these models is used in a simulation of a KATRIN measurement and another model is used in a corresponding fit for neutrino mass inference, their difference can be compensated by the fit parameter for the signal amplitude $\sigAmp$. However, the model that uses an energy-dependent cross section does not differ from the one with the constant cross section $\sigma_\mathrm{TDR}$ by a constant factor, but the differences varies over the energy range. Such a difference can not be compensated by the fit parameter for the signal amplitude $\sigAmp$.
 
-The two presented arguments show that the results obtained in the scope of this thesis and the ones in~\cite{Groh2015} do not necessarily contradict each other.
+The two presented arguments show that the results obtained in the scope of this thesis and the ones in~\cite{Groh2015} are in accordance, although they might be contradictory from an intuitive point of view.
 
 \begin{figure}[t]
 	\includegraphics[width=\textwidth]{\currentFigureFolder/nuMassShiftForConstCrossSec.pdf}
-	\xcaption{Shift of an inferred squared neutrino mass induced by a neglected constant offset of the inelastic scattering cross section}{Shift of an inferred squared neutrino mass induced by a neglected constant offset of the inelastic scattering cross section.}{The neutrino mass was inferred from data that was simulated using different inelastic scattering cross sections. The abscissa shows the offset of the used inelastic scattering cross section relative to $\sigma_\mathrm{TDR}=\SI{3.456e-22}{m^{-22}}$. In the inference process, a cross section of $\sigma_\mathrm{TDR}$ was assumed for the fit model. In an energy-dependent scenario, a cross section corresponds an energy of incident electrons as per equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu}. The cross section range, that corresponds the design KATRIN analysis energy interval of \SI{30}{eV} is depicted as a gray band. The analysis was done twice: once with a free parameter for the signal amplitude, which reproduced the results given in~\cite{Groh2015}~(figure 6.31 on page 221); the second analysis had this parameter fixed. The shifts obtained with a fixed signal amplitude are compatible with the shift obtained when neglecting the energy-dependence of the cross section within the \SI{30}{eV} measurement interval.}
+	\xcaption{Shift of an inferred squared neutrino mass induced by a neglected constant offset of the inelastic scattering cross section}{Shift of an inferred squared neutrino mass induced by a neglected constant offset of the inelastic scattering cross section.}{The neutrino mass was inferred from data that was simulated using different constant inelastic scattering cross sections. The abscissa shows the offset of the used inelastic scattering cross section relative to $\sigma_\mathrm{TDR}=\SI{3.456e-22}{m^{-22}}$, which was used in the assumed fit model. In an energy-dependent scenario, a cross section corresponds an energy of incident electrons as per equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu}. The cross section range, that corresponds the design KATRIN analysis energy interval of \SI{30}{eV} is depicted as a gray band. The analysis was done twice: once with a free parameter for the signal amplitude, which reproduced the results given in~\cite{Groh2015}~(figure 6.31 on page 221); the second analysis had this parameter fixed. The shifts obtained with a fixed signal amplitude are of a similar magnitude as the shift obtained when neglecting the energy-dependence of the cross section within the \SI{30}{eV} measurement interval (depicted by the horizontal line).}
 	\label{fig:eDepScatCrossSecNuMassInfShiftsForConstCrossSec}
 \end{figure}
 
 
 \begin{figure}[t]
 	\includegraphics[width=\textwidth]{\currentFigureFolder/normedIntegralRate.pdf}
-	\xcaption{Simulated integral $\upbeta$-electron rate using different models of the cross section for inelastic electron-scattering}{Simulated integral $\boldsymbol{\upbeta}$-electron rate using different models of the cross section for inelastic electron-scattering.}{The abscissa shows the energy range of the design KATRIN analysis interval of \SI{30}{eV}. The lines show the integral rate of $\upbeta$~electrons for different models for the inelastic scattering cross section normalized to the model that uses the constant cross section $\sigma_\mathrm{TDR}=\SI{3.456e-22}{m^{-22}}$. The gray lines use a model with a constant cross section. The cross section values can be identified with electron energies as per equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu} and the energy interpretation of equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecTDREngeryInterpretation} with $\sigma(E_0-\SI{30}{eV}=\SI{18545}{eV})=\SI{3.459e-22}{m^{-22}}$ and $\sigma(E_0=\SI{18575}{eV})=\SI{3.454e-22}{m^{-22}}$. The black line shows the simulated integral rate for an energy-dependent cross section. This graph is meant to emphasize that the integral rates for models using a constant cross section differ by an almost constant factor, whereas the rate using an energy-dependent cross section differs from the others by a varying factor.}
-	\label{fig:eDepScatCrossSecNuMassInfShiftsForConstCrossSec}
+	\xcaption{Simulated integral $\upbeta$-electron rate using different models of the cross section for inelastic electron-scattering}{Simulated integral $\boldsymbol{\upbeta}$-electron rate using different models of the cross section for inelastic electron-scattering.}{The abscissa shows the energy range of the design KATRIN analysis interval of \SI{30}{eV}. The lines show the integral rate of $\upbeta$~electrons for different models for the inelastic scattering cross section normalized to the model that uses the constant cross section $\sigma_\mathrm{TDR}=\SI{3.456e-22}{m^{-22}}$. The gray lines use a model with a constant cross section. The cross section values can be identified with electron energies as per equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecLiu} and the energy interpretation of equation~\eqref{eq:eDepScatCrossSecSourcesCrossSecTDREngeryInterpretation} with $\sigma(E_0-\SI{30}{eV}=\SI{18545}{eV})=\SI{3.459e-22}{m^{-22}}$ and $\sigma(E_0=\SI{18575}{eV})=\SI{3.454e-22}{m^{-22}}$. The black line shows the simulated integral rate for an energy-dependent cross section. This graph emphasizes that the integral rates for models using a constant cross section differ by an almost constant factor, whereas the rate using an energy-dependent cross section differs from the others by a varying factor.}
+	\label{fig:eDepScatCrossSecNuMassInfIntegralRate}
 \end{figure}
 \FloatBarrier
+
+\section{An Energy-Dependent Scattering Model beyond Using the Poisson Distribution}
+\label{sec:eDepScatCrossSecModelExtended}
+In the previous section~\ref{sec:eDepScatCrossSecModelPoisson} the scattering probabilities are modeled using a Poisson distribution. This introduces an error for the following reason: A scattering electron loses energy. The scattering cross section increases with decreasing energy (see figure~\ref{fig:eDepScatCrossSecSourcesValues}) and the electron becomes more likely to scatter again. In other words, the probabilities of individual scattering processes are not independent when respecting the dependence on the electron energy. This violates one of the preconditions to model the scattering probabilities via a Poisson distribution. This section aims at quantifying the error that is introduced by this approximation. Another model beyond the description via a Poisson distribution is suggested\footnote{The idea was inspired by a model in~\cite{Groh2015} that incorporates changes of the electron pitch angle due to scattering.} in~\ref{sec:eDepScatCrossSecExtendedModelFormalism} that partly accounts for the energy loss of electrons in the formalism of the scattering probabilities. The suggested model was evaluated numerically as it includes one limit and two integrals. The numerical accuracy had to be good enough to decided whether it differs significantly from the Poisson model or not. At the same time, a balance between the numerical accuracy and the evaluation run time had to be found. This matter is described in detail in section~\ref{sec:eDepScatCrossSecExtendedModelNumEval}. The results of the numerical evaluation are discussed in section~\ref{sec:eDepScatCrossSecExtendedModelDiscussion}.
+
+\subsection{Mathematical Formalism}
+\label{sec:eDepScatCrossSecExtendedModelFormalism}
+In the following, a model for the probability of electron-scattering in the \gls{wgts} that depends on the electron energy is derived. The difficulty lies in the fact, that an electron that scatters loses energy and hence its probability to scatter a second time is different from the first time. The presented model assumes the same fixed energy loss $\epsilon$ for each scattering in contrast to a realistic distribution as given by the energy loss function (see figure~\ref{fig:intSpecModelAseevEloss}). This was sufficient to show a difference in the Poisson model and the model suggested below. However, a more accurate description would incorporate the full energy loss function. This may be the subject of a future study. 
+
+The aim of this section is the derivation of an expression $\bar{P}^{\star}_l(\Esource)$ that denotes the probability of $l$-fold scattering for an electron with a starting energy $\Esource$ averaged over all starting positions and pitch angles assuming a fixed energy loss $\epsilon$ per scattering.
+
+The expected amount of scatterings for an electron when traveling through the whole \gls{wgts} volume of length $d$ filled with a gas of constant density $\rho$ is (see equation~\ref{eq:intSpecModelExpectedScatteringCount})
+\begin{equation}
+\mu(E,\thetaSource) =
+\frac{\sigma(E)\rho d}{\cos\thetaSource},
+\end{equation}
+where $E$ denotes the electron's kinetic energy; $\thetaSource$ the starting pitch angle; and $\sigma(E)$ the energy dependent scattering cross section.
+
+In the following, the volume of the \gls{wgts} is thought of divided into $N$ hypothetical slices of equal width $w=L/N$ (and later the limit $N\rightarrow\infty$ is applied). $N$ is chosen sufficiently large that the probability for an electron to scatter twice within one slice is essentially zero. Then, for large $N$ the probability to scatter within one slice is $\mu(E,\thetaSource)/N$. The probability not to scatter within $n \leq N$ slices is
+\begin{equation}
+p_0(E,\thetaSource,n) =
+\left(
+1-\frac{\mu(E,\thetaSource)}{N}
+\right)^n
+\fullstop
+\end{equation}
+Using the well known limit for the Euler constant, one obtains for $n=N$ and $N\rightarrow\infty$ that $p_0$ is a Poisson distribution with expectation $\mu$ and evaluated at 0 
+\begin{align}
+\lim_{N\rightarrow\infty} 
+p_0(E,\thetaSource,N) =
+\lim_{N\rightarrow\infty} 
+\left(
+1-\frac{\mu(E,\thetaSource)}{N}
+\right)^N =
+\mathrm{e}^{-\mu(E,\thetaSource)} = 
+\mathrm{Poisson}(\mu(E,\thetaSource), 0)
+\fullstop
+\end{align}
+In other words, for no scattering, the Poisson model for the scattering probabilities as described in section~\ref{sec:eDepScatCrossSecModelPoisson} is recovered.
+
+Assuming a constant energy loss $\epsilon$ per scattering, the probability to scatter $l$ times within $n<N$ slices can be expressed recursively
+\begin{equation}
+\label{eq:eDepScatCrossSecExtendedModelFormalismCore}
+p_l(E,\thetaSource,n) =
+\underbrace{
+	\sum_{k=l}^{n}
+}_{(4)}
+\underbrace{
+	p_{l-1}(E,\thetaSource,k-1)
+	\vphantom{\sum_{k=l}^{n}}
+}_{(1)}
+\underbrace{
+	\left(
+	1-p_0(E-(l-1)\epsilon,\thetaSource,1)
+	\right)
+	\vphantom{\sum_{k=l}^{n}}
+}_{(2)}
+\underbrace{
+	p_0(E-l\epsilon,\thetaSource,n-k)
+	\vphantom{\sum_{k=l}^{n}}
+}_{(3)}
+\fullstop
+\end{equation}
+The idea behind this expression is the following: One imagines an electron with an energy $E$ that travels through $n$ \gls{wgts} slices, scatters $l$ times in total and the last time in the $k$th slice. Hence, it must have scattered $l-1$ times in the $k-1$ slices before and must not scatter in the $n-k$ slices to follow. In that regard, the above terms have the following meaning:
+\begin{enumerate}[(1)]
+	\item Probability to scatter $l-1$ times within $k-1$ slices with a kinetic energy of $E$.
+	\item Probability to scatter once within the $k$th slice with a kinetic energy of $E-(l-1)\epsilon$.
+	\item Probability not to scatter within the remaining $n-k$ slices.
+	\item Sum over all slices $k$ where the electron could scatter the last time. The sum starts at $l$ (as opposed to 1) because the probability to scatter $l-1$ times within less than $k=l-1$ slices (term (1)) is 0 because due to the made assumption, that in the limit of a large amount of slices $N$ an electron does not scatter twice within one very narrow slice.
+\end{enumerate}
+The probability to scatter $l$ times can be averaged over all starting positions of electrons respectively starting slices. In this regard, $\nSource$ denotes the amount of slices an electron has to pass through depending on its starting slice (including its starting slice). Then the average is
+\begin{equation}
+\label{eq:eDepScatCrossSecExtendedModelFormalismZAverage}
+\bar{p}_l(E,\thetaSource) = 
+\frac{1}{N}
+\sum_{\nSource=1}^{N} p_l(E,\thetaSource,\nSource) \approx
+\frac{1}{d}
+\int_{0}^{d}
+p_l(E,\thetaSource,
+\left\lceil N \frac{\zSource}{d}\right\rceil
+)
+\d \zSource
+\fullstop
+\end{equation}
+Here, the averaging sum is approximated by an integral as this helps cutting down on run time in a numerical evaluation. This is due to the fact, that in a numerical evaluation a large number $N$ ($\sim10^5$) of slices has to be chosen and the sum would have many terms. However, a numerical integration can achieve an accurate result with a smaller set of supporting points (see subsequent section~\ref{sec:eDepScatCrossSecExtendedModelNumEval}). 
+
+Then, the limit $N\rightarrow\infty$ can be applied
+\begin{equation}
+P^{\star}_l(\Esource,\thetaSource) = 
+\lim_{N\rightarrow\infty} \bar{p}_l(\Esource,\thetaSource)
+\fullstop
+\label{eq:eDepScatCrossSecExtendedModelFormalismPitchAngleDepScatProbs}
+\end{equation}
+$P^{\star}_l(\Esource,\thetaSource)$ denotes the probability for an electron to scatter $l$ times when traveling through the whole \gls{wgts} with a starting energy $\Esource$ and pitch angle $\thetaSource$ averaged over all starting positions. Finally, this expression can be averaged over all starting pitch angles in order to obtain the energy dependent scattering probabilities
+\begin{equation}
+\bar{P}^{\star}_l(\Esource) = 
+\frac{1}{1-\cos\thetaMax}
+\int_0^{\thetaMax}
+\sin \thetaSource
+P^{\star}_l(\Esource,\thetaSource) 
+\d \thetaSource
+\fullstop
+\label{eq:eDepScatCrossSecExtendedModelFormalismAveragedDepScatProbs}
+\end{equation}
+$\bar{P}^{\star}_l(\Esource)$ denotes the probability for $l$-fold scattering of an electron with a starting energy $\Esource$ averaged over all starting positions and pitch angles assuming a fixed energy loss $\epsilon$ per scattering. In the following, this model is called the ``extended model''.
+
+\subsection{Numerical Evaluation and Cross-Check}
+\label{sec:eDepScatCrossSecExtendedModelNumEval}
+\begin{figure}[t]
+	\centering
+	\includegraphics{chapter/energyDependentCrossSec/fig/scatProb1_numericalAccuracy.pdf}
+	\xcaption{Accuracy of the numerical evaluation of the extended model of the probability for electron-scattering in the \glsentryshort{wgts}}{Accuracy of the numerical evaluation of the extended model of the probability for electron-scattering in the \glsentryshort{wgts}.}{The extended model is given by equation~\eqref{eq:eDepScatCrossSecExtendedModelFormalismAveragedDepScatProbs} and the Poisson model is given by equation~\eqref{eq:eDepScatCrossSecModelPoisson}. For both models, the energy of the incident electrons was taken such, that the Poisson model yields the values already given in table~\ref{tab:eDepScatCrossSecModelScatProbs}. The left column shows the dependence on the number $N$ of hypothetical slices of the \gls{wgts}. The right column shows the dependence on the order of Gaussian quadrature that was used to evaluate the two integrals in the extended model. The Poisson model is independent of these features and can be evaluated exactly (limited by machine number precision). In the left column, the order of Gaussian quadrature was fixed to 5 and in the right column, the number of slices was fixed to $5\times10^{5}$. The upper row shows the numerical evaluation of the extended model for no energy loss per scattering (markers). Its exact solution is given by the Poisson model (line). The lower row shows the model for an energy loss of \SI{12.6}{eV} per scattering. The upper row shows that the numerical evaluation of the extended model is within a distance of $10^{-5}$ of its exact solution and the lower row shows conversion on the $10^{-5}$ level. These results make it plausible to assume a numerical inaccuracy on the $10^{-5}$ level for the shown configurations of the numerical evaluation of the extended model.}
+	\label{fig:eDepScatCrossSecExtendedModelNumEval}
+\end{figure}
+For the evaluation of the energy-dependent scattering probabilities according to the extended model in equation~\eqref{eq:eDepScatCrossSecExtendedModelFormalismAveragedDepScatProbs} the fixed energy loss $\epsilon=\SI{12.6}{eV}$ per scattering was chosen as it is the most probable energy loss for electrons traveling through tritium gas (see figure~\ref{fig:intSpecModelAseevEloss}). The formula was evaluated numerically. Taking the limit~$N\rightarrow\infty$ in equation~\eqref{eq:eDepScatCrossSecExtendedModelFormalismPitchAngleDepScatProbs} was replaced by choosing a large $N$. The averaging integral over the starting positions in equation~\eqref{eq:eDepScatCrossSecExtendedModelFormalismZAverage} and starting pitch angles in equation~\eqref{eq:eDepScatCrossSecExtendedModelFormalismAveragedDepScatProbs} was computed using Gaussian quadrature. The extended model was introduced because the preconditions to model the scattering probabilities via a Poisson distribution (Poisson model) do not hold. Hence, the numerical evaluation of the extended model must be sufficiently accurate to show the difference to the Poisson model. How accurate this is can not be known beforehand and was found out by trial and error. Both, $N$ and the order of Gaussian quadrature, should be chosen as low as possible to cut down on calculation run time, but sufficiently high for the required accuracy. 
+
+Also, a benchmark had to be found, to determine the accuracy of the numerical evaluation. The following idea was used: For an energy loss of $\epsilon=\SI{0}{eV}$ per scattering, the extended model must recover the Poisson model exactly. This can be used to estimate the numerical accuracy in dependence of the number $N$ of slices and order of Gaussian quadrature. The estimated accuracy when using $\epsilon=\SI{0}{eV}$ was then assumed for evaluations when $\epsilon>\SI{0}{eV}$. A further cross-check is to look at the convergence of the numerical evaluation with increasing $N$ and an increasing order of the Gaussian quadrature, which is also done below.
+
+The averaged probability for one-fold scattering $\bar{P}^{\star}_1$ of the extended model was evaluated for $\epsilon=\SI{0}{eV}$. The result in dependence of $N$ and the order of the Gaussian quadrature is shown in the top row of figure~\ref{fig:eDepScatCrossSecExtendedModelNumEval}. It should recover the Poisson model. For $N=5\times10^5$ and using Gaussian quadrature of order 5, the Poisson model and the extended model differ less than $3\times10^{-6}$. The calculations for $\epsilon=\SI{12.6}{eV}$ are shown in the lower row of figure~\ref{fig:eDepScatCrossSecExtendedModelNumEval}. They also show convergence on the $10^{-5}$ level. Conclusively, the results make it plausible to assume a numerical inaccuracy on the $10^{-5}$ level or less for $N=10^5$ and using Gaussian quadrature of order 5 for the integrals.
+
+The corresponding run time to compute $\bar{P}^{\star}_1$ is in $\mathcal{O}(N)$ as it requires a sum over all $N$ slices in equation~\eqref{eq:eDepScatCrossSecExtendedModelFormalismCore}. The extended model is defined recursively and therefore, the run time for $l$-fold scattering is in $\mathcal{O}(N^l)$. Hence, computing the probability for two-fold scattering would take $5\times10^5$ times as long as for one-fold scattering for the same $10^{-5}$ accuracy. This was not yet found to be feasible.
+
+The results of the numerical evaluation are listed and discussed in the subsequent section~\ref{sec:eDepScatCrossSecExtendedModelDiscussion}.
+\FloatBarrier
+
+\subsection{Results and Discussion}
+\label{sec:eDepScatCrossSecExtendedModelDiscussion}
+\begin{figure}[t]
+	\centering
+	\includegraphics{chapter/energyDependentCrossSec/fig/scatProbs1PoissonAndExtended.pdf}
+	\xcaption{Comparison of the Poisson and the extended model for one-fold scattering of electrons in the \glsentryshort{wgts}}{Comparison of the Poisson and the extended model for one-fold scattering of electrons in the \glsentryshort{wgts}.}{The line shows the Poisson model and the markers the extended model (see main text for a description of the models. Due to long program run times, the latter was only evaluated at a selection of energies. Furthermore, The numerical evaluation of the extended model is subject to an uncertainty of $\sim10^{-5}$ (see section~\ref{sec:eDepScatCrossSecExtendedModelNumEval}), that is depicted as uncertainty bars.}
+	\label{fig:eDepScatCrossSecExtendedModelResults}
+\end{figure}
+Figure~\ref{fig:eDepScatCrossSecExtendedModelResults} depicts the Poisson model as per equation~\eqref{eq:eDepScatCrossSecModelPoisson} and the extended model as per equation~\eqref{eq:eDepScatCrossSecExtendedModelFormalismAveragedDepScatProbs} for the probability of one-fold scattering. The difference between the two models is below $10^{-4}$. How this difference propagates to neutrino mass inference was not investigated further in the scope of this thesis, but may be the subject of a future study. The \gls{ssc} software framework, that was used for many former works (e.\,g.~\cite{Groh2015,Kleesiek2014,SeitzM2019}), evaluates the scattering probabilities numerically with an accuracy of $10^{-5}$, which may serve as an indicator on to what extend this difference is of importance. But no definite answers can be given at the current stage.
+
+The extended model was evaluated numerically as it includes one limit and two integrals (see appendix~\ref{sec:eDepScatCrossSecExtendedModelFormalism}). The numerical accuracy had to be good enough to decided whether it differs significantly from the Poisson model or not. At the same time, a balance between the numerical accuracy and the evaluation run time had to be found. The probability for one-fold scattering could be calculated with a numerical accuracy on the $10^{-5}$ level (see appendix~\ref{sec:eDepScatCrossSecExtendedModelNumEval} on how this value is derived and how it can be interpreted). However, the evaluation of the extended model for more than one scattering has not yet been done and may be the subject of a future study.
+
+
+ 
+  
+
+
 \section{Conclusion and Outlook}
 \label{sec:eDepScatCrossSecConclusion}
 The cross section for inelastic scattering off tritium molecules within the \gls{wgts} depends on the energy of the incident electrons. Two models were developed that can integrate this dependence into a mathematical description of a KATRIN neutrino mass measurement. For the further results in this thesis, an approximation was made by modeling the probability for several-fold scattering via a Poisson distribution. It was shown, that this introduces an error of approximately $10^{-4}$ for the probability of one-fold scattering. Whether this effect is significant with regard to neutrino mass inference needs further investigation.
