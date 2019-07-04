@@ -352,7 +352,7 @@ In the previous section~\ref{sec:eDepScatCrossSecModelPoisson} the scattering pr
 
 This section aims at quantifying the error that is introduced by the approximate modeling via a Poisson distribution. Another model is suggested\footnote{The idea was inspired by a model in~\cite{Groh2015} that incorporates changes of the electron pitch angle due to scattering.} in section~\ref{sec:eDepScatCrossSecExtendedModelFormalism} that partly accounts for the energy loss of electrons in the formalism of the scattering probabilities. The suggested model was evaluated numerically as it includes one limit and two integrals that could not yet be solved analytically. The numerical accuracy had to be good enough to decide whether it differs significantly from the Poisson model or not. At the same time, a balance between the numerical accuracy and the evaluation run time had to be found. This matter is described in detail in section~\ref{sec:eDepScatCrossSecExtendedModelNumEval}. The results of the numerical evaluation are discussed in section~\ref{sec:eDepScatCrossSecExtendedModelDiscussion}.
 
-\subsection{Mathematical Formalism}
+\subsection{Mathematical Formalism of the Extended Model}
 \label{sec:eDepScatCrossSecExtendedModelFormalism}
 In the following, a model for the probability of electron-scattering in the \gls{wgts} that depends on the electron energy is derived. The difficulty lies in the fact, that an electron that scatters loses energy and hence its probability to scatter a second time is different from the first time. The presented model assumes the same fixed energy loss $\epsilon$ for each scattering in contrast to a realistic distribution as given by the energy loss function (see figure~\ref{fig:intSpecModelAseevEloss}). This was sufficient to show a difference in the Poisson model and the model suggested below. However, a more accurate description would incorporate the full energy loss function. This may be the subject of a future study. 
 
@@ -454,7 +454,7 @@ P^{\star}_l(\Esource,\thetaSource)
 \end{equation}
 $\bar{P}^{\star}_l(\Esource)$ denotes the probability for $l$-fold scattering of an electron with a starting energy $\Esource$ averaged over all starting positions and pitch angles assuming a fixed energy loss $\epsilon$ per scattering. In the following, this model is called the ``extended model''.
 
-\subsection{Numerical Evaluation and Cross-Check}
+\subsection{Numerical Accuracy and Cross-Check of the Extended Model}
 \label{sec:eDepScatCrossSecExtendedModelNumEval}
 \begin{figure}[t]
 	\centering
@@ -473,7 +473,7 @@ The corresponding run time to compute $\bar{P}^{\star}_1$ is in $\mathcal{O}(N)$
 The results of the numerical evaluation of for one-fold scattering are discussed in the subsequent section~\ref{sec:eDepScatCrossSecExtendedModelDiscussion}.
 \FloatBarrier
 
-\subsection{Results and Discussion}
+\subsection{Evaluation of the Extended Model and Discussion}
 \label{sec:eDepScatCrossSecExtendedModelDiscussion}
 \begin{figure}[t]
 	\centering
