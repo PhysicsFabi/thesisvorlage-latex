@@ -12,7 +12,7 @@ KaFit is configured using an \texttt{XML}-like syntax. Example excerpts from KaF
   </Penalty>
 </LoglikelihoodKatrin>
 \end{lstlisting}
-{\color{gray}\texttt{<!-- Penalty Type -->}} can be substituted by one ore more of the following tags:
+\lstinline[language=XML]{<!-- Penalty Type -->} can be substituted by one ore more of the tags listed below.
 \paragraph{Multivariate Normal Distribution}
 The {\color{violet}\texttt{Parameter}}-tag represents a parameter the likelihood depends on. Its attribute {\color{magenta}\texttt{Mean}} specifies the mean of a parameter, {\color{magenta}\texttt{Std}} the standard deviation, and one or more {\color{violet}\texttt{Correlation}}-sub-tags the correlations between the parameters.
 \begin{lstlisting}[language=XML]
